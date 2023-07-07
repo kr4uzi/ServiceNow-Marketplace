@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="729b49fa47772110acc88a88536d4399" label="Application Installation" max_length="40" name="x_376096_mpl_application_installation" type="collection">
+        <element default="true" label="Active" max_length="40" name="active" type="boolean"/>
+        <element label="Application" max_length="32" name="application" reference="x_376096_mpl_application" reference_cascade_rule="cascade" type="reference"/>
+        <element label="Branch" max_length="40" name="branch" type="string"/>
+        <element label="Customer" max_length="32" name="customer" reference="x_376096_mpl_customer" reference_cascade_rule="cascade" type="reference"/>
+        <element label="Name" max_length="100" name="display_name" type="string"/>
+        <element label="GitHub ID" max_length="40" name="github_id" type="integer"/>
+        <element label="GitHub Name" max_length="100" name="github_name" type="string"/>
+        <element label="Service User" max_length="32" name="service_user" reference="sys_user" type="reference"/>
+        <element label="SSH URL" max_length="1024" name="ssh_url" type="url"/>
+        <element label="Update Flow" max_length="32" name="update_flow" reference="sys_hub_flow" type="reference"/>
+        <index name="index">
+            <element name="application"/>
+        </index>
+        <index name="index2">
+            <element name="customer"/>
+        </index>
+        <index name="index3">
+            <element name="service_user"/>
+        </index>
+        <index name="index4">
+            <element name="update_flow"/>
+        </index>
+    </element>
+</database>

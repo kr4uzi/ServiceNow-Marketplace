@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
+    <sys_ui_action action="INSERT_OR_UPDATE">
+        <action_name>mpl_install</action_name>
+        <active>true</active>
+        <client>true</client>
+        <client_script_v2><![CDATA[function onClick(g_form) {
+
+}]]></client_script_v2>
+        <comments/>
+        <condition>current.canWrite() &amp;&amp; !current.app_install.nil()</condition>
+        <form_action>true</form_action>
+        <form_button>false</form_button>
+        <form_button_v2>false</form_button_v2>
+        <form_context_menu>false</form_context_menu>
+        <form_link>true</form_link>
+        <form_menu_button_v2>false</form_menu_button_v2>
+        <form_style/>
+        <format_for_configurable_workspace>false</format_for_configurable_workspace>
+        <hint/>
+        <isolate_script>true</isolate_script>
+        <list_action>false</list_action>
+        <list_banner_button>false</list_banner_button>
+        <list_button>false</list_button>
+        <list_choice>false</list_choice>
+        <list_context_menu>false</list_context_menu>
+        <list_link>false</list_link>
+        <list_save_with_form_button>false</list_save_with_form_button>
+        <list_style/>
+        <messages>mpl_confirm_install_title&#13;
+mpl_confirm_install_description</messages>
+        <name>Install</name>
+        <onclick>mpl_confirmInstall()</onclick>
+        <order>100</order>
+        <script><![CDATA[/* global current, action */
+/* global GlideModal, getMessage, gsftSubmit, g_form, x_beiag_sc */
+/* global sn_fd, gs, GlideRecord */
+/* eslint no-undef: "error" */
+function mpl_confirmInstall() {
+	var confirm = new GlideModal('glide_confirm_standard');
+	confirm.setTitle(getMessage('mpl_confirm_install_title'));
+	confirm.setPreference('title', getMessage('mpl_confirm_install_description'));
+	confirm.setPreference('warning', true);
+	confirm.setPreference('onPromptComplete', function () {
+		gsftSubmit(null, g_form.getFormElement(), 'mpl_install');
+	});
+	
+	confirm.render();
+}
+
+function mplInstall(appInstallGr, instanceGr, userGr) {
+	try {
+		sn_fd.FlowAPI.getRunner()
+			.subflow('x_376096_mpl.install_application_on_instance')
+			.inForeground()
+			.withInputs({ 'application_installation': appInstallGr, instance: instanceGr, user: userGr })
+			.run();
+	} catch (e) {
+		gs.addErrorMessage(e);
+	}
+}
+
+if (typeof window == 'undefined') {
+	const appInstallGr = current.app_install.getRefRecord();
+	const userGr = new GlideRecord('sys_user');
+	if (userGr.get(gs.getUserID())) {
+		if (appInstallGr.isValidRecord()) {
+			mplInstall(appInstallGr, current, userGr);
+		} else {
+			gs.addErrorMessage(gs.getMessage('mpl_record_not_found'));
+		}
+	} else {
+		gs.addErrorMessage(gs.getMessage('mpl_record_not_found'));
+	}
+	
+	action.setRedirectURL(current);
+}]]></script>
+        <show_insert>false</show_insert>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-07-06 18:41:17</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a8a8adbe47f72110acc88a88536d435f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Install</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name>sys_ui_action_a8a8adbe47f72110acc88a88536d435f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-07-06 18:41:17</sys_updated_on>
+        <table>x_376096_mpl_application_instance_installation</table>
+        <ui11_compatible>false</ui11_compatible>
+        <ui16_compatible>false</ui16_compatible>
+    </sys_ui_action>
+</record_update>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="io_set_item">
+    <io_set_item action="INSERT_OR_UPDATE">
+        <order>300</order>
+        <sc_cat_item display_value="Add new customer">0d57b93e473b2110acc88a88536d4331</sc_cat_item>
+        <sys_class_name>io_set_item</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-07-06 19:52:40</sys_created_on>
+        <sys_id>16d8b5be473b2110acc88a88536d4371</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Instance Configuration.Add new customer</sys_name>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name>io_set_item_16d8b5be473b2110acc88a88536d4371</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-07-06 19:52:40</sys_updated_on>
+        <variable_set display_value="Instance Configuration">64e8f5be473b2110acc88a88536d4393</variable_set>
+    </io_set_item>
+</record_update>

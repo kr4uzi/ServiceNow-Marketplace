@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_user_criteria_mtom">
+    <sc_cat_item_user_criteria_mtom action="INSERT_OR_UPDATE">
+        <sc_cat_item display_value="Add new customer">0d57b93e473b2110acc88a88536d4331</sc_cat_item>
+        <sys_class_name>sc_cat_item_user_criteria_mtom</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-07-06 19:54:43</sys_created_on>
+        <sys_id>ad59fdbe473b2110acc88a88536d439d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Add new customer.MPL Customer Owners</sys_name>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name>sc_cat_item_user_criteria_mtom_ad59fdbe473b2110acc88a88536d439d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-07-06 19:54:43</sys_updated_on>
+        <user_criteria display_value="MPL Customer Owners">2b5931fe473b2110acc88a88536d4366</user_criteria>
+    </sc_cat_item_user_criteria_mtom>
+</record_update>

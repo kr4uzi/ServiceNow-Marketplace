@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="catalog_ui_policy_action">
+    <catalog_ui_policy_action action="INSERT_OR_UPDATE">
+        <catalog_item display_value="Install application">1fe1423a477b2110acc88a88536d4338</catalog_item>
+        <catalog_variable>IO:77b20e3a477b2110acc88a88536d4352</catalog_variable>
+        <cleared>false</cleared>
+        <disabled>true</disabled>
+        <field/>
+        <mandatory>ignore</mandatory>
+        <order>100</order>
+        <sys_class_name>catalog_ui_policy_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-07-06 20:37:57</sys_created_on>
+        <sys_id>b9530a7a477b2110acc88a88536d4377</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>update_flow</sys_name>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name>catalog_ui_policy_action_b9530a7a477b2110acc88a88536d4377</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-07-06 20:37:57</sys_updated_on>
+        <table/>
+        <ui_policy display_value="MPL Install App - RITM">1623c67a477b2110acc88a88536d4313</ui_policy>
+        <variable>update_flow</variable>
+        <variable_set/>
+        <visible>ignore</visible>
+    </catalog_ui_policy_action>
+</record_update>

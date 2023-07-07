@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="daaec5be47772110acc88a88536d434a" label="OAuth Token" max_length="40" name="x_376096_mpl_oauth_token" type="collection">
+        <element label="Access Token" max_length="255" name="access_token" type="password2"/>
+        <element default="true" label="Active" max_length="40" name="active" type="boolean"/>
+        <element display="true" label="Name" max_length="40" name="display_name" type="string"/>
+        <element label="Expires At" max_length="40" name="expires_at" type="glide_date_time"/>
+        <element label="Instance" max_length="32" name="instance" reference="x_376096_mpl_instance" reference_cascade_rule="cascade" type="reference"/>
+        <element label="Refresh Token" max_length="255" name="refresh_token" type="password2"/>
+        <element label="User" max_length="32" name="user" reference="sys_user" type="reference"/>
+        <index name="index">
+            <element name="instance"/>
+        </index>
+        <index name="index2">
+            <element name="user"/>
+        </index>
+    </element>
+</database>

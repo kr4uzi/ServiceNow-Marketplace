@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="catalog_ui_policy_action">
+    <catalog_ui_policy_action action="INSERT_OR_UPDATE">
+        <catalog_item display_value="Install application">1fe1423a477b2110acc88a88536d4338</catalog_item>
+        <catalog_variable>IO:d052c2f6477b2110acc88a88536d4377</catalog_variable>
+        <cleared>false</cleared>
+        <disabled>true</disabled>
+        <field/>
+        <mandatory>false</mandatory>
+        <order>100</order>
+        <sys_class_name>catalog_ui_policy_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-07-06 20:38:58</sys_created_on>
+        <sys_id>0a838e7a477b2110acc88a88536d439c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>application</sys_name>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name>catalog_ui_policy_action_0a838e7a477b2110acc88a88536d439c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-07-06 20:38:58</sys_updated_on>
+        <table/>
+        <ui_policy display_value="MPL Install App - Customer Empty">a4734e7a477b2110acc88a88536d433e</ui_policy>
+        <variable>application</variable>
+        <variable_set/>
+        <visible>ignore</visible>
+    </catalog_ui_policy_action>
+</record_update>

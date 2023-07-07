@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="catalog_script_client">
+    <catalog_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_catalog>true</applies_catalog>
+        <applies_extended>false</applies_extended>
+        <applies_req_item>true</applies_req_item>
+        <applies_sc_task>false</applies_sc_task>
+        <applies_target_record>false</applies_target_record>
+        <applies_to>set</applies_to>
+        <cat_item/>
+        <cat_variable/>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>MPL Instance - Fix Custom Variables</name>
+        <order/>
+        <script><![CDATA[function onSubmit() {
+	var $window = NOW.mpl_instance_window;
+	
+	// When Custom Variables are present in a Multi Row Variable Set, the "Save" doesn't work because
+	// the OOTB functions getValue and getJSON will crash - the Custom Variables do not get mapped properly
+	
+	// The crash happens in the Class TableVariableRow, which is getting fixed in this script:
+	// TableVariableRow is loaded after "onLoad" so we can either inject (not deterministic) via setTimeout
+	// or (deterministic) via onSubmit (which is pretty late, but early enough to fix the crash)
+	
+	if ($window && $window.TableVariableRow && !$window.TableVariableRow.prototype.mpl_injected) {
+		$window.TableVariableRow.prototype.mpl_injected = true;
+		
+		// fixes Update of MRVS Row on Catalog Item
+		$window.TableVariableRow.prototype.getValue = function () {
+			var data = this.data;
+			var columnNames = this.parent.getColumnMeta();
+			return this.parent.getColumnsSysIds().reduce(function (result, column) {
+				var columnName = columnNames[column].name;
+				result[columnName] = column in data ? data[column].value : g_form.getValue(columnName);
+				return result;
+			}, {});
+		};
+		
+		// fixes Update of MRVS Row on Catalog Item
+		$window.TableVariableRow.prototype.getJSON = function () {
+			var data = this.data;
+			return this.parent.getColumnsSysIds().reduce(function (result, column) {
+				result[column] = column in data ? data[column].value : g_form.getValue(column);
+				return result;
+			}, {});
+		};
+		
+		// fixes Update of MRVS Row on Requested Item
+		$window.TableVariableRow.prototype.updateRowHtmlFromDialog = function() {
+			var columns = this.parent.getColumnsSysIds();
+			var rowEle = this.rowElement;
+			for (var i=0; i < columns.length; i++) {
+				rowEle.cells[i+1].textContent = (columns[i] && this.data[columns[i]]) ? (this.data[columns[i]].displayValue ? this.data[columns[i]].displayValue : this.data[columns[i]].value ? this.data[columns[i]].value : "") : "";
+			}
+		};
+	}
+}]]></script>
+        <sys_class_name>catalog_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-07-06 19:59:12</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>c86ab9fe473b2110acc88a88536d4340</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>MPL Instance - Fix Custom Variables</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name>catalog_script_client_c86ab9fe473b2110acc88a88536d4340</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-07-06 19:59:12</sys_updated_on>
+        <table/>
+        <type>onSubmit</type>
+        <ui_type>0</ui_type>
+        <variable_set display_value="Instance Configuration">64e8f5be473b2110acc88a88536d4393</variable_set>
+        <view/>
+    </catalog_script_client>
+</record_update>

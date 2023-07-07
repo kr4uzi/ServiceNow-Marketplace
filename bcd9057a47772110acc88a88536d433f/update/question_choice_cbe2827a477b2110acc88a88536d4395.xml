@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
+    <question_choice action="INSERT_OR_UPDATE">
+        <inactive>false</inactive>
+        <order>200</order>
+        <published_ref/>
+        <question display_value="Update Flow">77b20e3a477b2110acc88a88536d4352</question>
+        <sys_class_name>question_choice</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-07-06 20:36:20</sys_created_on>
+        <sys_id>cbe2827a477b2110acc88a88536d4395</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>With Approval</sys_name>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name>question_choice_cbe2827a477b2110acc88a88536d4395</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-07-07 21:22:11</sys_updated_on>
+        <text>With Approval</text>
+        <value>ad0ae60b47fb6110acc88a88536d437f</value>
+    </question_choice>
+    <fx_price action="delete_multiple" query="id=cbe2827a477b2110acc88a88536d4395"/>
+</record_update>

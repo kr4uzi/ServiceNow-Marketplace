@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_alias">
+    <sys_alias action="INSERT_OR_UPDATE">
+        <configuration_template/>
+        <connection_type>http_connection</connection_type>
+        <id>x_376096_mpl.Marketplace</id>
+        <multiple_connections>false</multiple_connections>
+        <name>Marketplace</name>
+        <parent/>
+        <retry_policy display_value="Default HTTP Retry Policy">ef751ff07301330025d71afe2ff6a7f9</retry_policy>
+        <sys_class_name>sys_alias</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-07-06 20:44:01</sys_created_on>
+        <sys_id>d4b4c6fa477b2110acc88a88536d4337</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_376096_mpl.Marketplace</sys_name>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name>sys_alias_d4b4c6fa477b2110acc88a88536d4337</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-07-06 20:44:01</sys_updated_on>
+        <type>connection</type>
+    </sys_alias>
+</record_update>

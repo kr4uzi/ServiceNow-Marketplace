@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="8b36d97a47b72110acc88a88536d4367" extends="x_376096_mpl_task" label="Merge Task" max_length="40" name="x_376096_mpl_merge_task" type="collection"/>
+</database>

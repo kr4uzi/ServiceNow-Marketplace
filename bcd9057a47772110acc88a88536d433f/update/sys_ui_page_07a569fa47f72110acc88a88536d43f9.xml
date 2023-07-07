@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description/>
+        <direct>true</direct>
+        <endpoint>x_376096_mpl_oauth_redirect.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<g:evaluate var="jvar_oauth_code" expression="RP.getParameterValue('code')" />
+	<g:evaluate var="jvar_oauth_state" expression="RP.getParameterValue('state')" />
+	<g:evaluate var="jvar_oauth_token_sys_id" expression="RP.getParameterValue('token_sys_id')" />
+	<g:evaluate var="jvar_oauth_error" expression="RP.getParameterValue('error')" />
+	<g:evaluate var="jvar_linked_message" expression="gs.getMessage('mpl_instance_successfully_linked')" />
+	<g:ui_form>
+		<input type="hidden" name="oauth_code" value="${jvar_oauth_code}" />
+		<input type="hidden" name="instance_url" value="" />
+		<input type="hidden" name="client_id" value="" />
+		<input type="hidden" name="client_secret" value="" />
+		<input type="hidden" name="state" value="${jvar_oauth_state}" />
+	</g:ui_form>
+	<script>
+		if (window.opener) {
+			if ('${jvar_oauth_token_sys_id}') {
+				if (window.opener $[AND] window.opener.mpl_SetOAuthToken) {
+					window.opener.mpl_SetOAuthToken('${jvar_oauth_token_sys_id}');
+				} else if (window.opener $[AND] window.opener.g_form) {
+					window.opener.g_form.addInfoMessage('${jvar_linked_message}');
+				}
+				
+				window.close();
+			} else if ('${jvar_oauth_code}') {
+				var form = window.document.forms['form.07a569fa47f72110acc88a88536d43f9'];
+				if (form.elements['state'].value == 'new_instance') {
+					var data = window.opener.mpl_GetOAuthData();
+					form.elements['instance_url'].value = data.instance_url;
+					form.elements['client_id'].value = data.client_id;
+					form.elements['client_secret'].value = data.client_secret;
+				}
+
+				form.submit();
+			}
+		}
+	</script>
+	<j:if test="${!empty(jvar_oauth_error)}">
+		<p style="color: red">${HTML:jvar_oauth_error}</p>
+	</j:if>
+	<j:if test="${!empty(jvar_oauth_token_sys_id)}">
+		<p style="color: green">${gs.getMessage('mpl_instance_successfully_linked')}</p>
+	</j:if>
+</j:jelly>]]></html>
+        <name>oauth_redirect</name>
+        <processing_script><![CDATA[/* global request, response */
+/* global sn_ws, gs */
+/* global GlideRecord, GlideDateTime */
+/* eslint no-undef: "error" */
+(function (request, response) {
+	// request [GlideServletRequest]
+	// https://developer.servicenow.com/dev.do#!/reference/api/sandiego/server/no-namespace/c_GlideServletRequestScopedAPI
+	
+	// response [GlideServletResponse]
+	// https://developer.servicenow.com/dev.do#!/reference/api/sandiego/server/no-namespace/c_GlideServletResponseScopedAPI
+	
+	// this
+	// [represents the values from the <g:ui_form>]
+	
+	let instance = this.state;
+	if (instance != 'new_instance') {
+		let instanceGr = new GlideRecord('x_376096_mpl_instance');
+		instanceGr.addQuery('sys_id', this.state);
+		instanceGr.setLimit(1);
+		instanceGr.query();
+		if (instanceGr.next()) {
+			instance = instanceGr.getUniqueValue();
+			
+			const customerGr = instanceGr.customer.getRefRecord();
+			this.instance_url = instanceGr.getValue('instance_url');
+			this.client_id = customerGr.getValue('oauth_client_id');
+			this.client_secret = customerGr.oauth_client_secret.getDecryptedValue();
+		} else {
+			instance = '';	
+		}
+	}
+	
+	let redirectURL = 'x_376096_mpl_oauth_redirect.do';
+	if (this.oauth_code && this.instance_url && this.client_id && this.client_secret && instance) {
+		let instanceURL = this.instance_url;
+		if (!instanceURL.endsWith('/')) {
+			instanceURL += '/';
+		}
+		
+		let request = new sn_ws.RESTMessageV2();
+		request.setHttpMethod('POST');
+		request.setEndpoint(instanceURL + 'oauth_token.do');
+		request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+		request.setRequestHeader('Accept', 'application/json');
+		request.setRequestBody(
+			'grant_type=authorization_code'
+			+ '&code=' + encodeURIComponent(this.oauth_code)
+			+ '&client_id=' + encodeURIComponent(this.client_id)
+			+ '&client_secret=' + encodeURIComponent(this.client_secret)
+			+ '&state=' + encodeURIComponent(instance)
+			+ '&redirect_uri=' + encodeURIComponent(
+					gs.getProperty('glide.servlet.uri') + 'x_376096_mpl_oauth_redirect.do'
+				)
+		);
+		
+		let response = request.execute();
+		let status = response.getStatusCode();
+		let body = response.getBody();
+		if (status == 200) {
+			try {
+				let token = JSON.parse(body);
+				if (token.token_type == 'Bearer') {
+					let tokenGr = new GlideRecord('x_376096_mpl_oauth_token');
+					tokenGr.newRecord();
+					tokenGr.user = gs.getUserID();
+					tokenGr.access_token = token.access_token;
+					tokenGr.refresh_token = token.refresh_token;
+					tokenGr.instance = instance == 'new_instance' ? '' : instance;
+					
+					let expiresAt = new GlideDateTime();
+					expiresAt.addSeconds(token.expires_in);
+					tokenGr.expires_at = expiresAt;
+					
+					let tokenSysID = tokenGr.insert();
+					if (tokenSysID) {
+						redirectURL += '?token_sys_id=' + tokenSysID;
+					} else {
+						redirectURL += '?error=' + encodeURIComponent(gs.getMessage('mpl_token_insert_failed'));
+					}
+				} else {
+					redirectURL += '?error=' + encodeURIComponent(gs.getMessage('mpl_token_bearer_expected'));
+				}
+			} catch (e) {
+				redirectURL += '?error=' + encodeURIComponent('Error: ' + e);
+			}
+		} else {
+			redirectURL += '?error=' + encodeURIComponent('Could not aquire token (status=' + status +'): ' + body + '\n' + 'grant_type=authorization_code'
+			+ '&code=' + encodeURIComponent(this.oauth_code)
+			+ '&client_id=' + encodeURIComponent(this.client_id)
+			+ '&client_secret=' + encodeURIComponent(this.client_secret)
+			+ '&state=' + encodeURIComponent(this.state)
+			+ '&redirect_uri=' + encodeURIComponent(
+					gs.getProperty('glide.servlet.uri') + 'x_376096_mpl_oauth_redirect.do'
+				));
+		}
+	} else {
+		redirectURL += '?error=' + encodeURIComponent(gs.getMessage('mpl_invalid_parameters'));
+	}
+	
+	response.sendRedirect(redirectURL);
+	
+}).call(this, request, response);]]></processing_script>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-07-06 18:29:30</sys_created_on>
+        <sys_id>07a569fa47f72110acc88a88536d43f9</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>oauth_redirect</sys_name>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name>sys_ui_page_07a569fa47f72110acc88a88536d43f9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-07-06 18:29:45</sys_updated_on>
+    </sys_ui_page>
+</record_update>

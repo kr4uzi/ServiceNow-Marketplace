@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="237d01be47772110acc88a88536d438d" label="Application Instance Installation" max_length="40" name="x_376096_mpl_application_instance_installation" type="collection">
+        <element label="Application Installation" max_length="32" name="application_installation" reference="x_376096_mpl_application_installation" reference_cascade_rule="cascade" type="reference"/>
+        <element label="Credentials Sys ID" max_length="40" name="credentials_sys_id" type="string"/>
+        <element label="Instance" max_length="32" name="instance" reference="x_376096_mpl_instance" reference_cascade_rule="cascade" type="reference"/>
+        <index name="index">
+            <element name="application_installation"/>
+        </index>
+        <index name="index2">
+            <element name="instance"/>
+        </index>
+    </element>
+</database>

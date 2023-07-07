@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="" label="Application Installation" language="en" table="x_376096_mpl_application_installation">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element/>
+            <help/>
+            <hint/>
+            <label>Application Installation</label>
+            <language>en</language>
+            <name>x_376096_mpl_application_installation</name>
+            <plural>Application Installations</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-07-06 16:39:16</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Application Installation</sys_name>
+            <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+            <sys_update_name>sys_documentation_x_376096_mpl_application_installation__en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2023-07-06 16:39:16</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

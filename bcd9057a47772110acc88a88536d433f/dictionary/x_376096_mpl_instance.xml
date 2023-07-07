@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="5b2d457e47772110acc88a88536d43eb" label="Instance" max_length="40" name="x_376096_mpl_instance" type="collection">
+        <element default="true" label="Active" max_length="40" name="active" type="boolean"/>
+        <element label="Customer" max_length="32" name="customer" reference="x_376096_mpl_customer" reference_cascade_rule="cascade" type="reference"/>
+        <element choice="1" default="dev" label="Type" max_length="40" name="type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Development" sequence="10" value="dev"/>
+                <element inactive_on_update="false" label="Testing" sequence="20" value="test"/>
+                <element inactive_on_update="false" label="Production" sequence="30" value="prod"/>
+            </choice>
+        </element>
+        <element label="URL" max_length="1024" name="url" type="url"/>
+        <index name="index">
+            <element name="customer"/>
+        </index>
+    </element>
+</database>

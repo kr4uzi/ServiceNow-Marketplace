@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="c2cc4dfa47772110acc88a88536d435b" label="Customer Application" max_length="40" name="x_376096_mpl_customer_application" type="collection">
+        <element label="Application" max_length="32" name="application" reference="x_376096_mpl_application" reference_cascade_rule="cascade" type="reference"/>
+        <element label="Customer" max_length="32" name="customer" reference="x_376096_mpl_customer" reference_cascade_rule="cascade" type="reference"/>
+        <element label="GitHub ID" max_length="40" name="github_id" type="integer"/>
+        <element label="GitHub Name" max_length="100" name="github_name" type="string"/>
+        <element label="Scope Name" max_length="40" name="scope_name" type="string"/>
+        <element label="Scope Sys ID" max_length="40" name="scope_sys_id" type="string"/>
+        <index name="index">
+            <element name="application"/>
+        </index>
+        <index name="index2">
+            <element name="customer"/>
+        </index>
+    </element>
+</database>

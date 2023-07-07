@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="f7d9897a47772110acc88a88536d4319" label="Application" max_length="40" name="x_376096_mpl_application" type="collection">
+        <element default="true" label="Active" max_length="40" name="active" type="boolean"/>
+        <element label="Branch" max_length="40" name="branch" type="string"/>
+        <element display="true" label="Name" max_length="100" name="display_name" type="string"/>
+        <element label="GitHub ID" max_length="40" name="github_id" type="integer"/>
+        <element label="GitHub Name" max_length="100" name="github_name" type="string"/>
+        <element label="Private" max_length="40" name="private" type="boolean"/>
+        <element label="Scope Name" max_length="40" name="scope_name" type="string"/>
+        <element label="Scope Sys ID" max_length="40" name="scope_sys_id" type="string"/>
+        <element label="Source" max_length="32" name="source" reference="x_376096_mpl_source" reference_cascade_rule="cascade" type="reference"/>
+        <index name="index">
+            <element name="source"/>
+        </index>
+    </element>
+</database>

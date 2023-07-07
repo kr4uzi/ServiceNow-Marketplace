@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_376096_mpl.CatalogItemUtilClient</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>CatalogItemUtilClient</name>
+        <script><![CDATA[/* eslint no-undef: "error" */
+/* global global, gs, sn_fd */
+/* global Class, GlideRecord, GlideRecordSecure, GlideStringUtil */
+var CatalogItemUtilClient = Class.create();
+CatalogItemUtilClient.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	
+	getFlowDescription: function () {
+		const result = {
+			status: 'error',
+			message: ''
+		};
+		
+		const flowSysID = this.getParameter('flow');
+		if (flowSysID) {
+			const flowGr = new GlideRecord('sys_hub_flow');
+			flowGr.addQuery('active', true);
+			flowGr.addQuery('sys_scope', '695dc8751b96a5507eb06464604bcb32'); // Marketplace
+			flowGr.addQuery('category', 'a1212928973fe110d70ef207f053af1f') // Install Handler
+				.addOrCondition('category', '1882cc8397a32510d70ef207f053afd1'); // Update Handler
+			flowGr.addQuery('sys_id', flowSysID);
+			flowGr.setLimit(1);
+			flowGr.query();
+			if (flowGr.next()) {
+				result.description = flowGr.description.toString();
+				result.status = 'success';
+			} else {
+				result.message = gs.getMessage('mpl_record_not_found');
+			}
+		} else {
+			result.message = gs.getMessage('mpl_invalid_parameters');
+		}
+		
+		return JSON.stringify(result);
+	},
+	
+	getCustomerInstanceSetup: function () {
+		const result = {
+			status: 'error',
+			message: ''
+		};
+		try {
+		const customer = this.getParameter('customer');
+		if (customer) {
+			const customerGr = new GlideRecordSecure('x_376096_mpl_customer');
+			customerGr.addQuery('sys_id', customer);
+			customerGr.setLimit(1);
+			customerGr.query();
+			if (customerGr.next()) {
+				const oAuthData = {
+					client_id: customerGr.oauth_client_id.toString(),
+					client_secret: customerGr.oauth_client_secret.getDecryptedValue(),
+					state: customerGr.getUniqueValue(),
+					tokens: {}
+				};
+			
+				const instanceGr = new GlideRecordSecure('x_376096_mpl_instance');
+				instanceGr.addQuery('customer', customer);
+				instanceGr.addQuery('active', true);
+				instanceGr.orderByDesc('type'); // Test Prod Dev
+				instanceGr.setLimit(10);
+				instanceGr.query();
+				
+				const instances = [];
+				while (instanceGr.next()) {
+					const instance = {
+						sys_id: instanceGr.getUniqueValue(),
+						url: instanceGr.url.toString(),
+						type: instanceGr.type.toString()
+					};
+					
+					if (instanceGr.type == 'dev') {
+						instances.unshift(instance);
+					} else {
+						instances.push(instance);
+					}
+				}
+
+				const tokenGr = new GlideRecordSecure('x_376096_mpl_oauth_token');
+				tokenGr.addQuery('active', true);
+				tokenGr.addQuery('instance', instances.map(i => i.sys_id));
+				tokenGr.addQuery('user', gs.getUserID());
+				tokenGr.setLimit(instances.length);
+				tokenGr.query();
+				if (tokenGr.next()) {
+					oAuthData.tokens[tokenGr.instance.url.toString()] = tokenGr.getUniqueValue();
+				}
+				
+				result.oauth_data = oAuthData;
+				result.instances = instances;
+				result.status = 'success';
+			} else {
+				result.message = gs.getMessage('mpl_record_not_found');
+			}
+		} else {
+			result.message = gs.getMessage('mpl_invalid_parameters');
+		}
+		} catch(e) { result.message += e + '\n' + e.stack; }
+		
+		return JSON.stringify(result);
+	},
+	
+	// returns either the oauth token matching for the calling user+target
+	// -or- client_id + client_secret
+	getOAuthInfoForInstance: function () {
+		let result = {
+			status: 'error',
+			message: ''
+		};
+		
+		try {
+			const instance = this.getParameter('instance');
+			if (instance) {
+				const tokenGr = new GlideRecordSecure('x_376096_mpl_oauth_token');
+				tokenGr.addQuery('active', true);
+				tokenGr.addQuery('instance', instance);
+				tokenGr.addQuery('user', gs.getUserID());
+				tokenGr.setLimit(1);
+				tokenGr.query();
+				if (tokenGr.next()) {
+					const instanceGr = tokenGr.instance.getRefRecord();
+					const customerGr = instanceGr.customer.getRefRecord();
+					result.status = 'success';
+					result.token = tokenGr.getUniqueValue();
+					result.url = instanceGr.url.toString();
+					result.client_id = customerGr.oauth_client_id.toString();
+					// as a token already exists, we do not need to transmit the client secret
+				} else {
+					const instanceGr = new GlideRecordSecure('x_376096_mpl_instance');
+					instanceGr.addQuery('sys_id', instance);
+					instanceGr.setLimit(1);
+					instanceGr.query();
+					if (instanceGr.next()) {
+						const customerGr = instanceGr.customer.getRefRecord();
+						const instanceURL = instanceGr.url.toString();
+						let clientId = customerGr.oauth_client_id.toString();
+						let clientSecret = customerGr.oauth_client_secret.getDecryptedValue();
+						if (instanceURL && clientId && clientSecret) {
+							result.status = 'success';
+							result.url = instanceURL;
+							result.client_id = clientId;
+							result.client_secret = clientSecret;
+							result.redirect_url = gs.getProperty('glide.servlet.uri') + 'x_376096_mpl_oauth_redirect.do';
+						} else {
+							result.message = gs.getMessage('mpl_invalid_target_config');
+						}
+					} else {
+						result.message = gs.getMessage('mpl_record_not_found');
+					}
+				}
+			} else {
+				result.message = gs.getMessage('mpl_invalid_parameters');
+			}
+		} catch (e) {
+			result.status = 'error';
+			result.message = e.toString();
+			
+			if (gs.hasRole('admin') && e.stack) {
+				result.message += '\nStack: ' + e.stack;
+			}
+		}
+		
+		return JSON.stringify(result);
+	},
+	
+	checkSourceExists: function () {
+		let result = {
+			status: 'error',
+			message: ''
+		};
+		
+		let sourceName = this.getParameter('name');
+		if (sourceName) {
+			let sourceGr = new GlideRecordSecure('x_376096_mpl_source');
+			sourceGr.addQuery('name', sourceName);
+			sourceGr.setLimit(1);
+			sourceGr.query();
+
+			result.status = 'success';
+			result.exists = sourceGr.hasNext();
+		} else {
+			result.message = gs.getMessage('mpl_invalid_parameters');
+		}
+		
+		return JSON.stringify(result);
+	},
+	
+	checkGitHubAccessToken: function () {
+		const result = {
+			status: 'error',
+			message: ''
+		};
+		
+		try {
+			const token = this.getParameter('token');
+			const scopes = JSON.parse(this.getParameter('scopes'));
+			if (token && (scopes instanceof Array && scopes.length)) {
+				const outputs = sn_fd.FlowAPI.getRunner()
+					.action('x_376096_mpl.git_test_access')
+					.inForeground()
+					.withInputs({ 
+						'access_token': token,
+						'expected_scopes': scopes
+					})
+					.run()
+					.getOutputs();
+				
+				if (outputs.has_access) {
+					result.status = 'success';
+				} else {
+					result.message = gs.getMessage('mpl_token_check_failed_scopes');
+				}
+			} else {
+				result.message = gs.getMessage('mpl_invalid_parameters');
+			}
+		} catch (e) {
+			result.status = 'error';
+			result.message = e.toString();
+			
+			if (gs.hasRole('admin') && e.stack) {
+				result.message += '\nStack: ' + e.stack;
+			}
+		}
+		
+		return JSON.stringify(result);
+	},
+
+    type: 'CatalogItemUtilClient'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-07-06 18:36:54</sys_created_on>
+        <sys_id>c3372d3e47f72110acc88a88536d430c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CatalogItemUtilClient</sys_name>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name>sys_script_include_c3372d3e47f72110acc88a88536d430c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-07-06 18:36:54</sys_updated_on>
+    </sys_script_include>
+</record_update>

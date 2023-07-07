@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_message">
+    <sys_ui_message action="INSERT_OR_UPDATE">
+        <application/>
+        <code/>
+        <commented_message/>
+        <key>mpl_github_instructions_access_token</key>
+        <language>en</language>
+        <message>&lt;p&gt;Create a new Access Token: &lt;a target='_blank' href='{0}/settings/tokens/new'&gt;LINK ➚&lt;/a&gt;&lt;br/&gt;&#13;
+The following scopes are required: &lt;b&gt;repo&lt;/b&gt; and &lt;b&gt;admin:public_key&lt;/b&gt;&lt;br /&gt;&#13;
+&lt;br /&gt;&#13;
+Scope &lt;b&gt;repo&lt;/b&gt; is required to fork an application from the Marketplace to the GitHub organization you just created.&lt;br /&gt;&#13;
+Scope &lt;b&gt;admin:public_key&lt;/b&gt; is required to install an application on a customer instance.&lt;/p&gt;</message>
+        <sys_class_name>sys_ui_message</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-07-06 18:08:19</sys_created_on>
+        <sys_id>b111a57647f72110acc88a88536d4323</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>mpl_github_instructions_access_token</sys_name>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name>sys_ui_message_b111a57647f72110acc88a88536d4323</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-07-06 18:08:19</sys_updated_on>
+    </sys_ui_message>
+</record_update>

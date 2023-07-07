@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_form_sections form_id="c8432df647f72110acc88a88536d4339" sys_domain="global" table="x_376096_mpl_customer" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-07-06 18:17:45</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>48432df647f72110acc88a88536d433a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_376096_mpl_customer" name="x_376096_mpl_customer" sys_domain="global" view="Default view">c8432df647f72110acc88a88536d4339</sys_ui_form>
+            <sys_ui_section caption="NULL" display_value="" name="x_376096_mpl_customer" sys_domain="global" view="Default view">80132df647f72110acc88a88536d4332</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2023-07-06 18:17:45</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-07-06 18:17:45</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>00432df647f72110acc88a88536d433c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_376096_mpl_customer" name="x_376096_mpl_customer" sys_domain="global" view="Default view">c8432df647f72110acc88a88536d4339</sys_ui_form>
+            <sys_ui_section caption="Instance Config" display_value="Instance Config" name="x_376096_mpl_customer" sys_domain="global" view="Default view">40432df647f72110acc88a88536d433b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2023-07-06 18:17:45</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-07-06 18:18:09</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>7d53293a47f72110acc88a88536d431d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_376096_mpl_customer" name="x_376096_mpl_customer" sys_domain="global" view="Default view">c8432df647f72110acc88a88536d4339</sys_ui_form>
+            <sys_ui_section caption="GitHub Config" display_value="GitHub Config" name="x_376096_mpl_customer" sys_domain="global" view="Default view">bd53293a47f72110acc88a88536d431b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2023-07-06 18:18:09</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>x_376096_mpl_customer</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-07-06 18:17:45</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>c8432df647f72110acc88a88536d4339</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_376096_mpl_customer</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+            <sys_update_name>sys_ui_form_sections_c8432df647f72110acc88a88536d4339</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2023-07-06 18:17:45</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
+</record_update>

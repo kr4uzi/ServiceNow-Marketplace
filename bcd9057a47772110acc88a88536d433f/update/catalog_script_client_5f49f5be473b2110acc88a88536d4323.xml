@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="catalog_script_client">
+    <catalog_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_catalog>true</applies_catalog>
+        <applies_extended>false</applies_extended>
+        <applies_req_item>false</applies_req_item>
+        <applies_sc_task>false</applies_sc_task>
+        <applies_target_record>false</applies_target_record>
+        <applies_to>item</applies_to>
+        <cat_item display_value="Add new customer">0d57b93e473b2110acc88a88536d4331</cat_item>
+        <cat_variable/>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>MPL New Customer - OAuth Token</name>
+        <order/>
+        <script><![CDATA[function onSubmit() {
+	// Custom MRVS values are not persisted in the DB
+	// Instead, the custom variable values are saved using the oauth_data variable
+	var oAuthData = JSON.parse(g_form.getValue('oauth_data'));
+	var instances = JSON.parse(g_form.getValue('mpl_instance') || '[]');
+	oAuthData.tokens = instances.reduce(function (tokens, i) { 
+		tokens[i.mpl_instance_url] = i.mpl_instance_oauth_token;
+		return tokens;
+	}, {});
+	g_form.setValue('oauth_data', JSON.stringify(oAuthData));
+}]]></script>
+        <sys_class_name>catalog_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-07-06 19:54:06</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>5f49f5be473b2110acc88a88536d4323</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>MPL New Customer - OAuth Token</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name>catalog_script_client_5f49f5be473b2110acc88a88536d4323</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-07-06 19:54:06</sys_updated_on>
+        <table/>
+        <type>onSubmit</type>
+        <ui_type>10</ui_type>
+        <variable_set/>
+        <view/>
+    </catalog_script_client>
+</record_update>
