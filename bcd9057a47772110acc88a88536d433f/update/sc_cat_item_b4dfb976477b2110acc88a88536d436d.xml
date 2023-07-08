@@ -8,7 +8,7 @@
         <checked_out/>
         <cost>0</cost>
         <custom_cart/>
-        <delivery_plan display_value="DEFAULT">523da512c611228900811a37c97c2014</delivery_plan>
+        <delivery_plan/>
         <delivery_plan_script/>
         <delivery_time>1970-01-03 00:00:00</delivery_time>
         <description><![CDATA[<p>Use this request, if you want to a GIT-User or GIT-Organization to be added as a new source for customer-downloadable applications.</p>
@@ -17,7 +17,7 @@
 <p>The access token will be stored encrypted and will not be used to modify any code whatsoever.</p>]]></description>
         <display_price_property>non_zero</display_price_property>
         <entitlement_script/>
-        <flow_designer_flow/>
+        <flow_designer_flow display_value="Add new Source">d421ab8347ff6110acc88a88536d431b</flow_designer_flow>
         <fulfillment_automation_level>unspecified</fulfillment_automation_level>
         <group/>
         <hide_sp>true</hide_sp>
@@ -31,7 +31,7 @@
         <mobile_picture/>
         <mobile_picture_type>use_desktop_picture</mobile_picture_type>
         <model/>
-        <name>Add new source</name>
+        <name>Add new Source</name>
         <no_attachment_v2>true</no_attachment_v2>
         <no_cart>true</no_cart>
         <no_cart_v2>true</no_cart_v2>
@@ -59,7 +59,7 @@
         <sc_ic_item_staging/>
         <sc_ic_version/>
         <sc_template/>
-        <short_description>Add new marketplace source</short_description>
+        <short_description>Add new application source</short_description>
         <show_variable_help_on_load>false</show_variable_help_on_load>
         <start_closed>false</start_closed>
         <state/>
@@ -67,14 +67,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-06 20:22:58</sys_created_on>
         <sys_id>b4dfb976477b2110acc88a88536d436d</sys_id>
-        <sys_mod_count>5</sys_mod_count>
-        <sys_name>Add new source</sys_name>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Add new Source</sys_name>
         <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name>sc_cat_item_b4dfb976477b2110acc88a88536d436d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-06 20:32:29</sys_updated_on>
+        <sys_updated_on>2023-07-08 07:34:44</sys_updated_on>
         <taxonomy_topic/>
         <template/>
         <template_manager_roles/>

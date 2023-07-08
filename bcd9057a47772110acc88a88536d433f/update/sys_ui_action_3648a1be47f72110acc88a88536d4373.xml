@@ -49,11 +49,12 @@ function mpl_connectToCustomerInstance() {
 				} else {
 					var win = g_navigation.openPopup(
 						new URL('oauth_auth.do?response_type=code'
+								+ '&sysparm_nostack=true'
 								+ '&client_id=' + encodeURIComponent(answer.client_id)
 								+ '&client_secret=' + encodeURIComponent(answer.client_secret)
 								+ '&state=' + encodeURIComponent(instance)
 								+ '&redirect_uri=' + encodeURIComponent(answer.redirect_url),
-								answer.instance_url).toString(),
+								answer.url).toString(),
 						'mpl_oauth_window',
 						'popup=true,width=800,height=600'
 					);
@@ -82,7 +83,7 @@ function mpl_connectToCustomerInstance() {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>3648a1be47f72110acc88a88536d4373</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>Connect</sys_name>
         <sys_overrides/>
         <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
@@ -90,7 +91,7 @@ function mpl_connectToCustomerInstance() {
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name>sys_ui_action_3648a1be47f72110acc88a88536d4373</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-06 18:39:47</sys_updated_on>
+        <sys_updated_on>2023-07-08 08:54:27</sys_updated_on>
         <table>x_376096_mpl_oauth_task</table>
         <ui11_compatible>false</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>

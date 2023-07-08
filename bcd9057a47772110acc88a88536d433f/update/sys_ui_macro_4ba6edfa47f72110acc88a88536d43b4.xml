@@ -10,17 +10,16 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-06 18:32:42</sys_created_on>
         <sys_id>4ba6edfa47f72110acc88a88536d43b4</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>oauth_create_instructions</sys_name>
         <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name>sys_ui_macro_4ba6edfa47f72110acc88a88536d43b4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-06 20:10:28</sys_updated_on>
+        <sys_updated_on>2023-07-08 07:21:13</sys_updated_on>
         <xml><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
 <j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
-	<g:requires name="x_376096_mpl.instance_util.jsdbx?v=1.0.0" />
 	<script>
 		function mpl_copyBackgroundScript() {
 			var oAuthData = JSON.parse(window.parent.g_form.getValue('oauth_data'));
@@ -57,7 +56,7 @@
 				if (oAuthSysID) {
 					gs.info('\n\n\nSuccessfully inserted the OAuth Application.'
 						+ '\nYou can ***close this window*** and ***proceed to Link this instance to the Marketplace Instance using &lt;Connect&gt;***'
-						+ '\n\n'Note: If used on all of your customer\'s instances, no unnecessary Application Files will be created as the OAuth Entity Record will be created with a predefined sys_id.'
+						+ '\n\nNote: If used on all of your customer\'s instances, no unnecessary Application Files will be created as the OAuth Entity Record will be created with a predefined sys_id.'
 						+ '\nTherefore no duplicates will be created when doing a clone.'
 					);
 				} else {
@@ -89,20 +88,6 @@
 		
 			return false;
 		}
-		
-		x_376096_mpl.instance_util.onUpdated(function () {		
-			var element = document.querySelector('#macro_${ref} #mpl_oauth_remote_bgs'.replace(/:/g, '\\:').replace(/\./g, '\\.'));
-			if (x_376096_mpl.instance_util.states.export.disabled) {
-				element.classList.add('mpl_oauth_remote_bgs_disabled');
-			} else {
-				element.classList.remove('mpl_oauth_remote_bgs_disabled');
-			}
-		
-			var oAuthData = JSON.parse(window.parent.g_form.getValue('oauth_data'));
-			if (oAuthData.show_instructions === false) {
-				document.querySelector('#macro_${ref}'.replace(/:/g, '\\:').replace(/\./g, '\\.')).style.display = 'none';
-			}
-		});
 	</script>
 	<style>
 		.mpl_oauth_remote_bgs_disabled {
@@ -116,6 +101,19 @@
 		<li>${gs.getMessage('mpl_oauth_bgs_instructions')} <a id='mpl_oauth_remote_bgs' class='mpl_oauth_remote_bgs_disabled' href='javascript:void(0)' onclick='mpl_openRemoteInstanceBGS()'>${gs.getMessage('mpl_oauth_open_bgs')} ➚</a></li>
 		<li>${gs.getMessage('mpl_oauth_bgs_global_scope')}</li>
 	</ul>
+	<script>
+		(function () {
+			var uiMacroElement = document.querySelector('#macro_${ref}'.replace(/:/g, '\\:').replace(/\./g, '\\.'));
+			var bgsScriptElement = uiMacroElement.querySelector('#mpl_oauth_remote_bgs');
+			NOW.CustomEvent.on('mpl_instance_url_changed', function (url) {
+				if (url) {
+					bgsScriptElement.classList.remove('mpl_oauth_remote_bgs_disabled');
+				} else {
+					bgsScriptElement.classList.add('mpl_oauth_remote_bgs_disabled');
+				}
+			});
+		})();
+	</script>
 </j:jelly>]]></xml>
     </sys_ui_macro>
 </record_update>

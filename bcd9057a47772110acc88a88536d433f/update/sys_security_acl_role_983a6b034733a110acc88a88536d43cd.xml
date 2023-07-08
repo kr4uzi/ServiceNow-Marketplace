@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-07-07 22:45:56</sys_created_on>
+        <sys_id>983a6b034733a110acc88a88536d43cd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_376096_mpl_source.x_376096_mpl.mpl_source_owner</sys_name>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_security_acl display_value="x_376096_mpl_source">5b2aab4f47ff6110acc88a88536d4386</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_983a6b034733a110acc88a88536d43cd</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-07-07 22:45:56</sys_updated_on>
+        <sys_user_role display_value="x_376096_mpl.mpl_source_owner" name="x_376096_mpl.mpl_source_owner">f88f053247b72110acc88a88536d4316</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+</record_update>

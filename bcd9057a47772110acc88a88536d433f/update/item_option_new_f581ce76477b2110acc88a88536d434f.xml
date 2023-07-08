@@ -2,7 +2,7 @@
     <item_option_new action="INSERT_OR_UPDATE">
         <active>true</active>
         <attributes/>
-        <cat_item display_value="Add new source">b4dfb976477b2110acc88a88536d436d</cat_item>
+        <cat_item display_value="Add new Source">b4dfb976477b2110acc88a88536d436d</cat_item>
         <category/>
         <choice_direction>down</choice_direction>
         <choice_field/>
@@ -42,7 +42,7 @@
         <mask_use_confirmation>false</mask_use_confirmation>
         <mask_use_encryption>true</mask_use_encryption>
         <name>github_access_token</name>
-        <order/>
+        <order>300</order>
         <post_insert_script/>
         <price_if_checked>0</price_if_checked>
         <pricing_implications>false</pricing_implications>
@@ -77,14 +77,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-06 20:30:19</sys_created_on>
         <sys_id>f581ce76477b2110acc88a88536d434f</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>GitHub Access Token</sys_name>
         <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name>item_option_new_f581ce76477b2110acc88a88536d434f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-06 20:30:19</sys_updated_on>
+        <sys_updated_on>2023-07-08 08:01:08</sys_updated_on>
         <table/>
         <tooltip/>
         <type>25</type>

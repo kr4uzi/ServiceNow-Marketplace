@@ -10,17 +10,16 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-06 18:32:06</sys_created_on>
         <sys_id>1686213e47f72110acc88a88536d43a4</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>oauth_connect_button</sys_name>
         <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name>sys_ui_macro_1686213e47f72110acc88a88536d43a4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-06 18:32:06</sys_updated_on>
+        <sys_updated_on>2023-07-08 07:29:17</sys_updated_on>
         <xml><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
 <j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
-	<g:requires name="x_376096_mpl.instance_util.jsdbx?v=1.0.0" />
 	<script>
 		// used by the UI page which is opened when clicking the 'Connect' Button
 		function mpl_GetOAuthData() {
@@ -30,7 +29,7 @@
 				instance_url: g_form.getValue('mpl_instance_url'),
 				client_id: oAuthData.client_id,
 				client_secret: oAuthData.client_secret,
-				state: g_form.getValue('mpl_instance_oauth_state')
+				state: oAuthData.state
 			};
 		}
 
@@ -40,7 +39,7 @@
 		
 			// mpl_instance_oauth_token is a custom variable and won't trigger an onChange event
 			// therefore we need to update the state manually
-			x_376096_mpl.instance_util.update(g_form);
+			NOW.CustomEvent.fire('mpl_instance_oauth_token_changed', tokenSysID);
 		}
 	</script>
 	<button class="btn btn-primary" disabled="true">${gs.getMessage('mpl_oauth_connect')}</button>
@@ -48,14 +47,27 @@
 	<script>
 		(function () {		
 			// onUserChangeValue not working in Classic UI + Service Catalog (SN-Problem: PRB1660540 - wont fix)
+			// the workaround is to use NOW.CustomEvent
 			var buttonElement = document.querySelector('#macro_${ref} button'.replace(/:/g, '\\:').replace(/\./g, '\\.'));
 			var connectedElement = document.querySelector('#macro_${ref} button + span'.replace(/:/g, '\\:').replace(/\./g, '\\.'));
 			
-			x_376096_mpl.instance_util.onUpdated(function () {
-				buttonElement.disabled = x_376096_mpl.instance_util.states.connect.disabled;
+			NOW.CustomEvent.on('mpl_instance_url_changed', function (url) {
+				if (url) {
+					var oAuthTokenSysID = g_form.getValue('mpl_instance_oauth_token');
+					if (!oAuthTokenSysID) {
+						buttonElement.disabled = false;
+						return;
+					}
+				}
 		
-				if (g_form.getValue('mpl_instance_oauth_token')) {
+				// The Connect button is disabled if no valid url has been set or if user is already connected to the instance
+				buttonElement.disabled = disabled;
+			});
+		
+			NOW.CustomEvent.on('mpl_instance_oauth_token_changed', function (tokenSysID) {
+				if (tokenSysID) {
 					connectedElement.style.display = '';
+					buttonElement.disabled = true;
 				} else {
 					connectedElement.style.display = 'none';
 				}
@@ -66,11 +78,12 @@
 				window.open(
 					new URL(
 						'oauth_auth.do?response_type=code'
+						+ '&amp;sysparm_nostack=true'
 						+ '&amp;client_id=' + encodeURIComponent(data.client_id)
 						+ '&amp;client_secret=' + encodeURIComponent(data.client_secret)
 						+ '&amp;state=' + encodeURIComponent(data.state)
 						+ '&amp;redirect_uri=' + encodeURIComponent(
-							'${gs.getProperty("glide.servlet.uri")}x_424426_mpl_oauth_redirect.do'
+							'${gs.getProperty("glide.servlet.uri")}x_376096_mpl_oauth_redirect.do'
 						), data.instance_url).toString(),
 					'mpl_oauth_window',
 					'popup=true,width=800,height=600'

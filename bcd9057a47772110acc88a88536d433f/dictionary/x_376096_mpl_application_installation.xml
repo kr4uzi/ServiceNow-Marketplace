@@ -4,7 +4,7 @@
         <element label="Application" max_length="32" name="application" reference="x_376096_mpl_application" reference_cascade_rule="cascade" type="reference"/>
         <element label="Branch" max_length="40" name="branch" type="string"/>
         <element label="Customer" max_length="32" name="customer" reference="x_376096_mpl_customer" reference_cascade_rule="cascade" type="reference"/>
-        <element label="Name" max_length="100" name="display_name" type="string"/>
+        <element display="true" label="Name" max_length="100" name="display_name" type="string"/>
         <element label="GitHub ID" max_length="40" name="github_id" type="integer"/>
         <element label="GitHub Name" max_length="100" name="github_name" type="string"/>
         <element label="Service User" max_length="32" name="service_user" reference="sys_user" type="reference"/>

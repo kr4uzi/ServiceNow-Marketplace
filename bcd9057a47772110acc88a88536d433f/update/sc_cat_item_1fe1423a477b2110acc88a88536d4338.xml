@@ -8,7 +8,7 @@
         <checked_out/>
         <cost>0</cost>
         <custom_cart/>
-        <delivery_plan display_value="DEFAULT">523da512c611228900811a37c97c2014</delivery_plan>
+        <delivery_plan/>
         <delivery_plan_script/>
         <delivery_time>1970-01-03 00:00:00</delivery_time>
         <description><![CDATA[<p>This request will automatically install an application on the customer instance and keep it automatically updated.</p>
@@ -16,7 +16,7 @@
 <ol style="list-style-position: inside;"><li>Fork the application from the source repository to the customer&#39;s GitHub organization</li><li>Add a new deployment key on the forked repository</li><li>Create SSH private key credential on the target instance</li><li>Install the application on the target instance</li></ol>]]></description>
         <display_price_property>non_zero</display_price_property>
         <entitlement_script/>
-        <flow_designer_flow/>
+        <flow_designer_flow display_value="Install Application">5e5367c747ff6110acc88a88536d43ac</flow_designer_flow>
         <fulfillment_automation_level>unspecified</fulfillment_automation_level>
         <group/>
         <hide_sp>true</hide_sp>
@@ -30,7 +30,7 @@
         <mobile_picture/>
         <mobile_picture_type>use_desktop_picture</mobile_picture_type>
         <model/>
-        <name>Install application</name>
+        <name>Install Application</name>
         <no_attachment_v2>true</no_attachment_v2>
         <no_cart>true</no_cart>
         <no_cart_v2>true</no_cart_v2>
@@ -66,14 +66,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-06 20:32:05</sys_created_on>
         <sys_id>1fe1423a477b2110acc88a88536d4338</sys_id>
-        <sys_mod_count>5</sys_mod_count>
-        <sys_name>Install application</sys_name>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Install Application</sys_name>
         <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name>sc_cat_item_1fe1423a477b2110acc88a88536d4338</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-06 20:32:29</sys_updated_on>
+        <sys_updated_on>2023-07-08 07:34:28</sys_updated_on>
         <taxonomy_topic/>
         <template/>
         <template_manager_roles/>

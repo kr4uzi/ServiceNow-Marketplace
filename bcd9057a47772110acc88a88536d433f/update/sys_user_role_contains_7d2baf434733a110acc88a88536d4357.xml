@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role_contains">
+    <sys_user_role_contains action="INSERT_OR_UPDATE">
+        <contains display_value="x_376096_mpl.mpl_customer_member" name="x_376096_mpl.mpl_customer_member">1b5f45fe47772110acc88a88536d432f</contains>
+        <role display_value="x_376096_mpl.mpl_customer_owner" name="x_376096_mpl.mpl_customer_owner">41bc453e47772110acc88a88536d435d</role>
+        <sys_class_name>sys_user_role_contains</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-07-07 22:50:00</sys_created_on>
+        <sys_id>7d2baf434733a110acc88a88536d4357</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_376096_mpl.mpl_customer_member.x_376096_mpl.mpl_customer_owner</sys_name>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name>sys_user_role_contains_7d2baf434733a110acc88a88536d4357</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-07-07 22:50:00</sys_updated_on>
+    </sys_user_role_contains>
+</record_update>

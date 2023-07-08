@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_user_criteria_mtom">
+    <sc_cat_item_user_criteria_mtom action="INSERT_OR_UPDATE">
+        <sc_cat_item display_value="Add new Source">b4dfb976477b2110acc88a88536d436d</sc_cat_item>
+        <sys_class_name>sc_cat_item_user_criteria_mtom</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-07-07 23:00:30</sys_created_on>
+        <sys_id>477dab074733a110acc88a88536d43e7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Add new source.MPL Source Owners</sys_name>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name>sc_cat_item_user_criteria_mtom_477dab074733a110acc88a88536d43e7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-07-07 23:00:30</sys_updated_on>
+        <user_criteria display_value="MPL Source Owners">948deb074733a110acc88a88536d43ac</user_criteria>
+    </sc_cat_item_user_criteria_mtom>
+</record_update>

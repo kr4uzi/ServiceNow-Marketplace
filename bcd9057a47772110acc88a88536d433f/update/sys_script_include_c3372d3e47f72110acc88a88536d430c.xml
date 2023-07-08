@@ -23,9 +23,9 @@ CatalogItemUtilClient.prototype = Object.extendsObject(global.AbstractAjaxProces
 		if (flowSysID) {
 			const flowGr = new GlideRecord('sys_hub_flow');
 			flowGr.addQuery('active', true);
-			flowGr.addQuery('sys_scope', '695dc8751b96a5507eb06464604bcb32'); // Marketplace
-			flowGr.addQuery('category', 'a1212928973fe110d70ef207f053af1f') // Install Handler
-				.addOrCondition('category', '1882cc8397a32510d70ef207f053afd1'); // Update Handler
+			flowGr.addQuery('sys_scope.scope', 'x_376096_mpl');
+			flowGr.addQuery('category.name', 'Install Handler')
+				.addOrCondition('category.name', 'Update Handler');
 			flowGr.addQuery('sys_id', flowSysID);
 			flowGr.setLimit(1);
 			flowGr.query();
@@ -239,13 +239,13 @@ CatalogItemUtilClient.prototype = Object.extendsObject(global.AbstractAjaxProces
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-06 18:36:54</sys_created_on>
         <sys_id>c3372d3e47f72110acc88a88536d430c</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>CatalogItemUtilClient</sys_name>
         <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name>sys_script_include_c3372d3e47f72110acc88a88536d430c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-06 18:36:54</sys_updated_on>
+        <sys_updated_on>2023-07-08 06:56:11</sys_updated_on>
     </sys_script_include>
 </record_update>

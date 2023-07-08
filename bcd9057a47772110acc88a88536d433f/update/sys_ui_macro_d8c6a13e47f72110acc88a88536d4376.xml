@@ -2,7 +2,7 @@
     <sys_ui_macro action="INSERT_OR_UPDATE">
         <active>true</active>
         <category>general</category>
-        <description/>
+        <description>This is a (work in progress) replacement for the "Instance Configuration" Multi Row Variable Set</description>
         <media_type/>
         <name>oauth_token_setup</name>
         <scoped_name>x_376096_mpl_oauth_token_setup</scoped_name>
@@ -10,17 +10,16 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-06 18:33:04</sys_created_on>
         <sys_id>d8c6a13e47f72110acc88a88536d4376</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>oauth_token_setup</sys_name>
         <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name>sys_ui_macro_d8c6a13e47f72110acc88a88536d4376</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-06 18:33:04</sys_updated_on>
+        <sys_updated_on>2023-07-08 06:47:51</sys_updated_on>
         <xml><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
 <j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
-	<g:requires name="x_376096_mpl.sc_form_chg.jsdbx?v=1.0.0" />
 	<script>
 		// used by the UI page which is opened when clicking the 'Connect' Button
 		function mpl_GetOAuthData() {
@@ -30,7 +29,7 @@
 				instance_url: g_form.getValue('mpl_instance_url'),
 				client_id: oAuthData.client_id,
 				client_secret: oAuthData.client_secret,
-				state: g_form.getValue('mpl_instance_oauth_state')
+				state: oAuthData.state
 			};
 		}
 
@@ -40,7 +39,7 @@
 		
 			// mpl_instance_oauth_token is a custom variable and won't trigger an onChange event
 			// therefore we need to update the state manually
-			x_424426_mpl.instance_util.update(g_form);
+			NOW.CustomEvent.fire('mpl_update', g_form);
 		}
 	</script>
 	<table>
@@ -60,10 +59,10 @@
 			var tbody = document.querySelector('#macro_${ref} table tbody'.replace(/:/g, '\\:').replace(/\./g, '\\.'));
 			var tfoot = document.querySelector('#macro_${ref} table tfoot'.replace(/:/g, '\\:').replace(/\./g, '\\.'));
 		
-			x_424426_mpl.sc_form_chg.observe(function () {
+			NOW.CustomEvent.on('mpl_change', function () {
 				var customer = g_form.getValue('customer');
 				if (customer) {
-					var ga = new GlideAjax('x_424426_mpl.CatalogItemUtilClient').setScope('x_424426_mpl');
+					var ga = new GlideAjax('x_376096_mpl.CatalogItemUtilClient').setScope('x_376096_mpl');
 					ga.addParam('sysparm_name', 'getCustomerInstanceSetup');
 					ga.addParam('customer', customer);
 					ga.getXMLAnswer(function (result) {
