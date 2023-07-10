@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="c2cc4dfa47772110acc88a88536d435b" label="Customer Application" max_length="40" name="x_376096_mpl_customer_application" type="collection">
-        <element label="Application" max_length="32" name="application" reference="x_376096_mpl_application" reference_cascade_rule="cascade" type="reference"/>
+        <element label="Application" max_length="32" name="application" reference="x_376096_mpl_application" reference_cascade_rule="cascade" reference_qual="javascript: 'scope_sys_id=' + current.scope_sys_id;" type="reference" use_reference_qualifier="advanced"/>
         <element label="Customer" max_length="32" name="customer" reference="x_376096_mpl_customer" reference_cascade_rule="cascade" type="reference"/>
         <element attributes="format=none" label="GitHub ID" max_length="40" name="github_id" type="integer"/>
         <element display="true" label="GitHub Name" max_length="100" name="github_name" type="string"/>
+        <element label="Repo URL" max_length="1024" name="repo_url" type="url"/>
         <element label="Scope Name" max_length="40" name="scope_name" type="string"/>
         <element label="Scope Sys ID" max_length="40" name="scope_sys_id" type="string"/>
         <index name="index">
