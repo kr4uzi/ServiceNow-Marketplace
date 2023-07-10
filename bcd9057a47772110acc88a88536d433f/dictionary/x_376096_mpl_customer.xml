@@ -2,7 +2,7 @@
     <element db_object_id="81cb05fa47772110acc88a88536d43b2" label="Customer" max_length="40" name="x_376096_mpl_customer" type="collection">
         <element default="true" label="Active" max_length="40" name="active" type="boolean"/>
         <element label="GitHub Access Token" max_length="255" name="github_access_token" type="password2"/>
-        <element label="GitHub ID" max_length="40" name="github_id" type="integer"/>
+        <element attributes="format=none" label="GitHub ID" max_length="40" name="github_id" type="integer"/>
         <element label="GitHub Name" max_length="100" name="github_name" type="string"/>
         <element label="Members" max_length="4000" name="members" reference="sys_user" reference_qual="roles=x_376096_mpl.mpl_customer_member^EQ" reference_qual_condition="roles=x_376096_mpl.mpl_customer_member^EQ" type="glide_list"/>
         <element display="true" label="Name" max_length="40" name="name" type="string"/>

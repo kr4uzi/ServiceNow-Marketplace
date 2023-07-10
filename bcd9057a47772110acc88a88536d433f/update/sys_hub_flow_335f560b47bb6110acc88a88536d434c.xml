@@ -10,7 +10,7 @@
         <copied_from_name/>
         <description/>
         <internal_name>now_get_access_token</internal_name>
-        <label_cache>[{"name":"subflow.instance","label":"Input➛Instance","reference":"x_376096_mpl_instance","reference_display":"Instance","type":"reference","base_type":"reference","column_name":"","attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"ac8d6714-7637-4353-8db9-1c3eb83aed7a","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.user","label":"Input➛User","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","column_name":"","attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"a8923291-dc1d-4b7c-8ce7-5bab8aa419dd","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"3b1d401e-1973-46cb-bac9-bbd9b7adc7ee.status","label":"1 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"150355f8-8d42-4d0e-a30f-50c71a27ab74.status","label":"5 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"150355f8-8d42-4d0e-a30f-50c71a27ab74.Record","label":"5 - Look Up Record➛OAuth Token Record","reference":"x_376096_mpl_oauth_token","reference_display":"OAuth Token","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"a213b637-66aa-4c74-87f3-df9ccf0ab900.oauth_token_record.active","label":"7➛Updated OAuth Token Record➛Active","reference":"","reference_display":"Active","type":"boolean","base_type":"boolean","parent_table_name":"x_376096_mpl_oauth_token","column_name":"active"},{"name":"subflow.reason","label":"Input➛Reason","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"13e515f1-a73f-40f6-918f-9c5718b2b1ee","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"8d0c3a2c-1a37-44a4-ae43-a952db3bac8e.Record.state","label":"11➛OAuth Task Record➛State","reference":"","reference_display":"State","type":"choice","base_type":"choice","parent_table_name":"x_376096_mpl_oauth_task","column_name":"state","choices":[{"used":false,"label":"Pending","image":"","rawLabel":"Pending","selected":false,"missing":false,"reference":false,"value":"-5","parameters":{"name":"task"}},{"used":false,"label":"Open","image":"","rawLabel":"Open","selected":false,"missing":false,"reference":false,"value":"1","parameters":{"name":"task"}},{"used":false,"label":"Work in Progress","image":"","rawLabel":"Work in Progress","selected":false,"missing":false,"reference":false,"value":"2","parameters":{"name":"task"}},{"used":false,"label":"Closed Complete","image":"","rawLabel":"Closed Complete","selected":false,"missing":false,"reference":false,"value":"3","parameters":{"name":"task"}},{"used":false,"label":"Closed Incomplete","image":"","rawLabel":"Closed Incomplete","selected":false,"missing":false,"reference":false,"value":"4","parameters":{"name":"task"}},{"used":false,"label":"Closed Skipped","image":"","rawLabel":"Closed Skipped","selected":false,"missing":false,"reference":false,"value":"7","parameters":{"name":"task"}}]},{"name":"8bf786d3-0296-49b4-b8eb-d794143ccb26.status","label":"13 - NOW Get Access Token➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Success","value":"success","order":1.0},{"label":"Error","value":"error","order":2.0}],"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"37a4253d-e13f-417d-98c8-ee077d55fa4c"}},{"name":"8bf786d3-0296-49b4-b8eb-d794143ccb26.access_token","label":"13 - NOW Get Access Token➛Access Token","reference_display":"Access Token","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"f09e708d-bf6d-4412-b097-86d78ae7bc32"}}]</label_cache>
+        <label_cache>[{"name":"8bf786d3-0296-49b4-b8eb-d794143ccb26.access_token","label":"13 - NOW Get Access Token➛Access Token","reference_display":"Access Token","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"f09e708d-bf6d-4412-b097-86d78ae7bc32"}},{"name":"8bf786d3-0296-49b4-b8eb-d794143ccb26.status","label":"13 - NOW Get Access Token➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Success","value":"success","order":1.0},{"label":"Error","value":"error","order":2.0}],"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"37a4253d-e13f-417d-98c8-ee077d55fa4c"}},{"name":"8d0c3a2c-1a37-44a4-ae43-a952db3bac8e.Record.state","label":"11➛OAuth Task Record➛State","reference":"","reference_display":"State","type":"choice","base_type":"choice","parent_table_name":"x_376096_mpl_oauth_task","column_name":"state","choices":[{"label":"Pending","rawLabel":"Pending","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"-5","parameters":{"name":"task"}},{"label":"Open","rawLabel":"Open","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"1","parameters":{"name":"task"}},{"label":"Work in Progress","rawLabel":"Work in Progress","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"2","parameters":{"name":"task"}},{"label":"Closed Complete","rawLabel":"Closed Complete","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"3","parameters":{"name":"task"}},{"label":"Closed Incomplete","rawLabel":"Closed Incomplete","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"4","parameters":{"name":"task"}},{"label":"Closed Skipped","rawLabel":"Closed Skipped","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"7","parameters":{"name":"task"}}]},{"name":"subflow.reason","label":"Input➛Reason","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"13e515f1-a73f-40f6-918f-9c5718b2b1ee","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"a213b637-66aa-4c74-87f3-df9ccf0ab900.oauth_token_record.active","label":"7➛Updated OAuth Token Record➛Active","reference":"","reference_display":"Active","type":"boolean","base_type":"boolean","parent_table_name":"x_376096_mpl_oauth_token","column_name":"active"},{"name":"150355f8-8d42-4d0e-a30f-50c71a27ab74.Record","label":"5 - Look Up Record➛OAuth Token Record","reference":"x_376096_mpl_oauth_token","reference_display":"OAuth Token","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"150355f8-8d42-4d0e-a30f-50c71a27ab74.status","label":"5 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"3b1d401e-1973-46cb-bac9-bbd9b7adc7ee.status","label":"1 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"subflow.user","label":"Input➛User","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","column_name":"","attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"a8923291-dc1d-4b7c-8ce7-5bab8aa419dd","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.instance","label":"Input➛Instance","reference":"x_376096_mpl_instance","reference_display":"Instance","type":"reference","base_type":"reference","column_name":"","attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"ac8d6714-7637-4353-8db9-1c3eb83aed7a","sourceUiUniqueId":"","sourceType":"","sourceId":""}}]</label_cache>
         <master_snapshot>4391e60f47bb6110acc88a88536d4304</master_snapshot>
         <name>NOW Get Access Token</name>
         <natlang/>
@@ -29,7 +29,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>335f560b47bb6110acc88a88536d434c</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>NOW Get Access Token</sys_name>
         <sys_overrides/>
         <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
@@ -37,7 +37,7 @@
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name>sys_hub_flow_335f560b47bb6110acc88a88536d434c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:20</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:24</sys_updated_on>
         <type>subflow</type>
     </sys_hub_flow>
     <sys_translated_text action="delete_multiple" query="documentkey=335f560b47bb6110acc88a88536d434c"/>
@@ -574,10 +574,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:28:06</sys_created_on>
         <sys_id>e671a20f47bb6110acc88a88536d43c6</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>20</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:19</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:45</sys_updated_on>
         <ui_id>3b1d401e-1973-46cb-bac9-bbd9b7adc7ee</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=e671a20f47bb6110acc88a88536d43c6"/>
@@ -662,10 +662,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:28:06</sys_created_on>
         <sys_id>e671a20f47bb6110acc88a88536d43da</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>20</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:19</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:45</sys_updated_on>
         <ui_id>150355f8-8d42-4d0e-a30f-50c71a27ab74</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=e671a20f47bb6110acc88a88536d43da"/>
@@ -750,10 +750,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:28:07</sys_created_on>
         <sys_id>ea71e20f47bb6110acc88a88536d4301</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>20</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:20</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:45</sys_updated_on>
         <ui_id>8d0c3a2c-1a37-44a4-ae43-a952db3bac8e</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=ea71e20f47bb6110acc88a88536d4301"/>
@@ -839,10 +839,10 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:28:07</sys_created_on>
         <sys_id>ee71a20f47bb6110acc88a88536d43f1</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>20</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:19</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:45</sys_updated_on>
         <ui_id>a213b637-66aa-4c74-87f3-df9ccf0ab900</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=ee71a20f47bb6110acc88a88536d43f1"/>
@@ -876,10 +876,10 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:30:07</sys_created_on>
         <sys_id>7fe1224f47bb6110acc88a88536d4382</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:20</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:23</sys_updated_on>
         <ui_id>8bf786d3-0296-49b4-b8eb-d794143ccb26</ui_id>
     </sys_hub_sub_flow_instance>
     <sys_variable_value action="delete_multiple" query="document_key=7fe1224f47bb6110acc88a88536d4382"/>
@@ -1055,10 +1055,10 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:30:07</sys_created_on>
         <sys_id>08f1224f47bb6110acc88a88536d43b0</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:20</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:23</sys_updated_on>
         <ui_id>18bbf7e3-1be0-4968-835e-c74c239d1680</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1127,10 +1127,10 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:28:07</sys_created_on>
         <sys_id>2671a20f47bb6110acc88a88536d43dd</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:19</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:23</sys_updated_on>
         <ui_id>e3606513-8e46-4739-8c99-f39dd5b46b34</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1174,10 +1174,10 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:28:06</sys_created_on>
         <sys_id>2a71a20f47bb6110acc88a88536d43c9</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:19</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:23</sys_updated_on>
         <ui_id>4e964ead-4b4c-4a31-8fd8-1675668e1c8f</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1220,10 +1220,10 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:28:06</sys_created_on>
         <sys_id>6e71a20f47bb6110acc88a88536d43cc</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:19</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:23</sys_updated_on>
         <ui_id>683ab380-544f-4526-a892-c4f7d207ba8f</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1280,10 +1280,10 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:28:06</sys_created_on>
         <sys_id>a271a20f47bb6110acc88a88536d43d1</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:19</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:23</sys_updated_on>
         <ui_id>e90107b6-2bfd-40c2-955f-4f0293081be9</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1294,7 +1294,7 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
     <sys_hub_input_scripts action="delete_multiple" query="instance=a271a20f47bb6110acc88a88536d43d1"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <block display_value="">ea71a20f47bb6110acc88a88536d43f6</block>
-        <comment/>
+        <comment>Status=Success</comment>
         <connected_to/>
         <decision_table/>
         <decision_table_inputs/>
@@ -1306,17 +1306,17 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <inputs/>
         <logic_definition display_value="Assign Subflow Outputs">df4e1945c3e232002841b63b12d3ae3e</logic_definition>
         <order>9</order>
-        <outputs_assigned>error_message,status</outputs_assigned>
+        <outputs_assigned>access_token,status</outputs_assigned>
         <outputs_to_assign/>
         <parent_ui_id>ed80443b-db04-4072-a381-4d5c4b64316b</parent_ui_id>
         <sys_class_name>sys_hub_flow_logic</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:28:07</sys_created_on>
         <sys_id>a271a20f47bb6110acc88a88536d43f7</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:20</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:23</sys_updated_on>
         <ui_id>99abf2a1-5b55-4472-998d-9a0534779447</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1338,7 +1338,7 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
     </sys_variable_value>
     <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_output_335f560b47bb6110acc88a88536d434c^id=a271a20f47bb6110acc88a88536d43f7"/>
     <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=a271a20f47bb6110acc88a88536d43f7"/>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=a271a20f47bb6110acc88a88536d43f7^sys_idNOT IN6271a20f47bb6110acc88a88536d43f8"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=a271a20f47bb6110acc88a88536d43f7^sys_idNOT IN6271a20f47bb6110acc88a88536d43f8,8ca320c847003110acc88a88536d438c"/>
     <sys_hub_input_scripts action="INSERT_OR_UPDATE">
         <active>true</active>
         <input_name>error_message</input_name>
@@ -1351,6 +1351,19 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2023-07-07 17:28:07</sys_updated_on>
+    </sys_hub_input_scripts>
+    <sys_hub_input_scripts action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <input_name>access_token</input_name>
+        <instance>a271a20f47bb6110acc88a88536d43f7</instance>
+        <referenced_table>sys_hub_flow_logic</referenced_table>
+        <script>{"access_token":{"scriptActive":true,"script":"/*\n**Access Flow/Action data using the fd_data object. Script must return a value. \n**Order number is offset by +1 in Error Handling Section.\n**Available options display upon pressing \".\" after fd_data\n**example: var shortDesc \u003d fd_data.trigger.current.short_description;\n**return shortDesc;\n*/\nreturn fd_data._7__now_refresh_oauth_token.oauth_token_record.access_token.getDecryptedValue();"}}</script>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-07-10 10:52:10</sys_created_on>
+        <sys_id>8ca320c847003110acc88a88536d438c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-07-10 10:52:10</sys_updated_on>
     </sys_hub_input_scripts>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <block display_value="">e271e20f47bb6110acc88a88536d4304</block>
@@ -1374,10 +1387,10 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:28:07</sys_created_on>
         <sys_id>aa71e20f47bb6110acc88a88536d4304</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:20</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:23</sys_updated_on>
         <ui_id>a836f060-6b75-491e-96dd-913e89becc80</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1421,15 +1434,29 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:28:07</sys_created_on>
         <sys_id>ae71a20f47bb6110acc88a88536d43f3</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:19</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:23</sys_updated_on>
         <ui_id>ed80443b-db04-4072-a381-4d5c4b64316b</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
     </sys_hub_flow_logic>
     <sys_variable_value action="delete_multiple" query="document_key=ae71a20f47bb6110acc88a88536d43f3"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>ae71a20f47bb6110acc88a88536d43f3</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-07-10 10:52:10</sys_created_on>
+        <sys_id>4ca320c847003110acc88a88536d4387</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-07-10 10:52:10</sys_updated_on>
+        <value>token still valid</value>
+        <variable display_value="Condition Label">f0af19c1c32632002841b63b12d3aea3</variable>
+    </sys_variable_value>
     <sys_element_mapping action="delete_multiple" query="id=ae71a20f47bb6110acc88a88536d43f3"/>
     <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>condition</field>
@@ -1442,6 +1469,18 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_updated_on>2023-07-07 17:28:07</sys_updated_on>
         <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
         <value>{{a213b637-66aa-4c74-87f3-df9ccf0ab900.oauth_token_record.active}}=true</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition_name</field>
+        <id>ae71a20f47bb6110acc88a88536d43f3</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-07-10 10:52:10</sys_created_on>
+        <sys_id>84a320c847003110acc88a88536d4387</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-07-10 10:52:10</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value/>
     </sys_element_mapping>
     <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_output_335f560b47bb6110acc88a88536d434c^id=ae71a20f47bb6110acc88a88536d43f3"/>
     <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=ae71a20f47bb6110acc88a88536d43f3"/>
@@ -1467,10 +1506,10 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:28:07</sys_created_on>
         <sys_id>ae71a20f47bb6110acc88a88536d43fa</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:20</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:23</sys_updated_on>
         <ui_id>4e05131a-5c29-4fa0-bef4-bc960e84a522</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1501,10 +1540,10 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:30:07</sys_created_on>
         <sys_id>b3e1224f47bb6110acc88a88536d43ac</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:20</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:23</sys_updated_on>
         <ui_id>f279e571-08f7-42d8-bf9e-ed8a95ba4e39</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1547,10 +1586,10 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:30:07</sys_created_on>
         <sys_id>c8f1224f47bb6110acc88a88536d43b4</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:20</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:23</sys_updated_on>
         <ui_id>69fd3fa3-3913-48e8-bd3a-1f1931694a32</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1580,10 +1619,10 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:28:07</sys_created_on>
         <sys_id>fa71e20f47bb6110acc88a88536d430a</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:20</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:23</sys_updated_on>
         <ui_id>c8ed0f6c-552e-4f6e-8a6b-d44064c5ce5d</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1809,19 +1848,19 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
     <sys_flow_trigger_plan action="delete_multiple" query="plan_id=335f560b47bb6110acc88a88536d434c"/>
     <sys_flow_subflow_plan action="delete_multiple" query="plan_id=335f560b47bb6110acc88a88536d434c^sys_idNOT IN08a12a0f47bb6110acc88a88536d43aa"/>
     <sys_flow_subflow_plan action="INSERT_OR_UPDATE">
-        <plan>com.snc.process_flow.engine.ProcessPlan@82962f</plan>
+        <plan>{"persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_subflow_plan","id":"08a12a0f47bb6110acc88a88536d43aa","name":"plan","plan_signature":null}}</plan>
         <plan_id display_value="NOW Get Access Token">335f560b47bb6110acc88a88536d434c</plan_id>
-        <snapshot>4391e60f47bb6110acc88a88536d4304</snapshot>
+        <snapshot>14c3a8c847003110acc88a88536d4396</snapshot>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:28:46</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>08a12a0f47bb6110acc88a88536d43aa</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:19</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:22</sys_updated_on>
     </sys_flow_subflow_plan>
     <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
         <access>package_private</access>
@@ -1834,7 +1873,7 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <copied_from_name/>
         <description/>
         <internal_name>now_get_access_token</internal_name>
-        <label_cache>[{"name":"subflow.instance","label":"Input➛Instance","reference":"x_376096_mpl_instance","reference_display":"Instance","type":"reference","base_type":"reference","column_name":"","attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"ac8d6714-7637-4353-8db9-1c3eb83aed7a","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.user","label":"Input➛User","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","column_name":"","attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"a8923291-dc1d-4b7c-8ce7-5bab8aa419dd","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"3b1d401e-1973-46cb-bac9-bbd9b7adc7ee.status","label":"1 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"150355f8-8d42-4d0e-a30f-50c71a27ab74.status","label":"5 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"150355f8-8d42-4d0e-a30f-50c71a27ab74.Record","label":"5 - Look Up Record➛OAuth Token Record","reference":"x_376096_mpl_oauth_token","reference_display":"OAuth Token","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"a213b637-66aa-4c74-87f3-df9ccf0ab900.oauth_token_record.active","label":"7➛Updated OAuth Token Record➛Active","reference":"","reference_display":"Active","type":"boolean","base_type":"boolean","parent_table_name":"x_376096_mpl_oauth_token","column_name":"active"},{"name":"subflow.reason","label":"Input➛Reason","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"13e515f1-a73f-40f6-918f-9c5718b2b1ee","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"8d0c3a2c-1a37-44a4-ae43-a952db3bac8e.Record.state","label":"11➛OAuth Task Record➛State","reference":"","reference_display":"State","type":"choice","base_type":"choice","parent_table_name":"x_376096_mpl_oauth_task","column_name":"state","choices":[{"used":false,"label":"Pending","image":"","rawLabel":"Pending","selected":false,"missing":false,"reference":false,"value":"-5","parameters":{"name":"task"}},{"used":false,"label":"Open","image":"","rawLabel":"Open","selected":false,"missing":false,"reference":false,"value":"1","parameters":{"name":"task"}},{"used":false,"label":"Work in Progress","image":"","rawLabel":"Work in Progress","selected":false,"missing":false,"reference":false,"value":"2","parameters":{"name":"task"}},{"used":false,"label":"Closed Complete","image":"","rawLabel":"Closed Complete","selected":false,"missing":false,"reference":false,"value":"3","parameters":{"name":"task"}},{"used":false,"label":"Closed Incomplete","image":"","rawLabel":"Closed Incomplete","selected":false,"missing":false,"reference":false,"value":"4","parameters":{"name":"task"}},{"used":false,"label":"Closed Skipped","image":"","rawLabel":"Closed Skipped","selected":false,"missing":false,"reference":false,"value":"7","parameters":{"name":"task"}}]},{"name":"8bf786d3-0296-49b4-b8eb-d794143ccb26.status","label":"13 - NOW Get Access Token➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Success","value":"success","order":1.0},{"label":"Error","value":"error","order":2.0}],"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"37a4253d-e13f-417d-98c8-ee077d55fa4c"}},{"name":"8bf786d3-0296-49b4-b8eb-d794143ccb26.access_token","label":"13 - NOW Get Access Token➛Access Token","reference_display":"Access Token","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"f09e708d-bf6d-4412-b097-86d78ae7bc32"}}]</label_cache>
+        <label_cache>[{"name":"8bf786d3-0296-49b4-b8eb-d794143ccb26.access_token","label":"13 - NOW Get Access Token➛Access Token","reference_display":"Access Token","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"f09e708d-bf6d-4412-b097-86d78ae7bc32"}},{"name":"8bf786d3-0296-49b4-b8eb-d794143ccb26.status","label":"13 - NOW Get Access Token➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Success","value":"success","order":1.0},{"label":"Error","value":"error","order":2.0}],"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"37a4253d-e13f-417d-98c8-ee077d55fa4c"}},{"name":"8d0c3a2c-1a37-44a4-ae43-a952db3bac8e.Record.state","label":"11➛OAuth Task Record➛State","reference":"","reference_display":"State","type":"choice","base_type":"choice","parent_table_name":"x_376096_mpl_oauth_task","column_name":"state","choices":[{"label":"Pending","rawLabel":"Pending","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"-5","parameters":{"name":"task"}},{"label":"Open","rawLabel":"Open","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"1","parameters":{"name":"task"}},{"label":"Work in Progress","rawLabel":"Work in Progress","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"2","parameters":{"name":"task"}},{"label":"Closed Complete","rawLabel":"Closed Complete","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"3","parameters":{"name":"task"}},{"label":"Closed Incomplete","rawLabel":"Closed Incomplete","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"4","parameters":{"name":"task"}},{"label":"Closed Skipped","rawLabel":"Closed Skipped","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"7","parameters":{"name":"task"}}]},{"name":"subflow.reason","label":"Input➛Reason","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"13e515f1-a73f-40f6-918f-9c5718b2b1ee","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"a213b637-66aa-4c74-87f3-df9ccf0ab900.oauth_token_record.active","label":"7➛Updated OAuth Token Record➛Active","reference":"","reference_display":"Active","type":"boolean","base_type":"boolean","parent_table_name":"x_376096_mpl_oauth_token","column_name":"active"},{"name":"150355f8-8d42-4d0e-a30f-50c71a27ab74.Record","label":"5 - Look Up Record➛OAuth Token Record","reference":"x_376096_mpl_oauth_token","reference_display":"OAuth Token","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"150355f8-8d42-4d0e-a30f-50c71a27ab74.status","label":"5 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"3b1d401e-1973-46cb-bac9-bbd9b7adc7ee.status","label":"1 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"subflow.user","label":"Input➛User","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","column_name":"","attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"a8923291-dc1d-4b7c-8ce7-5bab8aa419dd","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.instance","label":"Input➛Instance","reference":"x_376096_mpl_instance","reference_display":"Instance","type":"reference","base_type":"reference","column_name":"","attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"ac8d6714-7637-4353-8db9-1c3eb83aed7a","sourceUiUniqueId":"","sourceType":"","sourceId":""}}]</label_cache>
         <master>true</master>
         <name>NOW Get Access Token</name>
         <natlang/>
@@ -1851,7 +1890,7 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>4391e60f47bb6110acc88a88536d4304</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -1859,7 +1898,7 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name/>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:15</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:18</sys_updated_on>
         <type>subflow</type>
     </sys_hub_flow_snapshot>
     <sys_translated_text action="delete_multiple" query="documentkey=4391e60f47bb6110acc88a88536d4304"/>
@@ -2396,10 +2435,10 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:28:43</sys_created_on>
         <sys_id>2f91e60f47bb6110acc88a88536d43d6</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:14</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:18</sys_updated_on>
         <ui_id>8d0c3a2c-1a37-44a4-ae43-a952db3bac8e</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=2f91e60f47bb6110acc88a88536d43d6"/>
@@ -2485,10 +2524,10 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:28:43</sys_created_on>
         <sys_id>5391e60f47bb6110acc88a88536d43aa</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:14</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:17</sys_updated_on>
         <ui_id>3b1d401e-1973-46cb-bac9-bbd9b7adc7ee</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=5391e60f47bb6110acc88a88536d43aa"/>
@@ -2573,10 +2612,10 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:28:43</sys_created_on>
         <sys_id>a391e60f47bb6110acc88a88536d43cf</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:14</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:18</sys_updated_on>
         <ui_id>a213b637-66aa-4c74-87f3-df9ccf0ab900</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=a391e60f47bb6110acc88a88536d43cf"/>
@@ -2609,10 +2648,10 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:28:43</sys_created_on>
         <sys_id>e791e60f47bb6110acc88a88536d43b3</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:14</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:18</sys_updated_on>
         <ui_id>150355f8-8d42-4d0e-a30f-50c71a27ab74</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=e791e60f47bb6110acc88a88536d43b3"/>
@@ -2698,10 +2737,10 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:30:13</sys_created_on>
         <sys_id>edf1a24f47bb6110acc88a88536d4396</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:15</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:18</sys_updated_on>
         <ui_id>8bf786d3-0296-49b4-b8eb-d794143ccb26</ui_id>
     </sys_hub_sub_flow_instance>
     <sys_variable_value action="delete_multiple" query="document_key=edf1a24f47bb6110acc88a88536d4396"/>
@@ -2876,10 +2915,10 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:28:43</sys_created_on>
         <sys_id>1391e60f47bb6110acc88a88536d4394</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:14</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:18</sys_updated_on>
         <ui_id>4e05131a-5c29-4fa0-bef4-bc960e84a522</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -2909,10 +2948,10 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:28:42</sys_created_on>
         <sys_id>1b91e60f47bb6110acc88a88536d4386</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:14</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:18</sys_updated_on>
         <ui_id>e90107b6-2bfd-40c2-955f-4f0293081be9</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -2942,10 +2981,10 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:28:42</sys_created_on>
         <sys_id>5391e60f47bb6110acc88a88536d4382</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:14</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:18</sys_updated_on>
         <ui_id>683ab380-544f-4526-a892-c4f7d207ba8f</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -3002,10 +3041,10 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:28:43</sys_created_on>
         <sys_id>5391e60f47bb6110acc88a88536d439d</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:15</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:18</sys_updated_on>
         <ui_id>c8ed0f6c-552e-4f6e-8a6b-d44064c5ce5d</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -3064,10 +3103,10 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:28:42</sys_created_on>
         <sys_id>5b91e60f47bb6110acc88a88536d4389</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:14</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:18</sys_updated_on>
         <ui_id>e3606513-8e46-4739-8c99-f39dd5b46b34</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -3111,10 +3150,10 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:28:42</sys_created_on>
         <sys_id>9391e60f47bb6110acc88a88536d437e</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:14</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:18</sys_updated_on>
         <ui_id>4e964ead-4b4c-4a31-8fd8-1675668e1c8f</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -3158,15 +3197,29 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:28:42</sys_created_on>
         <sys_id>9f91e60f47bb6110acc88a88536d438c</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:14</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:18</sys_updated_on>
         <ui_id>ed80443b-db04-4072-a381-4d5c4b64316b</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
     </sys_hub_flow_logic>
     <sys_variable_value action="delete_multiple" query="document_key=9f91e60f47bb6110acc88a88536d438c"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>9f91e60f47bb6110acc88a88536d438c</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-07-10 10:52:17</sys_created_on>
+        <sys_id>a1a3e0c847003110acc88a88536d4309</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-07-10 10:52:17</sys_updated_on>
+        <value>token still valid</value>
+        <variable display_value="Condition Label">f0af19c1c32632002841b63b12d3aea3</variable>
+    </sys_variable_value>
     <sys_element_mapping action="delete_multiple" query="id=9f91e60f47bb6110acc88a88536d438c"/>
     <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>condition</field>
@@ -3179,6 +3232,18 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_updated_on>2023-07-07 17:28:43</sys_updated_on>
         <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
         <value>{{a213b637-66aa-4c74-87f3-df9ccf0ab900.oauth_token_record.active}}=true</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition_name</field>
+        <id>9f91e60f47bb6110acc88a88536d438c</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-07-10 10:52:17</sys_created_on>
+        <sys_id>21a3e0c847003110acc88a88536d4309</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-07-10 10:52:17</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value/>
     </sys_element_mapping>
     <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_output_4391e60f47bb6110acc88a88536d4304^id=9f91e60f47bb6110acc88a88536d438c"/>
     <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=9f91e60f47bb6110acc88a88536d438c"/>
@@ -3205,10 +3270,10 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:28:43</sys_created_on>
         <sys_id>9f91e60f47bb6110acc88a88536d4396</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:14</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:18</sys_updated_on>
         <ui_id>a836f060-6b75-491e-96dd-913e89becc80</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -3252,10 +3317,10 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:30:13</sys_created_on>
         <sys_id>a5f1a24f47bb6110acc88a88536d4387</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:15</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:18</sys_updated_on>
         <ui_id>f279e571-08f7-42d8-bf9e-ed8a95ba4e39</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -3298,10 +3363,10 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:30:13</sys_created_on>
         <sys_id>a5f1a24f47bb6110acc88a88536d438e</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:15</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:18</sys_updated_on>
         <ui_id>69fd3fa3-3913-48e8-bd3a-1f1931694a32</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -3312,7 +3377,7 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
     <sys_hub_input_scripts action="delete_multiple" query="instance=a5f1a24f47bb6110acc88a88536d438e"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <block display_value="">ea71a20f47bb6110acc88a88536d43f6</block>
-        <comment/>
+        <comment>Status=Success</comment>
         <connected_to/>
         <decision_table/>
         <decision_table_inputs/>
@@ -3324,17 +3389,17 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <inputs/>
         <logic_definition display_value="Assign Subflow Outputs">df4e1945c3e232002841b63b12d3ae3e</logic_definition>
         <order>9</order>
-        <outputs_assigned>error_message,status</outputs_assigned>
+        <outputs_assigned>access_token,status</outputs_assigned>
         <outputs_to_assign/>
         <parent_ui_id>ed80443b-db04-4072-a381-4d5c4b64316b</parent_ui_id>
         <sys_class_name>sys_hub_flow_logic</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:28:43</sys_created_on>
         <sys_id>d391e60f47bb6110acc88a88536d4390</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:14</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:18</sys_updated_on>
         <ui_id>99abf2a1-5b55-4472-998d-9a0534779447</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -3356,7 +3421,7 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
     </sys_variable_value>
     <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_output_4391e60f47bb6110acc88a88536d4304^id=d391e60f47bb6110acc88a88536d4390"/>
     <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=d391e60f47bb6110acc88a88536d4390"/>
-    <sys_hub_input_scripts action="delete_multiple" query="instance=d391e60f47bb6110acc88a88536d4390^sys_idNOT IN5391e60f47bb6110acc88a88536d4391"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=d391e60f47bb6110acc88a88536d4390^sys_idNOT IN5391e60f47bb6110acc88a88536d4391,6da3e0c847003110acc88a88536d430d"/>
     <sys_hub_input_scripts action="INSERT_OR_UPDATE">
         <active>true</active>
         <input_name>error_message</input_name>
@@ -3369,6 +3434,19 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2023-07-07 17:28:43</sys_updated_on>
+    </sys_hub_input_scripts>
+    <sys_hub_input_scripts action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <input_name>access_token</input_name>
+        <instance>d391e60f47bb6110acc88a88536d4390</instance>
+        <referenced_table>sys_hub_flow_logic</referenced_table>
+        <script>{"access_token":{"scriptActive":true,"script":"/*\n**Access Flow/Action data using the fd_data object. Script must return a value. \n**Order number is offset by +1 in Error Handling Section.\n**Available options display upon pressing \".\" after fd_data\n**example: var shortDesc \u003d fd_data.trigger.current.short_description;\n**return shortDesc;\n*/\nreturn fd_data._7__now_refresh_oauth_token.oauth_token_record.access_token.getDecryptedValue();"}}</script>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-07-10 10:52:17</sys_created_on>
+        <sys_id>6da3e0c847003110acc88a88536d430d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-07-10 10:52:17</sys_updated_on>
     </sys_hub_input_scripts>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
         <block display_value="">40f1224f47bb6110acc88a88536d43b0</block>
@@ -3392,10 +3470,10 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:30:13</sys_created_on>
         <sys_id>e9f1a24f47bb6110acc88a88536d438a</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:30:15</sys_updated_on>
+        <sys_updated_on>2023-07-10 10:52:18</sys_updated_on>
         <ui_id>18bbf7e3-1be0-4968-835e-c74c239d1680</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -3631,6 +3709,6 @@ Please use Connect to allow the Marketplace Instance to perform the action on yo
     <sys_hub_flow action="UPDATE">
         <sys_id>335f560b47bb6110acc88a88536d434c</sys_id>
         <latest_snapshot>4391e60f47bb6110acc88a88536d4304</latest_snapshot>
-        <compiler_build/>
+        <compiler_build>glide-utah-12-21-2022__patch1-03-01-2023_03-13-2023_1716.zip</compiler_build>
     </sys_hub_flow>
 </record_update>

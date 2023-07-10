@@ -5,7 +5,7 @@
         <element label="Branch" max_length="40" name="branch" type="string"/>
         <element label="Customer" max_length="32" name="customer" reference="x_376096_mpl_customer" reference_cascade_rule="cascade" type="reference"/>
         <element display="true" label="Name" max_length="100" name="display_name" type="string"/>
-        <element label="GitHub ID" max_length="40" name="github_id" type="integer"/>
+        <element attributes="format=none" label="GitHub ID" max_length="40" name="github_id" type="integer"/>
         <element label="GitHub Name" max_length="100" name="github_name" type="string"/>
         <element label="Service User" max_length="32" name="service_user" reference="sys_user" type="reference"/>
         <element label="SSH URL" max_length="1024" name="ssh_url" type="url"/>
