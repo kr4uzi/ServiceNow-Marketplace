@@ -9,7 +9,7 @@
         <element label="GitHub Name" max_length="100" name="github_name" type="string"/>
         <element label="Service User" max_length="32" name="service_user" reference="sys_user" type="reference"/>
         <element label="SSH URL" max_length="1024" name="ssh_url" type="url"/>
-        <element label="Update Flow" max_length="32" name="update_flow" reference="sys_hub_flow" type="reference"/>
+        <element label="Update Flow" max_length="32" name="update_flow" reference="sys_hub_flow" reference_qual="category=d049a68747fb6110acc88a88536d437b^active=true^EQ" reference_qual_condition="category=d049a68747fb6110acc88a88536d437b^active=true^EQ" type="reference"/>
         <index name="index">
             <element name="application"/>
         </index>

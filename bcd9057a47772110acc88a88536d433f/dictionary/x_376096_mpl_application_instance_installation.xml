@@ -3,7 +3,7 @@
         <element label="Application Installation" max_length="32" name="application_installation" reference="x_376096_mpl_application_installation" reference_cascade_rule="cascade" type="reference"/>
         <element label="Credentials Sys ID" max_length="40" name="credentials_sys_id" type="string"/>
         <element display="true" label="Name" max_length="40" name="display_name" type="string"/>
-        <element label="Instance" max_length="32" name="instance" reference="x_376096_mpl_instance" reference_cascade_rule="cascade" type="reference"/>
+        <element label="Instance" max_length="32" name="instance" reference="x_376096_mpl_instance" reference_cascade_rule="cascade" reference_qual="javascript: 'customer=' + current.application_installation.customer;" type="reference" use_reference_qualifier="advanced"/>
         <index name="index">
             <element name="application_installation"/>
         </index>
