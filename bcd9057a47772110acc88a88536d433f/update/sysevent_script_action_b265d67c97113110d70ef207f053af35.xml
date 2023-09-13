@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sysevent_script_action">
+    <sysevent_script_action action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition_script/>
+        <description/>
+        <event_name>x_376096_mpl.application_update</event_name>
+        <name>MPL Update Applications</name>
+        <order>100</order>
+        <script><![CDATA[/* global current, event, GlideRecord, sn_fd */
+/* eslint no-undef: "error" */
+(function (appGr, eventGr) {
+	
+	const updateHandlerCategorySysID = '1882cc8397a32510d70ef207f053afd1';
+	const appInstallGr = new GlideRecord('x_376096_mpl_app_installation');
+	appInstallGr.addQuery('active', true);
+	appInstallGr.addQuery('application', appGr.sys_id);
+	appInstallGr.addQuery('update_flow.active', true);
+	appInstallGr.addQuery('update_flow.category', updateHandlerCategorySysID);
+	appInstallGr.addQuery('service_user.active', true);
+	appInstallGr.query();
+	while (appInstallGr.next()) {
+		const serviceUserGr = appInstallGr.service_user.getRefRecord();
+		sn_fd.FlowAPI.getRunner()
+			.subflow(appInstallGr.update_flow.internal_name)
+			.inBackground()
+			.withInputs({ 'application_installation': appInstallGr, 'user': serviceUserGr })
+			.run();
+	}
+
+})(current, event);]]></script>
+        <synchronous>false</synchronous>
+        <sys_class_name>sysevent_script_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-09-13 06:25:58</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>b265d67c97113110d70ef207f053af35</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>MPL Update Applications</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name>sysevent_script_action_b265d67c97113110d70ef207f053af35</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-09-13 06:50:52</sys_updated_on>
+    </sysevent_script_action>
+</record_update>

@@ -14,21 +14,12 @@
 		const eventType = request.getHeader('X-GitHub-Event');
 		if (targetType == 'repository' && eventType == 'push') {
 			const repositoryID = request.getHeader('X-GitHub-Hook-Installation-Target-ID');
-			const appInstallGr = new GlideRecord('x_376096_mpl_application_installation');
-			appInstallGr.addQuery('active', true);
-			appInstallGr.addQuery('application.github_id', repositoryID);
-			appInstallGr.addQuery('update_flow.active', true);
-			appInstallGr.addQuery('update_flow.category.name', 'Update Handler');
-			appInstallGr.addQuery('service_user.active', true);
-			appInstallGr.query();
-			while (appInstallGr.next()) {
-				const serviceUserGr = appInstallGr.service_user.getRefRecord();
-				const updateFlow = appInstallGr.update_flow;
-				sn_fd.FlowAPI.getRunner()
-					.subflow(updateFlow.sys_scope.scope + '.' + updateFlow.internal_name)
-					.inBackground()
-					.withInputs({ 'application_installation': appInstallGr, 'user': serviceUserGr })
-					.run();
+			const appGr = new GlideRecord("x_376096_mpl_application");
+			appGr.addQuery("github_id", repositoryID);
+			appGr.setLimit(1);
+			appGr.query();
+			if (appGr.next()) {
+				gs.eventQueue("x_376096_mpl.application_update", appGr);
 			}
 		}
 	} catch (e) {
@@ -51,15 +42,15 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-06 20:42:46</sys_created_on>
         <sys_id>98348eba477b2110acc88a88536d4321</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>webhooks</sys_name>
         <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name>sys_ws_operation_98348eba477b2110acc88a88536d4321</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-10 10:48:52</sys_updated_on>
-        <web_service_definition display_value="git">14240eba477b2110acc88a88536d43e2</web_service_definition>
+        <sys_updated_on>2023-09-13 06:25:24</sys_updated_on>
+        <web_service_definition display_value="Marketplace REST">14240eba477b2110acc88a88536d43e2</web_service_definition>
         <web_service_version/>
     </sys_ws_operation>
 </record_update>
