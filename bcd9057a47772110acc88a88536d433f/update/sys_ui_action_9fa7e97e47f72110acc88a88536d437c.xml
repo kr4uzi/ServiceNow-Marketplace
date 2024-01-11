@@ -30,14 +30,23 @@
 mpl_oauth_already_connected</messages>
         <name>Connect</name>
         <onclick>mpl_connectToCustomerInstance()</onclick>
-        <order>100</order>
+        <order>140</order>
         <script><![CDATA[/* eslint no-undef: "error" */
 /* global URL, GlideList2 */
-/* global getMessage, jslog, g_form, g_navigation, GlideAjax */
+/* global getMessage, jslog, g_form, g_navigation, GlideAjax, rowSysId, g_list */
 function mpl_connectToCustomerInstance() {
+	let instanceSysID;
+	let onLinked;
+	if (typeof rowSysId != 'undefined') {
+		instanceSysID = rowSysId;
+		onLinked = function () { g_list.refresh(); };
+	} else {
+		instanceSysID = g_form.getUniqueValue();
+	}
+
 	var ga = new GlideAjax('x_376096_mpl.CatalogItemUtilClient');
 	ga.addParam('sysparm_name', 'getOAuthInfoForInstance');
-	ga.addParam('instance', g_form.getUniqueValue());
+	ga.addParam('instance', instanceSysID);
 	ga.getXMLAnswer(function (answer) {
 		try {
 			answer = JSON.parse(answer);
@@ -52,19 +61,25 @@ function mpl_connectToCustomerInstance() {
 								+ '&sysparm_nostack=true'
 								+ '&client_id=' + encodeURIComponent(answer.client_id)
 								+ '&client_secret=' + encodeURIComponent(answer.client_secret)
-								+ '&state=' + encodeURIComponent(g_form.getUniqueValue())
+								+ '&state=' + encodeURIComponent(instanceSysID)
 								+ '&redirect_uri=' + encodeURIComponent(answer.redirect_url),
 								answer.url).toString(),
 						'mpl_oauth_window',
 						'popup=true,width=800,height=600'
 					);
 					win.opener.mpl_SetOAuthToken = function () {
-						var listID = 'x_376096_mpl_instance.x_376096_mpl_oauth_token.instance';
-						GlideList2.get(listID).refresh();
+						if (g_form.getTableName() == 'x_376096_mpl_instance') {
+							var listID = 'x_376096_mpl_instance.x_376096_mpl_oauth_token.instance';
+							GlideList2.get(listID).refresh();
+						}
 						
 						getMessage('mpl_instance_successfully_linked', function (msg) {
 							g_form.addInfoMessage(msg);
 						});
+
+						if (onLinked) {
+							onLinked();
+						}
 					};
 				}
 			} else {
@@ -85,15 +100,15 @@ function mpl_connectToCustomerInstance() {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>9fa7e97e47f72110acc88a88536d437c</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>Connect</sys_name>
         <sys_overrides/>
         <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name>sys_ui_action_9fa7e97e47f72110acc88a88536d437c</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-08 07:44:39</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2023-12-03 22:48:23</sys_updated_on>
         <table>x_376096_mpl_instance</table>
         <ui11_compatible>false</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>

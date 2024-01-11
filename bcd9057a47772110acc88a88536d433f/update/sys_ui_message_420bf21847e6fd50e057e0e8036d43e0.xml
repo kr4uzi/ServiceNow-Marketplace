@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_message">
+    <sys_ui_message action="INSERT_OR_UPDATE">
+        <application/>
+        <code/>
+        <commented_message/>
+        <key>mpl_oauth_incomplete_data</key>
+        <language>en</language>
+        <message>Please make sure the following fields are set: OAuth Entity Sys ID, OAuth Client ID and OAuth Client Secret.</message>
+        <sys_class_name>sys_ui_message</sys_class_name>
+        <sys_created_by>mkraus6</sys_created_by>
+        <sys_created_on>2023-11-12 23:09:08</sys_created_on>
+        <sys_id>420bf21847e6fd50e057e0e8036d43e0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>mpl_oauth_incomplete_data</sys_name>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name>sys_ui_message_420bf21847e6fd50e057e0e8036d43e0</sys_update_name>
+        <sys_updated_by>mkraus6</sys_updated_by>
+        <sys_updated_on>2023-11-12 23:09:08</sys_updated_on>
+    </sys_ui_message>
+</record_update>

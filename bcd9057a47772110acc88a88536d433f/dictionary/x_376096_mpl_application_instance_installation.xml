@@ -1,14 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element db_object_id="237d01be47772110acc88a88536d438d" label="Application Instance Installation" max_length="40" name="x_376096_mpl_application_instance_installation" type="collection">
+    <element audit="true" db_object_id="237d01be47772110acc88a88536d438d" label="Application Instance Installation" max_length="40" name="x_376096_mpl_application_instance_installation" type="collection">
+        <element label="Action" max_length="4000" name="action" type="glide_action_list"/>
         <element label="Application Installation" max_length="32" name="application_installation" reference="x_376096_mpl_application_installation" reference_cascade_rule="cascade" type="reference"/>
+        <element default="javascript: typeof parent != 'undefined' ? parent.automatic_update : false" label="Automatic Update" max_length="40" name="automatic_update" type="boolean"/>
+        <element label="Commits" max_length="4000" name="commits" type="string"/>
         <element label="Credentials Sys ID" max_length="40" name="credentials_sys_id" type="string"/>
-        <element display="true" label="Name" max_length="40" name="display_name" type="string"/>
-        <element label="Instance" max_length="32" name="instance" reference="x_376096_mpl_instance" reference_cascade_rule="cascade" reference_qual="javascript: 'customer=' + current.application_installation.customer;" type="reference" use_reference_qualifier="advanced"/>
+        <element display="true" label="Name" max_length="255" name="display_name" type="string"/>
+        <element choice="1" label="Install status" max_length="40" name="install_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Approval" sequence="10" value="approval"/>
+                <element inactive_on_update="false" label="Installing" sequence="20" value="installing"/>
+                <element inactive_on_update="false" label="Installed" sequence="30" value="installed"/>
+                <element inactive_on_update="false" label="Error" sequence="40" value="error"/>
+            </choice>
+        </element>
+        <element label="Instance" max_length="32" name="instance" reference="x_376096_mpl_instance" reference_cascade_rule="cascade" reference_qual="javascript: new x_376096_mpl.MPLUtil().getInstancesAvailableForInstall(current.application_installation)" type="reference" use_reference_qualifier="advanced"/>
+        <element default="javascript: typeof parent != 'undefined' ? parent.service_user : ''" label="Service User" max_length="32" name="service_user" reference="sys_user" type="reference"/>
+        <element choice="1" label="State" max_length="40" name="state" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Installing" sequence="10" value="installing"/>
+                <element inactive_on_update="false" label="Installed" sequence="20" value="installed"/>
+                <element inactive_on_update="false" label="Update pending" sequence="30" value="update_pending"/>
+                <element inactive_on_update="false" label="Updating" sequence="40" value="updating"/>
+                <element inactive_on_update="false" label="Updated" sequence="50" value="updated"/>
+                <element inactive_on_update="false" label="Error" sequence="60" value="error"/>
+            </choice>
+        </element>
+        <element choice="1" label="Update status" max_length="40" name="update_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Pending" sequence="10" value="pending"/>
+                <element inactive_on_update="false" label="Updating" sequence="20" value="updating"/>
+                <element inactive_on_update="false" label="Updated" sequence="30" value="updated"/>
+                <element inactive_on_update="false" label="Error" sequence="40" value="error"/>
+            </choice>
+        </element>
+        <element label="Work notes" max_length="4000" name="work_notes" type="journal_input"/>
         <index name="index">
             <element name="application_installation"/>
         </index>
         <index name="index2">
             <element name="instance"/>
+        </index>
+        <index name="index3">
+            <element name="service_user"/>
         </index>
     </element>
 </database>

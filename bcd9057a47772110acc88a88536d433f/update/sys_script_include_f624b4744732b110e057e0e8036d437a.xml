@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_376096_mpl.MPLAnnUtil</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Annotation Utility for Marketplace - annotations are rendered from global scope!</description>
+        <name>MPLAnnUtil</name>
+        <script><![CDATA[/* eslint no-undef: "error" */
+/* global sn_fd */
+/* global Class */
+var MPLAnnUtil = Class.create();
+MPLAnnUtil.prototype = {
+    initialize: function() {
+		this.frontend_url = sn_fd.FlowAPI.getRunner()
+			.action('x_376096_mpl.get_github_config')
+			.inForeground()
+			.run()
+			.getOutputs()
+			.frontend_url;
+    },
+	
+	orgUrl: function (customerGr) {
+		if (customerGr.github_name) {
+			return this.frontend_url + '/' + customerGr.github_name;
+		} else {
+			return this.frontend_url + '/account/organizations/new';
+		}
+	},
+
+	accessToken: function (customerGr) {
+		if (customerGr.github_access_token) {
+			return this.frontend_url + '/settings/tokens';
+		} else {
+			return this.frontend_url + '/settings/tokens/new';
+		}
+	},
+
+    type: 'MPLAnnUtil'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2023-11-26 12:58:05</sys_created_on>
+        <sys_id>f624b4744732b110e057e0e8036d437a</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>MPLAnnUtil</sys_name>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name>sys_script_include_f624b4744732b110e057e0e8036d437a</sys_update_name>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2023-11-26 13:05:22</sys_updated_on>
+    </sys_script_include>
+</record_update>

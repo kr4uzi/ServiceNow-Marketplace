@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_376096_mpl.MPLUtil</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>MPLUtil</name>
+        <script><![CDATA[/* eslint no-undef: "error" */
+/* global gs */
+/* global Class, GlideRecord, GlideDateTime */
+var MPLUtil = Class.create();
+MPLUtil.prototype = {
+    initialize: function() {
+		
+    },
+
+	/**
+	 * Updates the Action of an a given Application Instance Installation record
+	 * @param {GlideRecord} installGr - the application instance installation record
+	 */
+	updateInstInstallAction: function (installGr) {
+		const installUIAction = '16a67a38477eb110e057e0e8036d43a0';
+		const updateUIAction = '7427f23c477eb110e057e0e8036d43b8';
+		const verifyUIAction = 'a8a8adbe47f72110acc88a88536d435f';
+
+		const uiActions = [verifyUIAction];
+		if (installGr.state == 'update_pending') {
+			uiActions.push(updateUIAction);
+		} else if (!installGr.state) {
+			uiActions.push(installUIAction);
+		}
+		
+		installGr.action = uiActions.join(',');
+	},
+
+	isConnectedToInstance: function (anyGr, userSysId) {
+		let instanceSysId;
+		const recordClassName = anyGr.getRecordClassName();
+		if (recordClassName == 'x_376096_mpl_application_instance_installation') {
+			instanceSysId = anyGr.getValue('instance');
+		} else {
+			instanceSysId = anyGr.getUniqueValue();
+		}
+
+		if (instanceSysId) {
+			const oAuthTokenGr = new GlideRecord('x_376096_mpl_oauth_token');
+			oAuthTokenGr.addQuery('instance', instanceSysId);
+			oAuthTokenGr.addQuery('user', userSysId || gs.getUserID());
+			oAuthTokenGr.addQuery('active', true);
+			oAuthTokenGr.addQuery('expires_at', '>', new GlideDateTime());
+			oAuthTokenGr.setLimit(1);
+			oAuthTokenGr.query();
+			return oAuthTokenGr.hasNext();
+		}
+
+		return false;
+	},
+	
+	getInstancesAvailableForInstall: function (appInstallGr) {
+		const installGr = new GlideRecord('x_376096_mpl_application_instance_installation');
+		installGr.addQuery('application_installation', appInstallGr.sys_id);
+		installGr.query();
+		
+		const installedInstances = [];
+		while (installGr.next()) {
+			installedInstances.push(installGr.getValue('instance'));
+		}
+		
+		return 'customer=' + appInstallGr.customer + '^sys_idNOT IN' + installedInstances;
+	},
+
+	getAppsAvailableForInstall: function (customerGr) {
+		const applicationGr = new GlideRecord('x_376096_mpl_application_installation');
+		applicationGr.addQuery('customer', customerGr.sys_id);
+		applicationGr.query();
+		
+		let installedApps = [];
+		while (applicationGr.next()) {
+			installedApps.push(applicationGr.getValue('application'));
+		}
+
+		return 'active=true^sys_idNOT IN' + installedApps.join(',');
+	},
+
+    type: 'MPLUtil'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>mkraus6</sys_created_by>
+        <sys_created_on>2023-11-23 23:21:15</sys_created_on>
+        <sys_id>3936e77f476e75d0e057e0e8036d43fe</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_name>MPLUtil</sys_name>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name>sys_script_include_3936e77f476e75d0e057e0e8036d43fe</sys_update_name>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2023-12-04 12:00:13</sys_updated_on>
+    </sys_script_include>
+</record_update>

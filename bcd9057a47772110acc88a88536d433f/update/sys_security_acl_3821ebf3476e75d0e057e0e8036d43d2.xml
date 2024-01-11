@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
+    <sys_security_acl action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <admin_overrides>true</admin_overrides>
+        <advanced>false</advanced>
+        <condition/>
+        <description>Allow create for all fields in x_376096_mpl_application_instance_installation, for users with role x_376096_mpl.mpl_customer_member.</description>
+        <local_or_existing>Local</local_or_existing>
+        <name>x_376096_mpl_application_instance_installation.*</name>
+        <operation display_value="create">create</operation>
+        <script/>
+        <security_attribute/>
+        <sys_class_name>sys_security_acl</sys_class_name>
+        <sys_created_by>mkraus6</sys_created_by>
+        <sys_created_on>2023-11-23 22:54:47</sys_created_on>
+        <sys_id>3821ebf3476e75d0e057e0e8036d43d2</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>x_376096_mpl_application_instance_installation.*</sys_name>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name>sys_security_acl_3821ebf3476e75d0e057e0e8036d43d2</sys_update_name>
+        <sys_updated_by>mkraus6</sys_updated_by>
+        <sys_updated_on>2023-11-23 23:03:16</sys_updated_on>
+        <type display_value="record">record</type>
+    </sys_security_acl>
+</record_update>

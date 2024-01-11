@@ -6,8 +6,9 @@
         <element label="GitHub Name" max_length="100" name="github_name" type="string"/>
         <element label="Members" max_length="4000" name="members" reference="sys_user" reference_qual="roles=x_376096_mpl.mpl_customer_member^EQ" reference_qual_condition="roles=x_376096_mpl.mpl_customer_member^EQ" type="glide_list"/>
         <element display="true" label="Name" max_length="40" name="name" type="string"/>
-        <element label="OAuth Client ID" max_length="40" name="oauth_client_id" type="string"/>
-        <element attributes="show_secret=true" label="OAuth Client Secret" max_length="255" name="oauth_client_secret" type="password2"/>
+        <element default="javascript: gs.generateGUID()" label="OAuth Client ID" max_length="40" name="oauth_client_id" type="string"/>
+        <element attributes="show_secret=true" default="javascript: GlideSecureRandomUtil.getSecureRandomString(12)" label="OAuth Client Secret" max_length="255" name="oauth_client_secret" type="password2"/>
+        <element default="javascript: gs.generateGUID()" label="OAuth Entity Sys ID" max_length="40" name="oauth_entity_sys_id" type="string"/>
         <element label="Owners" max_length="4000" name="owners" reference="sys_user" reference_qual="roles=x_376096_mpl.mpl_customer_owner^EQ" reference_qual_condition="roles=x_376096_mpl.mpl_customer_owner^EQ" type="glide_list"/>
     </element>
 </database>

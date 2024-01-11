@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_376096_mpl.MPLGitUtil</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>MPLGitUtil</name>
+        <script><![CDATA[var MPLGitUtil = Class.create();
+MPLGitUtil.prototype = {
+    initialize: function() {
+
+    },
+
+	getNewOrgUrl: function () {
+		const outputs = sn_fd.FlowAPI.getRunner()
+			.action('x_376096_mpl.get_github_config')
+			.inForeground()
+			.run()
+			.getOutputs();
+		return outputs.frontend_url + '/account/organizations/new';
+	},
+
+    type: 'MPLGitUtil'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2023-11-26 12:46:34</sys_created_on>
+        <sys_id>257230304732b110e057e0e8036d43ff</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>MPLGitUtil</sys_name>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name>sys_script_include_257230304732b110e057e0e8036d43ff</sys_update_name>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2023-11-26 12:53:13</sys_updated_on>
+    </sys_script_include>
+</record_update>

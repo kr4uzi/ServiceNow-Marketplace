@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
+    <question_choice action="DELETE">
+        <inactive>true</inactive>
+        <order>200</order>
+        <published_ref/>
+        <question display_value="Update Flow">77b20e3a477b2110acc88a88536d4352</question>
+        <sys_class_name>question_choice</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-07-06 20:36:20</sys_created_on>
+        <sys_id>cbe2827a477b2110acc88a88536d4395</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>With Approval</sys_name>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name>question_choice_cbe2827a477b2110acc88a88536d4395</sys_update_name>
+        <sys_updated_by>mkraus6</sys_updated_by>
+        <sys_updated_on>2023-11-23 23:57:17</sys_updated_on>
+        <text>With Approval</text>
+        <value>ad0ae60b47fb6110acc88a88536d437f</value>
+    </question_choice>
+    <fx_price action="DELETE" query="id=cbe2827a477b2110acc88a88536d4395"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Marketplace">bcd9057a47772110acc88a88536d433f</application>
+        <file_path/>
+        <instance_id>84830f404a36232a010b7b61011a5184</instance_id>
+        <instance_name>dxccneepractice1</instance_name>
+        <name>question_choice_cbe2827a477b2110acc88a88536d4395</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice"><question_choice action="INSERT_OR_UPDATE"><inactive>true</inactive><order>200</order><published_ref/><question display_value="Update Flow">77b20e3a477b2110acc88a88536d4352</question><sys_class_name>question_choice</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2023-07-06 20:36:20</sys_created_on><sys_id>cbe2827a477b2110acc88a88536d4395</sys_id><sys_mod_count>2</sys_mod_count><sys_name>With Approval</sys_name><sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package><sys_policy/><sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope><sys_update_name>question_choice_cbe2827a477b2110acc88a88536d4395</sys_update_name><sys_updated_by>mkraus6</sys_updated_by><sys_updated_on>2023-11-23 23:57:17</sys_updated_on><text>With Approval</text><value>ad0ae60b47fb6110acc88a88536d437f</value></question_choice><fx_price action="delete_multiple" query="id=cbe2827a477b2110acc88a88536d4395"/></record_update>]]></payload>
+        <payload_hash>-27051605</payload_hash>
+        <record_name>With Approval</record_name>
+        <reverted_from/>
+        <source>3ad05357877b21102a3163583cbb358c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>mkraus6</sys_created_by>
+        <sys_created_on>2023-11-23 23:57:17</sys_created_on>
+        <sys_id>668feb7f47ae75d0e057e0e8036d4384</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18bfe9dd0b80000001</sys_recorded_at>
+        <sys_updated_by>mkraus6</sys_updated_by>
+        <sys_updated_on>2023-11-23 23:57:17</sys_updated_on>
+        <type>Question Choice</type>
+        <update_guid>ea8feb7f6cae75d0866c921c8cef9d83</update_guid>
+        <update_guid_history>ea8feb7f6cae75d0866c921c8cef9d83:-27051605,6bdece5b4ff32110bbc26929a36c5bc9:-1476837136</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="With Approval">729f2f7f47ae75d0e057e0e8036d43c0</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>mkraus6</sys_created_by>
+        <sys_created_on>2023-11-23 23:57:34</sys_created_on>
+        <sys_db_object display_value="" name="question_choice">question_choice</sys_db_object>
+        <sys_id>5f9ae50e33064b9498bb44c82fc267d1</sys_id>
+        <sys_metadata>cbe2827a477b2110acc88a88536d4395</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>With Approval</sys_name>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_parent display_value="Update Flow">77b20e3a477b2110acc88a88536d4352</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_scope_delete display_value="">2e7dbf18fb1341e79af85ab2bf0af269</sys_scope_delete>
+        <sys_update_name>question_choice_cbe2827a477b2110acc88a88536d4395</sys_update_name>
+        <sys_update_version display_value="question_choice_cbe2827a477b2110acc88a88536d4395">668feb7f47ae75d0e057e0e8036d4384</sys_update_version>
+        <sys_updated_by>mkraus6</sys_updated_by>
+        <sys_updated_on>2023-11-23 23:57:34</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

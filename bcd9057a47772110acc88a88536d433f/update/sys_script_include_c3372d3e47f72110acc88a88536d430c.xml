@@ -216,7 +216,7 @@ CatalogItemUtilClient.prototype = Object.extendsObject(global.AbstractAjaxProces
 				if (outputs.has_access) {
 					result.status = 'success';
 				} else {
-					result.message = gs.getMessage('mpl_token_check_failed_scopes');
+					result.message = gs.getMessage('mpl_token_check_failed_scopes', [scopes.join(', ')]);
 				}
 			} else {
 				result.message = gs.getMessage('mpl_invalid_parameters');
@@ -239,13 +239,13 @@ CatalogItemUtilClient.prototype = Object.extendsObject(global.AbstractAjaxProces
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-06 18:36:54</sys_created_on>
         <sys_id>c3372d3e47f72110acc88a88536d430c</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>CatalogItemUtilClient</sys_name>
         <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name>sys_script_include_c3372d3e47f72110acc88a88536d430c</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-08 10:12:33</sys_updated_on>
+        <sys_updated_by>mkraus6</sys_updated_by>
+        <sys_updated_on>2023-11-23 18:42:08</sys_updated_on>
     </sys_script_include>
 </record_update>

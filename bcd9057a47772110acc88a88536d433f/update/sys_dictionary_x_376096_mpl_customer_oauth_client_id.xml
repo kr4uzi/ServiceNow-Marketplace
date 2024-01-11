@@ -16,7 +16,7 @@
         <column_label>OAuth Client ID</column_label>
         <comments/>
         <create_roles/>
-        <default_value/>
+        <default_value>javascript: gs.generateGUID()</default_value>
         <defaultsort/>
         <delete_roles/>
         <dependent/>
@@ -57,8 +57,8 @@
         <sys_policy/>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name>sys_dictionary_x_376096_mpl_customer_oauth_client_id</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-06 16:37:13</sys_updated_on>
+        <sys_updated_by>mkraus6</sys_updated_by>
+        <sys_updated_on>2023-11-25 14:47:44</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

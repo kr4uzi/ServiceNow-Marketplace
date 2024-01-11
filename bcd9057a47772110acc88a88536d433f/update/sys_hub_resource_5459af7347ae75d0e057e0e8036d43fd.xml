@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_hub_resource">
+    <sys_hub_resource action="INSERT_OR_UPDATE">
+        <conditions table="sys_hub_flow">category=410593c747bf6110acc88a88536d43ba^ORcategory=d049a68747fb6110acc88a88536d437b^EQ<item display_table="sys_hub_category" display_value="Install Handler" endquery="false" field="category" goto="false" newquery="false" operator="=" or="false" value="410593c747bf6110acc88a88536d43ba"/>
+            <item display_table="sys_hub_category" display_value="Update Handler" endquery="false" field="category" goto="false" newquery="false" operator="=" or="true" value="d049a68747fb6110acc88a88536d437b"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </conditions>
+        <name>MPL Handlers</name>
+        <resource_tags/>
+        <sys_class_name>sys_hub_resource</sys_class_name>
+        <sys_created_by>mkraus6</sys_created_by>
+        <sys_created_on>2023-11-23 23:30:45</sys_created_on>
+        <sys_id>5459af7347ae75d0e057e0e8036d43fd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>MPL Handlers</sys_name>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name>sys_hub_resource_5459af7347ae75d0e057e0e8036d43fd</sys_update_name>
+        <sys_updated_by>mkraus6</sys_updated_by>
+        <sys_updated_on>2023-11-23 23:30:45</sys_updated_on>
+        <table>sys_hub_flow</table>
+    </sys_hub_resource>
+</record_update>

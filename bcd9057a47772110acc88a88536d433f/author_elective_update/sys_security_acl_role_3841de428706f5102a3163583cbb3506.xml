@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="DELETE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>mkraus6</sys_created_by>
+        <sys_created_on>2023-10-24 10:04:37</sys_created_on>
+        <sys_id>3841de428706f5102a3163583cbb3506</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>.x_376096_mpl.mpl_customer_member</sys_name>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_security_acl display_value="">b041de428706f5102a3163583cbb3506</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_3841de428706f5102a3163583cbb3506</sys_update_name>
+        <sys_updated_by>mkraus6</sys_updated_by>
+        <sys_updated_on>2023-10-24 10:04:37</sys_updated_on>
+        <sys_user_role display_value="x_376096_mpl.mpl_customer_member" name="x_376096_mpl.mpl_customer_member">1b5f45fe47772110acc88a88536d432f</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Marketplace">bcd9057a47772110acc88a88536d433f</application>
+        <file_path/>
+        <instance_id>84830f404a36232a010b7b61011a5184</instance_id>
+        <instance_name>dxccneepractice1</instance_name>
+        <name>sys_security_acl_role_3841de428706f5102a3163583cbb3506</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>mkraus6</sys_created_by><sys_created_on>2023-10-24 10:04:37</sys_created_on><sys_id>3841de428706f5102a3163583cbb3506</sys_id><sys_mod_count>0</sys_mod_count><sys_name>.x_376096_mpl.mpl_customer_member</sys_name><sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package><sys_policy/><sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope><sys_security_acl display_value="">b041de428706f5102a3163583cbb3506</sys_security_acl><sys_update_name>sys_security_acl_role_3841de428706f5102a3163583cbb3506</sys_update_name><sys_updated_by>mkraus6</sys_updated_by><sys_updated_on>2023-10-24 10:04:37</sys_updated_on><sys_user_role display_value="x_376096_mpl.mpl_customer_member" name="x_376096_mpl.mpl_customer_member">1b5f45fe47772110acc88a88536d432f</sys_user_role><transaction_id/></sys_security_acl_role></record_update>]]></payload>
+        <payload_hash>1204156614</payload_hash>
+        <record_name>.x_376096_mpl.mpl_customer_member</record_name>
+        <reverted_from/>
+        <source>3ad05357877b21102a3163583cbb358c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>mkraus6</sys_created_by>
+        <sys_created_on>2023-10-24 10:04:37</sys_created_on>
+        <sys_id>384152828706f5102a3163583cbb3546</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18b6124b5360000001</sys_recorded_at>
+        <sys_updated_by>mkraus6</sys_updated_by>
+        <sys_updated_on>2023-10-24 10:04:37</sys_updated_on>
+        <type>Access Roles</type>
+        <update_guid>3c4152822606f5106abb8d13150ba845</update_guid>
+        <update_guid_history>3c4152822606f5106abb8d13150ba845:1204156614</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value=".x_376096_mpl.mpl_customer_member">8b235a468706f5102a3163583cbb35f9</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>mkraus6</sys_created_by>
+        <sys_created_on>2023-10-24 10:12:58</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl_role">sys_security_acl_role</sys_db_object>
+        <sys_id>036a2102bf4c46ea80bfa6d3bd3c78e4</sys_id>
+        <sys_metadata>3841de428706f5102a3163583cbb3506</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>.x_376096_mpl.mpl_customer_member</sys_name>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_scope_delete display_value="">2e7dbf18fb1341e79af85ab2bf0af269</sys_scope_delete>
+        <sys_update_name>sys_security_acl_role_3841de428706f5102a3163583cbb3506</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_role_3841de428706f5102a3163583cbb3506">384152828706f5102a3163583cbb3546</sys_update_version>
+        <sys_updated_by>mkraus6</sys_updated_by>
+        <sys_updated_on>2023-10-24 10:12:58</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

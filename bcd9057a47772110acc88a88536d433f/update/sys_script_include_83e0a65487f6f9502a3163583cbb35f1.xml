@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_376096_mpl.MPLUtilClient</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>MPLUtilClient</name>
+        <script><![CDATA[/* eslint no-undef: "error" */
+/* global global, gs, x_376096_mpl */
+/* global Class, GlideRecord, GlideRecordSecure, GlideScriptedHierarchicalWorker */
+var MPLUtilClient = Class.create();
+MPLUtilClient.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	initialize: function () {
+		global.AbstractAjaxProcessor.prototype.initialize.apply(this, arguments);
+	},
+
+	validateInstall: function () {
+		const result = {
+			status: 'error',
+			message: ''
+		};
+		
+		try {
+			const installSysId = this.getParameter('instance_installation');
+			if (installSysId) {
+				let serviceUserGr = new GlideRecordSecure('sys_user');
+				serviceUserGr.addQuery('sys_id', gs.getUserID());
+				serviceUserGr.setLimit(1);
+				serviceUserGr.query();
+				if (!serviceUserGr.next()) {
+					result.message = 'Failed to retrieved current user record';
+					return JSON.stringify(result);
+				}
+
+				const installGr = new GlideRecordSecure('x_376096_mpl_application_instance_installation');
+				installGr.addQuery('sys_id', installSysId);
+				installGr.setLimit(1);
+				installGr.query();
+				if (installGr.next()) {
+					const worker = new GlideScriptedHierarchicalWorker();
+					worker.setProgressName('Verify Application Installation');
+					worker.setScriptIncludeName('x_376096_mpl.MPLWorkerUtil');
+					worker.setScriptIncludeMethod('validateAppInstanceInstall');
+					worker.putMethodArg('installGr', installGr);
+					worker.putMethodArg('userGr', serviceUserGr);
+					worker.setBackground(true);
+					worker.start();
+
+					result.tracker_id = worker.getProgressID();
+					result.status = 'success';
+				} else {
+					result.message = gs.getMessage('mpl_record_not_found');
+				}
+			} else {
+				result.message = gs.getMessage('mpl_invalid_parameters');
+			}
+		} catch (e) { 
+			result.status = 'error';
+			result.message = e.message; 
+			if (e.stack && gs.hasRole('admin')) { 
+				result.message += '\n' + e.stack; 
+			}
+		}
+		
+		return JSON.stringify(result);
+	},
+
+	installApp: function () {
+		const result = {
+			status: 'error',
+			message: ''
+		};
+		
+		try {
+			const installSysId = this.getParameter('instance_installation');
+			if (installSysId) {
+				let serviceUserGr = new GlideRecordSecure('sys_user');
+				serviceUserGr.addQuery('sys_id', gs.getUserID());
+				serviceUserGr.setLimit(1);
+				serviceUserGr.query();
+				if (!serviceUserGr.next()) {
+					result.message = 'Failed to retrieved current user record';
+					return JSON.stringify(result);
+				}
+
+				const installGr = new GlideRecordSecure('x_376096_mpl_application_instance_installation');
+				installGr.addQuery('sys_id', installSysId);
+				installGr.setLimit(1);
+				installGr.query();
+				if (installGr.next()) {
+					const worker = new GlideScriptedHierarchicalWorker();
+					worker.setProgressName('Install Application');
+					worker.setScriptIncludeName('x_376096_mpl.MPLWorkerUtil');
+					worker.setScriptIncludeMethod('installApp');
+					worker.putMethodArg('installGr', installGr);
+					worker.putMethodArg('userGr', serviceUserGr);
+					worker.setBackground(true);
+					worker.start();
+
+					result.tracker_id = worker.getProgressID();
+					result.status = 'success';
+				} else {
+					result.message = gs.getMessage('mpl_record_not_found');
+				}
+			} else {
+				result.message = gs.getMessage('mpl_invalid_parameters');
+			}
+		} catch (e) { 
+			result.status = 'error';
+			result.message = e.message; 
+			if (e.stack && gs.hasRole('admin')) { 
+				result.message += '\n' + e.stack; 
+			}
+		}
+		
+		return JSON.stringify(result);
+	},
+
+	updateApp: function () {
+		const result = {
+			status: 'error',
+			message: ''
+		};
+		
+		try {
+			const installSysId = this.getParameter('instance_installation');
+			if (installSysId) {
+				let serviceUserGr = new GlideRecordSecure('sys_user');
+				serviceUserGr.addQuery('sys_id', gs.getUserID());
+				serviceUserGr.setLimit(1);
+				serviceUserGr.query();
+				if (!serviceUserGr.next()) {
+					result.message = 'Failed to retrieved current user record';
+					return JSON.stringify(result);
+				}
+
+				const installGr = new GlideRecordSecure('x_376096_mpl_application_instance_installation');
+				installGr.addQuery('sys_id', installSysId);
+				installGr.setLimit(1);
+				installGr.query();
+				if (installGr.next()) {
+					const worker = new GlideScriptedHierarchicalWorker();
+					worker.setProgressName('Update Application');
+					worker.setScriptIncludeName('x_376096_mpl.MPLWorkerUtil');
+					worker.setScriptIncludeMethod('updateApp');
+					worker.putMethodArg('installGr', installGr);
+					worker.putMethodArg('userGr', serviceUserGr);
+					worker.setBackground(true);
+					worker.start();
+
+					result.tracker_id = worker.getProgressID();
+					result.status = 'success';
+				} else {
+					result.message = gs.getMessage('mpl_record_not_found');
+				}
+			} else {
+				result.message = gs.getMessage('mpl_invalid_parameters');
+			}
+		} catch (e) { 
+			result.status = 'error';
+			result.message = e.message; 
+			if (e.stack && gs.hasRole('admin')) { 
+				result.message += '\n' + e.stack; 
+			}
+		}
+		
+		return JSON.stringify(result);
+	},
+	
+	deployApp: function () {
+		const result = {
+			status: 'error',
+			message: ''
+		};
+		
+		try {
+			const customerSysId = this.getParameter('customer');
+			const appSysId = this.getParameter('application');
+			const automaticUpdate = this.getParameter('automatic_update') == 'true';
+			const serviceUser = this.getParameter('service_user');
+			if (customerSysId && appSysId) {
+				let serviceUserGr = null;
+				if (automaticUpdate) {
+					serviceUserGr = new GlideRecordSecure('sys_user');
+					serviceUserGr.addQuery('sys_id', serviceUser);
+					serviceUserGr.setLimit(1);
+					serviceUserGr.query();
+					if (!serviceUserGr.next()) {
+						result.message = 'Failed to retrieve current user\'s record.';
+						return JSON.stringify(result);
+					}
+				}
+
+				const customerGr = new GlideRecordSecure('x_376096_mpl_customer');
+				customerGr.addQuery('sys_id', customerSysId);
+				customerGr.setLimit(1);
+				customerGr.query();
+				if (customerGr.next()) {
+					const appGr = new GlideRecordSecure('x_376096_mpl_application');
+					appGr.addQuery('sys_id', appSysId);
+					appGr.setLimit(1);
+					appGr.query();
+					if (appGr.next()) {
+						const worker = new GlideScriptedHierarchicalWorker();
+						worker.setProgressName('Prepare Application Installation');
+						worker.setScriptIncludeName('x_376096_mpl.MPLWorkerUtil');
+						worker.setScriptIncludeMethod('prepareAppInstall');
+						worker.putMethodArg('customerGr', customerGr);
+						worker.putMethodArg('appGr', appGr);
+						worker.putMethodArg('automaticUpdate', automaticUpdate);
+						worker.putMethodArg('serviceUserGr', serviceUserGr);
+						worker.setBackground(true);
+						worker.start();
+
+						result.tracker_id = worker.getProgressID();
+						result.status = 'success';
+					} else {
+						result.message = gs.getMessage('mpl_record_not_found');
+					}
+				} else {
+					result.message = gs.getMessage('mpl_record_not_found');
+				}
+			} else {
+				result.message = gs.getMessage('mpl_invalid_parameters');
+			}
+		} catch (e) { 
+			result.status = 'error';
+			result.message = e.message; 
+			if (e.stack && gs.hasRole('admin')) { 
+				result.message += '\n' + e.stack; 
+			}
+		}
+		
+		return JSON.stringify(result);
+	},
+	
+	syncGitHubApps: function () {
+		const result = {
+			status: 'error',
+			message: ''
+		};
+		
+		try {
+			const customerSysId = this.getParameter('customer');
+			if (customerSysId) {
+				const customerGr = new GlideRecordSecure('x_376096_mpl_customer');
+				customerGr.addQuery('sys_id', customerSysId);
+				customerGr.setLimit(1);
+				customerGr.query();
+				if (customerGr.next()) {
+					const worker = new GlideScriptedHierarchicalWorker();
+					worker.setProgressName('Sync Customer GitHub Apps');
+					worker.setScriptIncludeName('x_376096_mpl.MPLWorkerUtil');
+					worker.setScriptIncludeMethod('syncGitApps');
+					worker.putMethodArg('customerGr', customerGr);
+					worker.setBackground(true);
+					worker.start();
+
+					result.tracker_id = worker.getProgressID();
+					result.status = 'success';
+				} else {
+					result.message = gs.getMessage('mpl_record_not_found');
+				}
+			} else {
+				result.message = gs.getMessage('mpl_invalid_parameters');
+			}
+		} catch (e) { 
+			result.status = 'error';
+			result.message = e.message; 
+			if (e.stack && gs.hasRole('admin')) { 
+				result.message += '\n' + e.stack; 
+			}
+		}
+		
+		return JSON.stringify(result);
+	},
+
+    type: 'MPLUtilClient'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>mkraus6</sys_created_by>
+        <sys_created_on>2023-11-25 08:19:27</sys_created_on>
+        <sys_id>83e0a65487f6f9502a3163583cbb35f1</sys_id>
+        <sys_mod_count>22</sys_mod_count>
+        <sys_name>MPLUtilClient</sys_name>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name>sys_script_include_83e0a65487f6f9502a3163583cbb35f1</sys_update_name>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2023-12-03 23:33:11</sys_updated_on>
+    </sys_script_include>
+</record_update>

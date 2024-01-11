@@ -13,7 +13,8 @@
         <delivery_time>1970-01-03 00:00:00</delivery_time>
         <description><![CDATA[<p>Register a customer to the marketplace - after successful registration, applications can be installed.</p>
 <p>As part of the onboarding, an Organization in GitHub has to be created. Due to technical limitations of the GitHub API, this cannot be automated and has to be done manually.</p>
-<p>When installing an application from the ServiceNow Marketplace, a fork will be created from the original repository and a deployment key will be added to this newly forked repository. <br />For this reason, a personal access key has be created as well.</p>]]></description>
+<p>When installing an application from the ServiceNow Marketplace, a fork will be created from the original repository and a deployment key will be added to this newly forked repository. <br />For this reason, a personal access key has be created as well.</p>
+<p><strong>NOTE: Please register ALL customers instances even if you only want to try out an application on dev. When installing an application you can decide to only install it on dev, but adding instances later on involves some unnecessary manual steps.</strong></p>]]></description>
         <display_price_property>non_zero</display_price_property>
         <entitlement_script/>
         <flow_designer_flow display_value="Add new customer">abba1b8b47bf6110acc88a88536d4327</flow_designer_flow>
@@ -53,7 +54,7 @@
         <recurring_frequency/>
         <recurring_price>0</recurring_price>
         <request_method>submit</request_method>
-        <roles/>
+        <roles>snc_internal</roles>
         <sc_catalogs/>
         <sc_ic_item_staging/>
         <sc_ic_version/>
@@ -66,20 +67,21 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-06 19:46:21</sys_created_on>
         <sys_id>0d57b93e473b2110acc88a88536d4331</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name>Add new Customer</sys_name>
         <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name>sc_cat_item_0d57b93e473b2110acc88a88536d4331</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-08 07:34:57</sys_updated_on>
+        <sys_updated_by>mkraus6</sys_updated_by>
+        <sys_updated_on>2023-10-24 13:34:09</sys_updated_on>
         <taxonomy_topic/>
         <template/>
         <template_manager_roles/>
         <type>item</type>
         <use_sc_layout>false</use_sc_layout>
         <vendor/>
+        <version/>
         <visible_bundle>true</visible_bundle>
         <visible_guide>true</visible_guide>
         <visible_standalone>true</visible_standalone>

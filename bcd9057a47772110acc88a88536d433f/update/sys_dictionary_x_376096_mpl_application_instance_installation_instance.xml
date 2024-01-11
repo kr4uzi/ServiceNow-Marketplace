@@ -44,7 +44,7 @@
         <reference_cascade_rule>cascade</reference_cascade_rule>
         <reference_floats>false</reference_floats>
         <reference_key/>
-        <reference_qual>javascript: 'customer=' + current.application_installation.customer;</reference_qual>
+        <reference_qual>javascript: new x_376096_mpl.MPLUtil().getInstancesAvailableForInstall(current.application_installation)</reference_qual>
         <reference_qual_condition/>
         <reference_type/>
         <spell_check>false</spell_check>
@@ -57,8 +57,8 @@
         <sys_policy/>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name>sys_dictionary_x_376096_mpl_application_instance_installation_instance</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-11 18:39:14</sys_updated_on>
+        <sys_updated_by>mkraus6</sys_updated_by>
+        <sys_updated_on>2023-11-23 23:23:46</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

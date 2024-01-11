@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[/* global window */
+/* eslint no-undef: "error" */
+function selectBGS(element) {
+	var range = window.document.createRange();
+	range.selectNodeContents(element);
+  
+	var sel = window.getSelection();
+	sel.removeAllRanges();
+	sel.addRange(range);
+}
+
+function copyBGS() {
+	window.copyToClipboard(window.gel('oauth-script').innerText);
+}
+
+function openBGS(instanceUrl) {
+	window.open(
+		new window.URL('sys.scripts.do', instanceUrl),
+		'mpl_oauth_background_script',
+		'scrollbars=0,width=1000,height=650'
+	);
+}]]></client_script>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_376096_mpl_oauth_script.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<g:evaluate>
+		const instance = RP.getParameterValue('instance') || RP.getWindowProperties().instance;
+		let oAuthConfig = null;
+		let descData = null;
+		if (instance) {
+			const instanceGr = new GlideRecordSecure('x_376096_mpl_instance');
+			instanceGr.addQuery('sys_id', instance);
+			instanceGr.setLimit(1);
+			instanceGr.query();
+			if (instanceGr.next()) {
+				const sourceName = gs.getProperty('instance_name');
+				const url = instanceGr.url.toString();
+				descData = {
+					target_url: url,
+					target_name: /(?:http[s]?:\/\/)?([^\/]+)\.service-now\.com/.exec(url)?.[1] || url,
+					source_name: sourceName
+				};
+
+				const instanceUrl = gs.getProperty('glide.servlet.uri');
+				const customerGr = instanceGr.customer.getRefRecord();
+				oAuthConfig = {
+					sys_id: customerGr.oauth_entity_sys_id.toString(),
+					name: 'MPL ' + sourceName,
+					redirect_url: instanceUrl + 'x_376096_mpl_oauth_redirect.do',
+					logo_url: instanceUrl + 'x_376096_mpl.logo.png',
+					client_id: customerGr.oauth_client_id.toString(),
+					client_secret: customerGr.oauth_client_secret.getDecryptedValue()
+				};
+			}
+		}
+	</g:evaluate>
+	<j:if test="${oAuthConfig != null}">
+	<p>In order to install or update any application, ${descData.source_name} needs to be able to connect to ${descData.target_name}.</p>
+	<p>This is acomplished by using OAuth, which allows the Marketplace to make requests on your behalf.</p>
+	<p>The script below will do all this for you - and also check if the configuration already exists</p>
+	<p>Simply$[SP]<a href="javascript:(void)0;" onclick="copyBGS()">copy</a>$[SP]the script and execute it on the customer's instance$[SP]<a href="javascript:(void)0;" onclick="openBGS('${descData.target_url}')">Backgroundscript Script ➚</a>.</p>
+	<pre id="oauth-script" onclick="selectBGS(this)" style="height: 300px">
+createMarketplaceOAuthEndpoint(${JSON.stringify(oAuthConfig, null, 2)});
+ 
+function createMarketplaceOAuthEndpoint(oAuthConfig) {
+  if (gs.getCurrentApplicationId() != 'global') {
+    gs.error('Please switch to global scope before executing this script!');
+    return;
+  } else if (Object.keys(oAuthConfig) == 0) {
+    gs.error('Script not properly configured. Aborting!');
+    return;
+  }
+  
+  var oAuthEntityGr = new GlideRecord('oauth_entity');
+  oAuthEntityGr.initialize();
+  oAuthEntityGr.setNewGuidValue(oAuthConfig.sys_id);
+  oAuthEntityGr.type = 'client';
+  ['name', 'client_id', 'client_secret', 'redirect_url', 'logo_url'].forEach(function (field) {
+    oAuthEntityGr[field] = oAuthConfig[field];
+  });
+  
+  var oAuthEntityCheckGr = new GlideRecord('oauth_entity');
+  oAuthEntityCheckGr.addQuery('sys_id', oAuthEntityGr.sys_id);
+  oAuthEntityCheckGr.setLimit(1);
+  oAuthEntityCheckGr.query();
+  if (oAuthEntityCheckGr.next()) {
+    var diff = Object.keys(oAuthConfig).filter(function (f) { return oAuthEntityCheckGr[f] != oAuthEntityGr[f]; });
+    if (diff.length == 0) {
+      gs.info('OAuth Entity Record already exists and is properly configured!');
+      return;
+    } else {
+      var expectedMessage = 'OAuth Entity exists but is not properly configured:';
+      diff.forEach(function (f) {
+        var element = oAuthEntityGr.getElement(f);
+        expectedMessage += '\n' + element.getLabel() + ': "' + element.toString() + '" expected, got: "' + oAuthEntityCheckGr[f] + '"';
+      });
+      
+      gs.info('\n' + expectedMessage
+        + '\n'
+        + '\nPlease manually correct the OAuth Entity Record:'
+        + '\n' + gs.getProperty('glide.servlet.uri') + 'nav_to.do?uri=%2Foauth_entity.do%3Fsys_id%3D' + oAuthEntityGr.sys_id
+      );
+      return;
+    }
+  }
+  
+  var oAuthSysID = oAuthEntityGr.insert();
+  if (oAuthSysID) {
+    gs.info('\n\n\nSuccessfully inserted the OAuth Application.'
+      + '\nYou can ***close this window*** and ***proceed to Link this instance to the Marketplace Instance using &lt;Connect&gt;***'
+      + '\n\nNote: If used on all of your customer\'s instances, no unnecessary Application Files will be created as the OAuth Entity Record will be created with a predefined sys_id.'
+      + '\nTherefore no duplicates will be created when doing a clone.'
+    );
+  } else {
+    gs.info('\n\nFailed to insert OAuth Application.'
+      + '\nPlease do the following:'
+      + '\n1.) Check if an OAuth Entity Record for the Marketplace Instance already exists:'
+      + '\n' + gs.getProperty('glide.servlet.uri') + 'nav_to.do?uri=%2Foauth_entity_list.do%3Fsysparm_query%3Dtype%3Dclient%5Eredirect_url%3D' + encodeURIComponent(oAuthEntityGr.redirect_url) + '%5EORnameLIKE' + oAuthEntityGr.name
+      + '\n-> If one or multiple records are shown, and you\'re unsure how to perform the cleanup, please contact a Marketplace Admin.'
+      + '\n'
+      + '\n2.) If no record is found, please create the OAuth Record manually:'
+      + '\n-> Note: The Client Secret needs to be manually set, so please do not close the window after having saved the new OAuth Client!'
+      + '\n-> To create the new OAuth Client open the following URL and save the form:'
+      + '\n' + gs.getProperty('glide.servlet.uri') + 'nav_to.do?uri=' + encodeURIComponent('oauth_entity.do?sys_id=-1&amp;sysparm_query=type=client^name=' + oAuthEntityGr.name + '^client_id=' + oAuthEntityGr.client_id + '^redirect_url=' + oAuthEntityGr.redirect_url + '^logo_url=' + oAuthEntityGr.logo_url)
+      + '\n-> The form will be preconfigured with all relevant values except the \'Client Secret\'.'
+      + '\n-> The \'Client Secret\' needs to be manually entered: ' + oAuthEntityGr.client_secret
+      + '\n'
+      + '\n3.) Export the record to XML and import it on all of your customer\'s instances'
+    );
+  }
+}
+	</pre>
+	</j:if>
+</j:jelly>]]></html>
+        <name>oauth_script</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2023-11-25 20:09:56</sys_created_on>
+        <sys_id>294ac5e0873e31102a3163583cbb355d</sys_id>
+        <sys_mod_count>57</sys_mod_count>
+        <sys_name>oauth_script</sys_name>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name>sys_ui_page_294ac5e0873e31102a3163583cbb355d</sys_update_name>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2023-12-03 22:46:02</sys_updated_on>
+    </sys_ui_page>
+</record_update>

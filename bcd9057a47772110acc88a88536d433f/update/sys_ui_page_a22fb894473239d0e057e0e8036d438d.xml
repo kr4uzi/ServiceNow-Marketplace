@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[/* global window, GlideModal */
+/* eslint no-undef: "error" */
+window.addLoadEvent(function () {
+	window.gel('mpl_ok').setAttribute('disabled', '');
+});
+
+function appSelected(ref) {
+	updateMandatoryness(ref);
+	if (ref.value) {
+		window.gel('mpl_ok').removeAttribute('disabled');
+	} else {
+		window.gel('mpl_ok').setAttribute('disabled', '');
+	}
+}
+
+function updateMandatoryness(ref) {
+	var row = ref.closest('div.row');
+	if (ref.value) {
+		row.classList.add('is-filled');
+	} else {
+		row.classList.remove('is-filled');
+	}
+}
+
+function mpl_ok() {
+	var app = window.gel('mpl_app');
+	if (app.value) {
+		if (GlideModal.get) {
+			// opened via popup
+			var gdw = GlideModal.get();
+			var onPromptComplete = gdw.getPreference('onPromptComplete');
+			if (typeof onPromptComplete == 'function') {
+				onPromptComplete({ application: app.value, automatic_update: gel('mpl_automatic_update').value });
+			}
+		} else {
+			// directly opened
+		}
+	}
+}]]></client_script>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_376096_mpl_prepare_app_deploy.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<g:evaluate>
+		const customer = RP.getParameterValue('customer') || RP.getWindowProperties().customer;
+
+		const automaticUpdateLabel = new GlideRecordSecure('x_376096_mpl_application_instance_installation').getElement('automatic_update').getLabel();
+		
+		const applicationGr = new GlideRecordSecure('x_376096_mpl_application_installation');
+		const customerLabel = applicationGr.getElement('customer').getLabel();
+		const applicationLabel = applicationGr.getElement('application').getLabel();
+		if (customer) {
+			applicationGr.addQuery('customer', customer);
+		} else {
+			applicationGr.addQuery('sys_id', 'x');
+		}
+		
+		let installedApps = [];
+		applicationGr.query();
+		while (applicationGr.next()) {
+			installedApps.push(applicationGr.getValue('application'));
+		}
+		installedApps = installedApps.join(',');
+	</g:evaluate>
+	<style>
+		.mpl-select-app-cancel {
+			display: none;
+		}
+		
+		.row {
+			margin-top: 5px;
+		}
+	</style>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<p>Prepare App Deployment - no application will be installed by this transaction. Installation will be done manually afterwards.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group is-required form-horizontal">
+				<div class="col-md-2">
+					<g:form_label>${customerLabel}</g:form_label>
+				</div>
+				<div class="col-md-4">
+					<g:ui_reference name="mpl_customer"
+						table="x_376096_mpl_customer" query="active=true"
+						completer="AJAXTableCompleter" 
+						columns="name,github_name"
+						onchange="appSelected(this)"
+					/>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group is-required form-horizontal">
+				<div class="col-md-2">
+					<g:form_label>${applicationLabel}</g:form_label>
+				</div>
+				<div class="col-md-4">
+					<g:ui_reference name="mpl_app"
+						table="x_376096_mpl_application" query="active=true^sys_idNOT IN${installedApps}"
+						completer="AJAXTableCompleter" 
+						columns="display_name"
+						onchange="appSelected(this)"
+					/>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group is-required form-horizontal">
+				<div class="col-md-2">
+					<g:form_label>${automaticUpdateLabel}</g:form_label>
+				</div>
+				<div class="col-md-4">
+					<span class="input-group-checkbox">
+						<input class="checkbox" id="mpl_automatic_update" type="checkbox" />
+						<label for="mpl_automatic_update" class="checkbox-label"></label>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="row" style="margin-top: 1rem">
+			<div class="form-group form-horizontal">
+				<div class="col-md-6 text-right">
+					<g:dialog_buttons_ok_cancel
+						ok_type="button"
+						ok_id="mpl_ok"
+						ok="return mpl_ok()"
+						cancel_style_class = "mpl-select-app-cancel"
+					/>
+				</div>
+			</div>
+		</div>
+	</div>
+</j:jelly>]]></html>
+        <name>prepare_app_deploy</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>mkraus6</sys_created_by>
+        <sys_created_on>2023-11-25 00:34:35</sys_created_on>
+        <sys_id>a22fb894473239d0e057e0e8036d438d</sys_id>
+        <sys_mod_count>22</sys_mod_count>
+        <sys_name>prepare_app_deploy</sys_name>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name>sys_ui_page_a22fb894473239d0e057e0e8036d438d</sys_update_name>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2023-11-27 11:08:20</sys_updated_on>
+    </sys_ui_page>
+</record_update>

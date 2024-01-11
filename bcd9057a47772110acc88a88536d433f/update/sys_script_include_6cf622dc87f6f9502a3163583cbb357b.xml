@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_376096_mpl.MPLWorkerUtil</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>MPLWorkerUtil</name>
+        <script><![CDATA[/* eslint no-undef: "error" */
+/* global global, sn_fd */
+/* global Class, GlideRecord, GlideScopedEvaluator */
+var MPLWorkerUtil = Class.create();
+MPLWorkerUtil.prototype = {
+    initialize: function (workerId) {
+		if (workerId) {
+			this.worker_id = workerId;
+		} else {
+			this.worker_id = new global.AJAXExecutionTracker().getLastRunning();
+		}
+    },
+
+	validateAppInstanceInstall: function (instInstallGr, userGr) {
+		const flowResult = sn_fd.FlowAPI.getRunner()
+			.subflow('x_376096_mpl.validate_application_instance_installation')
+			.inBackground()
+			.withInputs({ 'instance_installation': instInstallGr, 'as_user': userGr, 'worker_id': this.worker_id })
+			.run();
+
+		this._waitFlowResult(flowResult);
+	},
+
+	updateApp: function (instInstallGr, userGr) {
+		const flowResult = sn_fd.FlowAPI.getRunner()
+			.subflow('x_376096_mpl.update_application_on_instance')
+			.inBackground()
+			.withInputs({ 'instance_installation': instInstallGr, 'user': userGr, 'worker_id': this.worker_id })
+			.run();
+
+		this._waitFlowResult(flowResult);
+	},
+
+	installApp: function (instInstallGr, userGr) {
+		const flowResult = sn_fd.FlowAPI.getRunner()
+			.subflow('x_376096_mpl.install_application_on_instance')
+			.inBackground()
+			.withInputs({ 'instance_installation': instInstallGr, 'user': userGr, 'worker_id': this.worker_id })
+			.run();
+
+		this._waitFlowResult(flowResult);
+	},
+
+	prepareAppInstall: function (customerGr, appGr, automaticUpdate, serviceUserGr) {
+		const flowResult = sn_fd.FlowAPI.getRunner()
+			.subflow('x_376096_mpl.prepare_application_installation')
+			.inBackground()
+			.withInputs({ 'customer': customerGr, 'application': appGr, 'automatic_update': automaticUpdate, 'service_user': serviceUserGr, 'worker_id': this.worker_id })
+			.run();
+
+		this._waitFlowResult(flowResult);
+	},
+	
+	syncGitApps: function (customerGr) {
+		const flowResult = sn_fd.FlowAPI.getRunner()
+			.subflow('x_376096_mpl.git_import_now_applications')
+			.inBackground()
+			.withInputs({ 'customer': customerGr, 'worker_id': this.worker_id })
+			.run();
+
+		this._waitFlowResult(flowResult);
+	},
+	
+	_trackerUpdateMessage: function (message) {
+		const globalTracker = new global.AJAXExecutionTracker();
+		const objs = {
+			sysparm_tracker_id: this.worker_id,
+			sysparm_message: message
+		};
+		globalTracker.getParameter = function (n) { return objs[n]; };
+		globalTracker.updateMessage();
+	},
+	
+	_trackerIsCancelled: function () {
+		const state = {
+			PENDING: 0,
+			RUNNING: 1,
+			SUCCESSFULL: 2,
+			FAILED: 3,
+			CANCELLED: 4
+		};
+		const trackerGr = new GlideRecord('sys_execution_tracker');
+		trackerGr.addQuery('sys_id', this.worker_id);
+		trackerGr.addQuery('state', state.CANCELLED);
+		trackerGr.setLimit(1);
+		trackerGr.query();
+		return trackerGr.hasNext();
+	},
+	
+	_trackerUpdatePercentComplete: function (percentage) {
+		const globalTracker = new global.AJAXExecutionTracker();
+		const objs = {
+			sysparm_tracker_id: this.worker_id,
+			sysparm_percent_complete: percentage
+		};
+		globalTracker.getParameter = function (n) { return objs[n]; };
+		globalTracker.updatePercentComplete();
+	},
+	
+	_trackerSuccess: function (message, result) {
+		const globalTracker = new global.AJAXExecutionTracker();
+		const objs = {
+			sysparm_tracker_id: this.worker_id,
+			sysparm_message: message
+		};
+		globalTracker.getParameter = function (n) { return objs[n]; };
+		globalTracker.success();this._updateResult(result);
+	},
+
+	_trackerFail: function (message, result) {
+		const globalTracker = new global.AJAXExecutionTracker();
+		const objs = {
+			sysparm_tracker_id: this.worker_id,
+			sysparm_message: message
+		};
+		globalTracker.getParameter = function (n) { return objs[n]; };
+		globalTracker.fail();
+
+		this._updateResult(result);
+	},
+
+	_updateResult: function (result) {
+		if (result) {
+			const globalTracker = new global.AJAXExecutionTracker();
+			const tracker = globalTracker._getTracker(this.worker_id);
+			tracker.updateResult(result);
+		}
+	},
+
+	_getResult: function () {
+		const trackerGr = new GlideRecord('sys_execution_tracker');
+		trackerGr.addQuery('sys_id', this.worker_id);
+		trackerGr.setLimit(1);
+		trackerGr.query();
+		if (trackerGr.next()) {
+			return trackerGr.result.toString();
+		}
+
+		return '';
+	},
+
+	_waitFlowResult: function (flowResult) {
+		const flowContextId = flowResult.getContextId();
+		const flowContextGr = new GlideRecord('sys_flow_context');
+		flowContextGr.addQuery('sys_id', flowContextId);
+		flowContextGr.addQuery('state', 'COMPLETE');
+		flowContextGr.setLimit(1);
+
+		do {
+			this._runScript('global', 'gs.sleep(1000);');
+			flowContextGr.query();
+		} while (!flowContextGr.hasNext());
+	},
+
+	_runScript: function (scope, script, vars) {
+		const scriptGr = new GlideRecord('sys_rte_eb_script_operation');
+		scriptGr.addQuery('sys_id', '14661a7447bab110e057e0e8036d4354');
+		scriptGr.setLimit(1);
+		scriptGr.query();
+		if (scriptGr.next()) {
+			scriptGr.sys_scope = scope;
+			scriptGr.script = script;
+			const gse = new GlideScopedEvaluator();
+			return gse.evaluateScript(scriptGr, 'script', vars);
+		}
+
+		return null;
+	},
+
+    type: 'MPLWorkerUtil'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>mkraus6</sys_created_by>
+        <sys_created_on>2023-11-25 08:10:08</sys_created_on>
+        <sys_id>6cf622dc87f6f9502a3163583cbb357b</sys_id>
+        <sys_mod_count>44</sys_mod_count>
+        <sys_name>MPLWorkerUtil</sys_name>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name>sys_script_include_6cf622dc87f6f9502a3163583cbb357b</sys_update_name>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2023-12-07 16:37:03</sys_updated_on>
+    </sys_script_include>
+</record_update>
