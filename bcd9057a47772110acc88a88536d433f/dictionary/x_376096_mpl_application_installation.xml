@@ -8,37 +8,15 @@
         <element display="true" label="Name" max_length="100" name="display_name" type="string"/>
         <element attributes="format=none" label="GitHub ID" max_length="40" name="github_id" type="integer"/>
         <element label="GitHub Name" max_length="100" name="github_name" type="string"/>
-        <element choice="1" default="not_installed" label="Install status" max_length="40" name="install_status" type="choice">
-            <choice>
-                <element inactive_on_update="false" label="Not installed" sequence="10" value="not_installed"/>
-                <element inactive_on_update="false" label="Installing" sequence="20" value="installing"/>
-                <element inactive_on_update="false" label="Installed" sequence="30" value="installed"/>
-                <element inactive_on_update="false" label="Error" sequence="40" value="error"/>
-            </choice>
-        </element>
         <element label="Service User" max_length="32" name="service_user" reference="sys_user" reference_qual="javascript: 'active=true^sys_idIN' + current.customer.owners + '^ORsys_idIN' + current.customer.members;" type="reference" use_reference_qualifier="advanced"/>
         <element label="SSH URL" max_length="1024" name="ssh_url" type="url"/>
-        <element choice="1" label="State" max_length="40" name="state" type="choice">
-            <choice>
-                <element inactive_on_update="false" label="Forking" sequence="10" value="forking"/>
-                <element inactive_on_update="false" label="Ready" sequence="20" value="ready"/>
-                <element inactive_on_update="false" label="Deactivated" sequence="30" value="deactivated"/>
-            </choice>
-        </element>
         <element choice="1" label="Update Flow" max_length="32" name="update_flow" reference_qual="category=d049a68747fb6110acc88a88536d437b^active=true^EQ" reference_qual_condition="category=d049a68747fb6110acc88a88536d437b^active=true^EQ" type="choice">
             <choice>
                 <element inactive_on_update="false" label="Automatic" sequence="100" value="c7492ac347fb6110acc88a88536d43eb"/>
                 <element inactive_on_update="false" label="With Approval" sequence="200" value="ad0ae60b47fb6110acc88a88536d437f"/>
             </choice>
         </element>
-        <element choice="1" label="Update status" max_length="40" name="update_status" type="choice">
-            <choice>
-                <element inactive_on_update="false" label="Update avilable" sequence="10" value="update_available"/>
-                <element inactive_on_update="false" label="Updating" sequence="20" value="updating"/>
-                <element inactive_on_update="false" label="Up to date" sequence="30" value="up_to_date"/>
-                <element inactive_on_update="false" label="Error" sequence="40" value="error"/>
-            </choice>
-        </element>
+        <element label="Worker ID" max_length="32" name="worker_id" type="GUID"/>
         <element label="Work notes" max_length="4000" name="work_notes" type="journal_input"/>
         <index name="index">
             <element name="application"/>

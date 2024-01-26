@@ -4,14 +4,14 @@
         <acls/>
         <active>true</active>
         <annotation/>
-        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=2561607000,viewActivatedIn=naturalLanguage</attributes>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=4634192000,viewActivatedIn=naturalLanguage</attributes>
         <callable_by_client_api>false</callable_by_client_api>
         <category/>
         <copied_from>2eec3dc747fa3150e057e0e8036d43b3</copied_from>
         <copied_from_name>Verify Application on Instance</copied_from_name>
         <description/>
         <internal_name>validate_application_instance_installation</internal_name>
-        <label_cache>[{"name":"flow_variable.repo_ssh_url","label":"Flow Variables➛Repo SSH URL","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"1bafc061-57bc-4154-afd7-3483ea2b5ff4"}},{"name":"9dcb4167-65a4-49dc-843c-0894fb64c672.has_changes","label":"13 - NOW App Has Remote Changes➛Has Changes","reference_display":"Has Changes","type":"boolean","base_type":"boolean","attributes":{"uiType":"boolean","uiTypeLabel":"True/False","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"9c412c83-b3aa-47b1-bdf8-26f012599a9a"}},{"name":"9dcb4167-65a4-49dc-843c-0894fb64c672.error_message","label":"13 - NOW App Has Remote Changes➛Error Message","reference_display":"Error Message","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"af27cc51-a6f3-4b7a-8f84-889979b19345"}},{"name":"9dcb4167-65a4-49dc-843c-0894fb64c672.status_code","label":"13 - NOW App Has Remote Changes➛Status Code","reference_display":"Status Code","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"5b5761e4-281d-43fa-9629-991458c427ce"}},{"name":"flow_variable.app_scope_sys_id","label":"Flow Variables➛App Scope Sys ID","type":"string","base_type":"string","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"1c8acdb6-219d-4ea4-b751-fd1fbbe5c816"}},{"name":"flow_variable.git_access_token","label":"Flow Variables➛GIT Access Token","type":"string","base_type":"string","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"7a1181fa-ca07-4ad9-a33c-9b2a4d7c8939"}},{"name":"6f8c6e23-bc4c-4a5e-8fc9-7b09e7f1d499.record_sys_id","label":"10 - NOW Look Up Repo Config➛Record Sys ID","reference_display":"Record Sys ID","type":"GUID","base_type":"GUID","attributes":{"uiType":"GUID","uiTypeLabel":"Sys ID (GUID)","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"c642889c-95eb-4bf7-a6c3-4f5c5db109d2"}},{"name":"subflow.instance_installation.application_installation.application.scope_sys_id","label":"Input➛Instance Installation➛Application Installation➛Application➛Scope Sys ID","reference":"","reference_display":"Scope Sys ID","type":"string","base_type":"string","parent_table_name":"x_376096_mpl_application","column_name":"scope_sys_id"},{"name":"flow_variable.instance_url","label":"Flow Variables➛Instance URL","type":"string","base_type":"string","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"f411f2a5-70ba-4c4a-bc67-62160564c2a6"}},{"name":"subflow.instance_installation.application_installation.ssh_url","label":"Input➛Instance Installation➛Application Installation➛SSH URL","reference":"","reference_display":"SSH URL","type":"url","base_type":"url","parent_table_name":"x_376096_mpl_application_installation","column_name":"ssh_url"},{"name":"35ba0812-e442-4a68-86eb-440796e0b9e4.access_token","label":"3 - NOW Get Access Token➛Access Token","reference_display":"Access Token","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"f09e708d-bf6d-4412-b097-86d78ae7bc32"}},{"name":"subflow.instance_installation.credentials_sys_id","label":"Input➛Instance Installation➛Credentials Sys ID","reference":"","reference_display":"Credentials Sys ID","type":"string","base_type":"string","parent_table_name":"x_376096_mpl_application_instance_installation","column_name":"credentials_sys_id"},{"name":"subflow.instance_installation","label":"Input➛Instance Installation","reference":"x_376096_mpl_application_instance_installation","reference_display":"Application Instance Installation","type":"reference","base_type":"reference","column_name":"","attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"d4296e25-59ad-4be8-973f-3965734737c5","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"35ba0812-e442-4a68-86eb-440796e0b9e4.error_message","label":"3 - NOW Get Access Token➛Error Message","reference_display":"Error Message","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"ee33e16e-9e7e-46b5-9ed9-30833b09fe30"}},{"name":"35ba0812-e442-4a68-86eb-440796e0b9e4.status","label":"3 - NOW Get Access Token➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Success","value":"success","order":1.0},{"label":"Error","value":"error","order":2.0}],"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"37a4253d-e13f-417d-98c8-ee077d55fa4c"}},{"name":"subflow.instance_installation.instance.url","label":"Input➛Instance Installation➛Instance➛URL","reference":"","reference_display":"URL","type":"url","base_type":"url","parent_table_name":"x_376096_mpl_instance","column_name":"url"},{"name":"subflow.instance_installation.application_installation.display_name","label":"Input➛Instance Installation➛Application Installation➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_376096_mpl_application_installation","column_name":"display_name"},{"name":"subflow.as_user","label":"Input➛As user","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","column_name":"","attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"64d6c01c-8a9c-43ed-b749-7748c52a02e5","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.instance_installation.instance","label":"Input➛Instance Installation➛Instance","reference":"x_376096_mpl_instance","reference_display":"Instance","type":"reference","base_type":"reference","parent_table_name":"x_376096_mpl_application_instance_installation","column_name":"instance"},{"name":"subflow.worker_id","label":"Input➛Worker ID","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"64279352-708e-4944-927a-50eae0baf642","sourceUiUniqueId":"","sourceType":"","sourceId":""}}]</label_cache>
+        <label_cache>[{"name":"6f8c6e23-bc4c-4a5e-8fc9-7b09e7f1d499.app_installed","label":"10 - NOW Look Up Repo Config➛App Installed","reference_display":"App Installed","type":"boolean","base_type":"boolean","attributes":{"uiType":"boolean","uiTypeLabel":"True/False","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"4457c0a5-f20e-4561-abcb-2d8492c13036"}},{"name":"flow_variable.repo_ssh_url","label":"Flow Variables➛Repo SSH URL","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"1bafc061-57bc-4154-afd7-3483ea2b5ff4"}},{"name":"9dcb4167-65a4-49dc-843c-0894fb64c672.has_changes","label":"13 - NOW App Has Remote Changes➛Has Changes","reference_display":"Has Changes","type":"boolean","base_type":"boolean","attributes":{"uiType":"boolean","uiTypeLabel":"True/False","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"9c412c83-b3aa-47b1-bdf8-26f012599a9a"}},{"name":"9dcb4167-65a4-49dc-843c-0894fb64c672.error_message","label":"13 - NOW App Has Remote Changes➛Error Message","reference_display":"Error Message","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"af27cc51-a6f3-4b7a-8f84-889979b19345"}},{"name":"9dcb4167-65a4-49dc-843c-0894fb64c672.status_code","label":"13 - NOW App Has Remote Changes➛Status Code","reference_display":"Status Code","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"5b5761e4-281d-43fa-9629-991458c427ce"}},{"name":"flow_variable.app_scope_sys_id","label":"Flow Variables➛App Scope Sys ID","type":"string","base_type":"string","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"1c8acdb6-219d-4ea4-b751-fd1fbbe5c816"}},{"name":"flow_variable.git_access_token","label":"Flow Variables➛GIT Access Token","type":"string","base_type":"string","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"7a1181fa-ca07-4ad9-a33c-9b2a4d7c8939"}},{"name":"6f8c6e23-bc4c-4a5e-8fc9-7b09e7f1d499.record_sys_id","label":"10 - NOW Look Up Repo Config➛Record Sys ID","reference_display":"Record Sys ID","type":"GUID","base_type":"GUID","attributes":{"uiType":"GUID","uiTypeLabel":"Sys ID (GUID)","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"c642889c-95eb-4bf7-a6c3-4f5c5db109d2"}},{"name":"subflow.instance_installation.application_installation.application.scope_sys_id","label":"Input➛Instance Installation➛Application Installation➛Application➛Scope Sys ID","reference":"","reference_display":"Scope Sys ID","type":"string","base_type":"string","parent_table_name":"x_376096_mpl_application","column_name":"scope_sys_id"},{"name":"flow_variable.instance_url","label":"Flow Variables➛Instance URL","type":"string","base_type":"string","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"f411f2a5-70ba-4c4a-bc67-62160564c2a6"}},{"name":"subflow.instance_installation.application_installation.ssh_url","label":"Input➛Instance Installation➛Application Installation➛SSH URL","reference":"","reference_display":"SSH URL","type":"url","base_type":"url","parent_table_name":"x_376096_mpl_application_installation","column_name":"ssh_url"},{"name":"35ba0812-e442-4a68-86eb-440796e0b9e4.access_token","label":"3 - NOW Get Access Token➛Access Token","reference_display":"Access Token","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"f09e708d-bf6d-4412-b097-86d78ae7bc32"}},{"name":"subflow.instance_installation.credentials_sys_id","label":"Input➛Instance Installation➛Credentials Sys ID","reference":"","reference_display":"Credentials Sys ID","type":"string","base_type":"string","parent_table_name":"x_376096_mpl_application_instance_installation","column_name":"credentials_sys_id"},{"name":"subflow.instance_installation","label":"Input➛Instance Installation","reference":"x_376096_mpl_application_instance_installation","reference_display":"Application Instance Installation","type":"reference","base_type":"reference","column_name":"","attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"d4296e25-59ad-4be8-973f-3965734737c5","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"35ba0812-e442-4a68-86eb-440796e0b9e4.error_message","label":"3 - NOW Get Access Token➛Error Message","reference_display":"Error Message","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"ee33e16e-9e7e-46b5-9ed9-30833b09fe30"}},{"name":"35ba0812-e442-4a68-86eb-440796e0b9e4.status","label":"3 - NOW Get Access Token➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Success","value":"success","order":1.0},{"label":"Error","value":"error","order":2.0}],"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"37a4253d-e13f-417d-98c8-ee077d55fa4c"}},{"name":"subflow.instance_installation.instance.url","label":"Input➛Instance Installation➛Instance➛URL","reference":"","reference_display":"URL","type":"url","base_type":"url","parent_table_name":"x_376096_mpl_instance","column_name":"url"},{"name":"subflow.instance_installation.application_installation.display_name","label":"Input➛Instance Installation➛Application Installation➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_376096_mpl_application_installation","column_name":"display_name"},{"name":"subflow.as_user","label":"Input➛As user","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","column_name":"","attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"64d6c01c-8a9c-43ed-b749-7748c52a02e5","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.instance_installation.instance","label":"Input➛Instance Installation➛Instance","reference":"x_376096_mpl_instance","reference_display":"Instance","type":"reference","base_type":"reference","parent_table_name":"x_376096_mpl_application_instance_installation","column_name":"instance"},{"name":"subflow.worker_id","label":"Input➛Worker ID","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"64279352-708e-4944-927a-50eae0baf642","sourceUiUniqueId":"","sourceType":"","sourceId":""}}]</label_cache>
         <master_snapshot>cfc8878747f27150e057e0e8036d43da</master_snapshot>
         <name>Validate Application Instance Installation</name>
         <natlang/>
@@ -30,15 +30,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>0676c38347f27150e057e0e8036d43ec</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_name>Validate Application Instance Installation</sys_name>
         <sys_overrides/>
         <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name>sys_hub_flow_0676c38347f27150e057e0e8036d43ec</sys_update_name>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:49</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:53</sys_updated_on>
         <type>subflow</type>
     </sys_hub_flow>
     <sys_translated_text action="delete_multiple" query="documentkey=0676c38347f27150e057e0e8036d43ec"/>
@@ -376,14 +376,14 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:18:07</sys_created_on>
         <sys_id>5676078347f27150e057e0e8036d434c</sys_id>
-        <sys_mod_count>25</sys_mod_count>
+        <sys_mod_count>49</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name/>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:48</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:52</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -498,10 +498,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:18:07</sys_created_on>
         <sys_id>2276078347f27150e057e0e8036d4392</sys_id>
-        <sys_mod_count>34</sys_mod_count>
+        <sys_mod_count>68</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:52:09</sys_updated_on>
+        <sys_updated_on>2024-01-26 14:37:07</sys_updated_on>
         <ui_id>be888f85-8854-428d-9429-9868313ce099</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=2276078347f27150e057e0e8036d4392"/>
@@ -561,10 +561,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:18:08</sys_created_on>
         <sys_id>2676078347f27150e057e0e8036d43b1</sys_id>
-        <sys_mod_count>34</sys_mod_count>
+        <sys_mod_count>68</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:52:09</sys_updated_on>
+        <sys_updated_on>2024-01-26 14:37:07</sys_updated_on>
         <ui_id>335f6750-d7b6-432d-9e7b-d55d31ea991a</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=2676078347f27150e057e0e8036d43b1"/>
@@ -624,10 +624,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:18:08</sys_created_on>
         <sys_id>2676078347f27150e057e0e8036d43c0</sys_id>
-        <sys_mod_count>34</sys_mod_count>
+        <sys_mod_count>68</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:52:09</sys_updated_on>
+        <sys_updated_on>2024-01-26 14:37:07</sys_updated_on>
         <ui_id>9dcb4167-65a4-49dc-843c-0894fb64c672</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=2676078347f27150e057e0e8036d43c0"/>
@@ -668,6 +668,18 @@
         <table>var__m_sys_hub_action_input_df904f4747b27150e057e0e8036d437e</table>
         <value>{{flow_variable.instance_url}}</value>
     </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>repo_config_sys_id</field>
+        <id>2676078347f27150e057e0e8036d43c0</id>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-01-24 12:56:55</sys_created_on>
+        <sys_id>f1faa0ff87ffbd102a3163583cbb35f1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-24 12:56:55</sys_updated_on>
+        <table>var__m_sys_hub_action_input_df904f4747b27150e057e0e8036d437e</table>
+        <value>{{6f8c6e23-bc4c-4a5e-8fc9-7b09e7f1d499.record_sys_id}}</value>
+    </sys_element_mapping>
     <sys_hub_input_scripts action="delete_multiple" query="instance=2676078347f27150e057e0e8036d43c0"/>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=2676078347f27150e057e0e8036d43c0"/>
     <sys_hub_action_instance action="INSERT_OR_UPDATE">
@@ -685,10 +697,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:18:07</sys_created_on>
         <sys_id>2a76078347f27150e057e0e8036d439a</sys_id>
-        <sys_mod_count>34</sys_mod_count>
+        <sys_mod_count>68</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:52:09</sys_updated_on>
+        <sys_updated_on>2024-01-26 14:37:07</sys_updated_on>
         <ui_id>b998a7e8-9c8b-4b29-8d19-bdf881ec7736</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=2a76078347f27150e057e0e8036d439a"/>
@@ -748,10 +760,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:27:41</sys_created_on>
         <sys_id>2aa8cf4747f27150e057e0e8036d43cd</sys_id>
-        <sys_mod_count>32</sys_mod_count>
+        <sys_mod_count>66</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:52:09</sys_updated_on>
+        <sys_updated_on>2024-01-26 14:37:07</sys_updated_on>
         <ui_id>59ab809a-339c-441f-8824-9e7be60c5e72</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=2aa8cf4747f27150e057e0e8036d43cd"/>
@@ -837,10 +849,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:41:12</sys_created_on>
         <sys_id>34cb878f47f27150e057e0e8036d43b7</sys_id>
-        <sys_mod_count>26</sys_mod_count>
+        <sys_mod_count>60</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:52:10</sys_updated_on>
+        <sys_updated_on>2024-01-26 14:37:07</sys_updated_on>
         <ui_id>9d2cce9d-4876-41ff-897b-d8e7c59f1e1f</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=34cb878f47f27150e057e0e8036d43b7"/>
@@ -939,10 +951,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:18:07</sys_created_on>
         <sys_id>6676078347f27150e057e0e8036d43a9</sys_id>
-        <sys_mod_count>34</sys_mod_count>
+        <sys_mod_count>68</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:52:09</sys_updated_on>
+        <sys_updated_on>2024-01-26 14:37:07</sys_updated_on>
         <ui_id>6f8c6e23-bc4c-4a5e-8fc9-7b09e7f1d499</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=6676078347f27150e057e0e8036d43a9"/>
@@ -1000,10 +1012,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:27:40</sys_created_on>
         <sys_id>9ea8cf4747f27150e057e0e8036d4399</sys_id>
-        <sys_mod_count>32</sys_mod_count>
+        <sys_mod_count>66</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:52:09</sys_updated_on>
+        <sys_updated_on>2024-01-26 14:37:07</sys_updated_on>
         <ui_id>8c6053f9-6cf9-4d4c-9c2a-f0f45bc590fc</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=9ea8cf4747f27150e057e0e8036d4399"/>
@@ -1089,10 +1101,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:41:12</sys_created_on>
         <sys_id>accb878f47f27150e057e0e8036d435f</sys_id>
-        <sys_mod_count>26</sys_mod_count>
+        <sys_mod_count>60</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:52:09</sys_updated_on>
+        <sys_updated_on>2024-01-26 14:37:07</sys_updated_on>
         <ui_id>d1c08137-8649-4456-9af8-f0ad68b30c77</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=accb878f47f27150e057e0e8036d435f"/>
@@ -1178,10 +1190,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:27:41</sys_created_on>
         <sys_id>e6a8cf4747f27150e057e0e8036d43da</sys_id>
-        <sys_mod_count>32</sys_mod_count>
+        <sys_mod_count>66</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:52:09</sys_updated_on>
+        <sys_updated_on>2024-01-26 14:37:07</sys_updated_on>
         <ui_id>3aba153b-9aa1-45e9-86b6-c01e8315e2bf</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=e6a8cf4747f27150e057e0e8036d43da"/>
@@ -1268,10 +1280,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:18:08</sys_created_on>
         <sys_id>ba76078347f27150e057e0e8036d43c9</sys_id>
-        <sys_mod_count>26</sys_mod_count>
+        <sys_mod_count>50</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:48</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:52</sys_updated_on>
         <ui_id>35ba0812-e442-4a68-86eb-440796e0b9e4</ui_id>
     </sys_hub_sub_flow_instance>
     <sys_variable_value action="delete_multiple" query="document_key=ba76078347f27150e057e0e8036d43c9"/>
@@ -1460,10 +1472,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:18:07</sys_created_on>
         <sys_id>2676078347f27150e057e0e8036d4360</sys_id>
-        <sys_mod_count>15</sys_mod_count>
+        <sys_mod_count>27</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:48</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:52</sys_updated_on>
         <ui_id>4d5f89a8-f421-4147-af85-dbecdf786d7c</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1507,10 +1519,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:27:41</sys_created_on>
         <sys_id>2aa8cf4747f27150e057e0e8036d43c1</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:49</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:53</sys_updated_on>
         <ui_id>c4b33171-24b4-4646-96ca-186fb40e9386</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1556,10 +1568,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:18:07</sys_created_on>
         <sys_id>6276078347f27150e057e0e8036d4389</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>30</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:49</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:53</sys_updated_on>
         <ui_id>1bc3d61e-3f9d-423d-ae3f-e0deb0a9383a</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1606,10 +1618,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:18:07</sys_created_on>
         <sys_id>6676078347f27150e057e0e8036d4356</sys_id>
-        <sys_mod_count>15</sys_mod_count>
+        <sys_mod_count>27</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:48</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:52</sys_updated_on>
         <ui_id>85493f95-7b7b-44e6-adca-b70f84bec125</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1691,10 +1703,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:27:41</sys_created_on>
         <sys_id>66a8cf4747f27150e057e0e8036d43c5</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:49</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:53</sys_updated_on>
         <ui_id>383761d9-faf0-414e-8df3-1d940fe84a06</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1739,10 +1751,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:27:41</sys_created_on>
         <sys_id>66a8cf4747f27150e057e0e8036d43e0</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>27</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:49</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:53</sys_updated_on>
         <ui_id>a9fd2e6d-0f0a-4db8-85c2-ab0a6edd28a4</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1774,10 +1786,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:27:41</sys_created_on>
         <sys_id>6aa8cf4747f27150e057e0e8036d43d3</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>27</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:49</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:53</sys_updated_on>
         <ui_id>5b99c279-ff1c-47da-aab8-7492382b8534</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1810,10 +1822,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:18:07</sys_created_on>
         <sys_id>a676078347f27150e057e0e8036d435c</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>26</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:48</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:52</sys_updated_on>
         <ui_id>6fb9edcb-3016-4866-b45f-1fe0bb16dac3</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1858,10 +1870,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:18:07</sys_created_on>
         <sys_id>aa76078347f27150e057e0e8036d4370</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>26</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:48</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:52</sys_updated_on>
         <ui_id>ceb163d1-3311-477f-b851-a1e108643d61</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1894,10 +1906,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:27:41</sys_created_on>
         <sys_id>aea8cf4747f27150e057e0e8036d43dc</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>28</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:49</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:53</sys_updated_on>
         <ui_id>5cd8b50b-6c42-4808-a2e3-16dc9c9c4d53</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1942,10 +1954,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:18:07</sys_created_on>
         <sys_id>e276078347f27150e057e0e8036d4377</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>26</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:49</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:53</sys_updated_on>
         <ui_id>fda290c4-8596-4b06-8903-03c230243b6a</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1973,11 +1985,11 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:18:07</sys_created_on>
         <sys_id>6676078347f27150e057e0e8036d437a</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>markus.kraus</sys_updated_by>
-        <sys_updated_on>2023-12-03 23:18:07</sys_updated_on>
+        <sys_updated_on>2024-01-26 14:34:14</sys_updated_on>
         <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
-        <value>{{6f8c6e23-bc4c-4a5e-8fc9-7b09e7f1d499.record_sys_id}}!=</value>
+        <value>{{6f8c6e23-bc4c-4a5e-8fc9-7b09e7f1d499.record_sys_id}}!=^{{6f8c6e23-bc4c-4a5e-8fc9-7b09e7f1d499.app_installed}}=true</value>
     </sys_element_mapping>
     <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>condition_name</field>
@@ -2017,10 +2029,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:18:07</sys_created_on>
         <sys_id>ea76078347f27150e057e0e8036d4373</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>26</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:48</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:53</sys_updated_on>
         <ui_id>df545ac3-b31d-45c7-ae01-79e5fcdaf22f</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -2066,10 +2078,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:27:40</sys_created_on>
         <sys_id>eaa8cf4747f27150e057e0e8036d43bd</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>24</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:49</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:53</sys_updated_on>
         <ui_id>634c1ac9-b09c-4a78-a959-afb6e83d7b4a</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -2114,10 +2126,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:27:41</sys_created_on>
         <sys_id>eea8cf4747f27150e057e0e8036d43cf</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>26</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:49</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:53</sys_updated_on>
         <ui_id>9bf0eb1d-21b2-482e-a76d-48259fb54508</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -2665,7 +2677,7 @@
         <copied_from_name/>
         <description/>
         <internal_name>validate_application_instance_installation</internal_name>
-        <label_cache>[{"name":"flow_variable.repo_ssh_url","label":"Flow Variables➛Repo SSH URL","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"1bafc061-57bc-4154-afd7-3483ea2b5ff4"}},{"name":"9dcb4167-65a4-49dc-843c-0894fb64c672.has_changes","label":"13 - NOW App Has Remote Changes➛Has Changes","reference_display":"Has Changes","type":"boolean","base_type":"boolean","attributes":{"uiType":"boolean","uiTypeLabel":"True/False","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"9c412c83-b3aa-47b1-bdf8-26f012599a9a"}},{"name":"9dcb4167-65a4-49dc-843c-0894fb64c672.error_message","label":"13 - NOW App Has Remote Changes➛Error Message","reference_display":"Error Message","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"af27cc51-a6f3-4b7a-8f84-889979b19345"}},{"name":"9dcb4167-65a4-49dc-843c-0894fb64c672.status_code","label":"13 - NOW App Has Remote Changes➛Status Code","reference_display":"Status Code","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"5b5761e4-281d-43fa-9629-991458c427ce"}},{"name":"flow_variable.app_scope_sys_id","label":"Flow Variables➛App Scope Sys ID","type":"string","base_type":"string","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"1c8acdb6-219d-4ea4-b751-fd1fbbe5c816"}},{"name":"flow_variable.git_access_token","label":"Flow Variables➛GIT Access Token","type":"string","base_type":"string","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"7a1181fa-ca07-4ad9-a33c-9b2a4d7c8939"}},{"name":"6f8c6e23-bc4c-4a5e-8fc9-7b09e7f1d499.record_sys_id","label":"10 - NOW Look Up Repo Config➛Record Sys ID","reference_display":"Record Sys ID","type":"GUID","base_type":"GUID","attributes":{"uiType":"GUID","uiTypeLabel":"Sys ID (GUID)","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"c642889c-95eb-4bf7-a6c3-4f5c5db109d2"}},{"name":"subflow.instance_installation.application_installation.application.scope_sys_id","label":"Input➛Instance Installation➛Application Installation➛Application➛Scope Sys ID","reference":"","reference_display":"Scope Sys ID","type":"string","base_type":"string","parent_table_name":"x_376096_mpl_application","column_name":"scope_sys_id"},{"name":"flow_variable.instance_url","label":"Flow Variables➛Instance URL","type":"string","base_type":"string","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"f411f2a5-70ba-4c4a-bc67-62160564c2a6"}},{"name":"subflow.instance_installation.application_installation.ssh_url","label":"Input➛Instance Installation➛Application Installation➛SSH URL","reference":"","reference_display":"SSH URL","type":"url","base_type":"url","parent_table_name":"x_376096_mpl_application_installation","column_name":"ssh_url"},{"name":"35ba0812-e442-4a68-86eb-440796e0b9e4.access_token","label":"3 - NOW Get Access Token➛Access Token","reference_display":"Access Token","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"f09e708d-bf6d-4412-b097-86d78ae7bc32"}},{"name":"subflow.instance_installation.credentials_sys_id","label":"Input➛Instance Installation➛Credentials Sys ID","reference":"","reference_display":"Credentials Sys ID","type":"string","base_type":"string","parent_table_name":"x_376096_mpl_application_instance_installation","column_name":"credentials_sys_id"},{"name":"subflow.instance_installation","label":"Input➛Instance Installation","reference":"x_376096_mpl_application_instance_installation","reference_display":"Application Instance Installation","type":"reference","base_type":"reference","column_name":"","attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"d4296e25-59ad-4be8-973f-3965734737c5","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"35ba0812-e442-4a68-86eb-440796e0b9e4.error_message","label":"3 - NOW Get Access Token➛Error Message","reference_display":"Error Message","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"ee33e16e-9e7e-46b5-9ed9-30833b09fe30"}},{"name":"35ba0812-e442-4a68-86eb-440796e0b9e4.status","label":"3 - NOW Get Access Token➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Success","value":"success","order":1.0},{"label":"Error","value":"error","order":2.0}],"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"37a4253d-e13f-417d-98c8-ee077d55fa4c"}},{"name":"subflow.instance_installation.instance.url","label":"Input➛Instance Installation➛Instance➛URL","reference":"","reference_display":"URL","type":"url","base_type":"url","parent_table_name":"x_376096_mpl_instance","column_name":"url"},{"name":"subflow.instance_installation.application_installation.display_name","label":"Input➛Instance Installation➛Application Installation➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_376096_mpl_application_installation","column_name":"display_name"},{"name":"subflow.as_user","label":"Input➛As user","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","column_name":"","attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"64d6c01c-8a9c-43ed-b749-7748c52a02e5","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.instance_installation.instance","label":"Input➛Instance Installation➛Instance","reference":"x_376096_mpl_instance","reference_display":"Instance","type":"reference","base_type":"reference","parent_table_name":"x_376096_mpl_application_instance_installation","column_name":"instance"},{"name":"subflow.worker_id","label":"Input➛Worker ID","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"64279352-708e-4944-927a-50eae0baf642","sourceUiUniqueId":"","sourceType":"","sourceId":""}}]</label_cache>
+        <label_cache>[{"name":"6f8c6e23-bc4c-4a5e-8fc9-7b09e7f1d499.app_installed","label":"10 - NOW Look Up Repo Config➛App Installed","reference_display":"App Installed","type":"boolean","base_type":"boolean","attributes":{"uiType":"boolean","uiTypeLabel":"True/False","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"4457c0a5-f20e-4561-abcb-2d8492c13036"}},{"name":"flow_variable.repo_ssh_url","label":"Flow Variables➛Repo SSH URL","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"1bafc061-57bc-4154-afd7-3483ea2b5ff4"}},{"name":"9dcb4167-65a4-49dc-843c-0894fb64c672.has_changes","label":"13 - NOW App Has Remote Changes➛Has Changes","reference_display":"Has Changes","type":"boolean","base_type":"boolean","attributes":{"uiType":"boolean","uiTypeLabel":"True/False","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"9c412c83-b3aa-47b1-bdf8-26f012599a9a"}},{"name":"9dcb4167-65a4-49dc-843c-0894fb64c672.error_message","label":"13 - NOW App Has Remote Changes➛Error Message","reference_display":"Error Message","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"af27cc51-a6f3-4b7a-8f84-889979b19345"}},{"name":"9dcb4167-65a4-49dc-843c-0894fb64c672.status_code","label":"13 - NOW App Has Remote Changes➛Status Code","reference_display":"Status Code","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"5b5761e4-281d-43fa-9629-991458c427ce"}},{"name":"flow_variable.app_scope_sys_id","label":"Flow Variables➛App Scope Sys ID","type":"string","base_type":"string","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"1c8acdb6-219d-4ea4-b751-fd1fbbe5c816"}},{"name":"flow_variable.git_access_token","label":"Flow Variables➛GIT Access Token","type":"string","base_type":"string","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"7a1181fa-ca07-4ad9-a33c-9b2a4d7c8939"}},{"name":"6f8c6e23-bc4c-4a5e-8fc9-7b09e7f1d499.record_sys_id","label":"10 - NOW Look Up Repo Config➛Record Sys ID","reference_display":"Record Sys ID","type":"GUID","base_type":"GUID","attributes":{"uiType":"GUID","uiTypeLabel":"Sys ID (GUID)","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"c642889c-95eb-4bf7-a6c3-4f5c5db109d2"}},{"name":"subflow.instance_installation.application_installation.application.scope_sys_id","label":"Input➛Instance Installation➛Application Installation➛Application➛Scope Sys ID","reference":"","reference_display":"Scope Sys ID","type":"string","base_type":"string","parent_table_name":"x_376096_mpl_application","column_name":"scope_sys_id"},{"name":"flow_variable.instance_url","label":"Flow Variables➛Instance URL","type":"string","base_type":"string","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"f411f2a5-70ba-4c4a-bc67-62160564c2a6"}},{"name":"subflow.instance_installation.application_installation.ssh_url","label":"Input➛Instance Installation➛Application Installation➛SSH URL","reference":"","reference_display":"SSH URL","type":"url","base_type":"url","parent_table_name":"x_376096_mpl_application_installation","column_name":"ssh_url"},{"name":"35ba0812-e442-4a68-86eb-440796e0b9e4.access_token","label":"3 - NOW Get Access Token➛Access Token","reference_display":"Access Token","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"f09e708d-bf6d-4412-b097-86d78ae7bc32"}},{"name":"subflow.instance_installation.credentials_sys_id","label":"Input➛Instance Installation➛Credentials Sys ID","reference":"","reference_display":"Credentials Sys ID","type":"string","base_type":"string","parent_table_name":"x_376096_mpl_application_instance_installation","column_name":"credentials_sys_id"},{"name":"subflow.instance_installation","label":"Input➛Instance Installation","reference":"x_376096_mpl_application_instance_installation","reference_display":"Application Instance Installation","type":"reference","base_type":"reference","column_name":"","attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"d4296e25-59ad-4be8-973f-3965734737c5","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"35ba0812-e442-4a68-86eb-440796e0b9e4.error_message","label":"3 - NOW Get Access Token➛Error Message","reference_display":"Error Message","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"ee33e16e-9e7e-46b5-9ed9-30833b09fe30"}},{"name":"35ba0812-e442-4a68-86eb-440796e0b9e4.status","label":"3 - NOW Get Access Token➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Success","value":"success","order":1.0},{"label":"Error","value":"error","order":2.0}],"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"37a4253d-e13f-417d-98c8-ee077d55fa4c"}},{"name":"subflow.instance_installation.instance.url","label":"Input➛Instance Installation➛Instance➛URL","reference":"","reference_display":"URL","type":"url","base_type":"url","parent_table_name":"x_376096_mpl_instance","column_name":"url"},{"name":"subflow.instance_installation.application_installation.display_name","label":"Input➛Instance Installation➛Application Installation➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"x_376096_mpl_application_installation","column_name":"display_name"},{"name":"subflow.as_user","label":"Input➛As user","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","column_name":"","attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"64d6c01c-8a9c-43ed-b749-7748c52a02e5","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.instance_installation.instance","label":"Input➛Instance Installation➛Instance","reference":"x_376096_mpl_instance","reference_display":"Instance","type":"reference","base_type":"reference","parent_table_name":"x_376096_mpl_application_instance_installation","column_name":"instance"},{"name":"subflow.worker_id","label":"Input➛Worker ID","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"64279352-708e-4944-927a-50eae0baf642","sourceUiUniqueId":"","sourceType":"","sourceId":""}}]</label_cache>
         <master>true</master>
         <name>Validate Application Instance Installation</name>
         <natlang/>
@@ -2682,15 +2694,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>cfc8878747f27150e057e0e8036d43da</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name/>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:43</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:47</sys_updated_on>
         <type>subflow</type>
     </sys_hub_flow_snapshot>
     <sys_translated_text action="delete_multiple" query="documentkey=cfc8878747f27150e057e0e8036d43da"/>
@@ -3028,14 +3040,14 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:28:16</sys_created_on>
         <sys_id>03c8c78747f27150e057e0e8036d4318</sys_id>
-        <sys_mod_count>17</sys_mod_count>
+        <sys_mod_count>33</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name/>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:42</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:46</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -3150,10 +3162,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:28:17</sys_created_on>
         <sys_id>17c8c78747f27150e057e0e8036d43b1</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>34</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:42</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:46</sys_updated_on>
         <ui_id>be888f85-8854-428d-9429-9868313ce099</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=17c8c78747f27150e057e0e8036d43b1"/>
@@ -3213,10 +3225,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:28:18</sys_created_on>
         <sys_id>27c8c78747f27150e057e0e8036d43df</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>34</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:43</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:47</sys_updated_on>
         <ui_id>335f6750-d7b6-432d-9e7b-d55d31ea991a</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=27c8c78747f27150e057e0e8036d43df"/>
@@ -3276,10 +3288,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:28:18</sys_created_on>
         <sys_id>27c8c78747f27150e057e0e8036d43f1</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>34</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:43</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:47</sys_updated_on>
         <ui_id>9dcb4167-65a4-49dc-843c-0894fb64c672</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=27c8c78747f27150e057e0e8036d43f1"/>
@@ -3320,6 +3332,18 @@
         <table>var__m_sys_hub_action_input_df904f4747b27150e057e0e8036d437e</table>
         <value>{{flow_variable.instance_url}}</value>
     </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>repo_config_sys_id</field>
+        <id>27c8c78747f27150e057e0e8036d43f1</id>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-01-24 12:57:58</sys_created_on>
+        <sys_id>493b20338733fd102a3163583cbb3550</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-24 12:57:58</sys_updated_on>
+        <table>var__m_sys_hub_action_input_df904f4747b27150e057e0e8036d437e</table>
+        <value>{{6f8c6e23-bc4c-4a5e-8fc9-7b09e7f1d499.record_sys_id}}</value>
+    </sys_element_mapping>
     <sys_hub_input_scripts action="delete_multiple" query="instance=27c8c78747f27150e057e0e8036d43f1"/>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=27c8c78747f27150e057e0e8036d43f1"/>
     <sys_hub_action_instance action="INSERT_OR_UPDATE">
@@ -3337,10 +3361,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:28:18</sys_created_on>
         <sys_id>2bc8c78747f27150e057e0e8036d43fd</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>34</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:43</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:47</sys_updated_on>
         <ui_id>3aba153b-9aa1-45e9-86b6-c01e8315e2bf</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=2bc8c78747f27150e057e0e8036d43fd"/>
@@ -3426,10 +3450,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:41:38</sys_created_on>
         <sys_id>36db8f8f47f27150e057e0e8036d43d8</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>32</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:43</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:47</sys_updated_on>
         <ui_id>d1c08137-8649-4456-9af8-f0ad68b30c77</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=36db8f8f47f27150e057e0e8036d43d8"/>
@@ -3515,10 +3539,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:28:17</sys_created_on>
         <sys_id>67c8c78747f27150e057e0e8036d43d7</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>34</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:43</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:47</sys_updated_on>
         <ui_id>6f8c6e23-bc4c-4a5e-8fc9-7b09e7f1d499</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=67c8c78747f27150e057e0e8036d43d7"/>
@@ -3576,10 +3600,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:28:17</sys_created_on>
         <sys_id>a3c8c78747f27150e057e0e8036d43ba</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>34</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:42</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:46</sys_updated_on>
         <ui_id>8c6053f9-6cf9-4d4c-9c2a-f0f45bc590fc</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=a3c8c78747f27150e057e0e8036d43ba"/>
@@ -3665,10 +3689,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:28:18</sys_created_on>
         <sys_id>a7c8c78747f27150e057e0e8036d43f7</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>34</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:43</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:47</sys_updated_on>
         <ui_id>59ab809a-339c-441f-8824-9e7be60c5e72</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=a7c8c78747f27150e057e0e8036d43f7"/>
@@ -3754,10 +3778,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:41:38</sys_created_on>
         <sys_id>b2db8f8f47f27150e057e0e8036d43e1</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>32</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:43</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:47</sys_updated_on>
         <ui_id>9d2cce9d-4876-41ff-897b-d8e7c59f1e1f</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=b2db8f8f47f27150e057e0e8036d43e1"/>
@@ -3856,10 +3880,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:28:17</sys_created_on>
         <sys_id>e7c8c78747f27150e057e0e8036d43c2</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>34</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:43</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:47</sys_updated_on>
         <ui_id>b998a7e8-9c8b-4b29-8d19-bdf881ec7736</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=e7c8c78747f27150e057e0e8036d43c2"/>
@@ -3920,10 +3944,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:28:18</sys_created_on>
         <sys_id>e7c8c78747f27150e057e0e8036d43ff</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>34</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:42</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:46</sys_updated_on>
         <ui_id>35ba0812-e442-4a68-86eb-440796e0b9e4</ui_id>
     </sys_hub_sub_flow_instance>
     <sys_variable_value action="delete_multiple" query="document_key=e7c8c78747f27150e057e0e8036d43ff"/>
@@ -4112,10 +4136,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:28:16</sys_created_on>
         <sys_id>53c8c78747f27150e057e0e8036d4360</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:42</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:46</sys_updated_on>
         <ui_id>6fb9edcb-3016-4866-b45f-1fe0bb16dac3</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -4161,10 +4185,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:28:16</sys_created_on>
         <sys_id>5bc8c78747f27150e057e0e8036d4370</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:42</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:47</sys_updated_on>
         <ui_id>4d5f89a8-f421-4147-af85-dbecdf786d7c</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -4208,10 +4232,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:28:17</sys_created_on>
         <sys_id>5fc8c78747f27150e057e0e8036d43a1</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>21</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:43</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:47</sys_updated_on>
         <ui_id>a9fd2e6d-0f0a-4db8-85c2-ab0a6edd28a4</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -4243,10 +4267,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:28:17</sys_created_on>
         <sys_id>9bc8c78747f27150e057e0e8036d438e</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>21</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:43</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:47</sys_updated_on>
         <ui_id>5b99c279-ff1c-47da-aab8-7492382b8534</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -4279,10 +4303,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:28:17</sys_created_on>
         <sys_id>9fc8c78747f27150e057e0e8036d4391</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>21</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:43</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:47</sys_updated_on>
         <ui_id>5cd8b50b-6c42-4808-a2e3-16dc9c9c4d53</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -4326,10 +4350,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:28:17</sys_created_on>
         <sys_id>9fc8c78747f27150e057e0e8036d43a4</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>22</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:43</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:47</sys_updated_on>
         <ui_id>1bc3d61e-3f9d-423d-ae3f-e0deb0a9383a</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -4376,10 +4400,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:28:16</sys_created_on>
         <sys_id>d7c8c78747f27150e057e0e8036d435a</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>19</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:42</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:46</sys_updated_on>
         <ui_id>85493f95-7b7b-44e6-adca-b70f84bec125</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -4461,10 +4485,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:28:17</sys_created_on>
         <sys_id>d7c8c78747f27150e057e0e8036d437b</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:43</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:47</sys_updated_on>
         <ui_id>fda290c4-8596-4b06-8903-03c230243b6a</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -4492,11 +4516,11 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:28:17</sys_created_on>
         <sys_id>5bc8c78747f27150e057e0e8036d437e</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>markus.kraus</sys_updated_by>
-        <sys_updated_on>2023-12-03 23:28:17</sys_updated_on>
+        <sys_updated_on>2024-01-26 14:34:45</sys_updated_on>
         <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
-        <value>{{6f8c6e23-bc4c-4a5e-8fc9-7b09e7f1d499.record_sys_id}}!=</value>
+        <value>{{6f8c6e23-bc4c-4a5e-8fc9-7b09e7f1d499.record_sys_id}}!=^{{6f8c6e23-bc4c-4a5e-8fc9-7b09e7f1d499.app_installed}}=true</value>
     </sys_element_mapping>
     <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>condition_name</field>
@@ -4536,10 +4560,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:28:17</sys_created_on>
         <sys_id>d7c8c78747f27150e057e0e8036d437f</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:43</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:47</sys_updated_on>
         <ui_id>634c1ac9-b09c-4a78-a959-afb6e83d7b4a</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -4585,10 +4609,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:28:17</sys_created_on>
         <sys_id>d7c8c78747f27150e057e0e8036d4386</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>19</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:43</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:47</sys_updated_on>
         <ui_id>383761d9-faf0-414e-8df3-1d940fe84a06</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -4633,10 +4657,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:28:17</sys_created_on>
         <sys_id>dbc8c78747f27150e057e0e8036d4374</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:43</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:47</sys_updated_on>
         <ui_id>ceb163d1-3311-477f-b851-a1e108643d61</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -4669,10 +4693,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:28:17</sys_created_on>
         <sys_id>dfc8c78747f27150e057e0e8036d4377</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:43</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:47</sys_updated_on>
         <ui_id>df545ac3-b31d-45c7-ae01-79e5fcdaf22f</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -4717,10 +4741,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:28:17</sys_created_on>
         <sys_id>dfc8c78747f27150e057e0e8036d4382</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>19</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:43</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:47</sys_updated_on>
         <ui_id>c4b33171-24b4-4646-96ca-186fb40e9386</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -4766,10 +4790,10 @@
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:28:17</sys_created_on>
         <sys_id>dfc8c78747f27150e057e0e8036d438a</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>19</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:43</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:47</sys_updated_on>
         <ui_id>9bf0eb1d-21b2-482e-a76d-48259fb54508</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -5308,23 +5332,23 @@
     <sys_hub_flow action="UPDATE">
         <sys_id>0676c38347f27150e057e0e8036d43ec</sys_id>
         <latest_snapshot>cfc8878747f27150e057e0e8036d43da</latest_snapshot>
-        <compiler_build>glide-vancouver-07-06-2023__patch4-11-02-2023_11-14-2023_1911.zip</compiler_build>
+        <compiler_build>glide-vancouver-07-06-2023__patch5-12-01-2023_12-11-2023_2006.zip</compiler_build>
     </sys_hub_flow>
     <sys_flow_trigger_plan action="delete_multiple" query="plan_id=0676c38347f27150e057e0e8036d43ec"/>
     <sys_flow_subflow_plan action="delete_multiple" query="plan_id=0676c38347f27150e057e0e8036d43ec^sys_idNOT INd4d84b8747f27150e057e0e8036d43b5"/>
     <sys_flow_subflow_plan action="INSERT_OR_UPDATE">
         <plan>{"persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_subflow_plan","id":"d4d84b8747f27150e057e0e8036d43b5","name":"plan","plan_signature":null}}</plan>
         <plan_id display_value="Validate Application Instance Installation">0676c38347f27150e057e0e8036d43ec</plan_id>
-        <snapshot>1752f7ec476f3d14e057e0e8036d43a0</snapshot>
+        <snapshot>4d159f5c470c0690e057e0e8036d4313</snapshot>
         <sys_created_by>markus.kraus</sys_created_by>
         <sys_created_on>2023-12-03 23:28:21</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>d4d84b8747f27150e057e0e8036d43b5</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-02 14:51:48</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-26 14:34:52</sys_updated_on>
     </sys_flow_subflow_plan>
 </record_update>

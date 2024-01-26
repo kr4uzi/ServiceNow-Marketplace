@@ -176,49 +176,27 @@ MPLUtilClient.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 		};
 		
 		try {
-			const customerSysId = this.getParameter('customer');
-			const appSysId = this.getParameter('application');
-			const automaticUpdate = this.getParameter('automatic_update') == 'true';
-			const serviceUser = this.getParameter('service_user');
-			if (customerSysId && appSysId) {
-				let serviceUserGr = null;
-				if (automaticUpdate) {
-					serviceUserGr = new GlideRecordSecure('sys_user');
-					serviceUserGr.addQuery('sys_id', serviceUser);
-					serviceUserGr.setLimit(1);
-					serviceUserGr.query();
-					if (!serviceUserGr.next()) {
-						result.message = 'Failed to retrieve current user\'s record.';
-						return JSON.stringify(result);
-					}
-				}
+			const appInstallSysID = this.getParameter('application_installation');
+			if (appInstallSysID) {
+				const appInstallGr = new GlideRecordSecure('x_376096_mpl_application_installation');
+				appInstallGr.addQuery('sys_id', appInstallSysID);
+				appInstallGr.setLimit(1);
+				appInstallGr.query();
+				if (appInstallGr.next()) {
+					const worker = new GlideScriptedHierarchicalWorker();
+					worker.setProgressName('Prepare Application Installation');
+					worker.setScriptIncludeName('x_376096_mpl.MPLWorkerUtil');
+					worker.setScriptIncludeMethod('prepareAppInstall');
+					worker.putMethodArg('appInstallGr', appInstallGr);
+					worker.setBackground(true);
+					worker.start();
 
-				const customerGr = new GlideRecordSecure('x_376096_mpl_customer');
-				customerGr.addQuery('sys_id', customerSysId);
-				customerGr.setLimit(1);
-				customerGr.query();
-				if (customerGr.next()) {
-					const appGr = new GlideRecordSecure('x_376096_mpl_application');
-					appGr.addQuery('sys_id', appSysId);
-					appGr.setLimit(1);
-					appGr.query();
-					if (appGr.next()) {
-						const worker = new GlideScriptedHierarchicalWorker();
-						worker.setProgressName('Prepare Application Installation');
-						worker.setScriptIncludeName('x_376096_mpl.MPLWorkerUtil');
-						worker.setScriptIncludeMethod('prepareAppInstall');
-						worker.putMethodArg('customerGr', customerGr);
-						worker.putMethodArg('appGr', appGr);
-						worker.putMethodArg('automaticUpdate', automaticUpdate);
-						worker.putMethodArg('serviceUserGr', serviceUserGr);
-						worker.setBackground(true);
-						worker.start();
+					const workerID = worker.getProgressID();
+					appInstallGr.worker_id = workerID;
+					appInstallGr.update();
 
-						result.tracker_id = worker.getProgressID();
-						result.status = 'success';
-					} else {
-						result.message = gs.getMessage('mpl_record_not_found');
-					}
+					result.tracker_id = workerID;
+					result.status = 'success';
 				} else {
 					result.message = gs.getMessage('mpl_record_not_found');
 				}
@@ -283,13 +261,13 @@ MPLUtilClient.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>mkraus6</sys_created_by>
         <sys_created_on>2023-11-25 08:19:27</sys_created_on>
         <sys_id>83e0a65487f6f9502a3163583cbb35f1</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_name>MPLUtilClient</sys_name>
         <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name>sys_script_include_83e0a65487f6f9502a3163583cbb35f1</sys_update_name>
-        <sys_updated_by>markus.kraus</sys_updated_by>
-        <sys_updated_on>2023-12-03 23:33:11</sys_updated_on>
+        <sys_updated_by>mkraus6</sys_updated_by>
+        <sys_updated_on>2024-01-26 23:11:46</sys_updated_on>
     </sys_script_include>
 </record_update>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>MPL App Inst - Show Progress onLoad</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+	var workerID = g_form.getValue('worker_id');
+	if (workerID) {
+		var dd = new GlideModal('hierarchical_progress_viewer', false, '40em', '10em');
+		dd.setTitle(getMessage('Status'));
+		dd.setPreference('sysparm_renderer_execution_id', workerID);
+		dd.on('executionComplete', function () {
+			GlideList2.get('x_376096_mpl_application_installation.REL:53ad0ff04772f110e057e0e8036d4376').refresh();
+		});
+		dd.render();
+	}
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>mkraus6</sys_created_by>
+        <sys_created_on>2024-01-26 23:07:10</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>00190d2c8704c2502a3163583cbb3548</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>MPL App Inst - Show Progress onLoad</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name>sys_script_client_00190d2c8704c2502a3163583cbb3548</sys_update_name>
+        <sys_updated_by>mkraus6</sys_updated_by>
+        <sys_updated_on>2024-01-26 23:07:10</sys_updated_on>
+        <table>x_376096_mpl_application_installation</table>
+        <type>onLoad</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

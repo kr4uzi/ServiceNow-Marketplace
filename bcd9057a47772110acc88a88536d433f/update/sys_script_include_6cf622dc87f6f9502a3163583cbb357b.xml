@@ -50,11 +50,11 @@ MPLWorkerUtil.prototype = {
 		this._waitFlowResult(flowResult);
 	},
 
-	prepareAppInstall: function (customerGr, appGr, automaticUpdate, serviceUserGr) {
+	prepareAppInstall: function (appInstallGr) {
 		const flowResult = sn_fd.FlowAPI.getRunner()
 			.subflow('x_376096_mpl.prepare_application_installation')
 			.inBackground()
-			.withInputs({ 'customer': customerGr, 'application': appGr, 'automatic_update': automaticUpdate, 'service_user': serviceUserGr, 'worker_id': this.worker_id })
+			.withInputs({ 'application_installation': appInstallGr, 'worker_id': this.worker_id })
 			.run();
 
 		this._waitFlowResult(flowResult);
@@ -107,16 +107,20 @@ MPLWorkerUtil.prototype = {
 	},
 	
 	_trackerSuccess: function (message, result) {
+		this._updateResult(result);
+		
 		const globalTracker = new global.AJAXExecutionTracker();
 		const objs = {
 			sysparm_tracker_id: this.worker_id,
 			sysparm_message: message
 		};
 		globalTracker.getParameter = function (n) { return objs[n]; };
-		globalTracker.success();this._updateResult(result);
+		globalTracker.success();
 	},
 
 	_trackerFail: function (message, result) {
+		this._updateResult(result);
+
 		const globalTracker = new global.AJAXExecutionTracker();
 		const objs = {
 			sysparm_tracker_id: this.worker_id,
@@ -124,8 +128,6 @@ MPLWorkerUtil.prototype = {
 		};
 		globalTracker.getParameter = function (n) { return objs[n]; };
 		globalTracker.fail();
-
-		this._updateResult(result);
 	},
 
 	_updateResult: function (result) {
@@ -182,13 +184,13 @@ MPLWorkerUtil.prototype = {
         <sys_created_by>mkraus6</sys_created_by>
         <sys_created_on>2023-11-25 08:10:08</sys_created_on>
         <sys_id>6cf622dc87f6f9502a3163583cbb357b</sys_id>
-        <sys_mod_count>44</sys_mod_count>
+        <sys_mod_count>47</sys_mod_count>
         <sys_name>MPLWorkerUtil</sys_name>
         <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name>sys_script_include_6cf622dc87f6f9502a3163583cbb357b</sys_update_name>
         <sys_updated_by>markus.kraus</sys_updated_by>
-        <sys_updated_on>2023-12-07 16:37:03</sys_updated_on>
+        <sys_updated_on>2024-01-26 16:44:02</sys_updated_on>
     </sys_script_include>
 </record_update>

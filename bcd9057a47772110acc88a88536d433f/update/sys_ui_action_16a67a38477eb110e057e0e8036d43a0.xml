@@ -28,11 +28,11 @@
         <list_style/>
         <messages/>
         <name>Install</name>
-        <onclick>deployApp()</onclick>
+        <onclick>installInstanceInstallation()</onclick>
         <order>100</order>
         <script><![CDATA[/* global GlideAjax, g_form, g_navigation, rowSysId, g_list, GlideModal, getMessage */
 /* eslint no-undef: "error" */
-function deployApp() {
+function installInstanceInstallation() {
 	var ga = new GlideAjax('x_376096_mpl.MPLUtilClient');
 	ga.addParam('sysparm_name', 'installApp');
 	var onComplete = function () { g_navigation.reloadWindow(); };
@@ -66,7 +66,7 @@ function deployApp() {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>16a67a38477eb110e057e0e8036d43a0</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>Install</sys_name>
         <sys_overrides/>
         <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
@@ -74,7 +74,7 @@ function deployApp() {
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name>sys_ui_action_16a67a38477eb110e057e0e8036d43a0</sys_update_name>
         <sys_updated_by>markus.kraus</sys_updated_by>
-        <sys_updated_on>2023-11-26 23:27:20</sys_updated_on>
+        <sys_updated_on>2024-01-24 18:45:27</sys_updated_on>
         <table>x_376096_mpl_application_instance_installation</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>
