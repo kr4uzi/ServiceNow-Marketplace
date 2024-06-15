@@ -41,7 +41,7 @@
         <read_only>false</read_only>
         <read_roles/>
         <reference display_value="" name="x_376096_mpl_instance">x_376096_mpl_instance</reference>
-        <reference_cascade_rule>clear</reference_cascade_rule>
+        <reference_cascade_rule>cascade</reference_cascade_rule>
         <reference_floats>false</reference_floats>
         <reference_key/>
         <reference_qual/>
@@ -57,8 +57,8 @@
         <sys_policy/>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name>sys_dictionary_x_376096_mpl_oauth_task_instance</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-06 17:18:52</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-01-29 09:14:10</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

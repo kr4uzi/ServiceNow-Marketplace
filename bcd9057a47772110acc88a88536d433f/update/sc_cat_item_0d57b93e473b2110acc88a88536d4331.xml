@@ -25,6 +25,7 @@
         <ignore_price>true</ignore_price>
         <image/>
         <location/>
+        <make_item_non_conversational>false</make_item_non_conversational>
         <mandatory_attachment>false</mandatory_attachment>
         <meta/>
         <mobile_hide_price>false</mobile_hide_price>
@@ -41,6 +42,7 @@
         <no_proceed_checkout>false</no_proceed_checkout>
         <no_quantity>true</no_quantity>
         <no_quantity_v2>true</no_quantity_v2>
+        <no_save_as_draft>false</no_save_as_draft>
         <no_search>false</no_search>
         <no_wishlist_v2>true</no_wishlist_v2>
         <omit_price>false</omit_price>
@@ -67,21 +69,21 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-06 19:46:21</sys_created_on>
         <sys_id>0d57b93e473b2110acc88a88536d4331</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>Add new Customer</sys_name>
         <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name>sc_cat_item_0d57b93e473b2110acc88a88536d4331</sys_update_name>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2023-10-24 13:34:09</sys_updated_on>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2024-03-07 10:08:25</sys_updated_on>
         <taxonomy_topic/>
         <template/>
         <template_manager_roles/>
         <type>item</type>
         <use_sc_layout>false</use_sc_layout>
         <vendor/>
-        <version/>
+        <version>1</version>
         <visible_bundle>true</visible_bundle>
         <visible_guide>true</visible_guide>
         <visible_standalone>true</visible_standalone>

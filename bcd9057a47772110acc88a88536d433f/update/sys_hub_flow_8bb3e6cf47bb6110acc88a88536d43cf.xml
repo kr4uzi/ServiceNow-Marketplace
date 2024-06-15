@@ -4,11 +4,16 @@
         <acls/>
         <active>true</active>
         <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=29685392000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version/>
         <callable_by_client_api>false</callable_by_client_api>
         <category/>
         <copied_from/>
         <copied_from_name/>
         <description/>
+        <display_name_after_preview/>
+        <flow_priority/>
+        <generation_source/>
         <internal_name>refresh_customer_repositories</internal_name>
         <label_cache>[{"name":"d9bfde6d-b67c-4b4e-b0ca-bc4e463da195.Records","label":"1 - Look Up Records➛Customer Records","reference":"x_376096_mpl_customer","reference_display":"Customer","type":"records","base_type":"records","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"3648126a-8f6a-4def-8373-c29306ec6948.item","label":"2 - For Each➛Customer Record","reference":"x_376096_mpl_customer","reference_display":"Customer","type":"reference","base_type":"reference","attributes":{"pills_draggable_inside_block":"true","pills_draggable_outside_block":"false"}}]</label_cache>
         <master_snapshot>f4f3aecf47bb6110acc88a88536d4334</master_snapshot>
@@ -23,21 +28,22 @@
         <show_draft_actions>false</show_draft_actions>
         <show_triggered_flows>false</show_triggered_flows>
         <status>published</status>
+        <substatus/>
         <sys_class_name>sys_hub_flow</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:37:58</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>8bb3e6cf47bb6110acc88a88536d43cf</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>Refresh Customer Repositories</sys_name>
         <sys_overrides/>
         <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name>sys_hub_flow_8bb3e6cf47bb6110acc88a88536d43cf</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:38:56</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-15 07:34:38</sys_updated_on>
         <type>flow</type>
     </sys_hub_flow>
     <sys_translated_text action="delete_multiple" query="documentkey=8bb3e6cf47bb6110acc88a88536d43cf"/>
@@ -55,12 +61,12 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>81f3aecf47bb6110acc88a88536d43a7</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_overrides/>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:38:56</sys_updated_on>
-        <time>1970-01-02 04:00:00</time>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-15 07:34:37</sys_updated_on>
+        <time>1970-01-01 19:00:00</time>
         <timer_type>11</timer_type>
     </sys_flow_timer_trigger>
     <sys_flow_trigger_auto_script action="delete_multiple" query="name=Trigger:81f3aecf47bb6110acc88a88536d43a7^sys_idNOT INc5f3aecf47bb6110acc88a88536d43a7"/>
@@ -80,21 +86,21 @@
         <run_dayofweek/>
         <run_period/>
         <run_start>2023-07-07 17:38:56</run_start>
-        <run_time>1970-01-02 04:00:00</run_time>
+        <run_time>1970-01-01 19:00:00</run_time>
         <run_type>daily</run_type>
         <script><![CDATA[sn_flow_trigger.FlowTriggerAPI.fireTimerTrigger('81f3aecf47bb6110acc88a88536d43a7');]]></script>
         <sys_class_name>sys_flow_trigger_auto_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:38:56</sys_created_on>
         <sys_id>c5f3aecf47bb6110acc88a88536d43a7</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name/>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:38:56</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-15 07:34:37</sys_updated_on>
         <time_zone/>
         <trigger display_value="">81f3aecf47bb6110acc88a88536d43a7</trigger>
         <upgrade_safe>true</upgrade_safe>
@@ -110,10 +116,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:38:53</sys_created_on>
         <sys_id>50f36ecf47bb6110acc88a88536d43b6</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_scope/>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:38:56</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-15 07:34:37</sys_updated_on>
         <trigger_definition display_value="Daily">89142dc0c32222002841b63b12d3ae8a</trigger_definition>
         <trigger_inputs/>
         <trigger_outputs/>
@@ -157,19 +163,21 @@
         <action_inputs/>
         <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
         <action_type_parent/>
+        <attributes/>
         <comment/>
         <display_text/>
         <flow display_value="Refresh Customer Repositories">8bb3e6cf47bb6110acc88a88536d43cf</flow>
+        <generation_source/>
         <order>1</order>
         <parent_ui_id/>
         <sys_class_name>sys_hub_action_instance</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:38:53</sys_created_on>
         <sys_id>dcf36ecf47bb6110acc88a88536d43bd</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>36</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:38:56</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-15 07:34:37</sys_updated_on>
         <ui_id>d9bfde6d-b67c-4b4e-b0ca-bc4e463da195</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=dcf36ecf47bb6110acc88a88536d43bd"/>
@@ -206,23 +214,25 @@
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=dcf36ecf47bb6110acc88a88536d43bd"/>
     <sys_hub_sub_flow_instance action="delete_multiple" query="flow=8bb3e6cf47bb6110acc88a88536d43cf^sys_idNOT IN1cf36ecf47bb6110acc88a88536d43c3"/>
     <sys_hub_sub_flow_instance action="INSERT_OR_UPDATE">
+        <attributes/>
         <comment/>
         <display_text/>
         <flow display_value="Refresh Customer Repositories">8bb3e6cf47bb6110acc88a88536d43cf</flow>
+        <generation_source/>
         <inputs/>
         <inputs/>
-        <order>3</order>
-        <parent_ui_id>3648126a-8f6a-4def-8373-c29306ec6948</parent_ui_id>
+        <order>4</order>
+        <parent_ui_id>a449fc19-e0e1-4d78-8b0a-be055c15a948</parent_ui_id>
         <subflow display_value="GIT Import NOW Applications">c73f5e4b47bb6110acc88a88536d4344</subflow>
         <subflow_instance_inputs/>
         <sys_class_name>sys_hub_sub_flow_instance</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:38:53</sys_created_on>
         <sys_id>1cf36ecf47bb6110acc88a88536d43c3</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:38:56</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-15 07:34:38</sys_updated_on>
         <ui_id>0e18c9d0-e0c9-445c-bd7d-05a3471884ed</ui_id>
     </sys_hub_sub_flow_instance>
     <sys_variable_value action="delete_multiple" query="document_key=1cf36ecf47bb6110acc88a88536d43c3"/>
@@ -238,7 +248,7 @@
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2023-07-07 17:38:53</sys_updated_on>
         <value>1</value>
-        <variable display_value="Wait For Completion">90f36ecf47bb6110acc88a88536d43c5</variable>
+        <variable display_value="wait_for_completion">90f36ecf47bb6110acc88a88536d43c5</variable>
     </sys_variable_value>
     <sys_element_mapping action="delete_multiple" query="id=1cf36ecf47bb6110acc88a88536d43c3"/>
     <sys_element_mapping action="INSERT_OR_UPDATE">
@@ -252,18 +262,6 @@
         <sys_updated_on>2023-07-07 17:38:53</sys_updated_on>
         <table>var__m_sys_hub_flow_input_c73f5e4b47bb6110acc88a88536d4344</table>
         <value>{{3648126a-8f6a-4def-8373-c29306ec6948.item}}</value>
-    </sys_element_mapping>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>wait_for_completion</field>
-        <id>1cf36ecf47bb6110acc88a88536d43c3</id>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2023-07-07 17:38:53</sys_created_on>
-        <sys_id>90f36ecf47bb6110acc88a88536d43ea</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:38:53</sys_updated_on>
-        <table>var__m_sys_hub_sub_flow_instance_inputs_1cf36ecf47bb6110acc88a88536d43c3</table>
-        <value/>
     </sys_element_mapping>
     <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_sub_flow_instance_inputs_1cf36ecf47bb6110acc88a88536d43c3^id=1cf36ecf47bb6110acc88a88536d43c3"/>
     <sys_hub_sub_flow_instance_inputs action="delete_multiple" query="model=1cf36ecf47bb6110acc88a88536d43c3^sys_idNOT IN90f36ecf47bb6110acc88a88536d43c5"/>
@@ -304,7 +302,7 @@
         <help/>
         <hint/>
         <internal_type display_value="">boolean</internal_type>
-        <label>Wait For Completion</label>
+        <label>wait_for_completion</label>
         <mandatory>false</mandatory>
         <max_length>40</max_length>
         <model display_value="">1cf36ecf47bb6110acc88a88536d43c3</model>
@@ -330,14 +328,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:38:53</sys_created_on>
         <sys_id>90f36ecf47bb6110acc88a88536d43c5</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name/>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:38:53</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-15 07:34:18</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -351,9 +349,10 @@
         <xml_view>false</xml_view>
     </sys_hub_sub_flow_instance_inputs>
     <sys_hub_input_scripts action="delete_multiple" query="instance=1cf36ecf47bb6110acc88a88536d43c3"/>
-    <sys_hub_flow_logic action="delete_multiple" query="flow=8bb3e6cf47bb6110acc88a88536d43cf^sys_idNOT IN9cf36ecf47bb6110acc88a88536d43c0"/>
+    <sys_hub_flow_logic action="delete_multiple" query="flow=8bb3e6cf47bb6110acc88a88536d43cf^sys_idNOT IN4e7cf3e987ba0a102a3163583cbb3568,8e7cf3e987ba0a102a3163583cbb35c9,9cf36ecf47bb6110acc88a88536d43c0"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
-        <block display_value="">d4f36ecf47bb6110acc88a88536d43c0</block>
+        <attributes/>
+        <block display_value="">867cf3e987ba0a102a3163583cbb3568</block>
         <comment/>
         <connected_to/>
         <decision_table/>
@@ -363,6 +362,90 @@
         <flow display_value="Refresh Customer Repositories">8bb3e6cf47bb6110acc88a88536d43cf</flow>
         <flow_variable/>
         <flow_variables_assigned/>
+        <generation_source/>
+        <inputs/>
+        <logic_definition display_value="Try">07223332de022010ec58424b73829721</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>3648126a-8f6a-4def-8373-c29306ec6948</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-15 07:34:18</sys_created_on>
+        <sys_id>4e7cf3e987ba0a102a3163583cbb3568</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-15 07:34:37</sys_updated_on>
+        <ui_id>a449fc19-e0e1-4d78-8b0a-be055c15a948</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=4e7cf3e987ba0a102a3163583cbb3568"/>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=4e7cf3e987ba0a102a3163583cbb3568"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=4e7cf3e987ba0a102a3163583cbb3568"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">c67cf3e987ba0a102a3163583cbb35c9</block>
+        <comment/>
+        <connected_to>a449fc19-e0e1-4d78-8b0a-be055c15a948</connected_to>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Refresh Customer Repositories">8bb3e6cf47bb6110acc88a88536d43cf</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <inputs/>
+        <logic_definition display_value="Catch">35d60003e6022010a5e40cdd1254dd21</logic_definition>
+        <order>5</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>3648126a-8f6a-4def-8373-c29306ec6948</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-15 07:34:18</sys_created_on>
+        <sys_id>8e7cf3e987ba0a102a3163583cbb35c9</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-15 07:34:38</sys_updated_on>
+        <ui_id>0f4037c8-7fa1-4ab2-b70f-b27bfd8d8372</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=8e7cf3e987ba0a102a3163583cbb35c9"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>8e7cf3e987ba0a102a3163583cbb35c9</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-15 07:34:18</sys_created_on>
+        <sys_id>d67cf3e987ba0a102a3163583cbb35ce</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-15 07:34:18</sys_updated_on>
+        <value>{"version":"1.0","complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"95125a2b-953f-4408-a730-80c1b9baa898\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"serializationFormat":"JSON"}</value>
+        <variable display_value="Error Status">c78d433e5bdb2010b61ea2013781c7f0</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_logic_input_35d60003e6022010a5e40cdd1254dd21^id=8e7cf3e987ba0a102a3163583cbb35c9"/>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=8e7cf3e987ba0a102a3163583cbb35c9"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=8e7cf3e987ba0a102a3163583cbb35c9"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">ca7cf3e987ba0a102a3163583cbb3564</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Refresh Customer Repositories">8bb3e6cf47bb6110acc88a88536d43cf</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <generation_source/>
         <inputs/>
         <inputs/>
         <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
@@ -374,10 +457,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:38:53</sys_created_on>
         <sys_id>9cf36ecf47bb6110acc88a88536d43c0</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:38:56</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-15 07:34:37</sys_updated_on>
         <ui_id>3648126a-8f6a-4def-8373-c29306ec6948</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -404,35 +487,19 @@
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_8bb3e6cf47bb6110acc88a88536d43cf"/>
     <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_8bb3e6cf47bb6110acc88a88536d43cf"/>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_8bb3e6cf47bb6110acc88a88536d43cf"/>
-    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=8bb3e6cf47bb6110acc88a88536d43cf^sys_idNOT IN4df3aecf47bb6110acc88a88536d43a8"/>
-    <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
-        <binding_strategy>com.snc.process_flow.engine.binding.RunAlways</binding_strategy>
-        <plan/>
-        <plan_id>8bb3e6cf47bb6110acc88a88536d43cf</plan_id>
-        <snapshot>f4f3aecf47bb6110acc88a88536d4334</snapshot>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2023-07-07 17:38:56</sys_created_on>
-        <sys_domain>global</sys_domain>
-        <sys_domain_path>/</sys_domain_path>
-        <sys_id>4df3aecf47bb6110acc88a88536d43a8</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_overrides/>
-        <sys_scope/>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:38:56</sys_updated_on>
-        <trigger display_value="">81f3aecf47bb6110acc88a88536d43a7</trigger>
-    </sys_flow_trigger_plan>
-    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=8bb3e6cf47bb6110acc88a88536d43cf"/>
     <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
         <access>public</access>
         <acls/>
         <active>true</active>
         <annotation/>
+        <attributes/>
+        <authored_on_release_version/>
         <callable_by_client_api>false</callable_by_client_api>
         <category/>
         <copied_from/>
         <copied_from_name/>
         <description/>
+        <flow_priority/>
         <internal_name>refresh_customer_repositories</internal_name>
         <label_cache>[{"name":"d9bfde6d-b67c-4b4e-b0ca-bc4e463da195.Records","label":"1 - Look Up Records➛Customer Records","reference":"x_376096_mpl_customer","reference_display":"Customer","type":"records","base_type":"records","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"3648126a-8f6a-4def-8373-c29306ec6948.item","label":"2 - For Each➛Customer Record","reference":"x_376096_mpl_customer","reference_display":"Customer","type":"reference","base_type":"reference","attributes":{"pills_draggable_inside_block":"true","pills_draggable_outside_block":"false"}}]</label_cache>
         <master>true</master>
@@ -451,15 +518,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f4f3aecf47bb6110acc88a88536d4334</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name/>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:38:54</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-15 07:34:35</sys_updated_on>
         <type>flow</type>
     </sys_hub_flow_snapshot>
     <sys_translated_text action="delete_multiple" query="documentkey=f4f3aecf47bb6110acc88a88536d4334"/>
@@ -474,10 +541,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:38:55</sys_created_on>
         <sys_id>b0f3aecf47bb6110acc88a88536d4343</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_scope/>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:38:56</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-15 07:34:37</sys_updated_on>
         <trigger_definition display_value="Daily">89142dc0c32222002841b63b12d3ae8a</trigger_definition>
         <trigger_inputs/>
         <trigger_outputs/>
@@ -521,19 +588,21 @@
         <action_inputs/>
         <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
         <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <attributes/>
         <comment/>
         <display_text/>
         <flow display_value="Refresh Customer Repositories">f4f3aecf47bb6110acc88a88536d4334</flow>
+        <generation_source/>
         <order>1</order>
         <parent_ui_id/>
         <sys_class_name>sys_hub_action_instance</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:38:55</sys_created_on>
         <sys_id>70f3aecf47bb6110acc88a88536d4341</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:38:55</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-15 07:34:34</sys_updated_on>
         <ui_id>d9bfde6d-b67c-4b4e-b0ca-bc4e463da195</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=70f3aecf47bb6110acc88a88536d4341"/>
@@ -570,23 +639,25 @@
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=70f3aecf47bb6110acc88a88536d4341"/>
     <sys_hub_sub_flow_instance action="delete_multiple" query="flow=f4f3aecf47bb6110acc88a88536d4334^sys_idNOT INfcf3aecf47bb6110acc88a88536d4343"/>
     <sys_hub_sub_flow_instance action="INSERT_OR_UPDATE">
+        <attributes/>
         <comment/>
         <display_text/>
         <flow display_value="Refresh Customer Repositories">f4f3aecf47bb6110acc88a88536d4334</flow>
+        <generation_source/>
         <inputs/>
         <inputs/>
-        <order>3</order>
-        <parent_ui_id>3648126a-8f6a-4def-8373-c29306ec6948</parent_ui_id>
+        <order>4</order>
+        <parent_ui_id>a449fc19-e0e1-4d78-8b0a-be055c15a948</parent_ui_id>
         <subflow display_value="GIT Import NOW Applications">c73f5e4b47bb6110acc88a88536d4344</subflow>
         <subflow_instance_inputs/>
         <sys_class_name>sys_hub_sub_flow_instance</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:38:55</sys_created_on>
         <sys_id>fcf3aecf47bb6110acc88a88536d4343</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:38:55</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-15 07:34:35</sys_updated_on>
         <ui_id>0e18c9d0-e0c9-445c-bd7d-05a3471884ed</ui_id>
     </sys_hub_sub_flow_instance>
     <sys_variable_value action="delete_multiple" query="document_key=fcf3aecf47bb6110acc88a88536d4343"/>
@@ -602,7 +673,7 @@
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2023-07-07 17:38:55</sys_updated_on>
         <value>1</value>
-        <variable display_value="Wait For Completion">b8f3aecf47bb6110acc88a88536d4344</variable>
+        <variable display_value="wait_for_completion">b8f3aecf47bb6110acc88a88536d4344</variable>
     </sys_variable_value>
     <sys_element_mapping action="delete_multiple" query="id=fcf3aecf47bb6110acc88a88536d4343"/>
     <sys_element_mapping action="INSERT_OR_UPDATE">
@@ -616,18 +687,6 @@
         <sys_updated_on>2023-07-07 17:38:55</sys_updated_on>
         <table>var__m_sys_hub_flow_input_c73f5e4b47bb6110acc88a88536d4344</table>
         <value>{{3648126a-8f6a-4def-8373-c29306ec6948.item}}</value>
-    </sys_element_mapping>
-    <sys_element_mapping action="INSERT_OR_UPDATE">
-        <field>wait_for_completion</field>
-        <id>fcf3aecf47bb6110acc88a88536d4343</id>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2023-07-07 17:38:55</sys_created_on>
-        <sys_id>7cf3aecf47bb6110acc88a88536d4356</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:38:55</sys_updated_on>
-        <table>var__m_sys_hub_sub_flow_instance_inputs_fcf3aecf47bb6110acc88a88536d4343</table>
-        <value/>
     </sys_element_mapping>
     <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_sub_flow_instance_inputs_fcf3aecf47bb6110acc88a88536d4343^id=fcf3aecf47bb6110acc88a88536d4343"/>
     <sys_hub_sub_flow_instance_inputs action="delete_multiple" query="model=fcf3aecf47bb6110acc88a88536d4343^sys_idNOT INb8f3aecf47bb6110acc88a88536d4344"/>
@@ -668,7 +727,7 @@
         <help/>
         <hint/>
         <internal_type display_value="">boolean</internal_type>
-        <label>Wait For Completion</label>
+        <label>wait_for_completion</label>
         <mandatory>false</mandatory>
         <max_length>40</max_length>
         <model display_value="">fcf3aecf47bb6110acc88a88536d4343</model>
@@ -694,14 +753,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:38:55</sys_created_on>
         <sys_id>b8f3aecf47bb6110acc88a88536d4344</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name/>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:38:55</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-15 07:34:34</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -715,9 +774,10 @@
         <xml_view>false</xml_view>
     </sys_hub_sub_flow_instance_inputs>
     <sys_hub_input_scripts action="delete_multiple" query="instance=fcf3aecf47bb6110acc88a88536d4343"/>
-    <sys_hub_flow_logic action="delete_multiple" query="flow=f4f3aecf47bb6110acc88a88536d4334^sys_idNOT IN34f3aecf47bb6110acc88a88536d4338"/>
+    <sys_hub_flow_logic action="delete_multiple" query="flow=f4f3aecf47bb6110acc88a88536d4334^sys_idNOT IN34f3aecf47bb6110acc88a88536d4338,8e8cf7e987ba0a102a3163583cbb351e,c28cf7e987ba0a102a3163583cbb351c"/>
     <sys_hub_flow_logic action="INSERT_OR_UPDATE">
-        <block display_value="">d4f36ecf47bb6110acc88a88536d43c0</block>
+        <attributes/>
+        <block display_value="">ca7cf3e987ba0a102a3163583cbb3564</block>
         <comment/>
         <connected_to/>
         <decision_table/>
@@ -727,6 +787,7 @@
         <flow display_value="Refresh Customer Repositories">f4f3aecf47bb6110acc88a88536d4334</flow>
         <flow_variable/>
         <flow_variables_assigned/>
+        <generation_source/>
         <inputs/>
         <inputs/>
         <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
@@ -738,10 +799,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-07 17:38:54</sys_created_on>
         <sys_id>34f3aecf47bb6110acc88a88536d4338</sys_id>
-        <sys_mod_count>1</sys_mod_count>
-        <sys_scope/>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 17:38:54</sys_updated_on>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-15 07:34:35</sys_updated_on>
         <ui_id>3648126a-8f6a-4def-8373-c29306ec6948</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -762,6 +823,89 @@
     </sys_element_mapping>
     <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=34f3aecf47bb6110acc88a88536d4338"/>
     <sys_hub_input_scripts action="delete_multiple" query="instance=34f3aecf47bb6110acc88a88536d4338"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">c67cf3e987ba0a102a3163583cbb35c9</block>
+        <comment/>
+        <connected_to>a449fc19-e0e1-4d78-8b0a-be055c15a948</connected_to>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Refresh Customer Repositories">f4f3aecf47bb6110acc88a88536d4334</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <inputs/>
+        <logic_definition display_value="Catch">35d60003e6022010a5e40cdd1254dd21</logic_definition>
+        <order>5</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>3648126a-8f6a-4def-8373-c29306ec6948</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-15 07:34:34</sys_created_on>
+        <sys_id>8e8cf7e987ba0a102a3163583cbb351e</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-15 07:34:35</sys_updated_on>
+        <ui_id>0f4037c8-7fa1-4ab2-b70f-b27bfd8d8372</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=8e8cf7e987ba0a102a3163583cbb351e"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>8e8cf7e987ba0a102a3163583cbb351e</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-15 07:34:34</sys_created_on>
+        <sys_id>0a8cf7e987ba0a102a3163583cbb3521</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-15 07:34:34</sys_updated_on>
+        <value>{"version":"1.0","complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"mapped\":\"{}\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"95125a2b-953f-4408-a730-80c1b9baa898\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"serializationFormat":"JSON"}</value>
+        <variable display_value="Error Status">c78d433e5bdb2010b61ea2013781c7f0</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_logic_input_35d60003e6022010a5e40cdd1254dd21^id=8e8cf7e987ba0a102a3163583cbb351e"/>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=8e8cf7e987ba0a102a3163583cbb351e"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=8e8cf7e987ba0a102a3163583cbb351e"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">867cf3e987ba0a102a3163583cbb3568</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Refresh Customer Repositories">f4f3aecf47bb6110acc88a88536d4334</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <inputs/>
+        <logic_definition display_value="Try">07223332de022010ec58424b73829721</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>3648126a-8f6a-4def-8373-c29306ec6948</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-15 07:34:34</sys_created_on>
+        <sys_id>c28cf7e987ba0a102a3163583cbb351c</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-15 07:34:35</sys_updated_on>
+        <ui_id>a449fc19-e0e1-4d78-8b0a-be055c15a948</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=c28cf7e987ba0a102a3163583cbb351c"/>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=c28cf7e987ba0a102a3163583cbb351c"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=c28cf7e987ba0a102a3163583cbb351c"/>
     <sys_hub_pill_compound action="delete_multiple" query="attached_to=f4f3aecf47bb6110acc88a88536d4334"/>
     <sys_hub_flow_variable action="delete_multiple" query="model=f4f3aecf47bb6110acc88a88536d4334"/>
     <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_f4f3aecf47bb6110acc88a88536d4334"/>
@@ -771,6 +915,25 @@
     <sys_hub_flow action="UPDATE">
         <sys_id>8bb3e6cf47bb6110acc88a88536d43cf</sys_id>
         <latest_snapshot>f4f3aecf47bb6110acc88a88536d4334</latest_snapshot>
-        <compiler_build/>
+        <compiler_build>glide-washingtondc-12-20-2023__patch4-05-23-2024_06-01-2024_1036.zip</compiler_build>
     </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=8bb3e6cf47bb6110acc88a88536d43cf^sys_idNOT IN4df3aecf47bb6110acc88a88536d43a8"/>
+    <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
+        <binding_strategy>com.snc.process_flow.engine.binding.RunAlways</binding_strategy>
+        <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_trigger_plan","id":"4df3aecf47bb6110acc88a88536d43a8","name":"plan","plan_signature":null}}</plan>
+        <plan_id>8bb3e6cf47bb6110acc88a88536d43cf</plan_id>
+        <snapshot>f4f3aecf47bb6110acc88a88536d4334</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-07-07 17:38:56</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>4df3aecf47bb6110acc88a88536d43a8</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-15 07:34:37</sys_updated_on>
+        <trigger display_value="">81f3aecf47bb6110acc88a88536d43a7</trigger>
+    </sys_flow_trigger_plan>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=8bb3e6cf47bb6110acc88a88536d43cf"/>
 </record_update>

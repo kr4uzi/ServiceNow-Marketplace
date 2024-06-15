@@ -3,26 +3,26 @@
         <sys_ui_annotation action="INSERT_OR_UPDATE">
             <is_plain_text>false</is_plain_text>
             <sys_created_by>markus.kraus</sys_created_by>
-            <sys_created_on>2023-11-26 13:03:41</sys_created_on>
-            <sys_id>39b670384732b110e057e0e8036d4331</sys_id>
-            <sys_mod_count>0</sys_mod_count>
+            <sys_created_on>2024-06-14 14:32:26</sys_created_on>
+            <sys_id>519294618776c6102a3163583cbb35f7</sys_id>
+            <sys_mod_count>1</sys_mod_count>
             <sys_updated_by>markus.kraus</sys_updated_by>
-            <sys_updated_on>2023-11-26 13:03:41</sys_updated_on>
-            <text>&lt;p&gt;A GitHub &lt;a target='_blank' href='${new x_376096_mpl.MPLAnnUtil().orgUrl(current)}'&gt;Organization ➚&lt;/a&gt; is required for each customer .&lt;br /&gt;&#13;
-Additionally a GitHub &lt;a target='_blank' href='${new x_376096_mpl.MPLAnnUtil().accessToken(current)}'&gt;Access Token ➚&lt;/a&gt; with scope &lt;b&gt;repo&lt;/b&gt; and &lt;b&gt;admin:public_key&lt;/b&gt; is required&lt;/p&gt;</text>
+            <sys_updated_on>2024-06-14 14:34:04</sys_updated_on>
+            <text>&lt;span&gt;A GitHub &lt;a target='_blank' href='${new x_376096_mpl.MPLAnnUtil().orgUrl(current)}'&gt;Organization ➚&lt;/a&gt; is required for each customer .&lt;br /&gt;&#13;
+Additionally a GitHub &lt;a target='_blank' href='${new x_376096_mpl.MPLAnnUtil().accessToken(current)}'&gt;Access Token ➚&lt;/a&gt; with scope &lt;b&gt;repo&lt;/b&gt; and &lt;b&gt;admin:public_key&lt;/b&gt; is required&lt;/span&gt;</text>
             <type display_value="Section Details">19756e5ec3313000bac1addbdfba8f18</type>
         </sys_ui_annotation>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>39b670384732b110e057e0e8036d4331</element>
+            <element>519294618776c6102a3163583cbb35f7</element>
             <position>0</position>
             <sys_created_by>markus.kraus</sys_created_by>
-            <sys_created_on>2023-11-26 13:03:42</sys_created_on>
-            <sys_id>c2b670384732b110e057e0e8036d4336</sys_id>
+            <sys_created_on>2024-06-14 14:32:26</sys_created_on>
+            <sys_id>d99294618776c6102a3163583cbb35fe</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="GitHub Config" display_value="GitHub Config" name="x_376096_mpl_customer" sys_domain="global" view="Default view">bd53293a47f72110acc88a88536d431b</sys_ui_section>
             <sys_updated_by>markus.kraus</sys_updated_by>
-            <sys_updated_on>2023-11-26 13:03:42</sys_updated_on>
+            <sys_updated_on>2024-06-14 14:32:26</sys_updated_on>
             <sys_user/>
             <type>annotation</type>
         </sys_ui_element>
@@ -30,27 +30,27 @@ Additionally a GitHub &lt;a target='_blank' href='${new x_376096_mpl.MPLAnnUtil(
             <element>.begin_split</element>
             <position>1</position>
             <sys_created_by>markus.kraus</sys_created_by>
-            <sys_created_on>2023-11-26 13:03:42</sys_created_on>
-            <sys_id>46b670384732b110e057e0e8036d4336</sys_id>
+            <sys_created_on>2024-06-14 14:32:26</sys_created_on>
+            <sys_id>d59294618776c6102a3163583cbb35ff</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="GitHub Config" display_value="GitHub Config" name="x_376096_mpl_customer" sys_domain="global" view="Default view">bd53293a47f72110acc88a88536d431b</sys_ui_section>
             <sys_updated_by>markus.kraus</sys_updated_by>
-            <sys_updated_on>2023-11-26 13:03:42</sys_updated_on>
+            <sys_updated_on>2024-06-14 14:32:26</sys_updated_on>
             <sys_user/>
             <type>.begin_split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>github_id</element>
+            <element>github_name</element>
             <position>2</position>
             <sys_created_by>markus.kraus</sys_created_by>
-            <sys_created_on>2023-11-26 13:03:42</sys_created_on>
-            <sys_id>c6b670384732b110e057e0e8036d4336</sys_id>
+            <sys_created_on>2024-06-14 14:32:26</sys_created_on>
+            <sys_id>5d9294618776c6102a3163583cbb35ff</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="GitHub Config" display_value="GitHub Config" name="x_376096_mpl_customer" sys_domain="global" view="Default view">bd53293a47f72110acc88a88536d431b</sys_ui_section>
             <sys_updated_by>markus.kraus</sys_updated_by>
-            <sys_updated_on>2023-11-26 13:03:42</sys_updated_on>
+            <sys_updated_on>2024-06-14 14:32:26</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -58,27 +58,27 @@ Additionally a GitHub &lt;a target='_blank' href='${new x_376096_mpl.MPLAnnUtil(
             <element>.split</element>
             <position>3</position>
             <sys_created_by>markus.kraus</sys_created_by>
-            <sys_created_on>2023-11-26 13:03:42</sys_created_on>
-            <sys_id>4ab670384732b110e057e0e8036d4336</sys_id>
+            <sys_created_on>2024-06-14 14:32:26</sys_created_on>
+            <sys_id>d192d4618776c6102a3163583cbb3500</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="GitHub Config" display_value="GitHub Config" name="x_376096_mpl_customer" sys_domain="global" view="Default view">bd53293a47f72110acc88a88536d431b</sys_ui_section>
             <sys_updated_by>markus.kraus</sys_updated_by>
-            <sys_updated_on>2023-11-26 13:03:42</sys_updated_on>
+            <sys_updated_on>2024-06-14 14:32:26</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>github_name</element>
+            <element>github_id</element>
             <position>4</position>
             <sys_created_by>markus.kraus</sys_created_by>
-            <sys_created_on>2023-11-26 13:03:42</sys_created_on>
-            <sys_id>cab670384732b110e057e0e8036d4336</sys_id>
+            <sys_created_on>2024-06-14 14:32:26</sys_created_on>
+            <sys_id>5992d4618776c6102a3163583cbb3500</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="GitHub Config" display_value="GitHub Config" name="x_376096_mpl_customer" sys_domain="global" view="Default view">bd53293a47f72110acc88a88536d431b</sys_ui_section>
             <sys_updated_by>markus.kraus</sys_updated_by>
-            <sys_updated_on>2023-11-26 13:03:42</sys_updated_on>
+            <sys_updated_on>2024-06-14 14:32:26</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -86,13 +86,13 @@ Additionally a GitHub &lt;a target='_blank' href='${new x_376096_mpl.MPLAnnUtil(
             <element>.end_split</element>
             <position>5</position>
             <sys_created_by>markus.kraus</sys_created_by>
-            <sys_created_on>2023-11-26 13:03:42</sys_created_on>
-            <sys_id>4eb670384732b110e057e0e8036d4336</sys_id>
+            <sys_created_on>2024-06-14 14:32:26</sys_created_on>
+            <sys_id>dd92d4618776c6102a3163583cbb3500</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="GitHub Config" display_value="GitHub Config" name="x_376096_mpl_customer" sys_domain="global" view="Default view">bd53293a47f72110acc88a88536d431b</sys_ui_section>
             <sys_updated_by>markus.kraus</sys_updated_by>
-            <sys_updated_on>2023-11-26 13:03:42</sys_updated_on>
+            <sys_updated_on>2024-06-14 14:32:26</sys_updated_on>
             <sys_user/>
             <type>.end_split</type>
         </sys_ui_element>
@@ -100,13 +100,13 @@ Additionally a GitHub &lt;a target='_blank' href='${new x_376096_mpl.MPLAnnUtil(
             <element>github_access_token</element>
             <position>6</position>
             <sys_created_by>markus.kraus</sys_created_by>
-            <sys_created_on>2023-11-26 13:03:42</sys_created_on>
-            <sys_id>ceb670384732b110e057e0e8036d4336</sys_id>
+            <sys_created_on>2024-06-14 14:32:26</sys_created_on>
+            <sys_id>5592d4618776c6102a3163583cbb3501</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="GitHub Config" display_value="GitHub Config" name="x_376096_mpl_customer" sys_domain="global" view="Default view">bd53293a47f72110acc88a88536d431b</sys_ui_section>
             <sys_updated_by>markus.kraus</sys_updated_by>
-            <sys_updated_on>2023-11-26 13:03:42</sys_updated_on>
+            <sys_updated_on>2024-06-14 14:32:26</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>

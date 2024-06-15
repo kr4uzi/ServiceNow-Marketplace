@@ -1,58 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
     <sys_ui_section caption="Instance Config" section_id="40432df647f72110acc88a88536d433b" sys_domain="global" table="x_376096_mpl_customer" version="3" view="">
+        <sys_ui_annotation action="INSERT_OR_UPDATE">
+            <is_plain_text>false</is_plain_text>
+            <sys_created_by>markus.kraus</sys_created_by>
+            <sys_created_on>2024-06-14 14:52:57</sys_created_on>
+            <sys_id>f947d8698776c6102a3163583cbb353a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>markus.kraus</sys_updated_by>
+            <sys_updated_on>2024-06-14 14:52:57</sys_updated_on>
+            <text>&lt;span&gt;The OAuth fields store the endpoint information of the customer instance(s).&lt;/span&gt;</text>
+            <type display_value="Info Box Blue">753f88a80f930000b12e6903cfe01206</type>
+        </sys_ui_annotation>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>oauth_entity_sys_id</element>
+            <element>f947d8698776c6102a3163583cbb353a</element>
             <position>0</position>
-            <sys_created_by>mkraus6</sys_created_by>
-            <sys_created_on>2023-10-30 21:26:33</sys_created_on>
-            <sys_id>24e62f88479a3510e057e0e8036d43d9</sys_id>
+            <sys_created_by>markus.kraus</sys_created_by>
+            <sys_created_on>2024-06-14 14:52:57</sys_created_on>
+            <sys_id>f547d8698776c6102a3163583cbb353f</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Instance Config" display_value="Instance Config" name="x_376096_mpl_customer" sys_domain="global" view="Default view">40432df647f72110acc88a88536d433b</sys_ui_section>
-            <sys_updated_by>mkraus6</sys_updated_by>
-            <sys_updated_on>2023-10-30 21:26:33</sys_updated_on>
+            <sys_updated_by>markus.kraus</sys_updated_by>
+            <sys_updated_on>2024-06-14 14:52:57</sys_updated_on>
+            <sys_user/>
+            <type>annotation</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>oauth_entity_sys_id</element>
+            <position>1</position>
+            <sys_created_by>markus.kraus</sys_created_by>
+            <sys_created_on>2024-06-14 14:52:57</sys_created_on>
+            <sys_id>7d47d8698776c6102a3163583cbb353f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Instance Config" display_value="Instance Config" name="x_376096_mpl_customer" sys_domain="global" view="Default view">40432df647f72110acc88a88536d433b</sys_ui_section>
+            <sys_updated_by>markus.kraus</sys_updated_by>
+            <sys_updated_on>2024-06-14 14:52:57</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>oauth_client_id</element>
-            <position>1</position>
-            <sys_created_by>mkraus6</sys_created_by>
-            <sys_created_on>2023-10-30 21:26:33</sys_created_on>
-            <sys_id>a4e62f88479a3510e057e0e8036d43d9</sys_id>
+            <position>2</position>
+            <sys_created_by>markus.kraus</sys_created_by>
+            <sys_created_on>2024-06-14 14:52:57</sys_created_on>
+            <sys_id>f147d8698776c6102a3163583cbb3540</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Instance Config" display_value="Instance Config" name="x_376096_mpl_customer" sys_domain="global" view="Default view">40432df647f72110acc88a88536d433b</sys_ui_section>
-            <sys_updated_by>mkraus6</sys_updated_by>
-            <sys_updated_on>2023-10-30 21:26:33</sys_updated_on>
+            <sys_updated_by>markus.kraus</sys_updated_by>
+            <sys_updated_on>2024-06-14 14:52:57</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>oauth_client_secret</element>
-            <position>2</position>
-            <sys_created_by>mkraus6</sys_created_by>
-            <sys_created_on>2023-10-30 21:26:33</sys_created_on>
-            <sys_id>28e62f88479a3510e057e0e8036d43d9</sys_id>
+            <position>3</position>
+            <sys_created_by>markus.kraus</sys_created_by>
+            <sys_created_on>2024-06-14 14:52:57</sys_created_on>
+            <sys_id>bd471c698776c6102a3163583cbb35f3</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Instance Config" display_value="Instance Config" name="x_376096_mpl_customer" sys_domain="global" view="Default view">40432df647f72110acc88a88536d433b</sys_ui_section>
-            <sys_updated_by>mkraus6</sys_updated_by>
-            <sys_updated_on>2023-10-30 21:26:33</sys_updated_on>
+            <sys_updated_by>markus.kraus</sys_updated_by>
+            <sys_updated_on>2024-06-14 14:52:57</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>12M.x_376096_mpl_customer.x_376096_mpl_instance.customer</element>
-            <position>3</position>
-            <sys_created_by>mkraus6</sys_created_by>
-            <sys_created_on>2023-10-30 21:26:33</sys_created_on>
-            <sys_id>a8e62f88479a3510e057e0e8036d43d9</sys_id>
+            <position>4</position>
+            <sys_created_by>markus.kraus</sys_created_by>
+            <sys_created_on>2024-06-14 14:52:57</sys_created_on>
+            <sys_id>35471c698776c6102a3163583cbb35f4</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Instance Config" display_value="Instance Config" name="x_376096_mpl_customer" sys_domain="global" view="Default view">40432df647f72110acc88a88536d433b</sys_ui_section>
-            <sys_updated_by>mkraus6</sys_updated_by>
-            <sys_updated_on>2023-10-30 21:26:33</sys_updated_on>
+            <sys_updated_by>markus.kraus</sys_updated_by>
+            <sys_updated_on>2024-06-14 14:52:57</sys_updated_on>
             <sys_user/>
             <type>list</type>
         </sys_ui_element>

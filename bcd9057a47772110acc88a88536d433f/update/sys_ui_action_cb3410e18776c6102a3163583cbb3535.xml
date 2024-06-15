@@ -26,55 +26,52 @@
         <list_link>false</list_link>
         <list_save_with_form_button>false</list_save_with_form_button>
         <list_style/>
-        <messages>mpl_oauth_incomplete_data</messages>
-        <name>Configure</name>
-        <onclick>mpl_configureInstance()</onclick>
+        <messages/>
+        <name>Validate</name>
+        <onclick>validateCustomer()</onclick>
         <order>100</order>
-        <script><![CDATA[/* global GlideModal, g_list, g_form, rowSysId */
+        <script><![CDATA[/* global GlideModal, g_form, g_navigation, getMessage, GlideAjax */
 /* eslint no-undef: "error" */
-function mpl_configureInstance() {
-	var instance = '';
-	var table = g_form.getTableName();
-	if (table == 'x_376096_mpl_instance') {
-		instance = g_form.getUniqueValue();
-	} else if (table == 'x_376096_mpl_customer') {
-		if (g_form.modified) {
-			g_form.addErrorMessage('You need to save the form before proceeding');
-			return;
+function validateCustomer() {
+	var ga = new GlideAjax('x_376096_mpl.MPLUtilClient');
+	ga.addParam('sysparm_name', 'validateCustomer');
+	ga.addParam('customer', g_form.getUniqueValue());
+	ga.getXMLAnswer(function (result) {
+		result = JSON.parse(result);
+		if (result.status == 'success') {
+			var trackerId = result.tracker_id;
+			var dd = new GlideModal('hierarchical_progress_viewer', false, '40em', '10em');
+			dd.setTitle(getMessage('Status'));
+			dd.setPreference('sysparm_renderer_execution_id', trackerId);
+			dd.on('executionComplete', function (result) {
+				g_navigation.reloadWindow();
+			});
+			dd.render();
+		} else if (result.message) {
+			g_form.addErrorMessage(result.message);
 		}
-
-		instance = rowSysId;
-	}
-
-	if (instance) {
-		var gm = new GlideModal('x_376096_mpl_oauth_script');
-		gm.setTitle('OAuth Script');
-		gm.setPreference('instance', instance);
-		gm.render();
-	} else {
-		g_form.addErrorMessage('Instance unknown');
-	}
+	});
 }]]></script>
         <show_insert>false</show_insert>
         <show_multiple_update>false</show_multiple_update>
         <show_query>false</show_query>
         <show_update>true</show_update>
         <sys_class_name>sys_ui_action</sys_class_name>
-        <sys_created_by>mkraus6</sys_created_by>
-        <sys_created_on>2023-10-30 20:33:34</sys_created_on>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:55:20</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>734a9384475a3510e057e0e8036d43e3</sys_id>
-        <sys_mod_count>18</sys_mod_count>
-        <sys_name>Configure</sys_name>
+        <sys_id>cb3410e18776c6102a3163583cbb3535</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Validate</sys_name>
         <sys_overrides/>
         <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
-        <sys_update_name>sys_ui_action_734a9384475a3510e057e0e8036d43e3</sys_update_name>
+        <sys_update_name>sys_ui_action_cb3410e18776c6102a3163583cbb3535</sys_update_name>
         <sys_updated_by>markus.kraus</sys_updated_by>
-        <sys_updated_on>2024-06-14 16:54:21</sys_updated_on>
-        <table>x_376096_mpl_instance</table>
+        <sys_updated_on>2024-06-14 16:47:03</sys_updated_on>
+        <table>x_376096_mpl_customer</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>
     </sys_ui_action>

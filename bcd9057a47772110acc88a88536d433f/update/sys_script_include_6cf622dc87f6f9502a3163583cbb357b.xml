@@ -20,6 +20,16 @@ MPLWorkerUtil.prototype = {
 		}
     },
 
+	validateCustomer: function (customerGr) {
+		const flowResult = sn_fd.FlowAPI.getRunner()
+			.subflow('x_376096_mpl.validate_customer')
+			.inBackground()
+			.withInputs({ 'customer': customerGr, 'worker_id': this.worker_id })
+			.run();
+
+		this._waitFlowResult(flowResult);
+	},
+
 	validateAppInstanceInstall: function (instInstallGr, userGr) {
 		const flowResult = sn_fd.FlowAPI.getRunner()
 			.subflow('x_376096_mpl.validate_application_instance_installation')
@@ -51,6 +61,9 @@ MPLWorkerUtil.prototype = {
 	},
 
 	prepareAppInstall: function (appInstallGr) {
+		// maybe a sleep needs to be added here because the appInstallGr 
+		// record might not yet have been inserted on the database
+
 		const flowResult = sn_fd.FlowAPI.getRunner()
 			.subflow('x_376096_mpl.prepare_application_installation')
 			.inBackground()
@@ -184,13 +197,13 @@ MPLWorkerUtil.prototype = {
         <sys_created_by>mkraus6</sys_created_by>
         <sys_created_on>2023-11-25 08:10:08</sys_created_on>
         <sys_id>6cf622dc87f6f9502a3163583cbb357b</sys_id>
-        <sys_mod_count>47</sys_mod_count>
+        <sys_mod_count>49</sys_mod_count>
         <sys_name>MPLWorkerUtil</sys_name>
         <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name>sys_script_include_6cf622dc87f6f9502a3163583cbb357b</sys_update_name>
         <sys_updated_by>markus.kraus</sys_updated_by>
-        <sys_updated_on>2024-01-26 16:44:02</sys_updated_on>
+        <sys_updated_on>2024-06-14 16:46:13</sys_updated_on>
     </sys_script_include>
 </record_update>

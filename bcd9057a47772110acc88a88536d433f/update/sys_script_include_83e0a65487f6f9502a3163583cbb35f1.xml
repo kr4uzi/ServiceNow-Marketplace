@@ -16,6 +16,47 @@ MPLUtilClient.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 		global.AbstractAjaxProcessor.prototype.initialize.apply(this, arguments);
 	},
 
+	validateCustomer: function () {
+		const result = {
+			status: 'error',
+			message: ''
+		};
+
+		try {
+			const customerSysID = this.getParameter('customer');
+			if (customerSysID) {
+				const customerGr = new GlideRecordSecure('x_376096_mpl_customer');
+				customerGr.addQuery('sys_id', customerSysID);
+				customerGr.setLimit(1);
+				customerGr.query();
+				if (customerGr.next()) {
+					const worker = new GlideScriptedHierarchicalWorker();
+					worker.setProgressName('Verify Customer Configuration');
+					worker.setScriptIncludeName('x_376096_mpl.MPLWorkerUtil');
+					worker.setScriptIncludeMethod('validateCustomer');
+					worker.putMethodArg('customerGr', customerGr);
+					worker.setBackground(true);
+					worker.start();
+
+					result.tracker_id = worker.getProgressID();
+					result.status = 'success';
+				} else {
+					result.message = gs.getMessage('mpl_record_not_found');
+				}
+			} else {
+				result.message = gs.getMessage('mpl_invalid_parameters');
+			}
+		} catch (e) { 
+			result.status = 'error';
+			result.message = e.message; 
+			if (e.stack && gs.hasRole('admin')) { 
+				result.message += '\n' + e.stack; 
+			}
+		}
+		
+		return JSON.stringify(result);	
+	},
+
 	validateInstall: function () {
 		const result = {
 			status: 'error',
@@ -261,13 +302,13 @@ MPLUtilClient.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>mkraus6</sys_created_by>
         <sys_created_on>2023-11-25 08:19:27</sys_created_on>
         <sys_id>83e0a65487f6f9502a3163583cbb35f1</sys_id>
-        <sys_mod_count>25</sys_mod_count>
+        <sys_mod_count>26</sys_mod_count>
         <sys_name>MPLUtilClient</sys_name>
         <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name>sys_script_include_83e0a65487f6f9502a3163583cbb35f1</sys_update_name>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-26 23:11:46</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:42:29</sys_updated_on>
     </sys_script_include>
 </record_update>

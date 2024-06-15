@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element audit="true" db_object_id="1f85553a47b72110acc88a88536d4351" extends="x_376096_mpl_task" label="OAuth Task" max_length="40" name="x_376096_mpl_oauth_task" type="collection">
-        <element label="Instance" max_length="32" name="instance" reference="x_376096_mpl_instance" reference_cascade_rule="clear" type="reference"/>
-        <element label="OAuth Token" max_length="32" name="oauth_token" reference="x_376096_mpl_oauth_token" reference_cascade_rule="clear" reference_qual="javascript: 'active=true^instance=' + current.instance" type="reference" use_reference_qualifier="advanced"/>
+        <element label="OAuth Token" max_length="32" name="oauth_token" reference="x_376096_mpl_oauth_token" reference_cascade_rule="cascade" reference_qual="javascript: 'active=true^instance=' + current.instance" type="reference" use_reference_qualifier="advanced"/>
+        <element label="Instance" max_length="32" name="instance" reference="x_376096_mpl_instance" reference_cascade_rule="cascade" type="reference"/>
     </element>
 </database>

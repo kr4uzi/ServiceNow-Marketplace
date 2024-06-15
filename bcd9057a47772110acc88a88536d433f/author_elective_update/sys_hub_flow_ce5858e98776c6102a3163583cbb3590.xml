@@ -1,0 +1,1655 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="DELETE">
+        <access>public</access>
+        <acls/>
+        <active>false</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=9931234000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>25000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <compiler_build>glide-vancouver-07-06-2023__patch4-11-02-2023_11-14-2023_1911.zip</compiler_build>
+        <copied_from>abba1b8b47bf6110acc88a88536d4327</copied_from>
+        <copied_from_name>Add new customer</copied_from_name>
+        <description/>
+        <display_name_after_preview/>
+        <flow_priority/>
+        <generation_source/>
+        <internal_name>validate_customer</internal_name>
+        <label_cache>[{"name":"Service Catalog_1.request_item","label":"Trigger - Service Catalog➛Requested Item Record","reference":"sc_req_item","reference_display":"Requested Item","type":"reference","base_type":"reference","attributes":{"default_search_field":"number"}},{"name":"flow_variable.git_access_token","label":"Flow Variables➛GIT Access Token","type":"string","base_type":"string","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"5665b12e-2c7a-4ad6-905f-ac07f2424c88"}},{"name":"413c680c-f406-4133-8953-ab0ea59c9ecd.github_organization","label":"2 - Get Catalog Variables➛github_organization","reference":"","reference_display":"github_organization","type":"string","base_type":"string","attributes":{"catalogType":"6","catalogTypeLabel":"Single Line Text"}},{"name":"9033493e-c3e9-41a3-b505-24f9878fcb85.has_access","label":"3 - GIT Test Access➛Has Access","reference_display":"Has Access","type":"boolean","base_type":"boolean","attributes":{"uiType":"boolean","uiTypeLabel":"True/False","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"a5ebbe30-0553-4a46-946d-dcea13fafeb5"}},{"name":"413c680c-f406-4133-8953-ab0ea59c9ecd.oauth_data","label":"2 - Get Catalog Variables➛oauth_data","reference":"","reference_display":"oauth_data","type":"multi_small","base_type":"multi_small","attributes":{"catalogType":"2","catalogTypeLabel":"Multi Line Text"}},{"name":"fa20c2f7-8c94-4e80-8689-dbf6f6cce59f.entity_id","label":"8 - GIT Get Entity ID➛Entity ID","reference_display":"Entity ID","type":"integer","base_type":"integer","attributes":{"uiType":"integer","uiTypeLabel":"Integer","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"da19a6a5-e36b-4637-bb5a-bd7bc2e25d65"}},{"name":"ea4c7419-9afb-4608-a7d2-0976dbff71a7.client_id","label":"7 - Parse OAuth Data➛Client ID","reference_display":"Client ID","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"5f26f51f-b29e-4459-bc3b-228e8b505988"}},{"name":"ea4c7419-9afb-4608-a7d2-0976dbff71a7.client_secret","label":"7 - Parse OAuth Data➛Client Secret","reference_display":"Client Secret","type":"password2","base_type":"password2","attributes":{"uiType":"password2","uiTypeLabel":"Password (2 Way Encrypted)","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"c28422a5-eb5e-4c09-aa4b-3cc772601ec6"}},{"name":"413c680c-f406-4133-8953-ab0ea59c9ecd.customer_name","label":"2 - Get Catalog Variables➛customer_name","reference":"","reference_display":"customer_name","type":"string","base_type":"string","attributes":{"catalogType":"6","catalogTypeLabel":"Single Line Text"}},{"name":"4cbb161a-141f-4759-a575-332900757727.record","label":"9 - Create or Update Record➛Customer Record","reference":"x_376096_mpl_customer","reference_display":"Customer","type":"reference","base_type":"reference","attributes":{"uiType":"document_id","uiTypeLabel":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"413c680c-f406-4133-8953-ab0ea59c9ecd.mpl_instance","label":"2 - Get Catalog Variables➛mpl_instance","reference":"","reference_display":"mpl_instance","type":"array.object","base_type":"array.object","attributes":{"child_label":"Instance Configuration","child_type_label":"Object","child_type":"object","child_name":"mpl_instance"}},{"name":"9b1458a1-3cf9-4d41-b641-4321fa20c534.item.mpl_instance_url","label":"11 - For Each➛Instance Configuration➛URL","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"catalogType":"27","catalogTypeLabel":"URL"}},{"name":"9b1458a1-3cf9-4d41-b641-4321fa20c534.item.mpl_instance_type","label":"11 - For Each➛Instance Configuration➛Type","reference":"","reference_display":"","type":"choice","base_type":"choice","column_name":"","choices":[{"label":"-- None --","value":"","order":100.0},{"label":"Development","value":"dev","order":100.0},{"label":"Testing","value":"test","order":100.0},{"label":"Production","value":"prod","order":100.0}],"attributes":{"catalogType":"5","catalogTypeLabel":"Select Box"}},{"name":"aecf3497-8536-4a32-abb8-497371d6624a.status","label":"13 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"aecf3497-8536-4a32-abb8-497371d6624a.Record","label":"13 - Look Up Record➛OAuth Token Record","reference":"x_376096_mpl_oauth_token","reference_display":"OAuth Token","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"bbabd733-1b93-4831-ac7d-0e02beaef7b1.record","label":"12 - Create or Update Record➛Instance Record","reference":"x_376096_mpl_instance","reference_display":"Instance","type":"reference","base_type":"reference","attributes":{"uiType":"document_id","uiTypeLabel":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"ea4c7419-9afb-4608-a7d2-0976dbff71a7.entity_sys_id","label":"7 - Parse OAuth Data➛Entity Sys ID","type":"GUID","base_type":"GUID","attributes":{"uiType":"GUID","uiTypeLabel":"Sys ID (GUID)","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"67398d2b-327f-4520-a79c-b85764f65c25"}}]</label_cache>
+        <latest_snapshot/>
+        <master_snapshot/>
+        <name>Validate Customer</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id/>
+        <run_as>system</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>draft</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:36</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>ce5858e98776c6102a3163583cbb3590</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Validate Customer</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name>sys_hub_flow_ce5858e98776c6102a3163583cbb3590</sys_update_name>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:41</sys_updated_on>
+        <type>flow</type>
+    </sys_hub_flow>
+    <sys_translated_text action="DELETE" query="documentkey=ce5858e98776c6102a3163583cbb3590"/>
+    <sys_variable_value action="DELETE" query="document_key=ce5858e98776c6102a3163583cbb3590"/>
+    <sys_hub_trigger_instance action="DELETE" query="flow=ce5858e98776c6102a3163583cbb3590^sys_idNOT IN3e5898e98776c6102a3163583cbb357f"/>
+    <sys_hub_trigger_instance action="DELETE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Validate Customer">ce5858e98776c6102a3163583cbb3590</flow>
+        <name>Service Catalog</name>
+        <remote_sys_id/>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:39</sys_created_on>
+        <sys_id>3e5898e98776c6102a3163583cbb357f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:39</sys_updated_on>
+        <trigger_definition display_value="Service Catalog">c43a1011c36813002841b63b12d3ae15</trigger_definition>
+        <trigger_inputs/>
+        <trigger_outputs/>
+        <trigger_type>service_catalog</trigger_type>
+    </sys_hub_trigger_instance>
+    <sys_variable_value action="DELETE" query="document_key=3e5898e98776c6102a3163583cbb357f"/>
+    <sys_hub_flow_stage action="DELETE" query="flow=ce5858e98776c6102a3163583cbb3590^sys_idNOT IN035898e98776c6102a3163583cbb35f9,075898e98776c6102a3163583cbb35f9,835898e98776c6102a3163583cbb35f9,875898e98776c6102a3163583cbb35f9,8f5898e98776c6102a3163583cbb35f8,c75898e98776c6102a3163583cbb35f8"/>
+    <sys_hub_flow_stage action="DELETE">
+        <always_show>true</always_show>
+        <ancestor_array_position>0</ancestor_array_position>
+        <ancestor_component_id/>
+        <ancestor_stage_id>416f0ef0-e148-44bb-91a3-a3fa5bd29c89</ancestor_stage_id>
+        <ancestral_if_else_logic>72e63b61-91b4-41d2-bc16-04b2e4f39a69</ancestral_if_else_logic>
+        <component_indexes>5</component_indexes>
+        <duration>1970-01-01 00:00:00</duration>
+        <flow display_value="Validate Customer">ce5858e98776c6102a3163583cbb3590</flow>
+        <label>Set current stage state to:  [Error]</label>
+        <order>0</order>
+        <stage_id>117cdaba-ebc5-4712-89ac-89bc1215e016</stage_id>
+        <states>{"pending":"Pending - has not started","in_progress":"In progress","skipped":"Skipped","complete":"Completed","error":"Error"}</states>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:41</sys_created_on>
+        <sys_id>035898e98776c6102a3163583cbb35f9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:41</sys_updated_on>
+        <type>error</type>
+        <value>Set current stage state to:  [Error]</value>
+    </sys_hub_flow_stage>
+    <sys_hub_flow_stage action="DELETE">
+        <always_show>false</always_show>
+        <ancestor_array_position>0</ancestor_array_position>
+        <ancestor_component_id/>
+        <ancestor_stage_id/>
+        <ancestral_if_else_logic/>
+        <component_indexes/>
+        <duration>1970-01-01 00:00:00</duration>
+        <flow display_value="Validate Customer">ce5858e98776c6102a3163583cbb3590</flow>
+        <label>Error</label>
+        <order>4</order>
+        <stage_id>6c64686f-e8b6-4de6-a7b7-f704fb4c835b</stage_id>
+        <states>{"pending":"Pending - has not started","in_progress":"In progress","skipped":"Skipped","complete":"Completed","error":"Error"}</states>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:41</sys_created_on>
+        <sys_id>075898e98776c6102a3163583cbb35f9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:41</sys_updated_on>
+        <type>standard</type>
+        <value>error</value>
+    </sys_hub_flow_stage>
+    <sys_hub_flow_stage action="DELETE">
+        <always_show>true</always_show>
+        <ancestor_array_position>0</ancestor_array_position>
+        <ancestor_component_id/>
+        <ancestor_stage_id/>
+        <ancestral_if_else_logic/>
+        <component_indexes>15</component_indexes>
+        <duration>1970-01-01 00:00:00</duration>
+        <flow display_value="Validate Customer">ce5858e98776c6102a3163583cbb3590</flow>
+        <label>Completed</label>
+        <order>3</order>
+        <stage_id>d1984220-8fd1-4f04-aa5e-54c896ff9cae</stage_id>
+        <states>{"pending":"Pending - has not started","in_progress":"In progress","skipped":"Skipped","complete":"Completed","error":"Error"}</states>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:41</sys_created_on>
+        <sys_id>835898e98776c6102a3163583cbb35f9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:41</sys_updated_on>
+        <type>standard</type>
+        <value>complete</value>
+    </sys_hub_flow_stage>
+    <sys_hub_flow_stage action="DELETE">
+        <always_show>true</always_show>
+        <ancestor_array_position>0</ancestor_array_position>
+        <ancestor_component_id/>
+        <ancestor_stage_id/>
+        <ancestral_if_else_logic/>
+        <component_indexes>9</component_indexes>
+        <duration>1970-01-01 00:00:00</duration>
+        <flow display_value="Validate Customer">ce5858e98776c6102a3163583cbb3590</flow>
+        <label>GitHub Import</label>
+        <order>1</order>
+        <stage_id>27d2c322-526e-4b63-be81-0260fbfe17dd</stage_id>
+        <states>{"pending":"Pending - has not started","in_progress":"In progress","skipped":"Skipped","complete":"Completed","error":"Error"}</states>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:41</sys_created_on>
+        <sys_id>875898e98776c6102a3163583cbb35f9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:41</sys_updated_on>
+        <type>standard</type>
+        <value>github_import</value>
+    </sys_hub_flow_stage>
+    <sys_hub_flow_stage action="DELETE">
+        <always_show>true</always_show>
+        <ancestor_array_position>0</ancestor_array_position>
+        <ancestor_component_id/>
+        <ancestor_stage_id/>
+        <ancestral_if_else_logic/>
+        <component_indexes>0</component_indexes>
+        <duration>1970-01-01 00:00:00</duration>
+        <flow display_value="Validate Customer">ce5858e98776c6102a3163583cbb3590</flow>
+        <label>GitHub Verification</label>
+        <order>0</order>
+        <stage_id>416f0ef0-e148-44bb-91a3-a3fa5bd29c89</stage_id>
+        <states>{"pending":"Pending - has not started","in_progress":"In progress","skipped":"Skipped","complete":"Completed","error":"Error"}</states>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:41</sys_created_on>
+        <sys_id>8f5898e98776c6102a3163583cbb35f8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:41</sys_updated_on>
+        <type>standard</type>
+        <value>github_verify</value>
+    </sys_hub_flow_stage>
+    <sys_hub_flow_stage action="DELETE">
+        <always_show>true</always_show>
+        <ancestor_array_position>0</ancestor_array_position>
+        <ancestor_component_id/>
+        <ancestor_stage_id/>
+        <ancestral_if_else_logic/>
+        <component_indexes>10</component_indexes>
+        <duration>1970-01-01 00:00:00</duration>
+        <flow display_value="Validate Customer">ce5858e98776c6102a3163583cbb3590</flow>
+        <label>Instance Verification</label>
+        <order>2</order>
+        <stage_id>6e35e54e-5f56-4e0a-b2d7-55253b19b01b</stage_id>
+        <states>{"pending":"Pending - has not started","in_progress":"In progress","skipped":"Skipped","complete":"Completed","error":"Error"}</states>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:41</sys_created_on>
+        <sys_id>c75898e98776c6102a3163583cbb35f8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:41</sys_updated_on>
+        <type>standard</type>
+        <value>instance_verify</value>
+    </sys_hub_flow_stage>
+    <sys_flow_cat_variable_model action="DELETE" query="id=ce5858e98776c6102a3163583cbb3590^sys_idNOT IN0a5858e98776c6102a3163583cbb3593"/>
+    <sys_flow_cat_variable_model action="DELETE">
+        <id>ce5858e98776c6102a3163583cbb3590</id>
+        <name>Validate Customer</name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:36</sys_created_on>
+        <sys_id>0a5858e98776c6102a3163583cbb3593</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:36</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="DELETE" query="flow_catalog_model=0a5858e98776c6102a3163583cbb3593"/>
+    <sys_hub_flow_input action="DELETE" query="model=ce5858e98776c6102a3163583cbb3590^sys_idNOT IN065858e98776c6102a3163583cbb35d3,8e5858e98776c6102a3163583cbb35d7"/>
+    <sys_hub_flow_input action="DELETE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>default_search_field=number,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>request_item</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Request Item</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Validate Customer">ce5858e98776c6102a3163583cbb3590</model>
+        <model_id>ce5858e98776c6102a3163583cbb3590</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_ce5858e98776c6102a3163583cbb3590</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="sc_req_item">sc_req_item</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:36</sys_created_on>
+        <sys_id>065858e98776c6102a3163583cbb35d3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:36</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="DELETE" query="action_input=065858e98776c6102a3163583cbb35d3"/>
+    <sys_hub_flow_input action="DELETE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value>sc_req_item</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Validate Customer">ce5858e98776c6102a3163583cbb3590</model>
+        <model_id>ce5858e98776c6102a3163583cbb3590</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_ce5858e98776c6102a3163583cbb3590</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>true</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:36</sys_created_on>
+        <sys_id>8e5858e98776c6102a3163583cbb35d7</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:37</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="DELETE" query="action_input=8e5858e98776c6102a3163583cbb35d7"/>
+    <sys_hub_flow_output action="DELETE" query="model=ce5858e98776c6102a3163583cbb3590"/>
+    <sys_hub_alias_mapping action="DELETE" query="source_id=ce5858e98776c6102a3163583cbb3590"/>
+    <sys_hub_action_instance action="DELETE" query="flow=ce5858e98776c6102a3163583cbb3590^sys_idNOT IN1e5898e98776c6102a3163583cbb350f,525898e98776c6102a3163583cbb352f,6e5898e98776c6102a3163583cbb354e,6e5898e98776c6102a3163583cbb3555,7e5898e98776c6102a3163583cbb357e,b25898e98776c6102a3163583cbb3579,d65898e98776c6102a3163583cbb3535,e25898e98776c6102a3163583cbb353f,ea5898e98776c6102a3163583cbb355c,fe5898e98776c6102a3163583cbb3571"/>
+    <sys_hub_action_instance action="DELETE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Get Catalog Variables">330ba3abc31013002841b63b12d3aee8</action_type>
+        <action_type_parent display_value="Get Catalog Variables">22f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>330ba3abc31013002841b63b12d3aee8</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Validate Customer">ce5858e98776c6102a3163583cbb3590</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:37</sys_created_on>
+        <sys_id>1e5898e98776c6102a3163583cbb350f</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:40</sys_updated_on>
+        <ui_id>413c680c-f406-4133-8953-ab0ea59c9ecd</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="DELETE" query="document_key=1e5898e98776c6102a3163583cbb350f"/>
+    <sys_variable_value action="DELETE">
+        <document>sys_hub_action_instance</document>
+        <document_key>1e5898e98776c6102a3163583cbb350f</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:37</sys_created_on>
+        <sys_id>565898e98776c6102a3163583cbb3512</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:37</sys_updated_on>
+        <value>fb87bd3e473b2110acc88a88536d43a6:item_option_new,3618b97e473b2110acc88a88536d4333:item_option_new,6d9831be473b2110acc88a88536d43f7:item_option_new,64e8f5be473b2110acc88a88536d4393:item_option_new_set</value>
+        <variable display_value="Catalog Variables">7b0ba3abc31013002841b63b12d3aef7</variable>
+    </sys_variable_value>
+    <sys_variable_value action="DELETE">
+        <document>sys_hub_action_instance</document>
+        <document_key>1e5898e98776c6102a3163583cbb350f</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:37</sys_created_on>
+        <sys_id>de5898e98776c6102a3163583cbb3512</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:37</sys_updated_on>
+        <value>0d57b93e473b2110acc88a88536d4331</value>
+        <variable display_value="Template Catalog Items and Variable Sets">bb0ba3abc31013002841b63b12d3aef1</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="DELETE" query="id=1e5898e98776c6102a3163583cbb350f"/>
+    <sys_element_mapping action="DELETE">
+        <field>catalog_variables</field>
+        <id>1e5898e98776c6102a3163583cbb350f</id>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:37</sys_created_on>
+        <sys_id>5e5898e98776c6102a3163583cbb3511</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:37</sys_updated_on>
+        <table>var__m_sys_hub_action_input_330ba3abc31013002841b63b12d3aee8</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="DELETE">
+        <field>requested_item</field>
+        <id>1e5898e98776c6102a3163583cbb350f</id>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:37</sys_created_on>
+        <sys_id>d25898e98776c6102a3163583cbb3512</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:37</sys_updated_on>
+        <table>var__m_sys_hub_action_input_330ba3abc31013002841b63b12d3aee8</table>
+        <value>{{Service Catalog_1.request_item}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="DELETE">
+        <field>template_catalog_item</field>
+        <id>1e5898e98776c6102a3163583cbb350f</id>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:37</sys_created_on>
+        <sys_id>125898e98776c6102a3163583cbb3512</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:37</sys_updated_on>
+        <table>var__m_sys_hub_action_input_330ba3abc31013002841b63b12d3aee8</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="DELETE" query="instance=1e5898e98776c6102a3163583cbb350f"/>
+    <sys_hub_alias_mapping action="DELETE" query="source_id=1e5898e98776c6102a3163583cbb350f"/>
+    <sys_hub_action_instance action="DELETE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="GIT Test Access">9740f40347376110acc88a88536d4364</action_type>
+        <action_type_parent display_value="GIT Test Access">01cfec8f47f36110acc88a88536d43b5</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9740f40347376110acc88a88536d4364</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Validate Customer">ce5858e98776c6102a3163583cbb3590</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:37</sys_created_on>
+        <sys_id>525898e98776c6102a3163583cbb352f</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:37</sys_updated_on>
+        <ui_id>9033493e-c3e9-41a3-b505-24f9878fcb85</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="DELETE" query="document_key=525898e98776c6102a3163583cbb352f"/>
+    <sys_variable_value action="DELETE">
+        <document>sys_hub_action_instance</document>
+        <document_key>525898e98776c6102a3163583cbb352f</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:37</sys_created_on>
+        <sys_id>1e5898e98776c6102a3163583cbb3530</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:37</sys_updated_on>
+        <value>{"version":"1.0","complexObjectSchema":{"FlowDesigner:FD9b40f403ef37611041c69ef83b3d0267":{"$COCollectionField":["String"],"$COCollectionField.$field_facets":{"SimpleMapFacet":"{\"up-shift-collection-level\":\"true\"}"}},"FlowDesigner:FD9b40f403ef37611041c69ef83b3d0267.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Expected Scopes\",\"mandatory\":\"true\",\"child_name\":\"scope\",\"uiUniqueId\":\"7e8693b8-3228-484e-9595-96e754e85b34\",\"uiTypeLabel\":\"Array.String\",\"co_type_name\":\"FD9b40f403ef37611041c69ef83b3d0267\",\"child_label\":\"Scope\",\"child_type_label\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.string\",\"mapped\":\"{}\",\"child_type\":\"string\",\"order\":\"2\",\"max_length\":\"65000\",\"child_uiUniqueId\":\"f6486b13-844f-4e40-8626-67ea53658b7c\"}"}},"complexObject":{"name$":"FD9b40f403ef37611041c69ef83b3d0267","$COCollectionField":["public_repo","write:public_key"]},"serializationFormat":"JSON"}</value>
+        <variable display_value="Expected Scopes">9740f40347376110acc88a88536d436e</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="DELETE" query="id=525898e98776c6102a3163583cbb352f"/>
+    <sys_element_mapping action="DELETE">
+        <field>access_token</field>
+        <id>525898e98776c6102a3163583cbb352f</id>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:37</sys_created_on>
+        <sys_id>d65898e98776c6102a3163583cbb3530</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:37</sys_updated_on>
+        <table>var__m_sys_hub_action_input_9740f40347376110acc88a88536d4364</table>
+        <value>{{flow_variable.git_access_token}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="DELETE">
+        <field>expected_scopes</field>
+        <id>525898e98776c6102a3163583cbb352f</id>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:37</sys_created_on>
+        <sys_id>9a5898e98776c6102a3163583cbb3530</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:37</sys_updated_on>
+        <table>var__m_sys_hub_action_input_9740f40347376110acc88a88536d4364</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="DELETE" query="instance=525898e98776c6102a3163583cbb352f"/>
+    <sys_hub_alias_mapping action="DELETE" query="source_id=525898e98776c6102a3163583cbb352f"/>
+    <sys_hub_action_instance action="DELETE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="GIT Get Entity ID">e7dc4ef647bb2110acc88a88536d4381</action_type>
+        <action_type_parent display_value="GIT Get Entity ID">395c8e7647bb2110acc88a88536d43e6</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>e7dc4ef647bb2110acc88a88536d4381</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Validate Customer">ce5858e98776c6102a3163583cbb3590</flow>
+        <generation_source/>
+        <order>8</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:38</sys_created_on>
+        <sys_id>6e5898e98776c6102a3163583cbb354e</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:38</sys_updated_on>
+        <ui_id>fa20c2f7-8c94-4e80-8689-dbf6f6cce59f</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="DELETE" query="document_key=6e5898e98776c6102a3163583cbb354e"/>
+    <sys_variable_value action="DELETE">
+        <document>sys_hub_action_instance</document>
+        <document_key>6e5898e98776c6102a3163583cbb354e</document_key>
+        <order>3</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:38</sys_created_on>
+        <sys_id>ea5898e98776c6102a3163583cbb3550</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:38</sys_updated_on>
+        <value>orgs</value>
+        <variable display_value="Type">a3dc4ef647bb2110acc88a88536d438d</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="DELETE" query="id=6e5898e98776c6102a3163583cbb354e"/>
+    <sys_element_mapping action="DELETE">
+        <field>access_token</field>
+        <id>6e5898e98776c6102a3163583cbb354e</id>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:38</sys_created_on>
+        <sys_id>e25898e98776c6102a3163583cbb3550</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:38</sys_updated_on>
+        <table>var__m_sys_hub_action_input_e7dc4ef647bb2110acc88a88536d4381</table>
+        <value>{{flow_variable.git_access_token}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="DELETE">
+        <field>name</field>
+        <id>6e5898e98776c6102a3163583cbb354e</id>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:38</sys_created_on>
+        <sys_id>a65898e98776c6102a3163583cbb3550</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:38</sys_updated_on>
+        <table>var__m_sys_hub_action_input_e7dc4ef647bb2110acc88a88536d4381</table>
+        <value>{{413c680c-f406-4133-8953-ab0ea59c9ecd.github_organization}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="DELETE">
+        <field>type</field>
+        <id>6e5898e98776c6102a3163583cbb354e</id>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:38</sys_created_on>
+        <sys_id>6a5898e98776c6102a3163583cbb3550</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:38</sys_updated_on>
+        <table>var__m_sys_hub_action_input_e7dc4ef647bb2110acc88a88536d4381</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="DELETE" query="instance=6e5898e98776c6102a3163583cbb354e"/>
+    <sys_hub_alias_mapping action="DELETE" query="source_id=6e5898e98776c6102a3163583cbb354e"/>
+    <sys_hub_action_instance action="DELETE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Create or Update Record">ab575ae253b3230034c6ddeeff7b12f1</action_type>
+        <action_type_parent display_value="Create or Update Record">e057d2e253b3230034c6ddeeff7b1261</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>ab575ae253b3230034c6ddeeff7b12f1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Validate Customer">ce5858e98776c6102a3163583cbb3590</flow>
+        <generation_source/>
+        <order>9</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:38</sys_created_on>
+        <sys_id>6e5898e98776c6102a3163583cbb3555</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:38</sys_updated_on>
+        <ui_id>4cbb161a-141f-4759-a575-332900757727</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="DELETE" query="document_key=6e5898e98776c6102a3163583cbb3555"/>
+    <sys_variable_value action="DELETE">
+        <document>sys_hub_action_instance</document>
+        <document_key>6e5898e98776c6102a3163583cbb3555</document_key>
+        <order>0</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:38</sys_created_on>
+        <sys_id>6a5898e98776c6102a3163583cbb3557</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:38</sys_updated_on>
+        <value>x_376096_mpl_customer</value>
+        <variable display_value="Table Name">27575ae253b3230034c6ddeeff7b12f4</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="DELETE" query="id=6e5898e98776c6102a3163583cbb3555"/>
+    <sys_element_mapping action="DELETE">
+        <field>fields</field>
+        <id>6e5898e98776c6102a3163583cbb3555</id>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:38</sys_created_on>
+        <sys_id>265898e98776c6102a3163583cbb3557</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:38</sys_updated_on>
+        <table>var__m_sys_hub_action_input_ab575ae253b3230034c6ddeeff7b12f1</table>
+        <value>github_id={{fa20c2f7-8c94-4e80-8689-dbf6f6cce59f.entity_id}}^github_name={{413c680c-f406-4133-8953-ab0ea59c9ecd.github_organization}}^github_access_token=fd-scripted^oauth_client_id={{ea4c7419-9afb-4608-a7d2-0976dbff71a7.client_id}}^oauth_client_secret={{ea4c7419-9afb-4608-a7d2-0976dbff71a7.client_secret}}^name={{413c680c-f406-4133-8953-ab0ea59c9ecd.customer_name}}^active=true^owners=fd-scripted^oauth_entity_sys_id={{ea4c7419-9afb-4608-a7d2-0976dbff71a7.entity_sys_id}}^coalesce_fields=github_id</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="DELETE">
+        <field>table_name</field>
+        <id>6e5898e98776c6102a3163583cbb3555</id>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:38</sys_created_on>
+        <sys_id>e65898e98776c6102a3163583cbb3557</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:38</sys_updated_on>
+        <table>var__m_sys_hub_action_input_ab575ae253b3230034c6ddeeff7b12f1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="DELETE" query="instance=6e5898e98776c6102a3163583cbb3555^sys_idNOT INea5898e98776c6102a3163583cbb3556"/>
+    <sys_hub_input_scripts action="DELETE">
+        <active>true</active>
+        <input_name>fields</input_name>
+        <instance>6e5898e98776c6102a3163583cbb3555</instance>
+        <referenced_table>sys_hub_action_instance</referenced_table>
+        <script>{"github_access_token":{"scriptActive":true,"script":"/*\n**Access Flow/Action data using the fd_data object. Script must return a value. \n**Order number is offset by +1 in Error Handling Section.\n**Available options display upon pressing \".\" after fd_data\n**example: var shortDesc \u003d fd_data.trigger.current.short_description;\n**return shortDesc;\n*/\nreturn fd_data.flow_var.git_access_token;","savedValue":""},"github_id":{"scriptActive":false,"savedValue":""},"owners":{"scriptActive":true,"script":"return fd_data.trigger.request_item.requested_for;","savedValue":""}}</script>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:38</sys_created_on>
+        <sys_id>ea5898e98776c6102a3163583cbb3556</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:38</sys_updated_on>
+    </sys_hub_input_scripts>
+    <sys_hub_alias_mapping action="DELETE" query="source_id=6e5898e98776c6102a3163583cbb3555"/>
+    <sys_hub_action_instance action="DELETE">
+        <action_inputs/>
+        <action_type display_value="Log">5bc1bcc6531003003bf1d9109ec587d4</action_type>
+        <action_type_parent display_value="Log">0e0ae8c2531003003bf1d9109ec587c8</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>5bc1bcc6531003003bf1d9109ec587d4</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Validate Customer">ce5858e98776c6102a3163583cbb3590</flow>
+        <generation_source/>
+        <order>16</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:39</sys_created_on>
+        <sys_id>7e5898e98776c6102a3163583cbb357e</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:39</sys_updated_on>
+        <ui_id>d144545b-2dd2-4d31-b8be-3c89aa910c65</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="DELETE" query="document_key=7e5898e98776c6102a3163583cbb357e"/>
+    <sys_element_mapping action="DELETE" query="table=var__m_sys_hub_action_input_5bc1bcc6531003003bf1d9109ec587d4^id=7e5898e98776c6102a3163583cbb357e"/>
+    <sys_hub_input_scripts action="DELETE" query="instance=7e5898e98776c6102a3163583cbb357e"/>
+    <sys_hub_alias_mapping action="DELETE" query="source_id=7e5898e98776c6102a3163583cbb357e"/>
+    <sys_hub_action_instance action="DELETE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Validate Customer">ce5858e98776c6102a3163583cbb3590</flow>
+        <generation_source/>
+        <order>15</order>
+        <parent_ui_id>8065dc2b-23e1-4a33-8f33-b5756164f7f8</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:39</sys_created_on>
+        <sys_id>b25898e98776c6102a3163583cbb3579</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:39</sys_updated_on>
+        <ui_id>3a9a676e-fc72-40b7-a6fa-3f89f83ea9fa</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="DELETE" query="document_key=b25898e98776c6102a3163583cbb3579"/>
+    <sys_variable_value action="DELETE">
+        <document>sys_hub_action_instance</document>
+        <document_key>b25898e98776c6102a3163583cbb3579</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:39</sys_created_on>
+        <sys_id>fa5898e98776c6102a3163583cbb357a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:39</sys_updated_on>
+        <value>x_376096_mpl_oauth_token</value>
+        <variable display_value="Table">b5d01916c31332002841b63b12d3aec9</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="DELETE" query="id=b25898e98776c6102a3163583cbb3579"/>
+    <sys_element_mapping action="DELETE">
+        <field>record</field>
+        <id>b25898e98776c6102a3163583cbb3579</id>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:39</sys_created_on>
+        <sys_id>7a5898e98776c6102a3163583cbb357a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:39</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>{{aecf3497-8536-4a32-abb8-497371d6624a.Record}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="DELETE">
+        <field>table_name</field>
+        <id>b25898e98776c6102a3163583cbb3579</id>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:39</sys_created_on>
+        <sys_id>f25898e98776c6102a3163583cbb357a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:39</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="DELETE">
+        <field>values</field>
+        <id>b25898e98776c6102a3163583cbb3579</id>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:39</sys_created_on>
+        <sys_id>b65898e98776c6102a3163583cbb357a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:39</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>instance={{bbabd733-1b93-4831-ac7d-0e02beaef7b1.record}}</value>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="DELETE" query="instance=b25898e98776c6102a3163583cbb3579"/>
+    <sys_hub_alias_mapping action="DELETE" query="source_id=b25898e98776c6102a3163583cbb3579"/>
+    <sys_hub_action_instance action="DELETE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Validate Customer">ce5858e98776c6102a3163583cbb3590</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>72e63b61-91b4-41d2-bc16-04b2e4f39a69</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:38</sys_created_on>
+        <sys_id>d65898e98776c6102a3163583cbb3535</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:38</sys_updated_on>
+        <ui_id>7bcd788d-8678-45ef-8adf-4bdbbe208e42</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="DELETE" query="document_key=d65898e98776c6102a3163583cbb3535"/>
+    <sys_variable_value action="DELETE">
+        <document>sys_hub_action_instance</document>
+        <document_key>d65898e98776c6102a3163583cbb3535</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:38</sys_created_on>
+        <sys_id>1a5898e98776c6102a3163583cbb3537</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:38</sys_updated_on>
+        <value>sc_req_item</value>
+        <variable display_value="Table">b5d01916c31332002841b63b12d3aec9</variable>
+    </sys_variable_value>
+    <sys_variable_value action="DELETE">
+        <document>sys_hub_action_instance</document>
+        <document_key>d65898e98776c6102a3163583cbb3535</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:38</sys_created_on>
+        <sys_id>565898e98776c6102a3163583cbb3537</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:38</sys_updated_on>
+        <value>comments=GitHub Access token does not have the necessary privileges: public_repo, write:repo_hook</value>
+        <variable display_value="Fields">02d01916c31332002841b63b12d3aeee</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="DELETE" query="id=d65898e98776c6102a3163583cbb3535"/>
+    <sys_element_mapping action="DELETE">
+        <field>record</field>
+        <id>d65898e98776c6102a3163583cbb3535</id>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:38</sys_created_on>
+        <sys_id>d25898e98776c6102a3163583cbb3537</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:38</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>{{Service Catalog_1.request_item}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="DELETE">
+        <field>table_name</field>
+        <id>d65898e98776c6102a3163583cbb3535</id>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:38</sys_created_on>
+        <sys_id>5e5898e98776c6102a3163583cbb3536</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:38</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="DELETE">
+        <field>values</field>
+        <id>d65898e98776c6102a3163583cbb3535</id>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:38</sys_created_on>
+        <sys_id>125898e98776c6102a3163583cbb3537</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:38</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="DELETE" query="instance=d65898e98776c6102a3163583cbb3535"/>
+    <sys_hub_alias_mapping action="DELETE" query="source_id=d65898e98776c6102a3163583cbb3535"/>
+    <sys_hub_action_instance action="DELETE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Parse OAuth Data">87de418f47776110acc88a88536d431a</action_type>
+        <action_type_parent display_value="Parse OAuth Data">1c1e410b47776110acc88a88536d4317</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>87de418f47776110acc88a88536d431a</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Validate Customer">ce5858e98776c6102a3163583cbb3590</flow>
+        <generation_source/>
+        <order>7</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:38</sys_created_on>
+        <sys_id>e25898e98776c6102a3163583cbb353f</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:38</sys_updated_on>
+        <ui_id>ea4c7419-9afb-4608-a7d2-0976dbff71a7</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="DELETE" query="document_key=e25898e98776c6102a3163583cbb353f"/>
+    <sys_element_mapping action="DELETE" query="id=e25898e98776c6102a3163583cbb353f"/>
+    <sys_element_mapping action="DELETE">
+        <field>oauth_data</field>
+        <id>e25898e98776c6102a3163583cbb353f</id>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:38</sys_created_on>
+        <sys_id>665898e98776c6102a3163583cbb3540</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:38</sys_updated_on>
+        <table>var__m_sys_hub_action_input_87de418f47776110acc88a88536d431a</table>
+        <value>{{413c680c-f406-4133-8953-ab0ea59c9ecd.oauth_data}}</value>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="DELETE" query="instance=e25898e98776c6102a3163583cbb353f"/>
+    <sys_hub_alias_mapping action="DELETE" query="source_id=e25898e98776c6102a3163583cbb353f"/>
+    <sys_hub_action_instance action="DELETE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Create or Update Record">ab575ae253b3230034c6ddeeff7b12f1</action_type>
+        <action_type_parent display_value="Create or Update Record">e057d2e253b3230034c6ddeeff7b1261</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>ab575ae253b3230034c6ddeeff7b12f1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Validate Customer">ce5858e98776c6102a3163583cbb3590</flow>
+        <generation_source/>
+        <order>12</order>
+        <parent_ui_id>9b1458a1-3cf9-4d41-b641-4321fa20c534</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:38</sys_created_on>
+        <sys_id>ea5898e98776c6102a3163583cbb355c</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:38</sys_updated_on>
+        <ui_id>bbabd733-1b93-4831-ac7d-0e02beaef7b1</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="DELETE" query="document_key=ea5898e98776c6102a3163583cbb355c"/>
+    <sys_variable_value action="DELETE">
+        <document>sys_hub_action_instance</document>
+        <document_key>ea5898e98776c6102a3163583cbb355c</document_key>
+        <order>0</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:38</sys_created_on>
+        <sys_id>ee5898e98776c6102a3163583cbb355d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:38</sys_updated_on>
+        <value>x_376096_mpl_instance</value>
+        <variable display_value="Table Name">27575ae253b3230034c6ddeeff7b12f4</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="DELETE" query="id=ea5898e98776c6102a3163583cbb355c"/>
+    <sys_element_mapping action="DELETE">
+        <field>fields</field>
+        <id>ea5898e98776c6102a3163583cbb355c</id>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:38</sys_created_on>
+        <sys_id>aa5898e98776c6102a3163583cbb355d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:38</sys_updated_on>
+        <table>var__m_sys_hub_action_input_ab575ae253b3230034c6ddeeff7b12f1</table>
+        <value>customer={{4cbb161a-141f-4759-a575-332900757727.record}}^url={{9b1458a1-3cf9-4d41-b641-4321fa20c534.item.mpl_instance_url}}^type={{9b1458a1-3cf9-4d41-b641-4321fa20c534.item.mpl_instance_type}}^coalesce_fields=url</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="DELETE">
+        <field>table_name</field>
+        <id>ea5898e98776c6102a3163583cbb355c</id>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:38</sys_created_on>
+        <sys_id>6e5898e98776c6102a3163583cbb355d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:38</sys_updated_on>
+        <table>var__m_sys_hub_action_input_ab575ae253b3230034c6ddeeff7b12f1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="DELETE" query="instance=ea5898e98776c6102a3163583cbb355c"/>
+    <sys_hub_alias_mapping action="DELETE" query="source_id=ea5898e98776c6102a3163583cbb355c"/>
+    <sys_hub_action_instance action="DELETE">
+        <action_inputs/>
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Validate Customer">ce5858e98776c6102a3163583cbb3590</flow>
+        <generation_source/>
+        <order>13</order>
+        <parent_ui_id>9b1458a1-3cf9-4d41-b641-4321fa20c534</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:39</sys_created_on>
+        <sys_id>fe5898e98776c6102a3163583cbb3571</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:39</sys_updated_on>
+        <ui_id>aecf3497-8536-4a32-abb8-497371d6624a</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="DELETE" query="document_key=fe5898e98776c6102a3163583cbb3571"/>
+    <sys_variable_value action="DELETE">
+        <document>sys_hub_action_instance</document>
+        <document_key>fe5898e98776c6102a3163583cbb3571</document_key>
+        <order>0</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:39</sys_created_on>
+        <sys_id>b65898e98776c6102a3163583cbb3574</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:39</sys_updated_on>
+        <value>x_376096_mpl_oauth_token</value>
+        <variable display_value="Table">d909f99587003300663ca1bb36cb0ba4</variable>
+    </sys_variable_value>
+    <sys_variable_value action="DELETE">
+        <document>sys_hub_action_instance</document>
+        <document_key>fe5898e98776c6102a3163583cbb3571</document_key>
+        <order>5</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:39</sys_created_on>
+        <sys_id>f25898e98776c6102a3163583cbb3574</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:39</sys_updated_on>
+        <value>1</value>
+        <variable display_value="Don't fail on error">ceab42a673110010d70877186bf6a74f</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="DELETE" query="table=var__m_sys_hub_action_input_9d09f99587003300663ca1bb36cb0ba3^id=fe5898e98776c6102a3163583cbb3571"/>
+    <sys_hub_input_scripts action="DELETE" query="instance=fe5898e98776c6102a3163583cbb3571^sys_idNOT IN725898e98776c6102a3163583cbb3573"/>
+    <sys_hub_input_scripts action="DELETE">
+        <active>true</active>
+        <input_name>conditions</input_name>
+        <instance>fe5898e98776c6102a3163583cbb3571</instance>
+        <referenced_table>sys_hub_action_instance</referenced_table>
+        <script>{"conditions":{"scriptActive":true,"script":"/*\n**Access Flow/Action data using the fd_data object. Script must return a value. \n**Order number is offset by +1 in Error Handling Section.\n**Available options display upon pressing \".\" after fd_data\n**example: var shortDesc \u003d fd_data.trigger.current.short_description;\n**return shortDesc;\n**\n**Requires GlideRecord encodedQuery response, example:\n**\"active\u003dtrue^short_descriptionSTARTSWITHtest\";\n*/\nconst instanceURL \u003d fd_data._11__for_each.item.mpl_instance_url;\nreturn \u0027sys_id\u003d\u0027 + fd_data._7__parse_oauth_data.tokens[instanceURL];"}}</script>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:39</sys_created_on>
+        <sys_id>725898e98776c6102a3163583cbb3573</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:39</sys_updated_on>
+    </sys_hub_input_scripts>
+    <sys_hub_alias_mapping action="DELETE" query="source_id=fe5898e98776c6102a3163583cbb3571"/>
+    <sys_hub_sub_flow_instance action="DELETE" query="flow=ce5858e98776c6102a3163583cbb3590^sys_idNOT IN7a5898e98776c6102a3163583cbb3580"/>
+    <sys_hub_sub_flow_instance action="DELETE">
+        <attributes/>
+        <comment/>
+        <display_text/>
+        <flow display_value="Validate Customer">ce5858e98776c6102a3163583cbb3590</flow>
+        <generation_source/>
+        <inputs/>
+        <inputs/>
+        <order>10</order>
+        <parent_ui_id/>
+        <subflow display_value="GIT Import NOW Applications">c73f5e4b47bb6110acc88a88536d4344</subflow>
+        <subflow_instance_inputs/>
+        <sys_class_name>sys_hub_sub_flow_instance</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:39</sys_created_on>
+        <sys_id>7a5898e98776c6102a3163583cbb3580</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:40</sys_updated_on>
+        <ui_id>ab44ee08-6350-40c4-8584-c54280481e13</ui_id>
+    </sys_hub_sub_flow_instance>
+    <sys_variable_value action="DELETE" query="document_key=7a5898e98776c6102a3163583cbb3580"/>
+    <sys_variable_value action="DELETE">
+        <document>sys_hub_sub_flow_instance</document>
+        <document_key>7a5898e98776c6102a3163583cbb3580</document_key>
+        <order>0</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:40</sys_created_on>
+        <sys_id>4b5898e98776c6102a3163583cbb35cf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:40</sys_updated_on>
+        <value>1</value>
+        <variable display_value="wait_for_completion">725898e98776c6102a3163583cbb3582</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="DELETE" query="id=7a5898e98776c6102a3163583cbb3580"/>
+    <sys_element_mapping action="DELETE">
+        <field>customer</field>
+        <id>7a5898e98776c6102a3163583cbb3580</id>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:40</sys_created_on>
+        <sys_id>4f5898e98776c6102a3163583cbb35ce</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:40</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_c73f5e4b47bb6110acc88a88536d4344</table>
+        <value>{{4cbb161a-141f-4759-a575-332900757727.record}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="DELETE">
+        <field>wait_for_completion</field>
+        <id>7a5898e98776c6102a3163583cbb3580</id>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:40</sys_created_on>
+        <sys_id>c75898e98776c6102a3163583cbb35cf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:40</sys_updated_on>
+        <table>var__m_sys_hub_sub_flow_instance_inputs_7a5898e98776c6102a3163583cbb3580</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="DELETE" query="table=var__m_sys_hub_sub_flow_instance_inputs_7a5898e98776c6102a3163583cbb3580^id=7a5898e98776c6102a3163583cbb3580"/>
+    <sys_hub_sub_flow_instance_inputs action="DELETE" query="model=7a5898e98776c6102a3163583cbb3580^sys_idNOT IN725898e98776c6102a3163583cbb3582"/>
+    <sys_hub_sub_flow_instance_inputs action="DELETE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,fd_hide_inline_script_widget=true,uiType=boolean,uiTypeLabel=True/False</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>wait_for_completion</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">boolean</internal_type>
+        <label>wait_for_completion</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="">7a5898e98776c6102a3163583cbb3580</model>
+        <model_id>7a5898e98776c6102a3163583cbb3580</model_id>
+        <model_table>sys_hub_flow_logic_ext_input</model_table>
+        <name>var__m_sys_hub_sub_flow_instance_inputs_7a5898e98776c6102a3163583cbb3580</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_sub_flow_instance_inputs</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:39</sys_created_on>
+        <sys_id>725898e98776c6102a3163583cbb3582</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:39</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_sub_flow_instance_inputs>
+    <sys_hub_input_scripts action="DELETE" query="instance=7a5898e98776c6102a3163583cbb3580"/>
+    <sys_hub_flow_logic action="DELETE" query="flow=ce5858e98776c6102a3163583cbb3590^sys_idNOT IN1a5858e98776c6102a3163583cbb35fc,8a5858e98776c6102a3163583cbb35e1,925858e98776c6102a3163583cbb35f6,da5858e98776c6102a3163583cbb35e5,de5858e98776c6102a3163583cbb35f8"/>
+    <sys_hub_flow_logic action="DELETE">
+        <attributes/>
+        <block display_value="">fcfa3d8e8702f5102a3163583cbb35e7</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Validate Customer">ce5858e98776c6102a3163583cbb3590</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>14</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>9b1458a1-3cf9-4d41-b641-4321fa20c534</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:37</sys_created_on>
+        <sys_id>1a5858e98776c6102a3163583cbb35fc</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:37</sys_updated_on>
+        <ui_id>8065dc2b-23e1-4a33-8f33-b5756164f7f8</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="DELETE" query="document_key=1a5858e98776c6102a3163583cbb35fc"/>
+    <sys_element_mapping action="DELETE" query="table=var__m_sys_hub_flow_variable_ce5858e98776c6102a3163583cbb3590^id=1a5858e98776c6102a3163583cbb35fc"/>
+    <sys_element_mapping action="DELETE" query="id=1a5858e98776c6102a3163583cbb35fc"/>
+    <sys_element_mapping action="DELETE">
+        <field>condition</field>
+        <id>1a5858e98776c6102a3163583cbb35fc</id>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:37</sys_created_on>
+        <sys_id>125858e98776c6102a3163583cbb35ff</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:37</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value>{{aecf3497-8536-4a32-abb8-497371d6624a.status}}=0</value>
+    </sys_element_mapping>
+    <sys_hub_flow_logic_ext_input action="DELETE" query="model=1a5858e98776c6102a3163583cbb35fc"/>
+    <sys_hub_input_scripts action="DELETE" query="instance=1a5858e98776c6102a3163583cbb35fc"/>
+    <sys_hub_flow_logic action="DELETE">
+        <attributes/>
+        <block display_value="">28fa3d8e8702f5102a3163583cbb3528</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Validate Customer">ce5858e98776c6102a3163583cbb3590</flow>
+        <flow_variable/>
+        <flow_variables_assigned>git_access_token</flow_variables_assigned>
+        <generation_source/>
+        <inputs/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>1</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:37</sys_created_on>
+        <sys_id>8a5858e98776c6102a3163583cbb35e1</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:37</sys_updated_on>
+        <ui_id>edd43844-e560-4f3e-9070-1c543f82b00f</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="DELETE" query="document_key=8a5858e98776c6102a3163583cbb35e1"/>
+    <sys_element_mapping action="DELETE" query="table=var__m_sys_hub_flow_variable_ce5858e98776c6102a3163583cbb3590^id=8a5858e98776c6102a3163583cbb35e1"/>
+    <sys_hub_flow_logic_ext_input action="DELETE" query="model=8a5858e98776c6102a3163583cbb35e1"/>
+    <sys_hub_input_scripts action="DELETE" query="instance=8a5858e98776c6102a3163583cbb35e1^sys_idNOT INda5858e98776c6102a3163583cbb35e2"/>
+    <sys_hub_input_scripts action="DELETE">
+        <active>true</active>
+        <input_name>git_access_token</input_name>
+        <instance>8a5858e98776c6102a3163583cbb35e1</instance>
+        <referenced_table>sys_hub_flow_logic</referenced_table>
+        <script>{"git_access_token":{"scriptActive":true,"script":"/*\n**Access Flow/Action data using the fd_data object. Script must return a value. \n**Order number is offset by +1 in Error Handling Section.\n**Available options display upon pressing \".\" after fd_data\n**example: var shortDesc \u003d fd_data.trigger.current.short_description;\n**return shortDesc;\n*/\nreturn fd_data.trigger.request_item.variables.github_access_token.getDecryptedValue();"}}</script>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:37</sys_created_on>
+        <sys_id>da5858e98776c6102a3163583cbb35e2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:37</sys_updated_on>
+    </sys_hub_input_scripts>
+    <sys_hub_flow_logic action="DELETE">
+        <attributes/>
+        <block display_value="">34fa3d8e8702f5102a3163583cbb3544</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Validate Customer">ce5858e98776c6102a3163583cbb3590</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <inputs/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>6</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>72e63b61-91b4-41d2-bc16-04b2e4f39a69</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:37</sys_created_on>
+        <sys_id>925858e98776c6102a3163583cbb35f6</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:37</sys_updated_on>
+        <ui_id>dca507a9-8654-4da1-b08b-a332ebfffb98</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="DELETE" query="document_key=925858e98776c6102a3163583cbb35f6"/>
+    <sys_element_mapping action="DELETE" query="table=var__m_sys_hub_flow_variable_ce5858e98776c6102a3163583cbb3590^id=925858e98776c6102a3163583cbb35f6"/>
+    <sys_hub_flow_logic_ext_input action="DELETE" query="model=925858e98776c6102a3163583cbb35f6"/>
+    <sys_hub_input_scripts action="DELETE" query="instance=925858e98776c6102a3163583cbb35f6"/>
+    <sys_hub_flow_logic action="DELETE">
+        <attributes/>
+        <block display_value="">7cfa3d8e8702f5102a3163583cbb3531</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Validate Customer">ce5858e98776c6102a3163583cbb3590</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:37</sys_created_on>
+        <sys_id>da5858e98776c6102a3163583cbb35e5</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:37</sys_updated_on>
+        <ui_id>72e63b61-91b4-41d2-bc16-04b2e4f39a69</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="DELETE" query="document_key=da5858e98776c6102a3163583cbb35e5"/>
+    <sys_element_mapping action="DELETE" query="table=var__m_sys_hub_flow_variable_ce5858e98776c6102a3163583cbb3590^id=da5858e98776c6102a3163583cbb35e5"/>
+    <sys_element_mapping action="DELETE" query="id=da5858e98776c6102a3163583cbb35e5"/>
+    <sys_element_mapping action="DELETE">
+        <field>condition</field>
+        <id>da5858e98776c6102a3163583cbb35e5</id>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:37</sys_created_on>
+        <sys_id>1a5858e98776c6102a3163583cbb35e8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:37</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value>{{9033493e-c3e9-41a3-b505-24f9878fcb85.has_access}}=false</value>
+    </sys_element_mapping>
+    <sys_hub_flow_logic_ext_input action="DELETE" query="model=da5858e98776c6102a3163583cbb35e5"/>
+    <sys_hub_input_scripts action="DELETE" query="instance=da5858e98776c6102a3163583cbb35e5"/>
+    <sys_hub_flow_logic action="DELETE">
+        <attributes/>
+        <block display_value="">f0fa3d8e8702f5102a3163583cbb35c4</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Validate Customer">ce5858e98776c6102a3163583cbb3590</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <order>11</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:37</sys_created_on>
+        <sys_id>de5858e98776c6102a3163583cbb35f8</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:37</sys_updated_on>
+        <ui_id>9b1458a1-3cf9-4d41-b641-4321fa20c534</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="DELETE" query="document_key=de5858e98776c6102a3163583cbb35f8"/>
+    <sys_element_mapping action="DELETE" query="table=var__m_sys_hub_flow_variable_ce5858e98776c6102a3163583cbb3590^id=de5858e98776c6102a3163583cbb35f8"/>
+    <sys_element_mapping action="DELETE" query="id=de5858e98776c6102a3163583cbb35f8"/>
+    <sys_element_mapping action="DELETE">
+        <field>items</field>
+        <id>de5858e98776c6102a3163583cbb35f8</id>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:37</sys_created_on>
+        <sys_id>9a5858e98776c6102a3163583cbb35fb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:37</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_098e1dc5c3e232002841b63b12d3ae33</table>
+        <value>{{413c680c-f406-4133-8953-ab0ea59c9ecd.mpl_instance}}</value>
+    </sys_element_mapping>
+    <sys_hub_flow_logic_ext_input action="DELETE" query="model=de5858e98776c6102a3163583cbb35f8"/>
+    <sys_hub_input_scripts action="DELETE" query="instance=de5858e98776c6102a3163583cbb35f8"/>
+    <sys_hub_pill_compound action="DELETE" query="attached_to=ce5858e98776c6102a3163583cbb3590"/>
+    <sys_hub_flow_variable action="DELETE" query="model=ce5858e98776c6102a3163583cbb3590^sys_idNOT IN865858e98776c6102a3163583cbb359a"/>
+    <sys_hub_flow_variable action="DELETE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=5665b12e-2c7a-4ad6-905f-ac07f2424c88</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>git_access_token</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>GIT Access Token</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Validate Customer">ce5858e98776c6102a3163583cbb3590</model>
+        <model_id>ce5858e98776c6102a3163583cbb3590</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_ce5858e98776c6102a3163583cbb3590</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:36</sys_created_on>
+        <sys_id>865858e98776c6102a3163583cbb359a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:36</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_documentation action="DELETE" query="name=var__m_sys_hub_flow_input_ce5858e98776c6102a3163583cbb3590^sys_idNOT IN0e5858e98776c6102a3163583cbb35dc,8e5858e98776c6102a3163583cbb35d6"/>
+    <sys_documentation action="DELETE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_ce5858e98776c6102a3163583cbb3590</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:37</sys_created_on>
+        <sys_id>0e5858e98776c6102a3163583cbb35dc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:37</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="DELETE">
+        <element>request_item</element>
+        <help/>
+        <hint/>
+        <label>Request Item</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_ce5858e98776c6102a3163583cbb3590</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:36</sys_created_on>
+        <sys_id>8e5858e98776c6102a3163583cbb35d6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:36</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="DELETE" query="name=var__m_sys_hub_flow_input_ce5858e98776c6102a3163583cbb3590"/>
+    <sys_documentation action="DELETE" query="name=var__m_sys_hub_flow_output_ce5858e98776c6102a3163583cbb3590"/>
+    <sys_choice action="DELETE" query="name=var__m_sys_hub_flow_output_ce5858e98776c6102a3163583cbb3590"/>
+    <sys_flow_trigger_plan action="DELETE" query="plan_id=ce5858e98776c6102a3163583cbb3590"/>
+    <sys_flow_subflow_plan action="DELETE" query="plan_id=ce5858e98776c6102a3163583cbb3590"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Marketplace">bcd9057a47772110acc88a88536d433f</application>
+        <file_path/>
+        <instance_id>84830f404a36232a010b7b61011a5184</instance_id>
+        <instance_name>dxccneepractice1</instance_name>
+        <name>sys_hub_flow_ce5858e98776c6102a3163583cbb3590</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_hub_flow"&gt;&lt;sys_hub_flow action="INSERT_OR_UPDATE"&gt;&lt;access&gt;public&lt;/access&gt;&lt;acls/&gt;&lt;active&gt;false&lt;/active&gt;&lt;annotation/&gt;&lt;attributes&gt;browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=9931234000,viewActivatedIn=naturalLanguage&lt;/attributes&gt;&lt;authored_on_release_version&gt;25000&lt;/authored_on_release_version&gt;&lt;callable_by_client_api&gt;false&lt;/callable_by_client_api&gt;&lt;category/&gt;&lt;compiler_build&gt;glide-vancouver-07-06-2023__patch4-11-02-2023_11-14-2023_1911.zip&lt;/compiler_build&gt;&lt;copied_from&gt;abba1b8b47bf6110acc88a88536d4327&lt;/copied_from&gt;&lt;copied_from_name&gt;Add new customer&lt;/copied_from_name&gt;&lt;description/&gt;&lt;display_name_after_preview/&gt;&lt;flow_priority/&gt;&lt;generation_source/&gt;&lt;internal_name&gt;validate_customer&lt;/internal_name&gt;&lt;label_cache&gt;[{"name":"Service Catalog_1.request_item","label":"Trigger - Service Catalog➛Requested Item Record","reference":"sc_req_item","reference_display":"Requested Item","type":"reference","base_type":"reference","attributes":{"default_search_field":"number"}},{"name":"flow_variable.git_access_token","label":"Flow Variables➛GIT Access Token","type":"string","base_type":"string","attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"5665b12e-2c7a-4ad6-905f-ac07f2424c88"}},{"name":"413c680c-f406-4133-8953-ab0ea59c9ecd.github_organization","label":"2 - Get Catalog Variables➛github_organization","reference":"","reference_display":"github_organization","type":"string","base_type":"string","attributes":{"catalogType":"6","catalogTypeLabel":"Single Line Text"}},{"name":"9033493e-c3e9-41a3-b505-24f9878fcb85.has_access","label":"3 - GIT Test Access➛Has Access","reference_display":"Has Access","type":"boolean","base_type":"boolean","attributes":{"uiType":"boolean","uiTypeLabel":"True/False","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"a5ebbe30-0553-4a46-946d-dcea13fafeb5"}},{"name":"413c680c-f406-4133-8953-ab0ea59c9ecd.oauth_data","label":"2 - Get Catalog Variables➛oauth_data","reference":"","reference_display":"oauth_data","type":"multi_small","base_type":"multi_small","attributes":{"catalogType":"2","catalogTypeLabel":"Multi Line Text"}},{"name":"fa20c2f7-8c94-4e80-8689-dbf6f6cce59f.entity_id","label":"8 - GIT Get Entity ID➛Entity ID","reference_display":"Entity ID","type":"integer","base_type":"integer","attributes":{"uiType":"integer","uiTypeLabel":"Integer","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"da19a6a5-e36b-4637-bb5a-bd7bc2e25d65"}},{"name":"ea4c7419-9afb-4608-a7d2-0976dbff71a7.client_id","label":"7 - Parse OAuth Data➛Client ID","reference_display":"Client ID","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"5f26f51f-b29e-4459-bc3b-228e8b505988"}},{"name":"ea4c7419-9afb-4608-a7d2-0976dbff71a7.client_secret","label":"7 - Parse OAuth Data➛Client Secret","reference_display":"Client Secret","type":"password2","base_type":"password2","attributes":{"uiType":"password2","uiTypeLabel":"Password (2 Way Encrypted)","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"c28422a5-eb5e-4c09-aa4b-3cc772601ec6"}},{"name":"413c680c-f406-4133-8953-ab0ea59c9ecd.customer_name","label":"2 - Get Catalog Variables➛customer_name","reference":"","reference_display":"customer_name","type":"string","base_type":"string","attributes":{"catalogType":"6","catalogTypeLabel":"Single Line Text"}},{"name":"4cbb161a-141f-4759-a575-332900757727.record","label":"9 - Create or Update Record➛Customer Record","reference":"x_376096_mpl_customer","reference_display":"Customer","type":"reference","base_type":"reference","attributes":{"uiType":"document_id","uiTypeLabel":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"413c680c-f406-4133-8953-ab0ea59c9ecd.mpl_instance","label":"2 - Get Catalog Variables➛mpl_instance","reference":"","reference_display":"mpl_instance","type":"array.object","base_type":"array.object","attributes":{"child_label":"Instance Configuration","child_type_label":"Object","child_type":"object","child_name":"mpl_instance"}},{"name":"9b1458a1-3cf9-4d41-b641-4321fa20c534.item.mpl_instance_url","label":"11 - For Each➛Instance Configuration➛URL","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{"catalogType":"27","catalogTypeLabel":"URL"}},{"name":"9b1458a1-3cf9-4d41-b641-4321fa20c534.item.mpl_instance_type","label":"11 - For Each➛Instance Configuration➛Type","reference":"","reference_display":"","type":"choice","base_type":"choice","column_name":"","choices":[{"label":"-- None --","value":"","order":100.0},{"label":"Development","value":"dev","order":100.0},{"label":"Testing","value":"test","order":100.0},{"label":"Production","value":"prod","order":100.0}],"attributes":{"catalogType":"5","catalogTypeLabel":"Select Box"}},{"name":"aecf3497-8536-4a32-abb8-497371d6624a.status","label":"13 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"aecf3497-8536-4a32-abb8-497371d6624a.Record","label":"13 - Look Up Record➛OAuth Token Record","reference":"x_376096_mpl_oauth_token","reference_display":"OAuth Token","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"bbabd733-1b93-4831-ac7d-0e02beaef7b1.record","label":"12 - Create or Update Record➛Instance Record","reference":"x_376096_mpl_instance","reference_display":"Instance","type":"reference","base_type":"reference","attributes":{"uiType":"document_id","uiTypeLabel":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"ea4c7419-9afb-4608-a7d2-0976dbff71a7.entity_sys_id","label":"7 - Parse OAuth Data➛Entity Sys ID","type":"GUID","base_type":"GUID","attributes":{"uiType":"GUID","uiTypeLabel":"Sys ID (GUID)","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"67398d2b-327f-4520-a79c-b85764f65c25"}}]&lt;/label_cache&gt;&lt;latest_snapshot/&gt;&lt;master_snapshot/&gt;&lt;name&gt;Validate Customer&lt;/name&gt;&lt;natlang/&gt;&lt;outputs/&gt;&lt;pre_compiled&gt;false&lt;/pre_compiled&gt;&lt;remote_trigger_id/&gt;&lt;run_as&gt;system&lt;/run_as&gt;&lt;run_with_roles/&gt;&lt;sc_callable&gt;false&lt;/sc_callable&gt;&lt;show_draft_actions&gt;false&lt;/show_draft_actions&gt;&lt;show_triggered_flows&gt;false&lt;/show_triggered_flows&gt;&lt;status&gt;draft&lt;/status&gt;&lt;substatus/&gt;&lt;sys_class_name&gt;sys_hub_flow&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:36&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;ce5858e98776c6102a3163583cbb3590&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_name&gt;Validate Customer&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Marketplace" source="x_376096_mpl"&gt;bcd9057a47772110acc88a88536d433f&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Marketplace"&gt;bcd9057a47772110acc88a88536d433f&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_hub_flow_ce5858e98776c6102a3163583cbb3590&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:41&lt;/sys_updated_on&gt;&lt;type&gt;flow&lt;/type&gt;&lt;/sys_hub_flow&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=ce5858e98776c6102a3163583cbb3590"/&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=ce5858e98776c6102a3163583cbb3590"/&gt;&lt;sys_hub_trigger_instance action="delete_multiple" query="flow=ce5858e98776c6102a3163583cbb3590^sys_idNOT IN3e5898e98776c6102a3163583cbb357f"/&gt;&lt;sys_hub_trigger_instance action="INSERT_OR_UPDATE"&gt;&lt;comment/&gt;&lt;display_text/&gt;&lt;flow display_value="Validate Customer"&gt;ce5858e98776c6102a3163583cbb3590&lt;/flow&gt;&lt;name&gt;Service Catalog&lt;/name&gt;&lt;remote_sys_id/&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:39&lt;/sys_created_on&gt;&lt;sys_id&gt;3e5898e98776c6102a3163583cbb357f&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_scope/&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:39&lt;/sys_updated_on&gt;&lt;trigger_definition display_value="Service Catalog"&gt;c43a1011c36813002841b63b12d3ae15&lt;/trigger_definition&gt;&lt;trigger_inputs/&gt;&lt;trigger_outputs/&gt;&lt;trigger_type&gt;service_catalog&lt;/trigger_type&gt;&lt;/sys_hub_trigger_instance&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=3e5898e98776c6102a3163583cbb357f"/&gt;&lt;sys_hub_flow_stage action="delete_multiple" query="flow=ce5858e98776c6102a3163583cbb3590^sys_idNOT IN035898e98776c6102a3163583cbb35f9,075898e98776c6102a3163583cbb35f9,835898e98776c6102a3163583cbb35f9,875898e98776c6102a3163583cbb35f9,8f5898e98776c6102a3163583cbb35f8,c75898e98776c6102a3163583cbb35f8"/&gt;&lt;sys_hub_flow_stage action="INSERT_OR_UPDATE"&gt;&lt;always_show&gt;true&lt;/always_show&gt;&lt;ancestor_array_position&gt;0&lt;/ancestor_array_position&gt;&lt;ancestor_component_id/&gt;&lt;ancestor_stage_id&gt;416f0ef0-e148-44bb-91a3-a3fa5bd29c89&lt;/ancestor_stage_id&gt;&lt;ancestral_if_else_logic&gt;72e63b61-91b4-41d2-bc16-04b2e4f39a69&lt;/ancestral_if_else_logic&gt;&lt;component_indexes&gt;5&lt;/component_indexes&gt;&lt;duration&gt;1970-01-01 00:00:00&lt;/duration&gt;&lt;flow display_value="Validate Customer"&gt;ce5858e98776c6102a3163583cbb3590&lt;/flow&gt;&lt;label&gt;Set current stage state to:  [Error]&lt;/label&gt;&lt;order&gt;0&lt;/order&gt;&lt;stage_id&gt;117cdaba-ebc5-4712-89ac-89bc1215e016&lt;/stage_id&gt;&lt;states&gt;{"pending":"Pending - has not started","in_progress":"In progress","skipped":"Skipped","complete":"Completed","error":"Error"}&lt;/states&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:41&lt;/sys_created_on&gt;&lt;sys_id&gt;035898e98776c6102a3163583cbb35f9&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_scope/&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:41&lt;/sys_updated_on&gt;&lt;type&gt;error&lt;/type&gt;&lt;value&gt;Set current stage state to:  [Error]&lt;/value&gt;&lt;/sys_hub_flow_stage&gt;&lt;sys_hub_flow_stage action="INSERT_OR_UPDATE"&gt;&lt;always_show&gt;false&lt;/always_show&gt;&lt;ancestor_array_position&gt;0&lt;/ancestor_array_position&gt;&lt;ancestor_component_id/&gt;&lt;ancestor_stage_id/&gt;&lt;ancestral_if_else_logic/&gt;&lt;component_indexes/&gt;&lt;duration&gt;1970-01-01 00:00:00&lt;/duration&gt;&lt;flow display_value="Validate Customer"&gt;ce5858e98776c6102a3163583cbb3590&lt;/flow&gt;&lt;label&gt;Error&lt;/label&gt;&lt;order&gt;4&lt;/order&gt;&lt;stage_id&gt;6c64686f-e8b6-4de6-a7b7-f704fb4c835b&lt;/stage_id&gt;&lt;states&gt;{"pending":"Pending - has not started","in_progress":"In progress","skipped":"Skipped","complete":"Completed","error":"Error"}&lt;/states&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:41&lt;/sys_created_on&gt;&lt;sys_id&gt;075898e98776c6102a3163583cbb35f9&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_scope/&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:41&lt;/sys_updated_on&gt;&lt;type&gt;standard&lt;/type&gt;&lt;value&gt;error&lt;/value&gt;&lt;/sys_hub_flow_stage&gt;&lt;sys_hub_flow_stage action="INSERT_OR_UPDATE"&gt;&lt;always_show&gt;true&lt;/always_show&gt;&lt;ancestor_array_position&gt;0&lt;/ancestor_array_position&gt;&lt;ancestor_component_id/&gt;&lt;ancestor_stage_id/&gt;&lt;ancestral_if_else_logic/&gt;&lt;component_indexes&gt;15&lt;/component_indexes&gt;&lt;duration&gt;1970-01-01 00:00:00&lt;/duration&gt;&lt;flow display_value="Validate Customer"&gt;ce5858e98776c6102a3163583cbb3590&lt;/flow&gt;&lt;label&gt;Completed&lt;/label&gt;&lt;order&gt;3&lt;/order&gt;&lt;stage_id&gt;d1984220-8fd1-4f04-aa5e-54c896ff9cae&lt;/stage_id&gt;&lt;states&gt;{"pending":"Pending - has not started","in_progress":"In progress","skipped":"Skipped","complete":"Completed","error":"Error"}&lt;/states&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:41&lt;/sys_created_on&gt;&lt;sys_id&gt;835898e98776c6102a3163583cbb35f9&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_scope/&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:41&lt;/sys_updated_on&gt;&lt;type&gt;standard&lt;/type&gt;&lt;value&gt;complete&lt;/value&gt;&lt;/sys_hub_flow_stage&gt;&lt;sys_hub_flow_stage action="INSERT_OR_UPDATE"&gt;&lt;always_show&gt;true&lt;/always_show&gt;&lt;ancestor_array_position&gt;0&lt;/ancestor_array_position&gt;&lt;ancestor_component_id/&gt;&lt;ancestor_stage_id/&gt;&lt;ancestral_if_else_logic/&gt;&lt;component_indexes&gt;9&lt;/component_indexes&gt;&lt;duration&gt;1970-01-01 00:00:00&lt;/duration&gt;&lt;flow display_value="Validate Customer"&gt;ce5858e98776c6102a3163583cbb3590&lt;/flow&gt;&lt;label&gt;GitHub Import&lt;/label&gt;&lt;order&gt;1&lt;/order&gt;&lt;stage_id&gt;27d2c322-526e-4b63-be81-0260fbfe17dd&lt;/stage_id&gt;&lt;states&gt;{"pending":"Pending - has not started","in_progress":"In progress","skipped":"Skipped","complete":"Completed","error":"Error"}&lt;/states&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:41&lt;/sys_created_on&gt;&lt;sys_id&gt;875898e98776c6102a3163583cbb35f9&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_scope/&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:41&lt;/sys_updated_on&gt;&lt;type&gt;standard&lt;/type&gt;&lt;value&gt;github_import&lt;/value&gt;&lt;/sys_hub_flow_stage&gt;&lt;sys_hub_flow_stage action="INSERT_OR_UPDATE"&gt;&lt;always_show&gt;true&lt;/always_show&gt;&lt;ancestor_array_position&gt;0&lt;/ancestor_array_position&gt;&lt;ancestor_component_id/&gt;&lt;ancestor_stage_id/&gt;&lt;ancestral_if_else_logic/&gt;&lt;component_indexes&gt;0&lt;/component_indexes&gt;&lt;duration&gt;1970-01-01 00:00:00&lt;/duration&gt;&lt;flow display_value="Validate Customer"&gt;ce5858e98776c6102a3163583cbb3590&lt;/flow&gt;&lt;label&gt;GitHub Verification&lt;/label&gt;&lt;order&gt;0&lt;/order&gt;&lt;stage_id&gt;416f0ef0-e148-44bb-91a3-a3fa5bd29c89&lt;/stage_id&gt;&lt;states&gt;{"pending":"Pending - has not started","in_progress":"In progress","skipped":"Skipped","complete":"Completed","error":"Error"}&lt;/states&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:41&lt;/sys_created_on&gt;&lt;sys_id&gt;8f5898e98776c6102a3163583cbb35f8&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_scope/&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:41&lt;/sys_updated_on&gt;&lt;type&gt;standard&lt;/type&gt;&lt;value&gt;github_verify&lt;/value&gt;&lt;/sys_hub_flow_stage&gt;&lt;sys_hub_flow_stage action="INSERT_OR_UPDATE"&gt;&lt;always_show&gt;true&lt;/always_show&gt;&lt;ancestor_array_position&gt;0&lt;/ancestor_array_position&gt;&lt;ancestor_component_id/&gt;&lt;ancestor_stage_id/&gt;&lt;ancestral_if_else_logic/&gt;&lt;component_indexes&gt;10&lt;/component_indexes&gt;&lt;duration&gt;1970-01-01 00:00:00&lt;/duration&gt;&lt;flow display_value="Validate Customer"&gt;ce5858e98776c6102a3163583cbb3590&lt;/flow&gt;&lt;label&gt;Instance Verification&lt;/label&gt;&lt;order&gt;2&lt;/order&gt;&lt;stage_id&gt;6e35e54e-5f56-4e0a-b2d7-55253b19b01b&lt;/stage_id&gt;&lt;states&gt;{"pending":"Pending - has not started","in_progress":"In progress","skipped":"Skipped","complete":"Completed","error":"Error"}&lt;/states&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:41&lt;/sys_created_on&gt;&lt;sys_id&gt;c75898e98776c6102a3163583cbb35f8&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_scope/&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:41&lt;/sys_updated_on&gt;&lt;type&gt;standard&lt;/type&gt;&lt;value&gt;instance_verify&lt;/value&gt;&lt;/sys_hub_flow_stage&gt;&lt;sys_flow_cat_variable_model action="delete_multiple" query="id=ce5858e98776c6102a3163583cbb3590^sys_idNOT IN0a5858e98776c6102a3163583cbb3593"/&gt;&lt;sys_flow_cat_variable_model action="INSERT_OR_UPDATE"&gt;&lt;id&gt;ce5858e98776c6102a3163583cbb3590&lt;/id&gt;&lt;name&gt;Validate Customer&lt;/name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:36&lt;/sys_created_on&gt;&lt;sys_id&gt;0a5858e98776c6102a3163583cbb3593&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_scope/&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:36&lt;/sys_updated_on&gt;&lt;/sys_flow_cat_variable_model&gt;&lt;sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=0a5858e98776c6102a3163583cbb3593"/&gt;&lt;sys_hub_flow_input action="delete_multiple" query="model=ce5858e98776c6102a3163583cbb3590^sys_idNOT IN065858e98776c6102a3163583cbb35d3,8e5858e98776c6102a3163583cbb35d7"/&gt;&lt;sys_hub_flow_input action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;array_denormalized&gt;false&lt;/array_denormalized&gt;&lt;attributes&gt;default_search_field=number,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference&lt;/attributes&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label/&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value/&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;request_item&lt;/element&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;formula/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;help/&gt;&lt;hint/&gt;&lt;internal_type display_value="Reference"&gt;reference&lt;/internal_type&gt;&lt;label&gt;Request Item&lt;/label&gt;&lt;mandatory&gt;true&lt;/mandatory&gt;&lt;max_length&gt;32&lt;/max_length&gt;&lt;model display_value="Validate Customer"&gt;ce5858e98776c6102a3163583cbb3590&lt;/model&gt;&lt;model_id&gt;ce5858e98776c6102a3163583cbb3590&lt;/model_id&gt;&lt;model_table&gt;sys_hub_flow&lt;/model_table&gt;&lt;name&gt;var__m_sys_hub_flow_input_ce5858e98776c6102a3163583cbb3590&lt;/name&gt;&lt;next_element/&gt;&lt;order&gt;100&lt;/order&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_roles/&gt;&lt;reference display_value="" name="sc_req_item"&gt;sc_req_item&lt;/reference&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;sizeclass/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;sys_hub_flow_input&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:36&lt;/sys_created_on&gt;&lt;sys_id&gt;065858e98776c6102a3163583cbb35d3&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package/&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Marketplace"&gt;bcd9057a47772110acc88a88536d433f&lt;/sys_scope&gt;&lt;sys_update_name/&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:36&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;virtual_type&gt;script&lt;/virtual_type&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/sys_hub_flow_input&gt;&lt;sys_hub_action_input_action_instance action="delete_multiple" query="action_input=065858e98776c6102a3163583cbb35d3"/&gt;&lt;sys_hub_flow_input action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;array_denormalized&gt;false&lt;/array_denormalized&gt;&lt;attributes&gt;element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name&lt;/attributes&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label/&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value&gt;sc_req_item&lt;/default_value&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;table_name&lt;/element&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;formula/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;help/&gt;&lt;hint/&gt;&lt;internal_type display_value=""&gt;table_name&lt;/internal_type&gt;&lt;label&gt;Table Name&lt;/label&gt;&lt;mandatory&gt;false&lt;/mandatory&gt;&lt;max_length&gt;40&lt;/max_length&gt;&lt;model display_value="Validate Customer"&gt;ce5858e98776c6102a3163583cbb3590&lt;/model&gt;&lt;model_id&gt;ce5858e98776c6102a3163583cbb3590&lt;/model_id&gt;&lt;model_table&gt;sys_hub_flow&lt;/model_table&gt;&lt;name&gt;var__m_sys_hub_flow_input_ce5858e98776c6102a3163583cbb3590&lt;/name&gt;&lt;next_element/&gt;&lt;order&gt;100&lt;/order&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;true&lt;/read_only&gt;&lt;read_roles/&gt;&lt;reference/&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;sizeclass/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;sys_hub_flow_input&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:36&lt;/sys_created_on&gt;&lt;sys_id&gt;8e5858e98776c6102a3163583cbb35d7&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package/&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Marketplace"&gt;bcd9057a47772110acc88a88536d433f&lt;/sys_scope&gt;&lt;sys_update_name/&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:37&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;virtual_type&gt;script&lt;/virtual_type&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/sys_hub_flow_input&gt;&lt;sys_hub_action_input_action_instance action="delete_multiple" query="action_input=8e5858e98776c6102a3163583cbb35d7"/&gt;&lt;sys_hub_flow_output action="delete_multiple" query="model=ce5858e98776c6102a3163583cbb3590"/&gt;&lt;sys_hub_alias_mapping action="delete_multiple" query="source_id=ce5858e98776c6102a3163583cbb3590"/&gt;&lt;sys_hub_action_instance action="delete_multiple" query="flow=ce5858e98776c6102a3163583cbb3590^sys_idNOT IN1e5898e98776c6102a3163583cbb350f,525898e98776c6102a3163583cbb352f,6e5898e98776c6102a3163583cbb354e,6e5898e98776c6102a3163583cbb3555,7e5898e98776c6102a3163583cbb357e,b25898e98776c6102a3163583cbb3579,d65898e98776c6102a3163583cbb3535,e25898e98776c6102a3163583cbb353f,ea5898e98776c6102a3163583cbb355c,fe5898e98776c6102a3163583cbb3571"/&gt;&lt;sys_hub_action_instance action="INSERT_OR_UPDATE"&gt;&lt;action_inputs/&gt;&lt;action_inputs/&gt;&lt;action_type display_value="Get Catalog Variables"&gt;330ba3abc31013002841b63b12d3aee8&lt;/action_type&gt;&lt;action_type_parent display_value="Get Catalog Variables"&gt;22f0b88cc3c632002841b63b12d3aeff&lt;/action_type_parent&gt;&lt;attributes/&gt;&lt;comment/&gt;&lt;compiled_snapshot&gt;330ba3abc31013002841b63b12d3aee8&lt;/compiled_snapshot&gt;&lt;display_text/&gt;&lt;flow display_value="Validate Customer"&gt;ce5858e98776c6102a3163583cbb3590&lt;/flow&gt;&lt;generation_source/&gt;&lt;order&gt;2&lt;/order&gt;&lt;parent_ui_id/&gt;&lt;sys_class_name&gt;sys_hub_action_instance&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:37&lt;/sys_created_on&gt;&lt;sys_id&gt;1e5898e98776c6102a3163583cbb350f&lt;/sys_id&gt;&lt;sys_mod_count&gt;4&lt;/sys_mod_count&gt;&lt;sys_scope display_value="Marketplace"&gt;bcd9057a47772110acc88a88536d433f&lt;/sys_scope&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:40&lt;/sys_updated_on&gt;&lt;ui_id&gt;413c680c-f406-4133-8953-ab0ea59c9ecd&lt;/ui_id&gt;&lt;/sys_hub_action_instance&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=1e5898e98776c6102a3163583cbb350f"/&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;sys_hub_action_instance&lt;/document&gt;&lt;document_key&gt;1e5898e98776c6102a3163583cbb350f&lt;/document_key&gt;&lt;order&gt;2&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:37&lt;/sys_created_on&gt;&lt;sys_id&gt;565898e98776c6102a3163583cbb3512&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:37&lt;/sys_updated_on&gt;&lt;value&gt;fb87bd3e473b2110acc88a88536d43a6:item_option_new,3618b97e473b2110acc88a88536d4333:item_option_new,6d9831be473b2110acc88a88536d43f7:item_option_new,64e8f5be473b2110acc88a88536d4393:item_option_new_set&lt;/value&gt;&lt;variable display_value="Catalog Variables"&gt;7b0ba3abc31013002841b63b12d3aef7&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;sys_hub_action_instance&lt;/document&gt;&lt;document_key&gt;1e5898e98776c6102a3163583cbb350f&lt;/document_key&gt;&lt;order&gt;1&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:37&lt;/sys_created_on&gt;&lt;sys_id&gt;de5898e98776c6102a3163583cbb3512&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:37&lt;/sys_updated_on&gt;&lt;value&gt;0d57b93e473b2110acc88a88536d4331&lt;/value&gt;&lt;variable display_value="Template Catalog Items and Variable Sets"&gt;bb0ba3abc31013002841b63b12d3aef1&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_element_mapping action="delete_multiple" query="id=1e5898e98776c6102a3163583cbb350f"/&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;catalog_variables&lt;/field&gt;&lt;id&gt;1e5898e98776c6102a3163583cbb350f&lt;/id&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:37&lt;/sys_created_on&gt;&lt;sys_id&gt;5e5898e98776c6102a3163583cbb3511&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:37&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_hub_action_input_330ba3abc31013002841b63b12d3aee8&lt;/table&gt;&lt;value/&gt;&lt;/sys_element_mapping&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;requested_item&lt;/field&gt;&lt;id&gt;1e5898e98776c6102a3163583cbb350f&lt;/id&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:37&lt;/sys_created_on&gt;&lt;sys_id&gt;d25898e98776c6102a3163583cbb3512&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:37&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_hub_action_input_330ba3abc31013002841b63b12d3aee8&lt;/table&gt;&lt;value&gt;{{Service Catalog_1.request_item}}&lt;/value&gt;&lt;/sys_element_mapping&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;template_catalog_item&lt;/field&gt;&lt;id&gt;1e5898e98776c6102a3163583cbb350f&lt;/id&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:37&lt;/sys_created_on&gt;&lt;sys_id&gt;125898e98776c6102a3163583cbb3512&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:37&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_hub_action_input_330ba3abc31013002841b63b12d3aee8&lt;/table&gt;&lt;value/&gt;&lt;/sys_element_mapping&gt;&lt;sys_hub_input_scripts action="delete_multiple" query="instance=1e5898e98776c6102a3163583cbb350f"/&gt;&lt;sys_hub_alias_mapping action="delete_multiple" query="source_id=1e5898e98776c6102a3163583cbb350f"/&gt;&lt;sys_hub_action_instance action="INSERT_OR_UPDATE"&gt;&lt;action_inputs/&gt;&lt;action_inputs/&gt;&lt;action_type display_value="GIT Test Access"&gt;9740f40347376110acc88a88536d4364&lt;/action_type&gt;&lt;action_type_parent display_value="GIT Test Access"&gt;01cfec8f47f36110acc88a88536d43b5&lt;/action_type_parent&gt;&lt;attributes/&gt;&lt;comment/&gt;&lt;compiled_snapshot&gt;9740f40347376110acc88a88536d4364&lt;/compiled_snapshot&gt;&lt;display_text/&gt;&lt;flow display_value="Validate Customer"&gt;ce5858e98776c6102a3163583cbb3590&lt;/flow&gt;&lt;generation_source/&gt;&lt;order&gt;3&lt;/order&gt;&lt;parent_ui_id/&gt;&lt;sys_class_name&gt;sys_hub_action_instance&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:37&lt;/sys_created_on&gt;&lt;sys_id&gt;525898e98776c6102a3163583cbb352f&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_scope display_value="Marketplace"&gt;bcd9057a47772110acc88a88536d433f&lt;/sys_scope&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:37&lt;/sys_updated_on&gt;&lt;ui_id&gt;9033493e-c3e9-41a3-b505-24f9878fcb85&lt;/ui_id&gt;&lt;/sys_hub_action_instance&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=525898e98776c6102a3163583cbb352f"/&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;sys_hub_action_instance&lt;/document&gt;&lt;document_key&gt;525898e98776c6102a3163583cbb352f&lt;/document_key&gt;&lt;order&gt;2&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:37&lt;/sys_created_on&gt;&lt;sys_id&gt;1e5898e98776c6102a3163583cbb3530&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:37&lt;/sys_updated_on&gt;&lt;value&gt;{"version":"1.0","complexObjectSchema":{"FlowDesigner:FD9b40f403ef37611041c69ef83b3d0267":{"$COCollectionField":["String"],"$COCollectionField.$field_facets":{"SimpleMapFacet":"{\"up-shift-collection-level\":\"true\"}"}},"FlowDesigner:FD9b40f403ef37611041c69ef83b3d0267.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Expected Scopes\",\"mandatory\":\"true\",\"child_name\":\"scope\",\"uiUniqueId\":\"7e8693b8-3228-484e-9595-96e754e85b34\",\"uiTypeLabel\":\"Array.String\",\"co_type_name\":\"FD9b40f403ef37611041c69ef83b3d0267\",\"child_label\":\"Scope\",\"child_type_label\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"array.string\",\"mapped\":\"{}\",\"child_type\":\"string\",\"order\":\"2\",\"max_length\":\"65000\",\"child_uiUniqueId\":\"f6486b13-844f-4e40-8626-67ea53658b7c\"}"}},"complexObject":{"name$":"FD9b40f403ef37611041c69ef83b3d0267","$COCollectionField":["public_repo","write:public_key"]},"serializationFormat":"JSON"}&lt;/value&gt;&lt;variable display_value="Expected Scopes"&gt;9740f40347376110acc88a88536d436e&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_element_mapping action="delete_multiple" query="id=525898e98776c6102a3163583cbb352f"/&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;access_token&lt;/field&gt;&lt;id&gt;525898e98776c6102a3163583cbb352f&lt;/id&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:37&lt;/sys_created_on&gt;&lt;sys_id&gt;d65898e98776c6102a3163583cbb3530&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:37&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_hub_action_input_9740f40347376110acc88a88536d4364&lt;/table&gt;&lt;value&gt;{{flow_variable.git_access_token}}&lt;/value&gt;&lt;/sys_element_mapping&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;expected_scopes&lt;/field&gt;&lt;id&gt;525898e98776c6102a3163583cbb352f&lt;/id&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:37&lt;/sys_created_on&gt;&lt;sys_id&gt;9a5898e98776c6102a3163583cbb3530&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:37&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_hub_action_input_9740f40347376110acc88a88536d4364&lt;/table&gt;&lt;value/&gt;&lt;/sys_element_mapping&gt;&lt;sys_hub_input_scripts action="delete_multiple" query="instance=525898e98776c6102a3163583cbb352f"/&gt;&lt;sys_hub_alias_mapping action="delete_multiple" query="source_id=525898e98776c6102a3163583cbb352f"/&gt;&lt;sys_hub_action_instance action="INSERT_OR_UPDATE"&gt;&lt;action_inputs/&gt;&lt;action_inputs/&gt;&lt;action_type display_value="GIT Get Entity ID"&gt;e7dc4ef647bb2110acc88a88536d4381&lt;/action_type&gt;&lt;action_type_parent display_value="GIT Get Entity ID"&gt;395c8e7647bb2110acc88a88536d43e6&lt;/action_type_parent&gt;&lt;attributes/&gt;&lt;comment/&gt;&lt;compiled_snapshot&gt;e7dc4ef647bb2110acc88a88536d4381&lt;/compiled_snapshot&gt;&lt;display_text/&gt;&lt;flow display_value="Validate Customer"&gt;ce5858e98776c6102a3163583cbb3590&lt;/flow&gt;&lt;generation_source/&gt;&lt;order&gt;8&lt;/order&gt;&lt;parent_ui_id/&gt;&lt;sys_class_name&gt;sys_hub_action_instance&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:38&lt;/sys_created_on&gt;&lt;sys_id&gt;6e5898e98776c6102a3163583cbb354e&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_scope display_value="Marketplace"&gt;bcd9057a47772110acc88a88536d433f&lt;/sys_scope&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:38&lt;/sys_updated_on&gt;&lt;ui_id&gt;fa20c2f7-8c94-4e80-8689-dbf6f6cce59f&lt;/ui_id&gt;&lt;/sys_hub_action_instance&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=6e5898e98776c6102a3163583cbb354e"/&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;sys_hub_action_instance&lt;/document&gt;&lt;document_key&gt;6e5898e98776c6102a3163583cbb354e&lt;/document_key&gt;&lt;order&gt;3&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:38&lt;/sys_created_on&gt;&lt;sys_id&gt;ea5898e98776c6102a3163583cbb3550&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:38&lt;/sys_updated_on&gt;&lt;value&gt;orgs&lt;/value&gt;&lt;variable display_value="Type"&gt;a3dc4ef647bb2110acc88a88536d438d&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_element_mapping action="delete_multiple" query="id=6e5898e98776c6102a3163583cbb354e"/&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;access_token&lt;/field&gt;&lt;id&gt;6e5898e98776c6102a3163583cbb354e&lt;/id&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:38&lt;/sys_created_on&gt;&lt;sys_id&gt;e25898e98776c6102a3163583cbb3550&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:38&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_hub_action_input_e7dc4ef647bb2110acc88a88536d4381&lt;/table&gt;&lt;value&gt;{{flow_variable.git_access_token}}&lt;/value&gt;&lt;/sys_element_mapping&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;name&lt;/field&gt;&lt;id&gt;6e5898e98776c6102a3163583cbb354e&lt;/id&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:38&lt;/sys_created_on&gt;&lt;sys_id&gt;a65898e98776c6102a3163583cbb3550&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:38&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_hub_action_input_e7dc4ef647bb2110acc88a88536d4381&lt;/table&gt;&lt;value&gt;{{413c680c-f406-4133-8953-ab0ea59c9ecd.github_organization}}&lt;/value&gt;&lt;/sys_element_mapping&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;type&lt;/field&gt;&lt;id&gt;6e5898e98776c6102a3163583cbb354e&lt;/id&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:38&lt;/sys_created_on&gt;&lt;sys_id&gt;6a5898e98776c6102a3163583cbb3550&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:38&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_hub_action_input_e7dc4ef647bb2110acc88a88536d4381&lt;/table&gt;&lt;value/&gt;&lt;/sys_element_mapping&gt;&lt;sys_hub_input_scripts action="delete_multiple" query="instance=6e5898e98776c6102a3163583cbb354e"/&gt;&lt;sys_hub_alias_mapping action="delete_multiple" query="source_id=6e5898e98776c6102a3163583cbb354e"/&gt;&lt;sys_hub_action_instance action="INSERT_OR_UPDATE"&gt;&lt;action_inputs/&gt;&lt;action_inputs/&gt;&lt;action_type display_value="Create or Update Record"&gt;ab575ae253b3230034c6ddeeff7b12f1&lt;/action_type&gt;&lt;action_type_parent display_value="Create or Update Record"&gt;e057d2e253b3230034c6ddeeff7b1261&lt;/action_type_parent&gt;&lt;attributes/&gt;&lt;comment/&gt;&lt;compiled_snapshot&gt;ab575ae253b3230034c6ddeeff7b12f1&lt;/compiled_snapshot&gt;&lt;display_text/&gt;&lt;flow display_value="Validate Customer"&gt;ce5858e98776c6102a3163583cbb3590&lt;/flow&gt;&lt;generation_source/&gt;&lt;order&gt;9&lt;/order&gt;&lt;parent_ui_id/&gt;&lt;sys_class_name&gt;sys_hub_action_instance&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:38&lt;/sys_created_on&gt;&lt;sys_id&gt;6e5898e98776c6102a3163583cbb3555&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_scope display_value="Marketplace"&gt;bcd9057a47772110acc88a88536d433f&lt;/sys_scope&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:38&lt;/sys_updated_on&gt;&lt;ui_id&gt;4cbb161a-141f-4759-a575-332900757727&lt;/ui_id&gt;&lt;/sys_hub_action_instance&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=6e5898e98776c6102a3163583cbb3555"/&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;sys_hub_action_instance&lt;/document&gt;&lt;document_key&gt;6e5898e98776c6102a3163583cbb3555&lt;/document_key&gt;&lt;order&gt;0&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:38&lt;/sys_created_on&gt;&lt;sys_id&gt;6a5898e98776c6102a3163583cbb3557&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:38&lt;/sys_updated_on&gt;&lt;value&gt;x_376096_mpl_customer&lt;/value&gt;&lt;variable display_value="Table Name"&gt;27575ae253b3230034c6ddeeff7b12f4&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_element_mapping action="delete_multiple" query="id=6e5898e98776c6102a3163583cbb3555"/&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;fields&lt;/field&gt;&lt;id&gt;6e5898e98776c6102a3163583cbb3555&lt;/id&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:38&lt;/sys_created_on&gt;&lt;sys_id&gt;265898e98776c6102a3163583cbb3557&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:38&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_hub_action_input_ab575ae253b3230034c6ddeeff7b12f1&lt;/table&gt;&lt;value&gt;github_id={{fa20c2f7-8c94-4e80-8689-dbf6f6cce59f.entity_id}}^github_name={{413c680c-f406-4133-8953-ab0ea59c9ecd.github_organization}}^github_access_token=fd-scripted^oauth_client_id={{ea4c7419-9afb-4608-a7d2-0976dbff71a7.client_id}}^oauth_client_secret={{ea4c7419-9afb-4608-a7d2-0976dbff71a7.client_secret}}^name={{413c680c-f406-4133-8953-ab0ea59c9ecd.customer_name}}^active=true^owners=fd-scripted^oauth_entity_sys_id={{ea4c7419-9afb-4608-a7d2-0976dbff71a7.entity_sys_id}}^coalesce_fields=github_id&lt;/value&gt;&lt;/sys_element_mapping&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;table_name&lt;/field&gt;&lt;id&gt;6e5898e98776c6102a3163583cbb3555&lt;/id&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:38&lt;/sys_created_on&gt;&lt;sys_id&gt;e65898e98776c6102a3163583cbb3557&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:38&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_hub_action_input_ab575ae253b3230034c6ddeeff7b12f1&lt;/table&gt;&lt;value/&gt;&lt;/sys_element_mapping&gt;&lt;sys_hub_input_scripts action="delete_multiple" query="instance=6e5898e98776c6102a3163583cbb3555^sys_idNOT INea5898e98776c6102a3163583cbb3556"/&gt;&lt;sys_hub_input_scripts action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;input_name&gt;fields&lt;/input_name&gt;&lt;instance&gt;6e5898e98776c6102a3163583cbb3555&lt;/instance&gt;&lt;referenced_table&gt;sys_hub_action_instance&lt;/referenced_table&gt;&lt;script&gt;{"github_access_token":{"scriptActive":true,"script":"/*\n**Access Flow/Action data using the fd_data object. Script must return a value. \n**Order number is offset by +1 in Error Handling Section.\n**Available options display upon pressing \".\" after fd_data\n**example: var shortDesc \u003d fd_data.trigger.current.short_description;\n**return shortDesc;\n*/\nreturn fd_data.flow_var.git_access_token;","savedValue":""},"github_id":{"scriptActive":false,"savedValue":""},"owners":{"scriptActive":true,"script":"return fd_data.trigger.request_item.requested_for;","savedValue":""}}&lt;/script&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:38&lt;/sys_created_on&gt;&lt;sys_id&gt;ea5898e98776c6102a3163583cbb3556&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:38&lt;/sys_updated_on&gt;&lt;/sys_hub_input_scripts&gt;&lt;sys_hub_alias_mapping action="delete_multiple" query="source_id=6e5898e98776c6102a3163583cbb3555"/&gt;&lt;sys_hub_action_instance action="INSERT_OR_UPDATE"&gt;&lt;action_inputs/&gt;&lt;action_type display_value="Log"&gt;5bc1bcc6531003003bf1d9109ec587d4&lt;/action_type&gt;&lt;action_type_parent display_value="Log"&gt;0e0ae8c2531003003bf1d9109ec587c8&lt;/action_type_parent&gt;&lt;attributes/&gt;&lt;comment/&gt;&lt;compiled_snapshot&gt;5bc1bcc6531003003bf1d9109ec587d4&lt;/compiled_snapshot&gt;&lt;display_text/&gt;&lt;flow display_value="Validate Customer"&gt;ce5858e98776c6102a3163583cbb3590&lt;/flow&gt;&lt;generation_source/&gt;&lt;order&gt;16&lt;/order&gt;&lt;parent_ui_id/&gt;&lt;sys_class_name&gt;sys_hub_action_instance&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:39&lt;/sys_created_on&gt;&lt;sys_id&gt;7e5898e98776c6102a3163583cbb357e&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_scope display_value="Marketplace"&gt;bcd9057a47772110acc88a88536d433f&lt;/sys_scope&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:39&lt;/sys_updated_on&gt;&lt;ui_id&gt;d144545b-2dd2-4d31-b8be-3c89aa910c65&lt;/ui_id&gt;&lt;/sys_hub_action_instance&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=7e5898e98776c6102a3163583cbb357e"/&gt;&lt;sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_action_input_5bc1bcc6531003003bf1d9109ec587d4^id=7e5898e98776c6102a3163583cbb357e"/&gt;&lt;sys_hub_input_scripts action="delete_multiple" query="instance=7e5898e98776c6102a3163583cbb357e"/&gt;&lt;sys_hub_alias_mapping action="delete_multiple" query="source_id=7e5898e98776c6102a3163583cbb357e"/&gt;&lt;sys_hub_action_instance action="INSERT_OR_UPDATE"&gt;&lt;action_inputs/&gt;&lt;action_inputs/&gt;&lt;action_type display_value="Update Record"&gt;f9d01dd2c31332002841b63b12d3aea1&lt;/action_type&gt;&lt;action_type_parent display_value="Update Record"&gt;baf174c8c3c232002841b63b12d3aee4&lt;/action_type_parent&gt;&lt;attributes/&gt;&lt;comment/&gt;&lt;compiled_snapshot&gt;f9d01dd2c31332002841b63b12d3aea1&lt;/compiled_snapshot&gt;&lt;display_text/&gt;&lt;flow display_value="Validate Customer"&gt;ce5858e98776c6102a3163583cbb3590&lt;/flow&gt;&lt;generation_source/&gt;&lt;order&gt;15&lt;/order&gt;&lt;parent_ui_id&gt;8065dc2b-23e1-4a33-8f33-b5756164f7f8&lt;/parent_ui_id&gt;&lt;sys_class_name&gt;sys_hub_action_instance&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:39&lt;/sys_created_on&gt;&lt;sys_id&gt;b25898e98776c6102a3163583cbb3579&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_scope display_value="Marketplace"&gt;bcd9057a47772110acc88a88536d433f&lt;/sys_scope&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:39&lt;/sys_updated_on&gt;&lt;ui_id&gt;3a9a676e-fc72-40b7-a6fa-3f89f83ea9fa&lt;/ui_id&gt;&lt;/sys_hub_action_instance&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=b25898e98776c6102a3163583cbb3579"/&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;sys_hub_action_instance&lt;/document&gt;&lt;document_key&gt;b25898e98776c6102a3163583cbb3579&lt;/document_key&gt;&lt;order&gt;50&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:39&lt;/sys_created_on&gt;&lt;sys_id&gt;fa5898e98776c6102a3163583cbb357a&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:39&lt;/sys_updated_on&gt;&lt;value&gt;x_376096_mpl_oauth_token&lt;/value&gt;&lt;variable display_value="Table"&gt;b5d01916c31332002841b63b12d3aec9&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_element_mapping action="delete_multiple" query="id=b25898e98776c6102a3163583cbb3579"/&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;record&lt;/field&gt;&lt;id&gt;b25898e98776c6102a3163583cbb3579&lt;/id&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:39&lt;/sys_created_on&gt;&lt;sys_id&gt;7a5898e98776c6102a3163583cbb357a&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:39&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1&lt;/table&gt;&lt;value&gt;{{aecf3497-8536-4a32-abb8-497371d6624a.Record}}&lt;/value&gt;&lt;/sys_element_mapping&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;table_name&lt;/field&gt;&lt;id&gt;b25898e98776c6102a3163583cbb3579&lt;/id&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:39&lt;/sys_created_on&gt;&lt;sys_id&gt;f25898e98776c6102a3163583cbb357a&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:39&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1&lt;/table&gt;&lt;value/&gt;&lt;/sys_element_mapping&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;values&lt;/field&gt;&lt;id&gt;b25898e98776c6102a3163583cbb3579&lt;/id&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:39&lt;/sys_created_on&gt;&lt;sys_id&gt;b65898e98776c6102a3163583cbb357a&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:39&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1&lt;/table&gt;&lt;value&gt;instance={{bbabd733-1b93-4831-ac7d-0e02beaef7b1.record}}&lt;/value&gt;&lt;/sys_element_mapping&gt;&lt;sys_hub_input_scripts action="delete_multiple" query="instance=b25898e98776c6102a3163583cbb3579"/&gt;&lt;sys_hub_alias_mapping action="delete_multiple" query="source_id=b25898e98776c6102a3163583cbb3579"/&gt;&lt;sys_hub_action_instance action="INSERT_OR_UPDATE"&gt;&lt;action_inputs/&gt;&lt;action_inputs/&gt;&lt;action_type display_value="Update Record"&gt;f9d01dd2c31332002841b63b12d3aea1&lt;/action_type&gt;&lt;action_type_parent display_value="Update Record"&gt;baf174c8c3c232002841b63b12d3aee4&lt;/action_type_parent&gt;&lt;attributes/&gt;&lt;comment/&gt;&lt;compiled_snapshot&gt;f9d01dd2c31332002841b63b12d3aea1&lt;/compiled_snapshot&gt;&lt;display_text/&gt;&lt;flow display_value="Validate Customer"&gt;ce5858e98776c6102a3163583cbb3590&lt;/flow&gt;&lt;generation_source/&gt;&lt;order&gt;5&lt;/order&gt;&lt;parent_ui_id&gt;72e63b61-91b4-41d2-bc16-04b2e4f39a69&lt;/parent_ui_id&gt;&lt;sys_class_name&gt;sys_hub_action_instance&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:38&lt;/sys_created_on&gt;&lt;sys_id&gt;d65898e98776c6102a3163583cbb3535&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_scope display_value="Marketplace"&gt;bcd9057a47772110acc88a88536d433f&lt;/sys_scope&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:38&lt;/sys_updated_on&gt;&lt;ui_id&gt;7bcd788d-8678-45ef-8adf-4bdbbe208e42&lt;/ui_id&gt;&lt;/sys_hub_action_instance&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=d65898e98776c6102a3163583cbb3535"/&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;sys_hub_action_instance&lt;/document&gt;&lt;document_key&gt;d65898e98776c6102a3163583cbb3535&lt;/document_key&gt;&lt;order&gt;50&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:38&lt;/sys_created_on&gt;&lt;sys_id&gt;1a5898e98776c6102a3163583cbb3537&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:38&lt;/sys_updated_on&gt;&lt;value&gt;sc_req_item&lt;/value&gt;&lt;variable display_value="Table"&gt;b5d01916c31332002841b63b12d3aec9&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;sys_hub_action_instance&lt;/document&gt;&lt;document_key&gt;d65898e98776c6102a3163583cbb3535&lt;/document_key&gt;&lt;order&gt;100&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:38&lt;/sys_created_on&gt;&lt;sys_id&gt;565898e98776c6102a3163583cbb3537&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:38&lt;/sys_updated_on&gt;&lt;value&gt;comments=GitHub Access token does not have the necessary privileges: public_repo, write:repo_hook&lt;/value&gt;&lt;variable display_value="Fields"&gt;02d01916c31332002841b63b12d3aeee&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_element_mapping action="delete_multiple" query="id=d65898e98776c6102a3163583cbb3535"/&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;record&lt;/field&gt;&lt;id&gt;d65898e98776c6102a3163583cbb3535&lt;/id&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:38&lt;/sys_created_on&gt;&lt;sys_id&gt;d25898e98776c6102a3163583cbb3537&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:38&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1&lt;/table&gt;&lt;value&gt;{{Service Catalog_1.request_item}}&lt;/value&gt;&lt;/sys_element_mapping&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;table_name&lt;/field&gt;&lt;id&gt;d65898e98776c6102a3163583cbb3535&lt;/id&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:38&lt;/sys_created_on&gt;&lt;sys_id&gt;5e5898e98776c6102a3163583cbb3536&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:38&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1&lt;/table&gt;&lt;value/&gt;&lt;/sys_element_mapping&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;values&lt;/field&gt;&lt;id&gt;d65898e98776c6102a3163583cbb3535&lt;/id&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:38&lt;/sys_created_on&gt;&lt;sys_id&gt;125898e98776c6102a3163583cbb3537&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:38&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1&lt;/table&gt;&lt;value/&gt;&lt;/sys_element_mapping&gt;&lt;sys_hub_input_scripts action="delete_multiple" query="instance=d65898e98776c6102a3163583cbb3535"/&gt;&lt;sys_hub_alias_mapping action="delete_multiple" query="source_id=d65898e98776c6102a3163583cbb3535"/&gt;&lt;sys_hub_action_instance action="INSERT_OR_UPDATE"&gt;&lt;action_inputs/&gt;&lt;action_inputs/&gt;&lt;action_type display_value="Parse OAuth Data"&gt;87de418f47776110acc88a88536d431a&lt;/action_type&gt;&lt;action_type_parent display_value="Parse OAuth Data"&gt;1c1e410b47776110acc88a88536d4317&lt;/action_type_parent&gt;&lt;attributes/&gt;&lt;comment/&gt;&lt;compiled_snapshot&gt;87de418f47776110acc88a88536d431a&lt;/compiled_snapshot&gt;&lt;display_text/&gt;&lt;flow display_value="Validate Customer"&gt;ce5858e98776c6102a3163583cbb3590&lt;/flow&gt;&lt;generation_source/&gt;&lt;order&gt;7&lt;/order&gt;&lt;parent_ui_id/&gt;&lt;sys_class_name&gt;sys_hub_action_instance&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:38&lt;/sys_created_on&gt;&lt;sys_id&gt;e25898e98776c6102a3163583cbb353f&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_scope display_value="Marketplace"&gt;bcd9057a47772110acc88a88536d433f&lt;/sys_scope&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:38&lt;/sys_updated_on&gt;&lt;ui_id&gt;ea4c7419-9afb-4608-a7d2-0976dbff71a7&lt;/ui_id&gt;&lt;/sys_hub_action_instance&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=e25898e98776c6102a3163583cbb353f"/&gt;&lt;sys_element_mapping action="delete_multiple" query="id=e25898e98776c6102a3163583cbb353f"/&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;oauth_data&lt;/field&gt;&lt;id&gt;e25898e98776c6102a3163583cbb353f&lt;/id&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:38&lt;/sys_created_on&gt;&lt;sys_id&gt;665898e98776c6102a3163583cbb3540&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:38&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_hub_action_input_87de418f47776110acc88a88536d431a&lt;/table&gt;&lt;value&gt;{{413c680c-f406-4133-8953-ab0ea59c9ecd.oauth_data}}&lt;/value&gt;&lt;/sys_element_mapping&gt;&lt;sys_hub_input_scripts action="delete_multiple" query="instance=e25898e98776c6102a3163583cbb353f"/&gt;&lt;sys_hub_alias_mapping action="delete_multiple" query="source_id=e25898e98776c6102a3163583cbb353f"/&gt;&lt;sys_hub_action_instance action="INSERT_OR_UPDATE"&gt;&lt;action_inputs/&gt;&lt;action_inputs/&gt;&lt;action_type display_value="Create or Update Record"&gt;ab575ae253b3230034c6ddeeff7b12f1&lt;/action_type&gt;&lt;action_type_parent display_value="Create or Update Record"&gt;e057d2e253b3230034c6ddeeff7b1261&lt;/action_type_parent&gt;&lt;attributes/&gt;&lt;comment/&gt;&lt;compiled_snapshot&gt;ab575ae253b3230034c6ddeeff7b12f1&lt;/compiled_snapshot&gt;&lt;display_text/&gt;&lt;flow display_value="Validate Customer"&gt;ce5858e98776c6102a3163583cbb3590&lt;/flow&gt;&lt;generation_source/&gt;&lt;order&gt;12&lt;/order&gt;&lt;parent_ui_id&gt;9b1458a1-3cf9-4d41-b641-4321fa20c534&lt;/parent_ui_id&gt;&lt;sys_class_name&gt;sys_hub_action_instance&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:38&lt;/sys_created_on&gt;&lt;sys_id&gt;ea5898e98776c6102a3163583cbb355c&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_scope display_value="Marketplace"&gt;bcd9057a47772110acc88a88536d433f&lt;/sys_scope&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:38&lt;/sys_updated_on&gt;&lt;ui_id&gt;bbabd733-1b93-4831-ac7d-0e02beaef7b1&lt;/ui_id&gt;&lt;/sys_hub_action_instance&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=ea5898e98776c6102a3163583cbb355c"/&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;sys_hub_action_instance&lt;/document&gt;&lt;document_key&gt;ea5898e98776c6102a3163583cbb355c&lt;/document_key&gt;&lt;order&gt;0&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:38&lt;/sys_created_on&gt;&lt;sys_id&gt;ee5898e98776c6102a3163583cbb355d&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:38&lt;/sys_updated_on&gt;&lt;value&gt;x_376096_mpl_instance&lt;/value&gt;&lt;variable display_value="Table Name"&gt;27575ae253b3230034c6ddeeff7b12f4&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_element_mapping action="delete_multiple" query="id=ea5898e98776c6102a3163583cbb355c"/&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;fields&lt;/field&gt;&lt;id&gt;ea5898e98776c6102a3163583cbb355c&lt;/id&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:38&lt;/sys_created_on&gt;&lt;sys_id&gt;aa5898e98776c6102a3163583cbb355d&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:38&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_hub_action_input_ab575ae253b3230034c6ddeeff7b12f1&lt;/table&gt;&lt;value&gt;customer={{4cbb161a-141f-4759-a575-332900757727.record}}^url={{9b1458a1-3cf9-4d41-b641-4321fa20c534.item.mpl_instance_url}}^type={{9b1458a1-3cf9-4d41-b641-4321fa20c534.item.mpl_instance_type}}^coalesce_fields=url&lt;/value&gt;&lt;/sys_element_mapping&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;table_name&lt;/field&gt;&lt;id&gt;ea5898e98776c6102a3163583cbb355c&lt;/id&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:38&lt;/sys_created_on&gt;&lt;sys_id&gt;6e5898e98776c6102a3163583cbb355d&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:38&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_hub_action_input_ab575ae253b3230034c6ddeeff7b12f1&lt;/table&gt;&lt;value/&gt;&lt;/sys_element_mapping&gt;&lt;sys_hub_input_scripts action="delete_multiple" query="instance=ea5898e98776c6102a3163583cbb355c"/&gt;&lt;sys_hub_alias_mapping action="delete_multiple" query="source_id=ea5898e98776c6102a3163583cbb355c"/&gt;&lt;sys_hub_action_instance action="INSERT_OR_UPDATE"&gt;&lt;action_inputs/&gt;&lt;action_type display_value="Look Up Record"&gt;9d09f99587003300663ca1bb36cb0ba3&lt;/action_type&gt;&lt;action_type_parent display_value="Look Up Record"&gt;b93f42810b30030085c083eb37673a63&lt;/action_type_parent&gt;&lt;attributes/&gt;&lt;comment/&gt;&lt;compiled_snapshot&gt;9d09f99587003300663ca1bb36cb0ba3&lt;/compiled_snapshot&gt;&lt;display_text/&gt;&lt;flow display_value="Validate Customer"&gt;ce5858e98776c6102a3163583cbb3590&lt;/flow&gt;&lt;generation_source/&gt;&lt;order&gt;13&lt;/order&gt;&lt;parent_ui_id&gt;9b1458a1-3cf9-4d41-b641-4321fa20c534&lt;/parent_ui_id&gt;&lt;sys_class_name&gt;sys_hub_action_instance&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:39&lt;/sys_created_on&gt;&lt;sys_id&gt;fe5898e98776c6102a3163583cbb3571&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_scope display_value="Marketplace"&gt;bcd9057a47772110acc88a88536d433f&lt;/sys_scope&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:39&lt;/sys_updated_on&gt;&lt;ui_id&gt;aecf3497-8536-4a32-abb8-497371d6624a&lt;/ui_id&gt;&lt;/sys_hub_action_instance&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=fe5898e98776c6102a3163583cbb3571"/&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;sys_hub_action_instance&lt;/document&gt;&lt;document_key&gt;fe5898e98776c6102a3163583cbb3571&lt;/document_key&gt;&lt;order&gt;0&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:39&lt;/sys_created_on&gt;&lt;sys_id&gt;b65898e98776c6102a3163583cbb3574&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:39&lt;/sys_updated_on&gt;&lt;value&gt;x_376096_mpl_oauth_token&lt;/value&gt;&lt;variable display_value="Table"&gt;d909f99587003300663ca1bb36cb0ba4&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;sys_hub_action_instance&lt;/document&gt;&lt;document_key&gt;fe5898e98776c6102a3163583cbb3571&lt;/document_key&gt;&lt;order&gt;5&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:39&lt;/sys_created_on&gt;&lt;sys_id&gt;f25898e98776c6102a3163583cbb3574&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:39&lt;/sys_updated_on&gt;&lt;value&gt;1&lt;/value&gt;&lt;variable display_value="Don't fail on error"&gt;ceab42a673110010d70877186bf6a74f&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_action_input_9d09f99587003300663ca1bb36cb0ba3^id=fe5898e98776c6102a3163583cbb3571"/&gt;&lt;sys_hub_input_scripts action="delete_multiple" query="instance=fe5898e98776c6102a3163583cbb3571^sys_idNOT IN725898e98776c6102a3163583cbb3573"/&gt;&lt;sys_hub_input_scripts action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;input_name&gt;conditions&lt;/input_name&gt;&lt;instance&gt;fe5898e98776c6102a3163583cbb3571&lt;/instance&gt;&lt;referenced_table&gt;sys_hub_action_instance&lt;/referenced_table&gt;&lt;script&gt;{"conditions":{"scriptActive":true,"script":"/*\n**Access Flow/Action data using the fd_data object. Script must return a value. \n**Order number is offset by +1 in Error Handling Section.\n**Available options display upon pressing \".\" after fd_data\n**example: var shortDesc \u003d fd_data.trigger.current.short_description;\n**return shortDesc;\n**\n**Requires GlideRecord encodedQuery response, example:\n**\"active\u003dtrue^short_descriptionSTARTSWITHtest\";\n*/\nconst instanceURL \u003d fd_data._11__for_each.item.mpl_instance_url;\nreturn \u0027sys_id\u003d\u0027 + fd_data._7__parse_oauth_data.tokens[instanceURL];"}}&lt;/script&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:39&lt;/sys_created_on&gt;&lt;sys_id&gt;725898e98776c6102a3163583cbb3573&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:39&lt;/sys_updated_on&gt;&lt;/sys_hub_input_scripts&gt;&lt;sys_hub_alias_mapping action="delete_multiple" query="source_id=fe5898e98776c6102a3163583cbb3571"/&gt;&lt;sys_hub_sub_flow_instance action="delete_multiple" query="flow=ce5858e98776c6102a3163583cbb3590^sys_idNOT IN7a5898e98776c6102a3163583cbb3580"/&gt;&lt;sys_hub_sub_flow_instance action="INSERT_OR_UPDATE"&gt;&lt;attributes/&gt;&lt;comment/&gt;&lt;display_text/&gt;&lt;flow display_value="Validate Customer"&gt;ce5858e98776c6102a3163583cbb3590&lt;/flow&gt;&lt;generation_source/&gt;&lt;inputs/&gt;&lt;inputs/&gt;&lt;order&gt;10&lt;/order&gt;&lt;parent_ui_id/&gt;&lt;subflow display_value="GIT Import NOW Applications"&gt;c73f5e4b47bb6110acc88a88536d4344&lt;/subflow&gt;&lt;subflow_instance_inputs/&gt;&lt;sys_class_name&gt;sys_hub_sub_flow_instance&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:39&lt;/sys_created_on&gt;&lt;sys_id&gt;7a5898e98776c6102a3163583cbb3580&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_scope display_value="Marketplace"&gt;bcd9057a47772110acc88a88536d433f&lt;/sys_scope&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:40&lt;/sys_updated_on&gt;&lt;ui_id&gt;ab44ee08-6350-40c4-8584-c54280481e13&lt;/ui_id&gt;&lt;/sys_hub_sub_flow_instance&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=7a5898e98776c6102a3163583cbb3580"/&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;sys_hub_sub_flow_instance&lt;/document&gt;&lt;document_key&gt;7a5898e98776c6102a3163583cbb3580&lt;/document_key&gt;&lt;order&gt;0&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:40&lt;/sys_created_on&gt;&lt;sys_id&gt;4b5898e98776c6102a3163583cbb35cf&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:40&lt;/sys_updated_on&gt;&lt;value&gt;1&lt;/value&gt;&lt;variable display_value="wait_for_completion"&gt;725898e98776c6102a3163583cbb3582&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_element_mapping action="delete_multiple" query="id=7a5898e98776c6102a3163583cbb3580"/&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;customer&lt;/field&gt;&lt;id&gt;7a5898e98776c6102a3163583cbb3580&lt;/id&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:40&lt;/sys_created_on&gt;&lt;sys_id&gt;4f5898e98776c6102a3163583cbb35ce&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:40&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_hub_flow_input_c73f5e4b47bb6110acc88a88536d4344&lt;/table&gt;&lt;value&gt;{{4cbb161a-141f-4759-a575-332900757727.record}}&lt;/value&gt;&lt;/sys_element_mapping&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;wait_for_completion&lt;/field&gt;&lt;id&gt;7a5898e98776c6102a3163583cbb3580&lt;/id&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:40&lt;/sys_created_on&gt;&lt;sys_id&gt;c75898e98776c6102a3163583cbb35cf&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:40&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_hub_sub_flow_instance_inputs_7a5898e98776c6102a3163583cbb3580&lt;/table&gt;&lt;value/&gt;&lt;/sys_element_mapping&gt;&lt;sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_sub_flow_instance_inputs_7a5898e98776c6102a3163583cbb3580^id=7a5898e98776c6102a3163583cbb3580"/&gt;&lt;sys_hub_sub_flow_instance_inputs action="delete_multiple" query="model=7a5898e98776c6102a3163583cbb3580^sys_idNOT IN725898e98776c6102a3163583cbb3582"/&gt;&lt;sys_hub_sub_flow_instance_inputs action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;array_denormalized&gt;false&lt;/array_denormalized&gt;&lt;attributes&gt;element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,fd_hide_inline_script_widget=true,uiType=boolean,uiTypeLabel=True/False&lt;/attributes&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label/&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value/&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;wait_for_completion&lt;/element&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;formula/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;help/&gt;&lt;hint/&gt;&lt;internal_type display_value=""&gt;boolean&lt;/internal_type&gt;&lt;label&gt;wait_for_completion&lt;/label&gt;&lt;mandatory&gt;false&lt;/mandatory&gt;&lt;max_length&gt;40&lt;/max_length&gt;&lt;model display_value=""&gt;7a5898e98776c6102a3163583cbb3580&lt;/model&gt;&lt;model_id&gt;7a5898e98776c6102a3163583cbb3580&lt;/model_id&gt;&lt;model_table&gt;sys_hub_flow_logic_ext_input&lt;/model_table&gt;&lt;name&gt;var__m_sys_hub_sub_flow_instance_inputs_7a5898e98776c6102a3163583cbb3580&lt;/name&gt;&lt;next_element/&gt;&lt;order&gt;0&lt;/order&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_roles/&gt;&lt;reference/&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;sizeclass/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;sys_hub_sub_flow_instance_inputs&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:39&lt;/sys_created_on&gt;&lt;sys_id&gt;725898e98776c6102a3163583cbb3582&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package/&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Marketplace"&gt;bcd9057a47772110acc88a88536d433f&lt;/sys_scope&gt;&lt;sys_update_name/&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:39&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;virtual_type&gt;script&lt;/virtual_type&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/sys_hub_sub_flow_instance_inputs&gt;&lt;sys_hub_input_scripts action="delete_multiple" query="instance=7a5898e98776c6102a3163583cbb3580"/&gt;&lt;sys_hub_flow_logic action="delete_multiple" query="flow=ce5858e98776c6102a3163583cbb3590^sys_idNOT IN1a5858e98776c6102a3163583cbb35fc,8a5858e98776c6102a3163583cbb35e1,925858e98776c6102a3163583cbb35f6,da5858e98776c6102a3163583cbb35e5,de5858e98776c6102a3163583cbb35f8"/&gt;&lt;sys_hub_flow_logic action="INSERT_OR_UPDATE"&gt;&lt;attributes/&gt;&lt;block display_value=""&gt;fcfa3d8e8702f5102a3163583cbb35e7&lt;/block&gt;&lt;comment/&gt;&lt;connected_to/&gt;&lt;decision_table/&gt;&lt;decision_table_inputs/&gt;&lt;display_text/&gt;&lt;extended_inputs/&gt;&lt;flow display_value="Validate Customer"&gt;ce5858e98776c6102a3163583cbb3590&lt;/flow&gt;&lt;flow_variable/&gt;&lt;flow_variables_assigned/&gt;&lt;generation_source/&gt;&lt;inputs/&gt;&lt;inputs/&gt;&lt;logic_definition display_value="If"&gt;af4e1945c3e232002841b63b12d3ae3e&lt;/logic_definition&gt;&lt;order&gt;14&lt;/order&gt;&lt;outputs_assigned/&gt;&lt;outputs_to_assign/&gt;&lt;parent_ui_id&gt;9b1458a1-3cf9-4d41-b641-4321fa20c534&lt;/parent_ui_id&gt;&lt;sys_class_name&gt;sys_hub_flow_logic&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:37&lt;/sys_created_on&gt;&lt;sys_id&gt;1a5858e98776c6102a3163583cbb35fc&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_scope/&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:37&lt;/sys_updated_on&gt;&lt;ui_id&gt;8065dc2b-23e1-4a33-8f33-b5756164f7f8&lt;/ui_id&gt;&lt;workflow_inputs/&gt;&lt;workflow_reference/&gt;&lt;/sys_hub_flow_logic&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=1a5858e98776c6102a3163583cbb35fc"/&gt;&lt;sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_variable_ce5858e98776c6102a3163583cbb3590^id=1a5858e98776c6102a3163583cbb35fc"/&gt;&lt;sys_element_mapping action="delete_multiple" query="id=1a5858e98776c6102a3163583cbb35fc"/&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;condition&lt;/field&gt;&lt;id&gt;1a5858e98776c6102a3163583cbb35fc&lt;/id&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:37&lt;/sys_created_on&gt;&lt;sys_id&gt;125858e98776c6102a3163583cbb35ff&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:37&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e&lt;/table&gt;&lt;value&gt;{{aecf3497-8536-4a32-abb8-497371d6624a.status}}=0&lt;/value&gt;&lt;/sys_element_mapping&gt;&lt;sys_hub_flow_logic_ext_input action="delete_multiple" query="model=1a5858e98776c6102a3163583cbb35fc"/&gt;&lt;sys_hub_input_scripts action="delete_multiple" query="instance=1a5858e98776c6102a3163583cbb35fc"/&gt;&lt;sys_hub_flow_logic action="INSERT_OR_UPDATE"&gt;&lt;attributes/&gt;&lt;block display_value=""&gt;28fa3d8e8702f5102a3163583cbb3528&lt;/block&gt;&lt;comment/&gt;&lt;connected_to/&gt;&lt;decision_table/&gt;&lt;decision_table_inputs/&gt;&lt;display_text/&gt;&lt;extended_inputs/&gt;&lt;flow display_value="Validate Customer"&gt;ce5858e98776c6102a3163583cbb3590&lt;/flow&gt;&lt;flow_variable/&gt;&lt;flow_variables_assigned&gt;git_access_token&lt;/flow_variables_assigned&gt;&lt;generation_source/&gt;&lt;inputs/&gt;&lt;logic_definition display_value="Set Flow Variables"&gt;4f787d1e0f9b0010ecf0cc52ff767ea0&lt;/logic_definition&gt;&lt;order&gt;1&lt;/order&gt;&lt;outputs_assigned/&gt;&lt;outputs_to_assign/&gt;&lt;parent_ui_id/&gt;&lt;sys_class_name&gt;sys_hub_flow_logic&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:37&lt;/sys_created_on&gt;&lt;sys_id&gt;8a5858e98776c6102a3163583cbb35e1&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_scope/&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:37&lt;/sys_updated_on&gt;&lt;ui_id&gt;edd43844-e560-4f3e-9070-1c543f82b00f&lt;/ui_id&gt;&lt;workflow_inputs/&gt;&lt;workflow_reference/&gt;&lt;/sys_hub_flow_logic&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=8a5858e98776c6102a3163583cbb35e1"/&gt;&lt;sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_variable_ce5858e98776c6102a3163583cbb3590^id=8a5858e98776c6102a3163583cbb35e1"/&gt;&lt;sys_hub_flow_logic_ext_input action="delete_multiple" query="model=8a5858e98776c6102a3163583cbb35e1"/&gt;&lt;sys_hub_input_scripts action="delete_multiple" query="instance=8a5858e98776c6102a3163583cbb35e1^sys_idNOT INda5858e98776c6102a3163583cbb35e2"/&gt;&lt;sys_hub_input_scripts action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;input_name&gt;git_access_token&lt;/input_name&gt;&lt;instance&gt;8a5858e98776c6102a3163583cbb35e1&lt;/instance&gt;&lt;referenced_table&gt;sys_hub_flow_logic&lt;/referenced_table&gt;&lt;script&gt;{"git_access_token":{"scriptActive":true,"script":"/*\n**Access Flow/Action data using the fd_data object. Script must return a value. \n**Order number is offset by +1 in Error Handling Section.\n**Available options display upon pressing \".\" after fd_data\n**example: var shortDesc \u003d fd_data.trigger.current.short_description;\n**return shortDesc;\n*/\nreturn fd_data.trigger.request_item.variables.github_access_token.getDecryptedValue();"}}&lt;/script&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:37&lt;/sys_created_on&gt;&lt;sys_id&gt;da5858e98776c6102a3163583cbb35e2&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:37&lt;/sys_updated_on&gt;&lt;/sys_hub_input_scripts&gt;&lt;sys_hub_flow_logic action="INSERT_OR_UPDATE"&gt;&lt;attributes/&gt;&lt;block display_value=""&gt;34fa3d8e8702f5102a3163583cbb3544&lt;/block&gt;&lt;comment/&gt;&lt;connected_to/&gt;&lt;decision_table/&gt;&lt;decision_table_inputs/&gt;&lt;display_text/&gt;&lt;extended_inputs/&gt;&lt;flow display_value="Validate Customer"&gt;ce5858e98776c6102a3163583cbb3590&lt;/flow&gt;&lt;flow_variable/&gt;&lt;flow_variables_assigned/&gt;&lt;generation_source/&gt;&lt;inputs/&gt;&lt;logic_definition display_value="End"&gt;d176605ea76103004f27b0d2187901c7&lt;/logic_definition&gt;&lt;order&gt;6&lt;/order&gt;&lt;outputs_assigned/&gt;&lt;outputs_to_assign/&gt;&lt;parent_ui_id&gt;72e63b61-91b4-41d2-bc16-04b2e4f39a69&lt;/parent_ui_id&gt;&lt;sys_class_name&gt;sys_hub_flow_logic&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:37&lt;/sys_created_on&gt;&lt;sys_id&gt;925858e98776c6102a3163583cbb35f6&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_scope/&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:37&lt;/sys_updated_on&gt;&lt;ui_id&gt;dca507a9-8654-4da1-b08b-a332ebfffb98&lt;/ui_id&gt;&lt;workflow_inputs/&gt;&lt;workflow_reference/&gt;&lt;/sys_hub_flow_logic&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=925858e98776c6102a3163583cbb35f6"/&gt;&lt;sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_variable_ce5858e98776c6102a3163583cbb3590^id=925858e98776c6102a3163583cbb35f6"/&gt;&lt;sys_hub_flow_logic_ext_input action="delete_multiple" query="model=925858e98776c6102a3163583cbb35f6"/&gt;&lt;sys_hub_input_scripts action="delete_multiple" query="instance=925858e98776c6102a3163583cbb35f6"/&gt;&lt;sys_hub_flow_logic action="INSERT_OR_UPDATE"&gt;&lt;attributes/&gt;&lt;block display_value=""&gt;7cfa3d8e8702f5102a3163583cbb3531&lt;/block&gt;&lt;comment/&gt;&lt;connected_to/&gt;&lt;decision_table/&gt;&lt;decision_table_inputs/&gt;&lt;display_text/&gt;&lt;extended_inputs/&gt;&lt;flow display_value="Validate Customer"&gt;ce5858e98776c6102a3163583cbb3590&lt;/flow&gt;&lt;flow_variable/&gt;&lt;flow_variables_assigned/&gt;&lt;generation_source/&gt;&lt;inputs/&gt;&lt;inputs/&gt;&lt;logic_definition display_value="If"&gt;af4e1945c3e232002841b63b12d3ae3e&lt;/logic_definition&gt;&lt;order&gt;4&lt;/order&gt;&lt;outputs_assigned/&gt;&lt;outputs_to_assign/&gt;&lt;parent_ui_id/&gt;&lt;sys_class_name&gt;sys_hub_flow_logic&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:37&lt;/sys_created_on&gt;&lt;sys_id&gt;da5858e98776c6102a3163583cbb35e5&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_scope/&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:37&lt;/sys_updated_on&gt;&lt;ui_id&gt;72e63b61-91b4-41d2-bc16-04b2e4f39a69&lt;/ui_id&gt;&lt;workflow_inputs/&gt;&lt;workflow_reference/&gt;&lt;/sys_hub_flow_logic&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=da5858e98776c6102a3163583cbb35e5"/&gt;&lt;sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_variable_ce5858e98776c6102a3163583cbb3590^id=da5858e98776c6102a3163583cbb35e5"/&gt;&lt;sys_element_mapping action="delete_multiple" query="id=da5858e98776c6102a3163583cbb35e5"/&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;condition&lt;/field&gt;&lt;id&gt;da5858e98776c6102a3163583cbb35e5&lt;/id&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:37&lt;/sys_created_on&gt;&lt;sys_id&gt;1a5858e98776c6102a3163583cbb35e8&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:37&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e&lt;/table&gt;&lt;value&gt;{{9033493e-c3e9-41a3-b505-24f9878fcb85.has_access}}=false&lt;/value&gt;&lt;/sys_element_mapping&gt;&lt;sys_hub_flow_logic_ext_input action="delete_multiple" query="model=da5858e98776c6102a3163583cbb35e5"/&gt;&lt;sys_hub_input_scripts action="delete_multiple" query="instance=da5858e98776c6102a3163583cbb35e5"/&gt;&lt;sys_hub_flow_logic action="INSERT_OR_UPDATE"&gt;&lt;attributes/&gt;&lt;block display_value=""&gt;f0fa3d8e8702f5102a3163583cbb35c4&lt;/block&gt;&lt;comment/&gt;&lt;connected_to/&gt;&lt;decision_table/&gt;&lt;decision_table_inputs/&gt;&lt;display_text/&gt;&lt;extended_inputs/&gt;&lt;flow display_value="Validate Customer"&gt;ce5858e98776c6102a3163583cbb3590&lt;/flow&gt;&lt;flow_variable/&gt;&lt;flow_variables_assigned/&gt;&lt;generation_source/&gt;&lt;inputs/&gt;&lt;inputs/&gt;&lt;logic_definition display_value="For Each"&gt;098e1dc5c3e232002841b63b12d3ae33&lt;/logic_definition&gt;&lt;order&gt;11&lt;/order&gt;&lt;outputs_assigned/&gt;&lt;outputs_to_assign/&gt;&lt;parent_ui_id/&gt;&lt;sys_class_name&gt;sys_hub_flow_logic&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:37&lt;/sys_created_on&gt;&lt;sys_id&gt;de5858e98776c6102a3163583cbb35f8&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_scope/&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:37&lt;/sys_updated_on&gt;&lt;ui_id&gt;9b1458a1-3cf9-4d41-b641-4321fa20c534&lt;/ui_id&gt;&lt;workflow_inputs/&gt;&lt;workflow_reference/&gt;&lt;/sys_hub_flow_logic&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=de5858e98776c6102a3163583cbb35f8"/&gt;&lt;sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_variable_ce5858e98776c6102a3163583cbb3590^id=de5858e98776c6102a3163583cbb35f8"/&gt;&lt;sys_element_mapping action="delete_multiple" query="id=de5858e98776c6102a3163583cbb35f8"/&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;items&lt;/field&gt;&lt;id&gt;de5858e98776c6102a3163583cbb35f8&lt;/id&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:37&lt;/sys_created_on&gt;&lt;sys_id&gt;9a5858e98776c6102a3163583cbb35fb&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:37&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_hub_flow_logic_input_098e1dc5c3e232002841b63b12d3ae33&lt;/table&gt;&lt;value&gt;{{413c680c-f406-4133-8953-ab0ea59c9ecd.mpl_instance}}&lt;/value&gt;&lt;/sys_element_mapping&gt;&lt;sys_hub_flow_logic_ext_input action="delete_multiple" query="model=de5858e98776c6102a3163583cbb35f8"/&gt;&lt;sys_hub_input_scripts action="delete_multiple" query="instance=de5858e98776c6102a3163583cbb35f8"/&gt;&lt;sys_hub_pill_compound action="delete_multiple" query="attached_to=ce5858e98776c6102a3163583cbb3590"/&gt;&lt;sys_hub_flow_variable action="delete_multiple" query="model=ce5858e98776c6102a3163583cbb3590^sys_idNOT IN865858e98776c6102a3163583cbb359a"/&gt;&lt;sys_hub_flow_variable action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;array_denormalized&gt;false&lt;/array_denormalized&gt;&lt;attributes&gt;element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=5665b12e-2c7a-4ad6-905f-ac07f2424c88&lt;/attributes&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label/&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value/&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;git_access_token&lt;/element&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;formula/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;help/&gt;&lt;hint/&gt;&lt;internal_type display_value="String"&gt;string&lt;/internal_type&gt;&lt;label&gt;GIT Access Token&lt;/label&gt;&lt;mandatory&gt;false&lt;/mandatory&gt;&lt;max_length&gt;8000&lt;/max_length&gt;&lt;model display_value="Validate Customer"&gt;ce5858e98776c6102a3163583cbb3590&lt;/model&gt;&lt;model_id&gt;ce5858e98776c6102a3163583cbb3590&lt;/model_id&gt;&lt;model_table&gt;sys_hub_flow&lt;/model_table&gt;&lt;name&gt;var__m_sys_hub_flow_variable_ce5858e98776c6102a3163583cbb3590&lt;/name&gt;&lt;next_element/&gt;&lt;order&gt;0&lt;/order&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_roles/&gt;&lt;reference/&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;sizeclass/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;sys_hub_flow_variable&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:36&lt;/sys_created_on&gt;&lt;sys_id&gt;865858e98776c6102a3163583cbb359a&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package/&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Marketplace"&gt;bcd9057a47772110acc88a88536d433f&lt;/sys_scope&gt;&lt;sys_update_name/&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:36&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;virtual_type&gt;script&lt;/virtual_type&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/sys_hub_flow_variable&gt;&lt;sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_ce5858e98776c6102a3163583cbb3590^sys_idNOT IN0e5858e98776c6102a3163583cbb35dc,8e5858e98776c6102a3163583cbb35d6"/&gt;&lt;sys_documentation action="INSERT_OR_UPDATE"&gt;&lt;element&gt;table_name&lt;/element&gt;&lt;help/&gt;&lt;hint/&gt;&lt;label&gt;Table Name&lt;/label&gt;&lt;language&gt;en&lt;/language&gt;&lt;name&gt;var__m_sys_hub_flow_input_ce5858e98776c6102a3163583cbb3590&lt;/name&gt;&lt;plural/&gt;&lt;sys_class_name&gt;sys_documentation&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:37&lt;/sys_created_on&gt;&lt;sys_id&gt;0e5858e98776c6102a3163583cbb35dc&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package display_value="Marketplace" source="x_376096_mpl"&gt;bcd9057a47772110acc88a88536d433f&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Marketplace"&gt;bcd9057a47772110acc88a88536d433f&lt;/sys_scope&gt;&lt;sys_update_name/&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:37&lt;/sys_updated_on&gt;&lt;url/&gt;&lt;url_target/&gt;&lt;/sys_documentation&gt;&lt;sys_documentation action="INSERT_OR_UPDATE"&gt;&lt;element&gt;request_item&lt;/element&gt;&lt;help/&gt;&lt;hint/&gt;&lt;label&gt;Request Item&lt;/label&gt;&lt;language&gt;en&lt;/language&gt;&lt;name&gt;var__m_sys_hub_flow_input_ce5858e98776c6102a3163583cbb3590&lt;/name&gt;&lt;plural/&gt;&lt;sys_class_name&gt;sys_documentation&lt;/sys_class_name&gt;&lt;sys_created_by&gt;markus.kraus&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 14:57:36&lt;/sys_created_on&gt;&lt;sys_id&gt;8e5858e98776c6102a3163583cbb35d6&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package display_value="Marketplace" source="x_376096_mpl"&gt;bcd9057a47772110acc88a88536d433f&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Marketplace"&gt;bcd9057a47772110acc88a88536d433f&lt;/sys_scope&gt;&lt;sys_update_name/&gt;&lt;sys_updated_by&gt;markus.kraus&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 14:57:36&lt;/sys_updated_on&gt;&lt;url/&gt;&lt;url_target/&gt;&lt;/sys_documentation&gt;&lt;sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_ce5858e98776c6102a3163583cbb3590"/&gt;&lt;sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_ce5858e98776c6102a3163583cbb3590"/&gt;&lt;sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_ce5858e98776c6102a3163583cbb3590"/&gt;&lt;sys_flow_trigger_plan action="delete_multiple" query="plan_id=ce5858e98776c6102a3163583cbb3590"/&gt;&lt;sys_flow_subflow_plan action="delete_multiple" query="plan_id=ce5858e98776c6102a3163583cbb3590"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1144263000</payload_hash>
+        <record_name>Validate Customer</record_name>
+        <reverted_from/>
+        <source>3ad05357877b21102a3163583cbb358c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 14:57:42</sys_created_on>
+        <sys_id>a758d8e98776c6102a3163583cbb355a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19017411ff80000001</sys_recorded_at>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 14:57:42</sys_updated_on>
+        <type>Flow</type>
+        <update_guid>2b58d8e97876c610ed0286f99be4bc59</update_guid>
+        <update_guid_history>2b58d8e97876c610ed0286f99be4bc59:-1144263000,c65858e99976c6106a5087f3c2576c97:-634388565</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-06-14 15:22:58</sys_created_on>
+        <sys_db_object display_value="" name="sys_hub_flow">sys_hub_flow</sys_db_object>
+        <sys_id>04c56c19feb0405090a3d91d33b6ea40</sys_id>
+        <sys_metadata>ce5858e98776c6102a3163583cbb3590</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Validate Customer</sys_name>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_scope_delete display_value="">2e7dbf18fb1341e79af85ab2bf0af269</sys_scope_delete>
+        <sys_update_name>sys_hub_flow_ce5858e98776c6102a3163583cbb3590</sys_update_name>
+        <sys_update_version display_value="sys_hub_flow_ce5858e98776c6102a3163583cbb3590">a758d8e98776c6102a3163583cbb355a</sys_update_version>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-14 15:22:58</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
