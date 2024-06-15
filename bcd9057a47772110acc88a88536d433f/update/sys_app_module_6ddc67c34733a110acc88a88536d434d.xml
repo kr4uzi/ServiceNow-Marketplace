@@ -8,15 +8,16 @@
         <hint/>
         <homepage/>
         <image/>
-        <link_type>DIRECT</link_type>
+        <link_type>NEW</link_type>
         <map_page/>
         <mobile_title>New Customer</mobile_title>
         <mobile_view_name>Mobile</mobile_view_name>
-        <name/>
+        <name>x_376096_mpl_customer</name>
         <order>320</order>
         <override_menu_roles>false</override_menu_roles>
-        <query>com.glideapp.servicecatalog_cat_item_view.do?sysparm_id=0d57b93e473b2110acc88a88536d4331</query>
+        <query/>
         <report/>
+        <require_confirmation>true</require_confirmation>
         <roles>x_376096_mpl.mpl_customer_owner</roles>
         <sys_class_name>sys_app_module</sys_class_name>
         <sys_created_by>admin</sys_created_by>
@@ -24,15 +25,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>6ddc67c34733a110acc88a88536d434d</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_name>New Customer</sys_name>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>x_376096_mpl_customer</sys_name>
         <sys_overrides/>
         <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name>sys_app_module_6ddc67c34733a110acc88a88536d434d</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-07 23:01:51</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-15 11:49:53</sys_updated_on>
         <timeline_page/>
         <title>New Customer</title>
         <uncancelable>false</uncancelable>
