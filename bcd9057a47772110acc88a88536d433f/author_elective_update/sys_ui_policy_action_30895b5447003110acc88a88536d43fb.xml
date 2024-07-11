@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="DELETE">
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field>service_user</field>
+        <mandatory>true</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-07-11 18:46:10</sys_created_on>
+        <sys_id>30895b5447003110acc88a88536d43fb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>service_user</sys_name>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name>sys_ui_policy_action_30895b5447003110acc88a88536d43fb</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-07-11 18:46:10</sys_updated_on>
+        <table>x_376096_mpl_application_installation</table>
+        <ui_policy display_value="MPL Application Installation - Update Flow selected">6f39175447003110acc88a88536d436b</ui_policy>
+        <visible>ignore</visible>
+    </sys_ui_policy_action>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Marketplace">bcd9057a47772110acc88a88536d433f</application>
+        <file_path/>
+        <instance_id>84830f404a36232a010b7b61011a5184</instance_id>
+        <instance_name>dxccneepractice1</instance_name>
+        <name>sys_ui_policy_action_30895b5447003110acc88a88536d43fb</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="INSERT_OR_UPDATE">
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field>service_user</field>
+        <mandatory>true</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-07-11 18:46:10</sys_created_on>
+        <sys_id>30895b5447003110acc88a88536d43fb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>service_user</sys_name>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_update_name>sys_ui_policy_action_30895b5447003110acc88a88536d43fb</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-07-11 18:46:10</sys_updated_on>
+        <table>x_376096_mpl_application_installation</table>
+        <ui_policy display_value="MPL Application Installation - Update Flow selected">6f39175447003110acc88a88536d436b</ui_policy>
+        <visible>ignore</visible>
+    </sys_ui_policy_action>
+</record_update>]]></payload>
+        <payload_hash>669488181</payload_hash>
+        <record_name>service_user</record_name>
+        <reverted_from/>
+        <source>a47a5b1887cc75102a3163583cbb3549</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>mkraus6</sys_created_by>
+        <sys_created_on>2023-07-11 18:49:31</sys_created_on>
+        <sys_id>8e7a9b1887cc75102a3163583cbb35b6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>189464986740000001</sys_recorded_at>
+        <sys_updated_by>mkraus6</sys_updated_by>
+        <sys_updated_on>2023-07-11 18:49:31</sys_updated_on>
+        <type>UI Policy Action</type>
+        <update_guid>4e7a9b18dccc7510abe3e0a24cfe43b6</update_guid>
+        <update_guid_history>4e7a9b18dccc7510abe3e0a24cfe43b6:669488181</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-16 12:35:58</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_policy_action">sys_ui_policy_action</sys_db_object>
+        <sys_id>4c0a5ae20c83475fbb49f446d6fb3769</sys_id>
+        <sys_metadata>30895b5447003110acc88a88536d43fb</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>service_user</sys_name>
+        <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
+        <sys_scope_delete display_value="">2e7dbf18fb1341e79af85ab2bf0af269</sys_scope_delete>
+        <sys_update_name>sys_ui_policy_action_30895b5447003110acc88a88536d43fb</sys_update_name>
+        <sys_update_version display_value="sys_ui_policy_action_30895b5447003110acc88a88536d43fb">8e7a9b1887cc75102a3163583cbb35b6</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-16 12:35:58</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -7,7 +7,7 @@
 
 }]]></client_script_v2>
         <comments/>
-        <condition>current.canWrite() &amp;&amp; gs.hasRole('x_376096_mpl.mpl_admin')</condition>
+        <condition>current.canWrite()</condition>
         <form_action>true</form_action>
         <form_button>false</form_button>
         <form_button_v2>false</form_button_v2>
@@ -27,14 +27,14 @@
         <list_save_with_form_button>false</list_save_with_form_button>
         <list_style/>
         <messages/>
-        <name>(Re-)Deploy</name>
+        <name>Prepare</name>
         <onclick>deployAppInstallation()</onclick>
         <order>100</order>
         <script><![CDATA[/* global GlideModal, g_form, g_navigation, getMessage, GlideAjax */
 /* eslint no-undef: "error" */
 function deployAppInstallation() {
 	var ga = new GlideAjax('x_376096_mpl.MPLUtilClient');
-	ga.addParam('sysparm_name', 'deployApp');
+	ga.addParam('sysparm_name', 'prepareApp');
 	ga.addParam('application_installation', g_form.getUniqueValue());
 	ga.getXMLAnswer(function (result) {
 		result = JSON.parse(result);
@@ -62,15 +62,15 @@ function deployAppInstallation() {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f42f7894473239d0e057e0e8036d43c1</sys_id>
-        <sys_mod_count>25</sys_mod_count>
-        <sys_name>(Re-)Deploy</sys_name>
+        <sys_mod_count>28</sys_mod_count>
+        <sys_name>Prepare</sys_name>
         <sys_overrides/>
         <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name>sys_ui_action_f42f7894473239d0e057e0e8036d43c1</sys_update_name>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-01-26 23:14:15</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-06-16 13:42:28</sys_updated_on>
         <table>x_376096_mpl_application_installation</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>

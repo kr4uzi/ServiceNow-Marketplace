@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="41ba49ba47772110acc88a88536d431e" label="Source" max_length="40" name="x_376096_mpl_source" type="collection">
-        <element default="true" label="Active" max_length="40" name="active" type="boolean"/>
-        <element label="GitHub Access Token" max_length="255" name="github_access_token" type="password2"/>
-        <element label="GitHub ID" max_length="40" name="github_id" type="integer"/>
-        <element label="GitHub Name" max_length="40" name="github_name" type="string"/>
         <element choice="1" label="GitHub Type" max_length="40" name="github_type" type="choice">
             <choice>
-                <element inactive_on_update="false" label="Organization" sequence="100" value="orgs"/>
                 <element inactive_on_update="false" label="User" sequence="200" value="users"/>
+                <element inactive_on_update="false" label="Organization" sequence="100" value="orgs"/>
             </choice>
         </element>
+        <element label="GitHub Access Token" max_length="255" name="github_access_token" type="password2"/>
         <element display="true" label="Name" max_length="40" name="name" type="string"/>
-        <element label="Owners" max_length="4000" name="owners" reference="sys_user" reference_qual="roles=x_376096_mpl.mpl_source_owner^EQ" reference_qual_condition="roles=x_376096_mpl.mpl_source_owner^EQ" type="glide_list"/>
+        <element default="javascript: gs.getUserID()" label="Owners" max_length="4000" name="owners" reference="sys_user" reference_qual="roles=x_376096_mpl.mpl_source_owner^EQ" reference_qual_condition="roles=x_376096_mpl.mpl_source_owner^EQ" type="glide_list"/>
+        <element label="GitHub ID" max_length="40" name="github_id" type="integer"/>
+        <element label="GitHub Name" max_length="40" name="github_name" type="string"/>
+        <element default="true" label="Active" max_length="40" name="active" type="boolean"/>
     </element>
 </database>
