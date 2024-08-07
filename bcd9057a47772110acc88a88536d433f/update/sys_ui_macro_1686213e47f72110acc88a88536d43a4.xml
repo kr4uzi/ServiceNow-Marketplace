@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_macro">
     <sys_ui_macro action="INSERT_OR_UPDATE">
-        <active>true</active>
+        <active>false</active>
         <category>general</category>
         <description/>
         <media_type/>
@@ -10,14 +10,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-06 18:32:06</sys_created_on>
         <sys_id>1686213e47f72110acc88a88536d43a4</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>oauth_connect_button</sys_name>
         <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name>sys_ui_macro_1686213e47f72110acc88a88536d43a4</sys_update_name>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2024-05-13 06:25:45</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-08-07 20:11:19</sys_updated_on>
         <xml><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
 <j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
 	<script>

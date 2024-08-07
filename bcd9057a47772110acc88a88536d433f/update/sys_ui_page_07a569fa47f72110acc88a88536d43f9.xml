@@ -20,16 +20,27 @@
 		<input type="hidden" name="state" value="${jvar_oauth_state}" />
 	</g:ui_form>
 	<script>
-		if (window.opener) {
-			if ('${jvar_oauth_token_sys_id}') {
-				if (window.opener $[AND] window.opener.mpl_SetOAuthToken) {
-					window.opener.mpl_SetOAuthToken('${jvar_oauth_token_sys_id}');
-				} else if (window.opener $[AND] window.opener.g_form) {
+		var oAuthTokenSysID = '${jvar_oauth_token_sys_id}';
+		if (oAuthTokenSysID) {
+			// the token sysid is set when we have successfully connected the instances
+			if (window.opener) {
+				// Note: the opener might not be available (XSS protection)
+				if (window.opener.mpl_SetOAuthToken) {
+					window.opener.mpl_SetOAuthToken();
+				} else if (window.opener.g_form) {
 					window.opener.g_form.addInfoMessage('${jvar_linked_message}');
 				}
 				
 				window.close();
-			} else if ('${jvar_oauth_code}') {
+			}
+		}
+
+		var oAuthCode = '${jvar_oauth_code}';
+		if (oAuthCode) {
+			var form = window.document.forms['form.07a569fa47f72110acc88a88536d43f9'];
+			/*
+			I don't think this is use anymore, afaik it was only used for the catalog item 'Add new customer', which is fully replaced with the table's form
+			if (window.opener) {
 				var form = window.document.forms['form.07a569fa47f72110acc88a88536d43f9'];
 				if (form.elements['state'].value == 'new_instance') {
 					var data = window.opener.mpl_GetOAuthData();
@@ -39,7 +50,9 @@
 				}
 
 				form.submit();
-			}
+			}*/
+
+			form.submit();
 		}
 	</script>
 	<j:if test="${!empty(jvar_oauth_error)}">
@@ -110,7 +123,6 @@
 		let body = response.getBody();
 		if (status == 200) {
 			try {
-				gs.info("MKR: body received: " + body);
 				let token = JSON.parse(body);
 				if (token.token_type == 'Bearer') {
 					let tokenGr = new GlideRecord('x_376096_mpl_oauth_token');
@@ -157,13 +169,24 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-07-06 18:29:30</sys_created_on>
         <sys_id>07a569fa47f72110acc88a88536d43f9</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>oauth_redirect</sys_name>
         <sys_package display_value="Marketplace" source="x_376096_mpl">bcd9057a47772110acc88a88536d433f</sys_package>
         <sys_policy/>
         <sys_scope display_value="Marketplace">bcd9057a47772110acc88a88536d433f</sys_scope>
         <sys_update_name>sys_ui_page_07a569fa47f72110acc88a88536d43f9</sys_update_name>
-        <sys_updated_by>mkraus6</sys_updated_by>
-        <sys_updated_on>2023-11-13 15:49:20</sys_updated_on>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-08-07 20:13:25</sys_updated_on>
     </sys_ui_page>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>07a569fa47f72110acc88a88536d43f9</id>
+        <sys_created_by>markus.kraus</sys_created_by>
+        <sys_created_on>2024-08-07 19:38:37</sys_created_on>
+        <sys_id>c58e533687b74a102a3163583cbb35ae</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>markus.kraus</sys_updated_by>
+        <sys_updated_on>2024-08-07 19:38:37</sys_updated_on>
+        <table>sys_ui_page</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
 </record_update>
